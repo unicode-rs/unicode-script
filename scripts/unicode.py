@@ -194,6 +194,8 @@ use core::convert::TryFrom;
 #[allow(non_camel_case_types)]
 /// A value of the Script property
 pub enum Script {
+    /// Unknown script
+    Unknown,
 """)
     for script in script_list:
         f.write("    /// %s\n    %s,\n" % (script, longforms[script]))
@@ -233,6 +235,7 @@ impl TryFrom<ScriptExtension> for Script {
 impl Script {
     pub(crate) fn inner_full_name(self) -> &'static str {
         match self {
+            Script::Unknown => "Unknown",
 """)
     for script in script_list:
         f.write("            Script::%s => \"%s\",\n" % (longforms[script], longforms[script]))
@@ -241,6 +244,7 @@ impl Script {
 
     pub(crate) fn inner_short_name(self) -> &'static str {
         match self {
+            Script::Unknown => "",
 """)
     for script in script_list:
         f.write("            Script::%s => \"%s\",\n" % (longforms[script], script))
@@ -276,6 +280,8 @@ impl ScriptExtension {
     #[inline]
     pub(crate) fn inner_intersects(self, other: Self) -> bool {
         match (self, other) {
+            (ScriptExtension::Single(Script::Unknown), _) |
+            (_, ScriptExtension::Single(Script::Unknown)) => false,
             (a, b) if a == b => true,
             (ScriptExtension::Single(Script::Common), _) |
             (ScriptExtension::Single(Script::Inherited), _) |

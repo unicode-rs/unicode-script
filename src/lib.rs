@@ -37,8 +37,10 @@ impl ScriptExtension {
     /// Check if this ScriptExtension has any intersection with another
     /// ScriptExtension
     ///
-    /// "Common" (`Zyyy`) and "Inherited" (Zinh`) are considered as intersecting
+    /// "Common" (`Zyyy`) and "Inherited" (`Zinh`) are considered as intersecting
     /// everything.
+    ///
+    /// "Unknown" intersects nothing
     pub fn intersects(self, other: Self) -> bool {
         self.inner_intersects(other)
     }
@@ -47,17 +49,17 @@ impl ScriptExtension {
 /// Extension trait on `char` for calculating script properties
 pub trait UnicodeScript {
     /// Get the script for a given character
-    fn script(&self) -> Option<Script>;
+    fn script(&self) -> Script;
     /// Get the Script_Extension for a given character
-    fn script_extension(&self) -> Option<ScriptExtension>;
+    fn script_extension(&self) -> ScriptExtension;
 }
 
 impl UnicodeScript for char {
-    fn script(&self) -> Option<Script> {
-        get_script(*self)
+    fn script(&self) -> Script {
+        get_script(*self).unwrap_or(Script::Unknown)
     }
 
-    fn script_extension(&self) -> Option<ScriptExtension> {
-        get_script_extension(*self).or_else(|| self.script().map(ScriptExtension::Single))
+    fn script_extension(&self) -> ScriptExtension {
+        get_script_extension(*self).unwrap_or_else(|| ScriptExtension::Single(self.script()))
     }
 }

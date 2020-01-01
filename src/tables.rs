@@ -22,6 +22,8 @@ use core::convert::TryFrom;
 #[allow(non_camel_case_types)]
 /// A value of the Script property
 pub enum Script {
+    /// Unknown script
+    Unknown,
     /// Tang
     Tangut,
     /// Thaa
@@ -454,6 +456,7 @@ impl TryFrom<ScriptExtension> for Script {
 impl Script {
     pub(crate) fn inner_full_name(self) -> &'static str {
         match self {
+            Script::Unknown => "Unknown",
             Script::Tangut => "Tangut",
             Script::Thaana => "Thaana",
             Script::Adlam => "Adlam",
@@ -611,6 +614,7 @@ impl Script {
 
     pub(crate) fn inner_short_name(self) -> &'static str {
         match self {
+            Script::Unknown => "",
             Script::Tangut => "Tang",
             Script::Thaana => "Thaa",
             Script::Adlam => "Adlm",
@@ -883,6 +887,8 @@ impl ScriptExtension {
     #[inline]
     pub(crate) fn inner_intersects(self, other: Self) -> bool {
         match (self, other) {
+            (ScriptExtension::Single(Script::Unknown), _) |
+            (_, ScriptExtension::Single(Script::Unknown)) => false,
             (a, b) if a == b => true,
             (ScriptExtension::Single(Script::Common), _) |
             (ScriptExtension::Single(Script::Inherited), _) |
