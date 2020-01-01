@@ -9,6 +9,12 @@ jobs:
 
     steps:
     - uses: actions/checkout@v1
+    - uses: actions-rs/toolchain@v1
+      with:
+        profile: minimal
+        toolchain: beta
+        override: true
+        components: rustfmt
     - name: Build
       run: cargo build --verbose
     - name: Run tests
