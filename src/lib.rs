@@ -22,6 +22,12 @@ impl Script {
     }
 }
 
+impl From<char> for Script {
+    fn from(o: char) -> Self {
+        o.script()
+    }
+}
+
 impl ScriptExtension {
     /// Obtain the list of scripts contained inside this ScriptExtension
     #[cfg(feature = "with_std")]
@@ -43,6 +49,12 @@ impl ScriptExtension {
     /// "Unknown" intersects nothing
     pub fn intersects(self, other: Self) -> bool {
         self.inner_intersects(other)
+    }
+}
+
+impl From<char> for ScriptExtension {
+    fn from(o: char) -> Self {
+        o.script_extension()
     }
 }
 
