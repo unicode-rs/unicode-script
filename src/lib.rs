@@ -1,3 +1,6 @@
+//! This crate exposes the Unicode `Script` and `Script_Extension`
+//! properties from [UAX #24](http://www.unicode.org/reports/tr24/)
+
 #![cfg_attr(not(feature = "with_std"), no_std)]
 
 #[rustfmt::skip]
