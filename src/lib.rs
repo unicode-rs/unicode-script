@@ -1,2 +1,55 @@
+#![cfg_attr(not(feature = "with_std"), no_std)]
+
 #[rustfmt::skip]
 mod tables;
+
+pub use tables::{Script, ScriptExtension, UNICODE_VERSION};
+
+use tables::{get_script, get_script_extension};
+
+impl Script {
+    /// Get the full name of a script
+    pub fn full_name(self) -> &'static str {
+        self.inner_full_name()
+    }
+}
+
+impl ScriptExtension {
+    /// Obtain the list of scripts contained inside this ScriptExtension
+    #[cfg(feature = "with_std")]
+    pub fn scripts(self) -> Vec<Script> {
+        self.inner_scripts()
+    }
+
+    /// Check if this ScriptExtension contains the given script
+    pub fn contains_script(self, script: Script) -> bool {
+        self.inner_contains_script(script)
+    }
+
+    /// Check if this ScriptExtension has any intersection with another
+    /// ScriptExtension
+    ///
+    /// "Common" (`Zyyy`) and "Inherited" (Zinh`) are considered as intersecting
+    /// everything.
+    pub fn intersects(self, other: Self) -> bool {
+        self.inner_intersects(other)
+    }
+}
+
+/// Extension trait on `char` for calculating script properties
+pub trait UnicodeScript {
+    /// Get the script for a given character
+    fn script(&self) -> Option<Script>;
+    /// Get the Script_Extension for a given character
+    fn script_extension(&self) -> Option<ScriptExtension>;
+}
+
+impl UnicodeScript for char {
+    fn script(&self) -> Option<Script> {
+        get_script(*self)
+    }
+
+    fn script_extension(&self) -> Option<ScriptExtension> {
+        get_script_extension(*self).or_else(|| self.script().map(ScriptExtension::Single))
+    }
+}
