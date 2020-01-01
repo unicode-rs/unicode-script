@@ -725,6 +725,7 @@ impl ScriptExtension {
     #[inline]
     pub(crate) fn inner_intersects(self, other: Self) -> bool {
         match (self, other) {
+            (a, b) if a == b => true,
             (ScriptExtension::Single(Script::Zyyy), _) |
             (ScriptExtension::Single(Script::Zinh), _) |
             (_, ScriptExtension::Single(Script::Zyyy)) |
