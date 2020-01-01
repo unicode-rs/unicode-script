@@ -48,6 +48,11 @@ impl ScriptExtension {
     pub fn intersect(self, other: Self) -> Self {
         self.inner_intersect(other)
     }
+
+    /// Checks if the script extension is empty (unknown)
+    pub fn is_empty(self) -> bool {
+        self == ScriptExtension::Single(Script::Unknown)
+    }
 }
 
 impl From<char> for ScriptExtension {
