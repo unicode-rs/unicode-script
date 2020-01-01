@@ -183,7 +183,7 @@ pub fn get_script_extension(c: char) -> Option<ScriptExtension> {
 }
 """)
 
-def emit_enums(f, script_list, extension_list, longforms):
+def emit_enums(f, script_list, extension_list, longforms, intersections):
     """
     Emit the Script and ScriptExtension enums as well as any related utility functions
     """
@@ -278,40 +278,39 @@ impl ScriptExtension {
     }
 
     #[inline]
-    pub(crate) fn inner_intersects(self, other: Self) -> bool {
+    pub(crate) fn inner_intersect(self, other: Self) -> Self {
         match (self, other) {
             (ScriptExtension::Single(Script::Unknown), _) |
-            (_, ScriptExtension::Single(Script::Unknown)) => false,
-            (a, b) if a == b => true,
-            (ScriptExtension::Single(Script::Common), _) |
-            (ScriptExtension::Single(Script::Inherited), _) |
-            (_, ScriptExtension::Single(Script::Common)) |
-            (_, ScriptExtension::Single(Script::Inherited)) => true,
-            (ScriptExtension::Single(s), o) | (o, ScriptExtension::Single(s)) => o.inner_contains_script(s),
+            (_, ScriptExtension::Single(Script::Unknown)) => ScriptExtension::Single(Script::Unknown),
+            (a, b) if a == b => a,
+            (ScriptExtension::Single(Script::Common), a) |
+            (ScriptExtension::Single(Script::Inherited), a) |
+            (a, ScriptExtension::Single(Script::Common)) |
+            (a, ScriptExtension::Single(Script::Inherited)) => a,
+            (ScriptExtension::Single(s), o) | (o, ScriptExtension::Single(s)) if o.inner_contains_script(s) => ScriptExtension::Single(s),
 """)
-    intersections = compute_intersections(extension_list)
-    for (e1, e2) in intersections:
-        f.write("            (%s, %s) => true,\n" % (extension_name(e1), extension_name(e2)))
-    f.write("""            _ => false,
+    for (e1, e2, i) in intersections:
+        f.write("            (%s, %s) => %s,\n" % (extension_name(e1), extension_name(e2), extension_name(i, longforms)))
+    f.write("""            _ => ScriptExtension::Single(Script::Unknown),
         }
     }
 }
 """)
 
 
-# We currently do NOT have an optimized method to compute
-# the actual intersection between two script extensions, we
-# only check if they *do* intersect
-#
-# To add such a method we'd need to do an extra pass where we compute any
-# new ScriptExtension enums we'll need from the intersections. It doesn't
-# seem worth it for now
-def compute_intersections(extension_list):
+def compute_intersections_elements(extension_list):
     """
-    Compute which pairs of elements intersect. This will return duplicate pairs with
-    the elements swapped, but that's fine.
+    Compute all intersections between the script extensions.
+    This will add new elements to extension_list, be sure to call it first!
     """
+
+    # This is the only third-level intersection
+    # It's easier to hardcode things here rather than
+    # do the below calculation in a loop
+    extension_list.append(['Deva', 'Knda', 'Tirh'])
     intersections = []
+    # Some intersections will not exist in extension_list and we'll need to add them
+    new_elements = []
     sets = [(e, set(e)) for e in extension_list]
     for (e1, s1) in sets:
         for (e2, s2) in sets:
@@ -319,10 +318,41 @@ def compute_intersections(extension_list):
                 continue
             intersection = s1.intersection(s2)
             if len(intersection) > 0:
-                intersections.append((e1, e2))
+                intersection = [i for i in intersection]
+                intersection.sort()
+                if len(intersection) > 1 and intersection not in extension_list and intersection not in new_elements:
+                    new_elements.append(intersection)
+                if (e1, e2, intersection) not in intersections:
+                    intersections.append((e1, e2, intersection))
+    extension_list.extend(new_elements)
+
+    # We now go through the newly added second-level extension values and calculate their intersections
+    # with the original set and each other
+    new_sets = [(e, set(e)) for e in new_elements]
+    sets = [(e, set(e)) for e in extension_list]
+    for (e1, s1) in new_sets:
+        for (e2, s2) in sets:
+            if e1 == e2:
+                continue
+            intersection = s1.intersection(s2)
+            if len(intersection) > 0:
+                intersection = [i for i in intersection]
+                intersection.sort()
+                if len(intersection) > 1 and intersection not in extension_list:
+                    raise "Found new third-level intersection, please hardcode it"
+                # The previous routine would automatically get both versions
+                # of an intersection because it would iterate each pair in both orders,
+                # but here we're working on an asymmetric pair, so we insert both in order to not
+                # miss anything
+                if (e1, e2, intersection) not in intersections:
+                    intersections.append((e1, e2, intersection))
+                if (e2, e1, intersection) not in intersections:
+                    intersections.append((e2, e1, intersection))
+
+    intersections.sort()
     return intersections
 
-def extension_name(ext, longforms=[]):
+def extension_name(ext, longforms={}):
     """Get the rust source for a given ScriptExtension"""
     if len(ext) == 1:
         return "ScriptExtension::Single(Script::%s)" % longforms[ext[0]]
@@ -373,7 +403,9 @@ pub const UNICODE_VERSION: (u64, u64, u64) = (%s, %s, %s);
             extension_table.extend([(x, y, output_ext) for (x, y) in extensions[ext]])
         extension_table.sort(key=lambda w: w[0])
 
-        emit_enums(rf, script_list, extension_list, longforms)
+        intersections = compute_intersections_elements(extension_list)
+
+        emit_enums(rf, script_list, extension_list, longforms, intersections)
         emit_search(rf)
 
         emit_table(rf, "SCRIPTS", script_table, t_type = "&'static [(char, char, Script)]",

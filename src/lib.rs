@@ -40,15 +40,13 @@ impl ScriptExtension {
         self.inner_contains_script(script)
     }
 
-    /// Check if this ScriptExtension has any intersection with another
-    /// ScriptExtension
+    /// Find the intersection between two ScriptExtensions. Returns Unknown if things
+    /// do not intersect.
     ///
     /// "Common" (`Zyyy`) and "Inherited" (`Zinh`) are considered as intersecting
     /// everything.
-    ///
-    /// "Unknown" intersects nothing
-    pub fn intersects(self, other: Self) -> bool {
-        self.inner_intersects(other)
+    pub fn intersect(self, other: Self) -> Self {
+        self.inner_intersect(other)
     }
 }
 
