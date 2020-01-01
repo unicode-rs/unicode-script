@@ -191,11 +191,12 @@ def emit_enums(f, script_list, extension_list, longforms):
 use core::convert::TryFrom;
 #[derive(Clone, Copy, PartialEq, Eq, Debug, Hash)]
 #[non_exhaustive]
+#[allow(non_camel_case_types)]
 /// A value of the Script property
 pub enum Script {
 """)
     for script in script_list:
-        f.write("    /// %s\n    %s,\n" % (longforms[script], script))
+        f.write("    /// %s\n    %s,\n" % (script, longforms[script]))
     f.write("""}
 #[derive(Clone, Copy, PartialEq, Eq, Debug, Hash)]
 #[non_exhaustive]
@@ -234,7 +235,15 @@ impl Script {
         match self {
 """)
     for script in script_list:
-        f.write("            Script::%s => \"%s\",\n" % (script, longforms[script]))
+        f.write("            Script::%s => \"%s\",\n" % (longforms[script], longforms[script]))
+    f.write("""        }
+    }
+
+    pub(crate) fn inner_short_name(self) -> &'static str {
+        match self {
+""")
+    for script in script_list:
+        f.write("            Script::%s => \"%s\",\n" % (longforms[script], script))
     f.write("""        }
     }
 }
@@ -247,7 +256,7 @@ impl ScriptExtension {
             ScriptExtension::Single(s) => vec![s],
 """)
     for ext in extension_list:
-        scripts = ", ".join(["Script::%s" % s for s in ext])
+        scripts = ", ".join(["Script::%s" % longforms[s] for s in ext])
         f.write("            %s => vec![%s],\n" % (extension_name(ext), scripts))
     f.write("""            _ => unreachable!()
         }
@@ -259,7 +268,7 @@ impl ScriptExtension {
             ScriptExtension::Single(s) => s == other,
 """)
     for ext in extension_list:
-        scripts = " || ".join(["other == Script::%s" % s for s in ext])
+        scripts = " || ".join(["other == Script::%s" % longforms[s] for s in ext])
         f.write("            %s => %s,\n" % (extension_name(ext), scripts))
     f.write("""        }
     }
@@ -268,10 +277,10 @@ impl ScriptExtension {
     pub(crate) fn inner_intersects(self, other: Self) -> bool {
         match (self, other) {
             (a, b) if a == b => true,
-            (ScriptExtension::Single(Script::Zyyy), _) |
-            (ScriptExtension::Single(Script::Zinh), _) |
-            (_, ScriptExtension::Single(Script::Zyyy)) |
-            (_, ScriptExtension::Single(Script::Zinh)) => true,
+            (ScriptExtension::Single(Script::Common), _) |
+            (ScriptExtension::Single(Script::Inherited), _) |
+            (_, ScriptExtension::Single(Script::Common)) |
+            (_, ScriptExtension::Single(Script::Inherited)) => true,
             (ScriptExtension::Single(s), o) | (o, ScriptExtension::Single(s)) => o.inner_contains_script(s),
 """)
     intersections = compute_intersections(extension_list)
@@ -307,10 +316,10 @@ def compute_intersections(extension_list):
                 intersections.append((e1, e2))
     return intersections
 
-def extension_name(ext):
+def extension_name(ext, longforms=[]):
     """Get the rust source for a given ScriptExtension"""
     if len(ext) == 1:
-        return "ScriptExtension::Single(Script::%s)" % ext[0]
+        return "ScriptExtension::Single(Script::%s)" % longforms[ext[0]]
     else:
         return "ScriptExtension::%s" % "".join(ext)
 
@@ -362,8 +371,8 @@ pub const UNICODE_VERSION: (u64, u64, u64) = (%s, %s, %s);
         emit_search(rf)
 
         emit_table(rf, "SCRIPTS", script_table, t_type = "&'static [(char, char, Script)]",
-                   is_pub=False , pfun=lambda x: "(%s,%s, Script::%s)" % (escape_char(x[0]), escape_char(x[1]), x[2]))
+                   is_pub=False , pfun=lambda x: "(%s,%s, Script::%s)" % (escape_char(x[0]), escape_char(x[1]), longforms[x[2]]))
         emit_table(rf, "SCRIPT_EXTENSIONS", extension_table, t_type = "&'static [(char, char, ScriptExtension)]",
-                   is_pub=False , pfun=lambda x: "(%s,%s,%s)" % (escape_char(x[0]), escape_char(x[1]), extension_name(x[2])))
+                   is_pub=False , pfun=lambda x: "(%s,%s,%s)" % (escape_char(x[0]), escape_char(x[1]), extension_name(x[2], longforms)))
 
         # emit_table(rf, "FOObar", properties)

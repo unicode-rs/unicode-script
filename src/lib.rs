@@ -15,6 +15,11 @@ impl Script {
     pub fn full_name(self) -> &'static str {
         self.inner_full_name()
     }
+
+    /// Get the four-character short name of a script
+    pub fn short_name(self) -> &'static str {
+        self.inner_short_name()
+    }
 }
 
 impl ScriptExtension {
