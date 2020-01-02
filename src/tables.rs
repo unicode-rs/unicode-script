@@ -334,8 +334,9 @@ pub enum Script {
 /// A value for the Script_Extension property
 ///
 /// Script_Extension is one or more Script
+///
 /// This is essentially an optimized version of Vec<Script>,
-/// optimized by script sets actually present in Unicode.
+/// optimized by script sets and intersections actually present in Unicode.
 pub enum ScriptExtension {
     /// A single script
     Single(Script),
