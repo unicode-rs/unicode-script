@@ -35,6 +35,12 @@ impl Script {
     }
 }
 
+impl Default for Script {
+    fn default() -> Self {
+        Script::Common
+    }
+}
+
 impl From<char> for Script {
     fn from(o: char) -> Self {
         o.script()
@@ -76,11 +82,31 @@ impl ScriptExtension {
     pub fn is_empty(self) -> bool {
         self == ScriptExtension::Single(Script::Unknown)
     }
+
+    pub fn for_str(x: &str) -> Self {
+        let mut ext = ScriptExtension::default();
+        for ch in x.chars() {
+            ext.intersect_with(ch.into());
+        }
+        ext
+    }
+}
+
+impl Default for ScriptExtension {
+    fn default() -> Self {
+        ScriptExtension::Single(Script::Common)
+    }
 }
 
 impl From<char> for ScriptExtension {
     fn from(o: char) -> Self {
         o.script_extension()
+    }
+}
+
+impl From<&'_ str> for ScriptExtension {
+    fn from(o: &'_ str) -> Self {
+        Self::for_str(o)
     }
 }
 
