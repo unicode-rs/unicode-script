@@ -20,6 +20,19 @@ impl Script {
     pub fn short_name(self) -> &'static str {
         self.inner_short_name()
     }
+
+    /// Is this script "Recommended" according to
+    /// [UAX #31](www.unicode.org/reports/tr31/#Table_Recommended_Scripts)?
+    pub fn is_recommended(self) -> bool {
+        use Script::*;
+        match self {
+            Common | Inherited | Arabic | Armenian | Bengali | Bopomofo | Cyrillic | Devanagari
+            | Ethiopic | Georgian | Greek | Gujarati | Gurmukhi | Han | Hangul | Hebrew
+            | Hiragana | Kannada | Katakana | Khmer | Lao | Latin | Malayalam | Myanmar | Oriya
+            | Sinhala | Tamil | Telugu | Thaana | Thai | Tibetan => true,
+            _ => false,
+        }
+    }
 }
 
 impl From<char> for Script {
