@@ -13,7 +13,7 @@
 #![allow(missing_docs, non_upper_case_globals, non_snake_case)]
 
 /// The version of [Unicode](http://www.unicode.org/)
-/// that this version of unicode-segmentation is based on.
+/// that this version of unicode-script is based on.
 pub const UNICODE_VERSION: (u64, u64, u64) = (12, 0, 0);
 
 use core::convert::TryFrom;

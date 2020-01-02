@@ -371,7 +371,7 @@ if __name__ == "__main__":
         rf.write(preamble)
         rf.write("""
 /// The version of [Unicode](http://www.unicode.org/)
-/// that this version of unicode-segmentation is based on.
+/// that this version of unicode-script is based on.
 pub const UNICODE_VERSION: (u64, u64, u64) = (%s, %s, %s);
 """ % UNICODE_VERSION)
 
