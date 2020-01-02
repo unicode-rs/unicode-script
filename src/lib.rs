@@ -45,8 +45,18 @@ impl ScriptExtension {
     ///
     /// "Common" (`Zyyy`) and "Inherited" (`Zinh`) are considered as intersecting
     /// everything.
-    pub fn intersect(self, other: Self) -> Self {
+    pub fn intersection(&mut self, other: Self) -> Self {
         self.inner_intersect(other)
+    }
+
+    /// Intersect this ScriptExtension with another ScriptExtension. Produces Unknown if things
+    /// do not intersect. This is equivalent to [`ScriptExtension::intersection`] but it stores the result
+    /// in `self`
+    ///
+    /// "Common" (`Zyyy`) and "Inherited" (`Zinh`) are considered as intersecting
+    /// everything.
+    pub fn intersect_with(&mut self, other: Self) {
+        *self = self.inner_intersect(other)
     }
 
     /// Checks if the script extension is empty (unknown)
