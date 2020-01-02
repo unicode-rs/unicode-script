@@ -8,6 +8,7 @@ mod tables;
 
 pub use tables::{Script, ScriptExtension, UNICODE_VERSION};
 
+use core::convert::TryFrom;
 use tables::{get_script, get_script_extension};
 
 impl Script {
@@ -31,6 +32,22 @@ impl Script {
             | Hiragana | Kannada | Katakana | Khmer | Lao | Latin | Malayalam | Myanmar | Oriya
             | Sinhala | Tamil | Telugu | Thaana | Thai | Tibetan => true,
             _ => false,
+        }
+    }
+}
+
+impl From<Script> for ScriptExtension {
+    fn from(script: Script) -> Self {
+        ScriptExtension::Single(script)
+    }
+}
+
+impl TryFrom<ScriptExtension> for Script {
+    type Error = ();
+    fn try_from(ext: ScriptExtension) -> Result<Self, ()> {
+        match ext {
+            ScriptExtension::Single(s) => Ok(s),
+            _ => Err(()),
         }
     }
 }

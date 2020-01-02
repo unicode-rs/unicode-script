@@ -16,11 +16,10 @@
 /// that this version of unicode-script is based on.
 pub const UNICODE_VERSION: (u64, u64, u64) = (12, 0, 0);
 
-use core::convert::TryFrom;
 #[derive(Clone, Copy, PartialEq, Eq, Debug, Hash)]
 #[non_exhaustive]
 #[allow(non_camel_case_types)]
-/// A value of the Script property
+/// A value of the `Script` property
 pub enum Script {
     /// Unknown script
     Unknown,
@@ -331,11 +330,11 @@ pub enum Script {
 }
 #[derive(Clone, Copy, PartialEq, Eq, Debug, Hash)]
 #[non_exhaustive]
-/// A value for the Script_Extension property
+/// A value for the `Script_Extension` property
 ///
-/// Script_Extension is one or more Script
+/// [`ScriptExtension`] is one or more [`Script`]
 ///
-/// This is essentially an optimized version of Vec<Script>,
+/// This is essentially an optimized version of `Vec<Script>`,
 /// optimized by script sets and intersections actually present in Unicode.
 pub enum ScriptExtension {
     /// A single script
@@ -472,23 +471,8 @@ pub enum ScriptExtension {
     DevaKndaOryaTelu,
 }
 
-impl From<Script> for ScriptExtension {
-    fn from(script: Script) -> Self {
-        ScriptExtension::Single(script)
-    }
-}
-
-impl TryFrom<ScriptExtension> for Script {
-    type Error = ();
-    fn try_from(ext: ScriptExtension) -> Result<Self, ()> {
-        match ext {
-            ScriptExtension::Single(s) => Ok(s),
-            _ => Err(())
-        }
-    }
-}
-
 impl Script {
+    #[inline]
     pub(crate) fn inner_full_name(self) -> &'static str {
         match self {
             Script::Unknown => "Unknown",
@@ -647,6 +631,7 @@ impl Script {
         }
     }
 
+    #[inline]
     pub(crate) fn inner_short_name(self) -> &'static str {
         match self {
             Script::Unknown => "",
