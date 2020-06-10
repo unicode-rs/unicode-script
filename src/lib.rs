@@ -193,6 +193,15 @@ impl ScriptExtension {
         (self.first == 0) & (self.second == 0) & (self.third == 0)
     }
 
+    /// Returns the number of scripts in the script extension
+    pub fn len(self) -> usize {
+        if self.is_common_or_inherited() {
+            1
+        } else {
+            (self.first.count_ones() + self.second.count_ones() + self.third.count_ones()) as usize
+        }
+    }
+
     /// Intersect this `ScriptExtension` with another `ScriptExtension`. Produces `Unknown` if things
     /// do not intersect. This is equivalent to [`ScriptExtension::intersection`] but it stores the result
     /// in `self`
@@ -257,9 +266,9 @@ impl ScriptExtension {
         ext
     }
 
-    /// Iterate over the scripts in this string
+    /// Iterate over the scripts in this script extension
     ///
-    /// Will never yeild Script::Unknown
+    /// Will never yield Script::Unknown
     pub fn iter(self) -> ScriptIterator {
         ScriptIterator { ext: self }
     }
