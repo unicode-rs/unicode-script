@@ -266,9 +266,9 @@ impl ScriptExtension {
         ext
     }
 
-    /// Iterate over the scripts in this string
+    /// Iterate over the scripts in this script extension
     ///
-    /// Will never yeild Script::Unknown
+    /// Will never yield Script::Unknown
     pub fn iter(self) -> ScriptIterator {
         ScriptIterator { ext: self }
     }
