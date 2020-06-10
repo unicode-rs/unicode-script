@@ -11,11 +11,9 @@
 # except according to those terms.
 
 # This script uses the following Unicode tables:
-# - DerivedCoreProperties.txt
-# - auxiliary/GraphemeBreakProperty.txt
-# - auxiliary/WordBreakProperty.txt
-# - ReadMe.txt
-# - UnicodeData.txt
+# - PropertyValueAliases.txt
+# - ScriptExtensions.txt
+# - Scripts.txt
 #
 # Since this should not require frequent updates, we just store this
 # out-of-line and check the unicode.rs file into git.
@@ -39,7 +37,7 @@ preamble = '''// Copyright 2012-2018 The Rust Project Developers. See the COPYRI
 use super::ScriptExtension;
 '''
 
-UNICODE_VERSION = (12, 0, 0)
+UNICODE_VERSION = (13, 0, 0)
 
 UNICODE_VERSION_NUMBER = "%s.%s.%s" %UNICODE_VERSION
 
