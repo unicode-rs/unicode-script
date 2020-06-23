@@ -112,6 +112,12 @@ impl From<char> for Script {
     }
 }
 
+impl fmt::Display for Script {
+    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
+        write!(f, "{}", self.full_name())
+    }
+}
+
 #[derive(Clone, Copy, PartialEq, Eq, Hash)]
 #[non_exhaustive]
 /// A value for the `Script_Extension` property
@@ -295,6 +301,13 @@ impl From<&'_ str> for ScriptExtension {
 impl fmt::Debug for ScriptExtension {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
         write!(f, "ScriptExtension(")?;
+        fmt::Display::fmt(self, f)?;
+        write!(f, ")")
+    }
+}
+
+impl fmt::Display for ScriptExtension {
+    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
         if self.is_common() {
             write!(f, "Common")?;
         } else if self.is_inherited() {
@@ -311,7 +324,7 @@ impl fmt::Debug for ScriptExtension {
                 script.full_name().fmt(f)?;
             }
         }
-        write!(f, ")")
+        Ok(())
     }
 }
 
