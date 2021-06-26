@@ -12,7 +12,11 @@
 
 #![allow(missing_docs, non_upper_case_globals, non_snake_case)]
 
-use super::ScriptExtension;
+pub use tables_impl::*;
+
+#[rustfmt::skip]
+mod tables_impl {
+use crate::ScriptExtension;
 
 /// The version of [Unicode](http://www.unicode.org/)
 /// that this version of unicode-script is based on.
@@ -950,109 +954,110 @@ pub mod script_extensions {
     pub const ZANABAZAR_SQUARE: ScriptExtension = ScriptExtension::new(0, 0, 0x2000000);
     /// Zanabazar_Square
     pub const ZANB: ScriptExtension = ZANABAZAR_SQUARE;
-    /// Arabic, Coptic
-    pub const ARAB_COPT: ScriptExtension = ARAB.union(COPT);
-    /// Arabic, Hanifi_Rohingya
-    pub const ARAB_ROHG: ScriptExtension = ARAB.union(ROHG);
-    /// Arabic, Syriac
-    pub const ARAB_SYRC: ScriptExtension = ARAB.union(SYRC);
-    /// Arabic, Thaana
-    pub const ARAB_THAA: ScriptExtension = ARAB.union(THAA);
-    /// Bengali, Devanagari
-    pub const BENG_DEVA: ScriptExtension = BENG.union(DEVA);
-    /// Bopomofo, Han
-    pub const BOPO_HANI: ScriptExtension = BOPO.union(HANI);
-    /// Buginese, Javanese
-    pub const BUGI_JAVA: ScriptExtension = BUGI.union(JAVA);
-    /// Cypriot, Linear_B
-    pub const CPRT_LINB: ScriptExtension = CPRT.union(LINB);
-    /// Cyrillic, Glagolitic
-    pub const CYRL_GLAG: ScriptExtension = CYRL.union(GLAG);
-    /// Cyrillic, Latin
-    pub const CYRL_LATN: ScriptExtension = CYRL.union(LATN);
-    /// Cyrillic, Old_Permic
-    pub const CYRL_PERM: ScriptExtension = CYRL.union(PERM);
-    /// Cyrillic, Syriac
-    pub const CYRL_SYRC: ScriptExtension = CYRL.union(SYRC);
     /// Devanagari, Grantha
     pub const DEVA_GRAN: ScriptExtension = DEVA.union(GRAN);
-    /// Devanagari, Nandinagari
-    pub const DEVA_NAND: ScriptExtension = DEVA.union(NAND);
-    /// Devanagari, Sharada
-    pub const DEVA_SHRD: ScriptExtension = DEVA.union(SHRD);
-    /// Devanagari, Tamil
-    pub const DEVA_TAML: ScriptExtension = DEVA.union(TAML);
-    /// Georgian, Latin
-    pub const GEOR_LATN: ScriptExtension = GEOR.union(LATN);
-    /// Grantha, Tamil
-    pub const GRAN_TAML: ScriptExtension = GRAN.union(TAML);
-    /// Gujarati, Khojki
-    pub const GUJR_KHOJ: ScriptExtension = GUJR.union(KHOJ);
-    /// Gurmukhi, Multani
-    pub const GURU_MULT: ScriptExtension = GURU.union(MULT);
-    /// Han, Latin
-    pub const HANI_LATN: ScriptExtension = HANI.union(LATN);
-    /// Hiragana, Katakana
-    pub const HIRA_KANA: ScriptExtension = HIRA.union(KANA);
-    /// Kannada, Nandinagari
-    pub const KNDA_NAND: ScriptExtension = KNDA.union(NAND);
-    /// Latin, Mongolian
-    pub const LATN_MONG: ScriptExtension = LATN.union(MONG);
-    /// Mongolian, Phags_Pa
-    pub const MONG_PHAG: ScriptExtension = MONG.union(PHAG);
-    /// Arabic, Syriac, Thaana
-    pub const ARAB_SYRC_THAA: ScriptExtension = ARAB.union(SYRC).union(THAA);
-    /// Arabic, Thaana, Yezidi
-    pub const ARAB_THAA_YEZI: ScriptExtension = ARAB.union(THAA).union(YEZI);
-    /// Bengali, Chakma, Syloti_Nagri
-    pub const BENG_CAKM_SYLO: ScriptExtension = BENG.union(CAKM).union(SYLO);
-    /// Chakma, Myanmar, Tai_Le
-    pub const CAKM_MYMR_TALE: ScriptExtension = CAKM.union(MYMR).union(TALE);
     /// Cypriot, Linear_A, Linear_B
     pub const CPRT_LINA_LINB: ScriptExtension = CPRT.union(LINA).union(LINB);
-    /// Devanagari, Grantha, Kannada
-    pub const DEVA_GRAN_KNDA: ScriptExtension = DEVA.union(GRAN).union(KNDA);
-    /// Devanagari, Grantha, Latin
-    pub const DEVA_GRAN_LATN: ScriptExtension = DEVA.union(GRAN).union(LATN);
+    /// Arabic, Thaana
+    pub const ARAB_THAA: ScriptExtension = ARAB.union(THAA);
     /// Han, Hiragana, Katakana
     pub const HANI_HIRA_KANA: ScriptExtension = HANI.union(HIRA).union(KANA);
+    /// Bengali, Devanagari, Dogra, Gunjala_Gondi, Masaram_Gondi, Grantha, Gujarati, Gurmukhi, Kannada, Mahajani, Malayalam, Nandinagari, Oriya, Khudawadi, Sinhala, Syloti_Nagri, Takri, Tamil, Telugu, Tirhuta
+    pub const BENG_DEVA_DOGR_GONG_GONM_GRAN_GUJR_GURU_KNDA_MAHJ_MLYM_NAND_ORYA_SIND_SINH_SYLO_TAKR_TAML_TELU_TIRH: ScriptExtension = BENG.union(DEVA).union(DOGR).union(GONG).union(GONM).union(GRAN).union(GUJR).union(GURU).union(KNDA).union(MAHJ).union(MLYM).union(NAND).union(ORYA).union(SIND).union(SINH).union(SYLO).union(TAKR).union(TAML).union(TELU).union(TIRH);
+    /// Bengali, Devanagari, Grantha, Gujarati, Gurmukhi, Kannada, Latin, Malayalam, Oriya, Sharada, Tamil, Telugu, Tirhuta
+    pub const BENG_DEVA_GRAN_GUJR_GURU_KNDA_LATN_MLYM_ORYA_SHRD_TAML_TELU_TIRH: ScriptExtension = BENG.union(DEVA).union(GRAN).union(GUJR).union(GURU).union(KNDA).union(LATN).union(MLYM).union(ORYA).union(SHRD).union(TAML).union(TELU).union(TIRH);
+    /// Cyrillic, Latin
+    pub const CYRL_LATN: ScriptExtension = CYRL.union(LATN);
+    /// Devanagari, Dogra, Gujarati, Gurmukhi, Khojki, Kannada, Kaithi, Mahajani, Malayalam, Modi, Nandinagari, Khudawadi, Takri, Tirhuta
+    pub const DEVA_DOGR_GUJR_GURU_KHOJ_KNDA_KTHI_MAHJ_MLYM_MODI_NAND_SIND_TAKR_TIRH: ScriptExtension = DEVA.union(DOGR).union(GUJR).union(GURU).union(KHOJ).union(KNDA).union(KTHI).union(MAHJ).union(MLYM).union(MODI).union(NAND).union(SIND).union(TAKR).union(TIRH);
+    /// Arabic, Hanifi_Rohingya
+    pub const ARAB_ROHG: ScriptExtension = ARAB.union(ROHG);
+    /// Devanagari, Dogra, Gujarati, Gurmukhi, Khojki, Kaithi, Mahajani, Modi, Khudawadi, Takri, Tirhuta
+    pub const DEVA_DOGR_GUJR_GURU_KHOJ_KTHI_MAHJ_MODI_SIND_TAKR_TIRH: ScriptExtension = DEVA.union(DOGR).union(GUJR).union(GURU).union(KHOJ).union(KTHI).union(MAHJ).union(MODI).union(SIND).union(TAKR).union(TIRH);
+    /// Buginese, Javanese
+    pub const BUGI_JAVA: ScriptExtension = BUGI.union(JAVA);
+    /// Arabic, Hanifi_Rohingya, Syriac, Thaana, Yezidi
+    pub const ARAB_ROHG_SYRC_THAA_YEZI: ScriptExtension = ARAB.union(ROHG).union(SYRC).union(THAA).union(YEZI);
+    /// Georgian, Latin
+    pub const GEOR_LATN: ScriptExtension = GEOR.union(LATN);
+    /// Bengali, Devanagari, Dogra, Gunjala_Gondi, Masaram_Gondi, Grantha, Gujarati, Gurmukhi, Kannada, Limbu, Mahajani, Malayalam, Nandinagari, Oriya, Khudawadi, Sinhala, Syloti_Nagri, Takri, Tamil, Telugu, Tirhuta
+    pub const BENG_DEVA_DOGR_GONG_GONM_GRAN_GUJR_GURU_KNDA_LIMB_MAHJ_MLYM_NAND_ORYA_SIND_SINH_SYLO_TAKR_TAML_TELU_TIRH: ScriptExtension = BENG.union(DEVA).union(DOGR).union(GONG).union(GONM).union(GRAN).union(GUJR).union(GURU).union(KNDA).union(LIMB).union(MAHJ).union(MLYM).union(NAND).union(ORYA).union(SIND).union(SINH).union(SYLO).union(TAKR).union(TAML).union(TELU).union(TIRH);
+    /// Devanagari, Dogra, Kaithi, Mahajani
+    pub const DEVA_DOGR_KTHI_MAHJ: ScriptExtension = DEVA.union(DOGR).union(KTHI).union(MAHJ);
+    /// Adlam, Arabic, Mandaic, Manichaean, Psalter_Pahlavi, Hanifi_Rohingya, Sogdian, Syriac
+    pub const ADLM_ARAB_MAND_MANI_PHLP_ROHG_SOGD_SYRC: ScriptExtension = ADLM.union(ARAB).union(MAND).union(MANI).union(PHLP).union(ROHG).union(SOGD).union(SYRC);
     /// Kayah_Li, Latin, Myanmar
     pub const KALI_LATN_MYMR: ScriptExtension = KALI.union(LATN).union(MYMR);
     /// Bengali, Devanagari, Grantha, Kannada
     pub const BENG_DEVA_GRAN_KNDA: ScriptExtension = BENG.union(DEVA).union(GRAN).union(KNDA);
-    /// Buhid, Hanunoo, Tagbanwa, Tagalog
-    pub const BUHD_HANO_TAGB_TGLG: ScriptExtension = BUHD.union(HANO).union(TAGB).union(TGLG);
-    /// Devanagari, Dogra, Kaithi, Mahajani
-    pub const DEVA_DOGR_KTHI_MAHJ: ScriptExtension = DEVA.union(DOGR).union(KTHI).union(MAHJ);
-    /// Arabic, Hanifi_Rohingya, Syriac, Thaana, Yezidi
-    pub const ARAB_ROHG_SYRC_THAA_YEZI: ScriptExtension = ARAB.union(ROHG).union(SYRC).union(THAA).union(YEZI);
+    /// Han, Latin
+    pub const HANI_LATN: ScriptExtension = HANI.union(LATN);
+    /// Devanagari, Tamil
+    pub const DEVA_TAML: ScriptExtension = DEVA.union(TAML);
+    /// Cyrillic, Syriac
+    pub const CYRL_SYRC: ScriptExtension = CYRL.union(SYRC);
     /// Bopomofo, Hangul, Han, Hiragana, Katakana
     pub const BOPO_HANG_HANI_HIRA_KANA: ScriptExtension = BOPO.union(HANG).union(HANI).union(HIRA).union(KANA);
-    /// Bopomofo, Hangul, Han, Hiragana, Katakana, Yi
-    pub const BOPO_HANG_HANI_HIRA_KANA_YIII: ScriptExtension = BOPO.union(HANG).union(HANI).union(HIRA).union(KANA).union(YIII);
+    /// Arabic, Syriac, Thaana
+    pub const ARAB_SYRC_THAA: ScriptExtension = ARAB.union(SYRC).union(THAA);
+    /// Devanagari, Grantha, Kannada
+    pub const DEVA_GRAN_KNDA: ScriptExtension = DEVA.union(GRAN).union(KNDA);
+    /// Bengali, Chakma, Syloti_Nagri
+    pub const BENG_CAKM_SYLO: ScriptExtension = BENG.union(CAKM).union(SYLO);
+    /// Kannada, Nandinagari
+    pub const KNDA_NAND: ScriptExtension = KNDA.union(NAND);
+    /// Gurmukhi, Multani
+    pub const GURU_MULT: ScriptExtension = GURU.union(MULT);
     /// Devanagari, Kannada, Malayalam, Oriya, Tamil, Telugu
     pub const DEVA_KNDA_MLYM_ORYA_TAML_TELU: ScriptExtension = DEVA.union(KNDA).union(MLYM).union(ORYA).union(TAML).union(TELU);
-    /// Adlam, Arabic, Mandaic, Manichaean, Psalter_Pahlavi, Hanifi_Rohingya, Sogdian, Syriac
-    pub const ADLM_ARAB_MAND_MANI_PHLP_ROHG_SOGD_SYRC: ScriptExtension = ADLM.union(ARAB).union(MAND).union(MANI).union(PHLP).union(ROHG).union(SOGD).union(SYRC);
-    /// Bengali, Devanagari, Grantha, Kannada, Nandinagari, Oriya, Telugu, Tirhuta
-    pub const BENG_DEVA_GRAN_KNDA_NAND_ORYA_TELU_TIRH: ScriptExtension = BENG.union(DEVA).union(GRAN).union(KNDA).union(NAND).union(ORYA).union(TELU).union(TIRH);
-    /// Devanagari, Dogra, Gujarati, Gurmukhi, Khojki, Kaithi, Mahajani, Modi, Khudawadi, Takri, Tirhuta
-    pub const DEVA_DOGR_GUJR_GURU_KHOJ_KTHI_MAHJ_MODI_SIND_TAKR_TIRH: ScriptExtension = DEVA.union(DOGR).union(GUJR).union(GURU).union(KHOJ).union(KTHI).union(MAHJ).union(MODI).union(SIND).union(TAKR).union(TIRH);
-    /// Bengali, Devanagari, Grantha, Gujarati, Gurmukhi, Kannada, Latin, Malayalam, Oriya, Tamil, Telugu, Tirhuta
-    pub const BENG_DEVA_GRAN_GUJR_GURU_KNDA_LATN_MLYM_ORYA_TAML_TELU_TIRH: ScriptExtension = BENG.union(DEVA).union(GRAN).union(GUJR).union(GURU).union(KNDA).union(LATN).union(MLYM).union(ORYA).union(TAML).union(TELU).union(TIRH);
-    /// Bengali, Devanagari, Grantha, Gujarati, Gurmukhi, Kannada, Latin, Malayalam, Oriya, Sharada, Tamil, Telugu, Tirhuta
-    pub const BENG_DEVA_GRAN_GUJR_GURU_KNDA_LATN_MLYM_ORYA_SHRD_TAML_TELU_TIRH: ScriptExtension = BENG.union(DEVA).union(GRAN).union(GUJR).union(GURU).union(KNDA).union(LATN).union(MLYM).union(ORYA).union(SHRD).union(TAML).union(TELU).union(TIRH);
+    /// Gujarati, Khojki
+    pub const GUJR_KHOJ: ScriptExtension = GUJR.union(KHOJ);
+    /// Cyrillic, Old_Permic
+    pub const CYRL_PERM: ScriptExtension = CYRL.union(PERM);
     /// Devanagari, Dogra, Gujarati, Gurmukhi, Khojki, Kannada, Kaithi, Mahajani, Modi, Nandinagari, Khudawadi, Takri, Tirhuta
     pub const DEVA_DOGR_GUJR_GURU_KHOJ_KNDA_KTHI_MAHJ_MODI_NAND_SIND_TAKR_TIRH: ScriptExtension = DEVA.union(DOGR).union(GUJR).union(GURU).union(KHOJ).union(KNDA).union(KTHI).union(MAHJ).union(MODI).union(NAND).union(SIND).union(TAKR).union(TIRH);
-    /// Devanagari, Dogra, Gujarati, Gurmukhi, Khojki, Kannada, Kaithi, Mahajani, Malayalam, Modi, Nandinagari, Khudawadi, Takri, Tirhuta
-    pub const DEVA_DOGR_GUJR_GURU_KHOJ_KNDA_KTHI_MAHJ_MLYM_MODI_NAND_SIND_TAKR_TIRH: ScriptExtension = DEVA.union(DOGR).union(GUJR).union(GURU).union(KHOJ).union(KNDA).union(KTHI).union(MAHJ).union(MLYM).union(MODI).union(NAND).union(SIND).union(TAKR).union(TIRH);
-    /// Bengali, Devanagari, Dogra, Gunjala_Gondi, Masaram_Gondi, Grantha, Gujarati, Gurmukhi, Kannada, Mahajani, Malayalam, Nandinagari, Oriya, Khudawadi, Sinhala, Syloti_Nagri, Takri, Tamil, Telugu, Tirhuta
-    pub const BENG_DEVA_DOGR_GONG_GONM_GRAN_GUJR_GURU_KNDA_MAHJ_MLYM_NAND_ORYA_SIND_SINH_SYLO_TAKR_TAML_TELU_TIRH: ScriptExtension = BENG.union(DEVA).union(DOGR).union(GONG).union(GONM).union(GRAN).union(GUJR).union(GURU).union(KNDA).union(MAHJ).union(MLYM).union(NAND).union(ORYA).union(SIND).union(SINH).union(SYLO).union(TAKR).union(TAML).union(TELU).union(TIRH);
-    /// Bengali, Devanagari, Dogra, Gunjala_Gondi, Masaram_Gondi, Grantha, Gujarati, Gurmukhi, Kannada, Limbu, Mahajani, Malayalam, Nandinagari, Oriya, Khudawadi, Sinhala, Syloti_Nagri, Takri, Tamil, Telugu, Tirhuta
-    pub const BENG_DEVA_DOGR_GONG_GONM_GRAN_GUJR_GURU_KNDA_LIMB_MAHJ_MLYM_NAND_ORYA_SIND_SINH_SYLO_TAKR_TAML_TELU_TIRH: ScriptExtension = BENG.union(DEVA).union(DOGR).union(GONG).union(GONM).union(GRAN).union(GUJR).union(GURU).union(KNDA).union(LIMB).union(MAHJ).union(MLYM).union(NAND).union(ORYA).union(SIND).union(SINH).union(SYLO).union(TAKR).union(TAML).union(TELU).union(TIRH);
+    /// Hiragana, Katakana
+    pub const HIRA_KANA: ScriptExtension = HIRA.union(KANA);
+    /// Devanagari, Nandinagari
+    pub const DEVA_NAND: ScriptExtension = DEVA.union(NAND);
+    /// Cypriot, Linear_B
+    pub const CPRT_LINB: ScriptExtension = CPRT.union(LINB);
+    /// Devanagari, Grantha, Latin
+    pub const DEVA_GRAN_LATN: ScriptExtension = DEVA.union(GRAN).union(LATN);
+    /// Buhid, Hanunoo, Tagbanwa, Tagalog
+    pub const BUHD_HANO_TAGB_TGLG: ScriptExtension = BUHD.union(HANO).union(TAGB).union(TGLG);
+    /// Arabic, Syriac
+    pub const ARAB_SYRC: ScriptExtension = ARAB.union(SYRC);
+    /// Grantha, Tamil
+    pub const GRAN_TAML: ScriptExtension = GRAN.union(TAML);
+    /// Bopomofo, Hangul, Han, Hiragana, Katakana, Yi
+    pub const BOPO_HANG_HANI_HIRA_KANA_YIII: ScriptExtension = BOPO.union(HANG).union(HANI).union(HIRA).union(KANA).union(YIII);
+    /// Chakma, Myanmar, Tai_Le
+    pub const CAKM_MYMR_TALE: ScriptExtension = CAKM.union(MYMR).union(TALE);
+    /// Bengali, Devanagari
+    pub const BENG_DEVA: ScriptExtension = BENG.union(DEVA);
+    /// Bengali, Devanagari, Grantha, Kannada, Nandinagari, Oriya, Telugu, Tirhuta
+    pub const BENG_DEVA_GRAN_KNDA_NAND_ORYA_TELU_TIRH: ScriptExtension = BENG.union(DEVA).union(GRAN).union(KNDA).union(NAND).union(ORYA).union(TELU).union(TIRH);
+    /// Latin, Mongolian
+    pub const LATN_MONG: ScriptExtension = LATN.union(MONG);
+    /// Bengali, Devanagari, Grantha, Gujarati, Gurmukhi, Kannada, Latin, Malayalam, Oriya, Tamil, Telugu, Tirhuta
+    pub const BENG_DEVA_GRAN_GUJR_GURU_KNDA_LATN_MLYM_ORYA_TAML_TELU_TIRH: ScriptExtension = BENG.union(DEVA).union(GRAN).union(GUJR).union(GURU).union(KNDA).union(LATN).union(MLYM).union(ORYA).union(TAML).union(TELU).union(TIRH);
+    /// Bopomofo, Han
+    pub const BOPO_HANI: ScriptExtension = BOPO.union(HANI);
+    /// Arabic, Coptic
+    pub const ARAB_COPT: ScriptExtension = ARAB.union(COPT);
+    /// Devanagari, Sharada
+    pub const DEVA_SHRD: ScriptExtension = DEVA.union(SHRD);
+    /// Mongolian, Phags_Pa
+    pub const MONG_PHAG: ScriptExtension = MONG.union(PHAG);
+    /// Arabic, Thaana, Yezidi
+    pub const ARAB_THAA_YEZI: ScriptExtension = ARAB.union(THAA).union(YEZI);
+    /// Cyrillic, Glagolitic
+    pub const CYRL_GLAG: ScriptExtension = CYRL.union(GLAG);
 }
 
 impl Script {
+
     #[inline]
     pub(crate) fn inner_full_name(self) -> &'static str {
         match self {
@@ -1213,6 +1218,170 @@ impl Script {
             Script::Yezidi => "Yezidi",
             Script::Yi => "Yi",
             Script::Zanabazar_Square => "Zanabazar_Square",
+        }
+    }
+
+    #[inline]
+    pub(crate) fn inner_from_full_name(input: &str) -> Option<Self> {
+        match input {
+            "Unknown" => Some(Script::Unknown),
+            "Common" => Some(Script::Common),
+            "Inherited" => Some(Script::Inherited),
+            "Adlam" => Some(Script::Adlam),
+            "Caucasian_Albanian" => Some(Script::Caucasian_Albanian),
+            "Ahom" => Some(Script::Ahom),
+            "Arabic" => Some(Script::Arabic),
+            "Imperial_Aramaic" => Some(Script::Imperial_Aramaic),
+            "Armenian" => Some(Script::Armenian),
+            "Avestan" => Some(Script::Avestan),
+            "Balinese" => Some(Script::Balinese),
+            "Bamum" => Some(Script::Bamum),
+            "Bassa_Vah" => Some(Script::Bassa_Vah),
+            "Batak" => Some(Script::Batak),
+            "Bengali" => Some(Script::Bengali),
+            "Bhaiksuki" => Some(Script::Bhaiksuki),
+            "Bopomofo" => Some(Script::Bopomofo),
+            "Brahmi" => Some(Script::Brahmi),
+            "Braille" => Some(Script::Braille),
+            "Buginese" => Some(Script::Buginese),
+            "Buhid" => Some(Script::Buhid),
+            "Chakma" => Some(Script::Chakma),
+            "Canadian_Aboriginal" => Some(Script::Canadian_Aboriginal),
+            "Carian" => Some(Script::Carian),
+            "Cham" => Some(Script::Cham),
+            "Cherokee" => Some(Script::Cherokee),
+            "Chorasmian" => Some(Script::Chorasmian),
+            "Coptic" => Some(Script::Coptic),
+            "Cypriot" => Some(Script::Cypriot),
+            "Cyrillic" => Some(Script::Cyrillic),
+            "Devanagari" => Some(Script::Devanagari),
+            "Dives_Akuru" => Some(Script::Dives_Akuru),
+            "Dogra" => Some(Script::Dogra),
+            "Deseret" => Some(Script::Deseret),
+            "Duployan" => Some(Script::Duployan),
+            "Egyptian_Hieroglyphs" => Some(Script::Egyptian_Hieroglyphs),
+            "Elbasan" => Some(Script::Elbasan),
+            "Elymaic" => Some(Script::Elymaic),
+            "Ethiopic" => Some(Script::Ethiopic),
+            "Georgian" => Some(Script::Georgian),
+            "Glagolitic" => Some(Script::Glagolitic),
+            "Gunjala_Gondi" => Some(Script::Gunjala_Gondi),
+            "Masaram_Gondi" => Some(Script::Masaram_Gondi),
+            "Gothic" => Some(Script::Gothic),
+            "Grantha" => Some(Script::Grantha),
+            "Greek" => Some(Script::Greek),
+            "Gujarati" => Some(Script::Gujarati),
+            "Gurmukhi" => Some(Script::Gurmukhi),
+            "Hangul" => Some(Script::Hangul),
+            "Han" => Some(Script::Han),
+            "Hanunoo" => Some(Script::Hanunoo),
+            "Hatran" => Some(Script::Hatran),
+            "Hebrew" => Some(Script::Hebrew),
+            "Hiragana" => Some(Script::Hiragana),
+            "Anatolian_Hieroglyphs" => Some(Script::Anatolian_Hieroglyphs),
+            "Pahawh_Hmong" => Some(Script::Pahawh_Hmong),
+            "Nyiakeng_Puachue_Hmong" => Some(Script::Nyiakeng_Puachue_Hmong),
+            "Old_Hungarian" => Some(Script::Old_Hungarian),
+            "Old_Italic" => Some(Script::Old_Italic),
+            "Javanese" => Some(Script::Javanese),
+            "Kayah_Li" => Some(Script::Kayah_Li),
+            "Katakana" => Some(Script::Katakana),
+            "Kharoshthi" => Some(Script::Kharoshthi),
+            "Khmer" => Some(Script::Khmer),
+            "Khojki" => Some(Script::Khojki),
+            "Khitan_Small_Script" => Some(Script::Khitan_Small_Script),
+            "Kannada" => Some(Script::Kannada),
+            "Kaithi" => Some(Script::Kaithi),
+            "Tai_Tham" => Some(Script::Tai_Tham),
+            "Lao" => Some(Script::Lao),
+            "Latin" => Some(Script::Latin),
+            "Lepcha" => Some(Script::Lepcha),
+            "Limbu" => Some(Script::Limbu),
+            "Linear_A" => Some(Script::Linear_A),
+            "Linear_B" => Some(Script::Linear_B),
+            "Lisu" => Some(Script::Lisu),
+            "Lycian" => Some(Script::Lycian),
+            "Lydian" => Some(Script::Lydian),
+            "Mahajani" => Some(Script::Mahajani),
+            "Makasar" => Some(Script::Makasar),
+            "Mandaic" => Some(Script::Mandaic),
+            "Manichaean" => Some(Script::Manichaean),
+            "Marchen" => Some(Script::Marchen),
+            "Medefaidrin" => Some(Script::Medefaidrin),
+            "Mende_Kikakui" => Some(Script::Mende_Kikakui),
+            "Meroitic_Cursive" => Some(Script::Meroitic_Cursive),
+            "Meroitic_Hieroglyphs" => Some(Script::Meroitic_Hieroglyphs),
+            "Malayalam" => Some(Script::Malayalam),
+            "Modi" => Some(Script::Modi),
+            "Mongolian" => Some(Script::Mongolian),
+            "Mro" => Some(Script::Mro),
+            "Meetei_Mayek" => Some(Script::Meetei_Mayek),
+            "Multani" => Some(Script::Multani),
+            "Myanmar" => Some(Script::Myanmar),
+            "Nandinagari" => Some(Script::Nandinagari),
+            "Old_North_Arabian" => Some(Script::Old_North_Arabian),
+            "Nabataean" => Some(Script::Nabataean),
+            "Newa" => Some(Script::Newa),
+            "Nko" => Some(Script::Nko),
+            "Nushu" => Some(Script::Nushu),
+            "Ogham" => Some(Script::Ogham),
+            "Ol_Chiki" => Some(Script::Ol_Chiki),
+            "Old_Turkic" => Some(Script::Old_Turkic),
+            "Oriya" => Some(Script::Oriya),
+            "Osage" => Some(Script::Osage),
+            "Osmanya" => Some(Script::Osmanya),
+            "Palmyrene" => Some(Script::Palmyrene),
+            "Pau_Cin_Hau" => Some(Script::Pau_Cin_Hau),
+            "Old_Permic" => Some(Script::Old_Permic),
+            "Phags_Pa" => Some(Script::Phags_Pa),
+            "Inscriptional_Pahlavi" => Some(Script::Inscriptional_Pahlavi),
+            "Psalter_Pahlavi" => Some(Script::Psalter_Pahlavi),
+            "Phoenician" => Some(Script::Phoenician),
+            "Miao" => Some(Script::Miao),
+            "Inscriptional_Parthian" => Some(Script::Inscriptional_Parthian),
+            "Rejang" => Some(Script::Rejang),
+            "Hanifi_Rohingya" => Some(Script::Hanifi_Rohingya),
+            "Runic" => Some(Script::Runic),
+            "Samaritan" => Some(Script::Samaritan),
+            "Old_South_Arabian" => Some(Script::Old_South_Arabian),
+            "Saurashtra" => Some(Script::Saurashtra),
+            "SignWriting" => Some(Script::SignWriting),
+            "Shavian" => Some(Script::Shavian),
+            "Sharada" => Some(Script::Sharada),
+            "Siddham" => Some(Script::Siddham),
+            "Khudawadi" => Some(Script::Khudawadi),
+            "Sinhala" => Some(Script::Sinhala),
+            "Sogdian" => Some(Script::Sogdian),
+            "Old_Sogdian" => Some(Script::Old_Sogdian),
+            "Sora_Sompeng" => Some(Script::Sora_Sompeng),
+            "Soyombo" => Some(Script::Soyombo),
+            "Sundanese" => Some(Script::Sundanese),
+            "Syloti_Nagri" => Some(Script::Syloti_Nagri),
+            "Syriac" => Some(Script::Syriac),
+            "Tagbanwa" => Some(Script::Tagbanwa),
+            "Takri" => Some(Script::Takri),
+            "Tai_Le" => Some(Script::Tai_Le),
+            "New_Tai_Lue" => Some(Script::New_Tai_Lue),
+            "Tamil" => Some(Script::Tamil),
+            "Tangut" => Some(Script::Tangut),
+            "Tai_Viet" => Some(Script::Tai_Viet),
+            "Telugu" => Some(Script::Telugu),
+            "Tifinagh" => Some(Script::Tifinagh),
+            "Tagalog" => Some(Script::Tagalog),
+            "Thaana" => Some(Script::Thaana),
+            "Thai" => Some(Script::Thai),
+            "Tibetan" => Some(Script::Tibetan),
+            "Tirhuta" => Some(Script::Tirhuta),
+            "Ugaritic" => Some(Script::Ugaritic),
+            "Vai" => Some(Script::Vai),
+            "Warang_Citi" => Some(Script::Warang_Citi),
+            "Wancho" => Some(Script::Wancho),
+            "Old_Persian" => Some(Script::Old_Persian),
+            "Cuneiform" => Some(Script::Cuneiform),
+            "Yezidi" => Some(Script::Yezidi),
+            "Yi" => Some(Script::Yi),
+            "Zanabazar_Square" => Some(Script::Zanabazar_Square),
+            _ => None,
         }
     }
 
@@ -1380,6 +1549,170 @@ impl Script {
     }
 
     #[inline]
+    pub(crate) fn inner_from_short_name(input: &str) -> Option<Self> {
+        match input {
+            "" => Some(Script::Unknown),
+            "Zyyy" => Some(Script::Common),
+            "Zinh" => Some(Script::Inherited),
+            "Adlm" => Some(Script::Adlam),
+            "Aghb" => Some(Script::Caucasian_Albanian),
+            "Ahom" => Some(Script::Ahom),
+            "Arab" => Some(Script::Arabic),
+            "Armi" => Some(Script::Imperial_Aramaic),
+            "Armn" => Some(Script::Armenian),
+            "Avst" => Some(Script::Avestan),
+            "Bali" => Some(Script::Balinese),
+            "Bamu" => Some(Script::Bamum),
+            "Bass" => Some(Script::Bassa_Vah),
+            "Batk" => Some(Script::Batak),
+            "Beng" => Some(Script::Bengali),
+            "Bhks" => Some(Script::Bhaiksuki),
+            "Bopo" => Some(Script::Bopomofo),
+            "Brah" => Some(Script::Brahmi),
+            "Brai" => Some(Script::Braille),
+            "Bugi" => Some(Script::Buginese),
+            "Buhd" => Some(Script::Buhid),
+            "Cakm" => Some(Script::Chakma),
+            "Cans" => Some(Script::Canadian_Aboriginal),
+            "Cari" => Some(Script::Carian),
+            "Cham" => Some(Script::Cham),
+            "Cher" => Some(Script::Cherokee),
+            "Chrs" => Some(Script::Chorasmian),
+            "Copt" => Some(Script::Coptic),
+            "Cprt" => Some(Script::Cypriot),
+            "Cyrl" => Some(Script::Cyrillic),
+            "Deva" => Some(Script::Devanagari),
+            "Diak" => Some(Script::Dives_Akuru),
+            "Dogr" => Some(Script::Dogra),
+            "Dsrt" => Some(Script::Deseret),
+            "Dupl" => Some(Script::Duployan),
+            "Egyp" => Some(Script::Egyptian_Hieroglyphs),
+            "Elba" => Some(Script::Elbasan),
+            "Elym" => Some(Script::Elymaic),
+            "Ethi" => Some(Script::Ethiopic),
+            "Geor" => Some(Script::Georgian),
+            "Glag" => Some(Script::Glagolitic),
+            "Gong" => Some(Script::Gunjala_Gondi),
+            "Gonm" => Some(Script::Masaram_Gondi),
+            "Goth" => Some(Script::Gothic),
+            "Gran" => Some(Script::Grantha),
+            "Grek" => Some(Script::Greek),
+            "Gujr" => Some(Script::Gujarati),
+            "Guru" => Some(Script::Gurmukhi),
+            "Hang" => Some(Script::Hangul),
+            "Hani" => Some(Script::Han),
+            "Hano" => Some(Script::Hanunoo),
+            "Hatr" => Some(Script::Hatran),
+            "Hebr" => Some(Script::Hebrew),
+            "Hira" => Some(Script::Hiragana),
+            "Hluw" => Some(Script::Anatolian_Hieroglyphs),
+            "Hmng" => Some(Script::Pahawh_Hmong),
+            "Hmnp" => Some(Script::Nyiakeng_Puachue_Hmong),
+            "Hung" => Some(Script::Old_Hungarian),
+            "Ital" => Some(Script::Old_Italic),
+            "Java" => Some(Script::Javanese),
+            "Kali" => Some(Script::Kayah_Li),
+            "Kana" => Some(Script::Katakana),
+            "Khar" => Some(Script::Kharoshthi),
+            "Khmr" => Some(Script::Khmer),
+            "Khoj" => Some(Script::Khojki),
+            "Kits" => Some(Script::Khitan_Small_Script),
+            "Knda" => Some(Script::Kannada),
+            "Kthi" => Some(Script::Kaithi),
+            "Lana" => Some(Script::Tai_Tham),
+            "Laoo" => Some(Script::Lao),
+            "Latn" => Some(Script::Latin),
+            "Lepc" => Some(Script::Lepcha),
+            "Limb" => Some(Script::Limbu),
+            "Lina" => Some(Script::Linear_A),
+            "Linb" => Some(Script::Linear_B),
+            "Lisu" => Some(Script::Lisu),
+            "Lyci" => Some(Script::Lycian),
+            "Lydi" => Some(Script::Lydian),
+            "Mahj" => Some(Script::Mahajani),
+            "Maka" => Some(Script::Makasar),
+            "Mand" => Some(Script::Mandaic),
+            "Mani" => Some(Script::Manichaean),
+            "Marc" => Some(Script::Marchen),
+            "Medf" => Some(Script::Medefaidrin),
+            "Mend" => Some(Script::Mende_Kikakui),
+            "Merc" => Some(Script::Meroitic_Cursive),
+            "Mero" => Some(Script::Meroitic_Hieroglyphs),
+            "Mlym" => Some(Script::Malayalam),
+            "Modi" => Some(Script::Modi),
+            "Mong" => Some(Script::Mongolian),
+            "Mroo" => Some(Script::Mro),
+            "Mtei" => Some(Script::Meetei_Mayek),
+            "Mult" => Some(Script::Multani),
+            "Mymr" => Some(Script::Myanmar),
+            "Nand" => Some(Script::Nandinagari),
+            "Narb" => Some(Script::Old_North_Arabian),
+            "Nbat" => Some(Script::Nabataean),
+            "Newa" => Some(Script::Newa),
+            "Nkoo" => Some(Script::Nko),
+            "Nshu" => Some(Script::Nushu),
+            "Ogam" => Some(Script::Ogham),
+            "Olck" => Some(Script::Ol_Chiki),
+            "Orkh" => Some(Script::Old_Turkic),
+            "Orya" => Some(Script::Oriya),
+            "Osge" => Some(Script::Osage),
+            "Osma" => Some(Script::Osmanya),
+            "Palm" => Some(Script::Palmyrene),
+            "Pauc" => Some(Script::Pau_Cin_Hau),
+            "Perm" => Some(Script::Old_Permic),
+            "Phag" => Some(Script::Phags_Pa),
+            "Phli" => Some(Script::Inscriptional_Pahlavi),
+            "Phlp" => Some(Script::Psalter_Pahlavi),
+            "Phnx" => Some(Script::Phoenician),
+            "Plrd" => Some(Script::Miao),
+            "Prti" => Some(Script::Inscriptional_Parthian),
+            "Rjng" => Some(Script::Rejang),
+            "Rohg" => Some(Script::Hanifi_Rohingya),
+            "Runr" => Some(Script::Runic),
+            "Samr" => Some(Script::Samaritan),
+            "Sarb" => Some(Script::Old_South_Arabian),
+            "Saur" => Some(Script::Saurashtra),
+            "Sgnw" => Some(Script::SignWriting),
+            "Shaw" => Some(Script::Shavian),
+            "Shrd" => Some(Script::Sharada),
+            "Sidd" => Some(Script::Siddham),
+            "Sind" => Some(Script::Khudawadi),
+            "Sinh" => Some(Script::Sinhala),
+            "Sogd" => Some(Script::Sogdian),
+            "Sogo" => Some(Script::Old_Sogdian),
+            "Sora" => Some(Script::Sora_Sompeng),
+            "Soyo" => Some(Script::Soyombo),
+            "Sund" => Some(Script::Sundanese),
+            "Sylo" => Some(Script::Syloti_Nagri),
+            "Syrc" => Some(Script::Syriac),
+            "Tagb" => Some(Script::Tagbanwa),
+            "Takr" => Some(Script::Takri),
+            "Tale" => Some(Script::Tai_Le),
+            "Talu" => Some(Script::New_Tai_Lue),
+            "Taml" => Some(Script::Tamil),
+            "Tang" => Some(Script::Tangut),
+            "Tavt" => Some(Script::Tai_Viet),
+            "Telu" => Some(Script::Telugu),
+            "Tfng" => Some(Script::Tifinagh),
+            "Tglg" => Some(Script::Tagalog),
+            "Thaa" => Some(Script::Thaana),
+            "Thai" => Some(Script::Thai),
+            "Tibt" => Some(Script::Tibetan),
+            "Tirh" => Some(Script::Tirhuta),
+            "Ugar" => Some(Script::Ugaritic),
+            "Vaii" => Some(Script::Vai),
+            "Wara" => Some(Script::Warang_Citi),
+            "Wcho" => Some(Script::Wancho),
+            "Xpeo" => Some(Script::Old_Persian),
+            "Xsux" => Some(Script::Cuneiform),
+            "Yezi" => Some(Script::Yezidi),
+            "Yiii" => Some(Script::Yi),
+            "Zanb" => Some(Script::Zanabazar_Square),
+        _ => None,
+        }
+    }
+
+    #[inline]
     pub(crate) fn for_integer(value: u8) -> Self {
         match value {
             0 => Script::Adlam,
@@ -1539,6 +1872,7 @@ impl Script {
             _ => unreachable!(),
         }
     }
+
 }
 
 pub fn bsearch_range_value_table<T: Copy>(c: char, r: &'static [(char, char, T)]) -> Option<T> {
@@ -2774,3 +3108,5 @@ pub fn get_script_extension(c: char) -> Option<ScriptExtension> {
         script_extensions::HANI), ('\u{1f250}', '\u{1f251}', script_extensions::HANI)
     ];
 
+
+}
