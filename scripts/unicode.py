@@ -252,12 +252,12 @@ pub mod script_extensions {
 
     # Generate implementation for the `Script`
     generate_script_impl(f)
-    
-    
+
+
 def generate_script_impl(f):
     """Generates an `impl Script { ... }` section with all the required functions"""
 
-    # Open `impl Script` section.    
+    # Open `impl Script` section.
     f.write("""impl Script {
 """)
 
@@ -322,7 +322,7 @@ def generate_script_impl(f):
     f.write("""        }
     }
 """)
-    
+
     # Generate impl of `for_integer`
     f.write("""
     #[inline]
@@ -335,7 +335,7 @@ def generate_script_impl(f):
         }
     }
 """)
-    
+
     # Close `impl Script` section
     f.write("""
 }
@@ -399,5 +399,5 @@ pub const UNICODE_VERSION: (u64, u64, u64) = (%s, %s, %s);
                    is_pub=False , pfun=lambda x: "(%s,%s,%s)" % (escape_char(x[0]), escape_char(x[1]), extension_name(x[2])))
 
         # emit_table(rf, "FOObar", properties)
-        
+
         rf.write(ending)
