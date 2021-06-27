@@ -4,7 +4,6 @@
 #![cfg_attr(not(test), no_std)]
 #![cfg_attr(feature = "bench", feature(test))]
 
-#[rustfmt::skip]
 mod tables;
 
 use core::convert::TryFrom;
