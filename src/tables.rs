@@ -954,106 +954,106 @@ pub mod script_extensions {
     pub const ZANABAZAR_SQUARE: ScriptExtension = ScriptExtension::new(0, 0, 0x2000000);
     /// Zanabazar_Square
     pub const ZANB: ScriptExtension = ZANABAZAR_SQUARE;
-    /// Devanagari, Grantha
-    pub const DEVA_GRAN: ScriptExtension = DEVA.union(GRAN);
-    /// Cypriot, Linear_A, Linear_B
-    pub const CPRT_LINA_LINB: ScriptExtension = CPRT.union(LINA).union(LINB);
-    /// Arabic, Thaana
-    pub const ARAB_THAA: ScriptExtension = ARAB.union(THAA);
-    /// Han, Hiragana, Katakana
-    pub const HANI_HIRA_KANA: ScriptExtension = HANI.union(HIRA).union(KANA);
-    /// Bengali, Devanagari, Dogra, Gunjala_Gondi, Masaram_Gondi, Grantha, Gujarati, Gurmukhi, Kannada, Mahajani, Malayalam, Nandinagari, Oriya, Khudawadi, Sinhala, Syloti_Nagri, Takri, Tamil, Telugu, Tirhuta
-    pub const BENG_DEVA_DOGR_GONG_GONM_GRAN_GUJR_GURU_KNDA_MAHJ_MLYM_NAND_ORYA_SIND_SINH_SYLO_TAKR_TAML_TELU_TIRH: ScriptExtension = BENG.union(DEVA).union(DOGR).union(GONG).union(GONM).union(GRAN).union(GUJR).union(GURU).union(KNDA).union(MAHJ).union(MLYM).union(NAND).union(ORYA).union(SIND).union(SINH).union(SYLO).union(TAKR).union(TAML).union(TELU).union(TIRH);
-    /// Bengali, Devanagari, Grantha, Gujarati, Gurmukhi, Kannada, Latin, Malayalam, Oriya, Sharada, Tamil, Telugu, Tirhuta
-    pub const BENG_DEVA_GRAN_GUJR_GURU_KNDA_LATN_MLYM_ORYA_SHRD_TAML_TELU_TIRH: ScriptExtension = BENG.union(DEVA).union(GRAN).union(GUJR).union(GURU).union(KNDA).union(LATN).union(MLYM).union(ORYA).union(SHRD).union(TAML).union(TELU).union(TIRH);
-    /// Cyrillic, Latin
-    pub const CYRL_LATN: ScriptExtension = CYRL.union(LATN);
-    /// Devanagari, Dogra, Gujarati, Gurmukhi, Khojki, Kannada, Kaithi, Mahajani, Malayalam, Modi, Nandinagari, Khudawadi, Takri, Tirhuta
-    pub const DEVA_DOGR_GUJR_GURU_KHOJ_KNDA_KTHI_MAHJ_MLYM_MODI_NAND_SIND_TAKR_TIRH: ScriptExtension = DEVA.union(DOGR).union(GUJR).union(GURU).union(KHOJ).union(KNDA).union(KTHI).union(MAHJ).union(MLYM).union(MODI).union(NAND).union(SIND).union(TAKR).union(TIRH);
+    /// Arabic, Coptic
+    pub const ARAB_COPT: ScriptExtension = ARAB.union(COPT);
     /// Arabic, Hanifi_Rohingya
     pub const ARAB_ROHG: ScriptExtension = ARAB.union(ROHG);
-    /// Devanagari, Dogra, Gujarati, Gurmukhi, Khojki, Kaithi, Mahajani, Modi, Khudawadi, Takri, Tirhuta
-    pub const DEVA_DOGR_GUJR_GURU_KHOJ_KTHI_MAHJ_MODI_SIND_TAKR_TIRH: ScriptExtension = DEVA.union(DOGR).union(GUJR).union(GURU).union(KHOJ).union(KTHI).union(MAHJ).union(MODI).union(SIND).union(TAKR).union(TIRH);
+    /// Arabic, Syriac
+    pub const ARAB_SYRC: ScriptExtension = ARAB.union(SYRC);
+    /// Arabic, Thaana
+    pub const ARAB_THAA: ScriptExtension = ARAB.union(THAA);
+    /// Bengali, Devanagari
+    pub const BENG_DEVA: ScriptExtension = BENG.union(DEVA);
+    /// Bopomofo, Han
+    pub const BOPO_HANI: ScriptExtension = BOPO.union(HANI);
     /// Buginese, Javanese
     pub const BUGI_JAVA: ScriptExtension = BUGI.union(JAVA);
-    /// Arabic, Hanifi_Rohingya, Syriac, Thaana, Yezidi
-    pub const ARAB_ROHG_SYRC_THAA_YEZI: ScriptExtension = ARAB.union(ROHG).union(SYRC).union(THAA).union(YEZI);
+    /// Cypriot, Linear_B
+    pub const CPRT_LINB: ScriptExtension = CPRT.union(LINB);
+    /// Cyrillic, Glagolitic
+    pub const CYRL_GLAG: ScriptExtension = CYRL.union(GLAG);
+    /// Cyrillic, Latin
+    pub const CYRL_LATN: ScriptExtension = CYRL.union(LATN);
+    /// Cyrillic, Old_Permic
+    pub const CYRL_PERM: ScriptExtension = CYRL.union(PERM);
+    /// Cyrillic, Syriac
+    pub const CYRL_SYRC: ScriptExtension = CYRL.union(SYRC);
+    /// Devanagari, Grantha
+    pub const DEVA_GRAN: ScriptExtension = DEVA.union(GRAN);
+    /// Devanagari, Nandinagari
+    pub const DEVA_NAND: ScriptExtension = DEVA.union(NAND);
+    /// Devanagari, Sharada
+    pub const DEVA_SHRD: ScriptExtension = DEVA.union(SHRD);
+    /// Devanagari, Tamil
+    pub const DEVA_TAML: ScriptExtension = DEVA.union(TAML);
     /// Georgian, Latin
     pub const GEOR_LATN: ScriptExtension = GEOR.union(LATN);
-    /// Bengali, Devanagari, Dogra, Gunjala_Gondi, Masaram_Gondi, Grantha, Gujarati, Gurmukhi, Kannada, Limbu, Mahajani, Malayalam, Nandinagari, Oriya, Khudawadi, Sinhala, Syloti_Nagri, Takri, Tamil, Telugu, Tirhuta
-    pub const BENG_DEVA_DOGR_GONG_GONM_GRAN_GUJR_GURU_KNDA_LIMB_MAHJ_MLYM_NAND_ORYA_SIND_SINH_SYLO_TAKR_TAML_TELU_TIRH: ScriptExtension = BENG.union(DEVA).union(DOGR).union(GONG).union(GONM).union(GRAN).union(GUJR).union(GURU).union(KNDA).union(LIMB).union(MAHJ).union(MLYM).union(NAND).union(ORYA).union(SIND).union(SINH).union(SYLO).union(TAKR).union(TAML).union(TELU).union(TIRH);
-    /// Devanagari, Dogra, Kaithi, Mahajani
-    pub const DEVA_DOGR_KTHI_MAHJ: ScriptExtension = DEVA.union(DOGR).union(KTHI).union(MAHJ);
-    /// Adlam, Arabic, Mandaic, Manichaean, Psalter_Pahlavi, Hanifi_Rohingya, Sogdian, Syriac
-    pub const ADLM_ARAB_MAND_MANI_PHLP_ROHG_SOGD_SYRC: ScriptExtension = ADLM.union(ARAB).union(MAND).union(MANI).union(PHLP).union(ROHG).union(SOGD).union(SYRC);
+    /// Grantha, Tamil
+    pub const GRAN_TAML: ScriptExtension = GRAN.union(TAML);
+    /// Gujarati, Khojki
+    pub const GUJR_KHOJ: ScriptExtension = GUJR.union(KHOJ);
+    /// Gurmukhi, Multani
+    pub const GURU_MULT: ScriptExtension = GURU.union(MULT);
+    /// Han, Latin
+    pub const HANI_LATN: ScriptExtension = HANI.union(LATN);
+    /// Hiragana, Katakana
+    pub const HIRA_KANA: ScriptExtension = HIRA.union(KANA);
+    /// Kannada, Nandinagari
+    pub const KNDA_NAND: ScriptExtension = KNDA.union(NAND);
+    /// Latin, Mongolian
+    pub const LATN_MONG: ScriptExtension = LATN.union(MONG);
+    /// Mongolian, Phags_Pa
+    pub const MONG_PHAG: ScriptExtension = MONG.union(PHAG);
+    /// Arabic, Syriac, Thaana
+    pub const ARAB_SYRC_THAA: ScriptExtension = ARAB.union(SYRC).union(THAA);
+    /// Arabic, Thaana, Yezidi
+    pub const ARAB_THAA_YEZI: ScriptExtension = ARAB.union(THAA).union(YEZI);
+    /// Bengali, Chakma, Syloti_Nagri
+    pub const BENG_CAKM_SYLO: ScriptExtension = BENG.union(CAKM).union(SYLO);
+    /// Chakma, Myanmar, Tai_Le
+    pub const CAKM_MYMR_TALE: ScriptExtension = CAKM.union(MYMR).union(TALE);
+    /// Cypriot, Linear_A, Linear_B
+    pub const CPRT_LINA_LINB: ScriptExtension = CPRT.union(LINA).union(LINB);
+    /// Devanagari, Grantha, Kannada
+    pub const DEVA_GRAN_KNDA: ScriptExtension = DEVA.union(GRAN).union(KNDA);
+    /// Devanagari, Grantha, Latin
+    pub const DEVA_GRAN_LATN: ScriptExtension = DEVA.union(GRAN).union(LATN);
+    /// Han, Hiragana, Katakana
+    pub const HANI_HIRA_KANA: ScriptExtension = HANI.union(HIRA).union(KANA);
     /// Kayah_Li, Latin, Myanmar
     pub const KALI_LATN_MYMR: ScriptExtension = KALI.union(LATN).union(MYMR);
     /// Bengali, Devanagari, Grantha, Kannada
     pub const BENG_DEVA_GRAN_KNDA: ScriptExtension = BENG.union(DEVA).union(GRAN).union(KNDA);
-    /// Han, Latin
-    pub const HANI_LATN: ScriptExtension = HANI.union(LATN);
-    /// Devanagari, Tamil
-    pub const DEVA_TAML: ScriptExtension = DEVA.union(TAML);
-    /// Cyrillic, Syriac
-    pub const CYRL_SYRC: ScriptExtension = CYRL.union(SYRC);
-    /// Bopomofo, Hangul, Han, Hiragana, Katakana
-    pub const BOPO_HANG_HANI_HIRA_KANA: ScriptExtension = BOPO.union(HANG).union(HANI).union(HIRA).union(KANA);
-    /// Arabic, Syriac, Thaana
-    pub const ARAB_SYRC_THAA: ScriptExtension = ARAB.union(SYRC).union(THAA);
-    /// Devanagari, Grantha, Kannada
-    pub const DEVA_GRAN_KNDA: ScriptExtension = DEVA.union(GRAN).union(KNDA);
-    /// Bengali, Chakma, Syloti_Nagri
-    pub const BENG_CAKM_SYLO: ScriptExtension = BENG.union(CAKM).union(SYLO);
-    /// Kannada, Nandinagari
-    pub const KNDA_NAND: ScriptExtension = KNDA.union(NAND);
-    /// Gurmukhi, Multani
-    pub const GURU_MULT: ScriptExtension = GURU.union(MULT);
-    /// Devanagari, Kannada, Malayalam, Oriya, Tamil, Telugu
-    pub const DEVA_KNDA_MLYM_ORYA_TAML_TELU: ScriptExtension = DEVA.union(KNDA).union(MLYM).union(ORYA).union(TAML).union(TELU);
-    /// Gujarati, Khojki
-    pub const GUJR_KHOJ: ScriptExtension = GUJR.union(KHOJ);
-    /// Cyrillic, Old_Permic
-    pub const CYRL_PERM: ScriptExtension = CYRL.union(PERM);
-    /// Devanagari, Dogra, Gujarati, Gurmukhi, Khojki, Kannada, Kaithi, Mahajani, Modi, Nandinagari, Khudawadi, Takri, Tirhuta
-    pub const DEVA_DOGR_GUJR_GURU_KHOJ_KNDA_KTHI_MAHJ_MODI_NAND_SIND_TAKR_TIRH: ScriptExtension = DEVA.union(DOGR).union(GUJR).union(GURU).union(KHOJ).union(KNDA).union(KTHI).union(MAHJ).union(MODI).union(NAND).union(SIND).union(TAKR).union(TIRH);
-    /// Hiragana, Katakana
-    pub const HIRA_KANA: ScriptExtension = HIRA.union(KANA);
-    /// Devanagari, Nandinagari
-    pub const DEVA_NAND: ScriptExtension = DEVA.union(NAND);
-    /// Cypriot, Linear_B
-    pub const CPRT_LINB: ScriptExtension = CPRT.union(LINB);
-    /// Devanagari, Grantha, Latin
-    pub const DEVA_GRAN_LATN: ScriptExtension = DEVA.union(GRAN).union(LATN);
     /// Buhid, Hanunoo, Tagbanwa, Tagalog
     pub const BUHD_HANO_TAGB_TGLG: ScriptExtension = BUHD.union(HANO).union(TAGB).union(TGLG);
-    /// Arabic, Syriac
-    pub const ARAB_SYRC: ScriptExtension = ARAB.union(SYRC);
-    /// Grantha, Tamil
-    pub const GRAN_TAML: ScriptExtension = GRAN.union(TAML);
+    /// Devanagari, Dogra, Kaithi, Mahajani
+    pub const DEVA_DOGR_KTHI_MAHJ: ScriptExtension = DEVA.union(DOGR).union(KTHI).union(MAHJ);
+    /// Arabic, Hanifi_Rohingya, Syriac, Thaana, Yezidi
+    pub const ARAB_ROHG_SYRC_THAA_YEZI: ScriptExtension = ARAB.union(ROHG).union(SYRC).union(THAA).union(YEZI);
+    /// Bopomofo, Hangul, Han, Hiragana, Katakana
+    pub const BOPO_HANG_HANI_HIRA_KANA: ScriptExtension = BOPO.union(HANG).union(HANI).union(HIRA).union(KANA);
     /// Bopomofo, Hangul, Han, Hiragana, Katakana, Yi
     pub const BOPO_HANG_HANI_HIRA_KANA_YIII: ScriptExtension = BOPO.union(HANG).union(HANI).union(HIRA).union(KANA).union(YIII);
-    /// Chakma, Myanmar, Tai_Le
-    pub const CAKM_MYMR_TALE: ScriptExtension = CAKM.union(MYMR).union(TALE);
-    /// Bengali, Devanagari
-    pub const BENG_DEVA: ScriptExtension = BENG.union(DEVA);
+    /// Devanagari, Kannada, Malayalam, Oriya, Tamil, Telugu
+    pub const DEVA_KNDA_MLYM_ORYA_TAML_TELU: ScriptExtension = DEVA.union(KNDA).union(MLYM).union(ORYA).union(TAML).union(TELU);
+    /// Adlam, Arabic, Mandaic, Manichaean, Psalter_Pahlavi, Hanifi_Rohingya, Sogdian, Syriac
+    pub const ADLM_ARAB_MAND_MANI_PHLP_ROHG_SOGD_SYRC: ScriptExtension = ADLM.union(ARAB).union(MAND).union(MANI).union(PHLP).union(ROHG).union(SOGD).union(SYRC);
     /// Bengali, Devanagari, Grantha, Kannada, Nandinagari, Oriya, Telugu, Tirhuta
     pub const BENG_DEVA_GRAN_KNDA_NAND_ORYA_TELU_TIRH: ScriptExtension = BENG.union(DEVA).union(GRAN).union(KNDA).union(NAND).union(ORYA).union(TELU).union(TIRH);
-    /// Latin, Mongolian
-    pub const LATN_MONG: ScriptExtension = LATN.union(MONG);
+    /// Devanagari, Dogra, Gujarati, Gurmukhi, Khojki, Kaithi, Mahajani, Modi, Khudawadi, Takri, Tirhuta
+    pub const DEVA_DOGR_GUJR_GURU_KHOJ_KTHI_MAHJ_MODI_SIND_TAKR_TIRH: ScriptExtension = DEVA.union(DOGR).union(GUJR).union(GURU).union(KHOJ).union(KTHI).union(MAHJ).union(MODI).union(SIND).union(TAKR).union(TIRH);
     /// Bengali, Devanagari, Grantha, Gujarati, Gurmukhi, Kannada, Latin, Malayalam, Oriya, Tamil, Telugu, Tirhuta
     pub const BENG_DEVA_GRAN_GUJR_GURU_KNDA_LATN_MLYM_ORYA_TAML_TELU_TIRH: ScriptExtension = BENG.union(DEVA).union(GRAN).union(GUJR).union(GURU).union(KNDA).union(LATN).union(MLYM).union(ORYA).union(TAML).union(TELU).union(TIRH);
-    /// Bopomofo, Han
-    pub const BOPO_HANI: ScriptExtension = BOPO.union(HANI);
-    /// Arabic, Coptic
-    pub const ARAB_COPT: ScriptExtension = ARAB.union(COPT);
-    /// Devanagari, Sharada
-    pub const DEVA_SHRD: ScriptExtension = DEVA.union(SHRD);
-    /// Mongolian, Phags_Pa
-    pub const MONG_PHAG: ScriptExtension = MONG.union(PHAG);
-    /// Arabic, Thaana, Yezidi
-    pub const ARAB_THAA_YEZI: ScriptExtension = ARAB.union(THAA).union(YEZI);
-    /// Cyrillic, Glagolitic
-    pub const CYRL_GLAG: ScriptExtension = CYRL.union(GLAG);
+    /// Bengali, Devanagari, Grantha, Gujarati, Gurmukhi, Kannada, Latin, Malayalam, Oriya, Sharada, Tamil, Telugu, Tirhuta
+    pub const BENG_DEVA_GRAN_GUJR_GURU_KNDA_LATN_MLYM_ORYA_SHRD_TAML_TELU_TIRH: ScriptExtension = BENG.union(DEVA).union(GRAN).union(GUJR).union(GURU).union(KNDA).union(LATN).union(MLYM).union(ORYA).union(SHRD).union(TAML).union(TELU).union(TIRH);
+    /// Devanagari, Dogra, Gujarati, Gurmukhi, Khojki, Kannada, Kaithi, Mahajani, Modi, Nandinagari, Khudawadi, Takri, Tirhuta
+    pub const DEVA_DOGR_GUJR_GURU_KHOJ_KNDA_KTHI_MAHJ_MODI_NAND_SIND_TAKR_TIRH: ScriptExtension = DEVA.union(DOGR).union(GUJR).union(GURU).union(KHOJ).union(KNDA).union(KTHI).union(MAHJ).union(MODI).union(NAND).union(SIND).union(TAKR).union(TIRH);
+    /// Devanagari, Dogra, Gujarati, Gurmukhi, Khojki, Kannada, Kaithi, Mahajani, Malayalam, Modi, Nandinagari, Khudawadi, Takri, Tirhuta
+    pub const DEVA_DOGR_GUJR_GURU_KHOJ_KNDA_KTHI_MAHJ_MLYM_MODI_NAND_SIND_TAKR_TIRH: ScriptExtension = DEVA.union(DOGR).union(GUJR).union(GURU).union(KHOJ).union(KNDA).union(KTHI).union(MAHJ).union(MLYM).union(MODI).union(NAND).union(SIND).union(TAKR).union(TIRH);
+    /// Bengali, Devanagari, Dogra, Gunjala_Gondi, Masaram_Gondi, Grantha, Gujarati, Gurmukhi, Kannada, Mahajani, Malayalam, Nandinagari, Oriya, Khudawadi, Sinhala, Syloti_Nagri, Takri, Tamil, Telugu, Tirhuta
+    pub const BENG_DEVA_DOGR_GONG_GONM_GRAN_GUJR_GURU_KNDA_MAHJ_MLYM_NAND_ORYA_SIND_SINH_SYLO_TAKR_TAML_TELU_TIRH: ScriptExtension = BENG.union(DEVA).union(DOGR).union(GONG).union(GONM).union(GRAN).union(GUJR).union(GURU).union(KNDA).union(MAHJ).union(MLYM).union(NAND).union(ORYA).union(SIND).union(SINH).union(SYLO).union(TAKR).union(TAML).union(TELU).union(TIRH);
+    /// Bengali, Devanagari, Dogra, Gunjala_Gondi, Masaram_Gondi, Grantha, Gujarati, Gurmukhi, Kannada, Limbu, Mahajani, Malayalam, Nandinagari, Oriya, Khudawadi, Sinhala, Syloti_Nagri, Takri, Tamil, Telugu, Tirhuta
+    pub const BENG_DEVA_DOGR_GONG_GONM_GRAN_GUJR_GURU_KNDA_LIMB_MAHJ_MLYM_NAND_ORYA_SIND_SINH_SYLO_TAKR_TAML_TELU_TIRH: ScriptExtension = BENG.union(DEVA).union(DOGR).union(GONG).union(GONM).union(GRAN).union(GUJR).union(GURU).union(KNDA).union(LIMB).union(MAHJ).union(MLYM).union(NAND).union(ORYA).union(SIND).union(SINH).union(SYLO).union(TAKR).union(TAML).union(TELU).union(TIRH);
 }
 
 impl Script {
