@@ -34,7 +34,16 @@ preamble = '''// Copyright 2012-2018 The Rust Project Developers. See the COPYRI
 
 #![allow(missing_docs, non_upper_case_globals, non_snake_case)]
 
-use super::ScriptExtension;
+pub use tables_impl::*;
+
+#[rustfmt::skip]
+mod tables_impl {
+use crate::ScriptExtension;
+'''
+
+# Close `mod impl {`
+ending='''
+}
 '''
 
 UNICODE_VERSION = (13, 0, 0)
@@ -239,7 +248,21 @@ pub mod script_extensions {
         f.write("    /// %s\n    pub const %s: ScriptExtension = %s;\n" % (longform, name, expr))
     f.write("""}
 
-impl Script {
+""")
+
+    # Generate implementation for the `Script`
+    generate_script_impl(f)
+
+
+def generate_script_impl(f):
+    """Generates an `impl Script { ... }` section with all the required functions"""
+
+    # Open `impl Script` section.
+    f.write("""impl Script {
+""")
+
+    # Generate impl of `inner_full_name`.
+    f.write("""
     #[inline]
     pub(crate) fn inner_full_name(self) -> &'static str {
         match self {
@@ -251,7 +274,26 @@ impl Script {
         f.write("            Script::%s => \"%s\",\n" % (longforms[script], longforms[script]))
     f.write("""        }
     }
+""")
 
+    # Generate impl of `inner_from_full_name`.
+    f.write("""
+    #[inline]
+    pub(crate) fn inner_from_full_name(input: &str) -> Option<Self> {
+        match input {
+            "Unknown" => Some(Script::Unknown),
+            "Common" => Some(Script::Common),
+            "Inherited" => Some(Script::Inherited),
+""")
+    for script in script_list:
+        f.write("            \"%s\" => Some(Script::%s),\n" % (longforms[script], longforms[script]))
+    f.write("            _ => None,\n" )
+    f.write("""        }
+    }
+""")
+
+    # Generate impl of `inner_short_name`
+    f.write("""
     #[inline]
     pub(crate) fn inner_short_name(self) -> &'static str {
         match self {
@@ -263,7 +305,25 @@ impl Script {
         f.write("            Script::%s => \"%s\",\n" % (longforms[script], script))
     f.write("""        }
     }
+""")
 
+    # Generate impl of `inner_from_short_name`
+    f.write("""
+    #[inline]
+    pub(crate) fn inner_from_short_name(input: &str) -> Option<Self> {
+        match input {
+            "Zyyy" => Some(Script::Common),
+            "Zinh" => Some(Script::Inherited),
+""")
+    for script in script_list:
+        f.write("            \"%s\" => Some(Script::%s),\n" % (script, longforms[script]))
+    f.write("""        _ => None,\n""")
+    f.write("""        }
+    }
+""")
+
+    # Generate impl of `for_integer`
+    f.write("""
     #[inline]
     pub(crate) fn for_integer(value: u8) -> Self {
         match value {
@@ -273,14 +333,16 @@ impl Script {
     f.write("""            _ => unreachable!(),
         }
     }
+""")
+
+    # Close `impl Script` section
+    f.write("""
 }
 """)
 
 def extension_name(ext):
     """Get the rust source for a given ScriptExtension"""
     return "script_extensions::%s" % "_".join([e.upper() for e in ext])
-
-
 
 
 if __name__ == "__main__":
@@ -336,3 +398,5 @@ pub const UNICODE_VERSION: (u64, u64, u64) = (%s, %s, %s);
                    is_pub=False , pfun=lambda x: "(%s,%s,%s)" % (escape_char(x[0]), escape_char(x[1]), extension_name(x[2])))
 
         # emit_table(rf, "FOObar", properties)
+
+        rf.write(ending)

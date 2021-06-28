@@ -4,7 +4,6 @@
 #![cfg_attr(not(test), no_std)]
 #![cfg_attr(feature = "bench", feature(test))]
 
-#[rustfmt::skip]
 mod tables;
 
 use core::convert::TryFrom;
@@ -15,14 +14,28 @@ use tables::{get_script, get_script_extension, NEXT_SCRIPT};
 pub use tables::{Script, UNICODE_VERSION};
 
 impl Script {
-    /// Get the full name of a script
+    /// Get the full name of a script.
     pub fn full_name(self) -> &'static str {
         self.inner_full_name()
     }
 
-    /// Get the four-character short name of a script
+    /// Attempts to parse script name from the provided string.
+    /// Returns `None` if the provided string does not represent a valid
+    /// script full name.
+    pub fn from_full_name(input: &str) -> Option<Self> {
+        Self::inner_from_full_name(input)
+    }
+
+    /// Get the four-character short name of a script.
     pub fn short_name(self) -> &'static str {
         self.inner_short_name()
+    }
+
+    /// Attempts to parse script name from the provided string.
+    /// Returns `None` if the provided string does not represent a valid
+    /// script four-character short name.
+    pub fn from_short_name(input: &str) -> Option<Self> {
+        Self::inner_from_short_name(input)
     }
 
     /// Is this script "Recommended" according to
