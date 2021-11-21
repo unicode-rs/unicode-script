@@ -59,7 +59,7 @@ def fetch(f):
             os.system("curl -O https://www.unicode.org/Public/emoji/%s.%s/%s"
                       % (UNICODE_VERSION[0], UNICODE_VERSION[1], f))
         else:
-            os.system("curl -O http://www.unicode.org/Public/%s/ucd/%s"
+            os.system("curl -O https://www.unicode.org/Public/%s/ucd/%s"
                       % (UNICODE_VERSION_NUMBER, f))
 
     if not os.path.exists(os.path.basename(f)):
