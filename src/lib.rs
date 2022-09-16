@@ -534,7 +534,7 @@ mod tests {
     #[bench]
     fn bench_ext_intersection(b: &mut Bencher) {
         b.iter(|| {
-            let e1 = test::black_box(script_extensions::ARAB_ROHG_SYRC_THAA_YEZI);
+            let e1 = test::black_box(script_extensions::ARAB_NKOO_ROHG_SYRC_THAA_YEZI);
             let e2 = test::black_box(script_extensions::BENG_DEVA_DOGR_GONG_GONM_GRAN_GUJR_GURU_KNDA_MAHJ_MLYM_NAND_ORYA_SIND_SINH_SYLO_TAKR_TAML_TELU_TIRH);
             test::black_box(e2.intersection(e1));
         })
