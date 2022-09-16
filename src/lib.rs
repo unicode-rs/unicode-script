@@ -144,20 +144,20 @@ pub struct ScriptExtension {
     // A bitset for the scripts 65-128
     second: u64,
     // A bitset for scripts after 128
-    third: u32,
+    third: u64,
     // Both Common and Inherited are represented by all used bits being set,
     // this flag lets us distinguish the two.
     common: bool,
 }
 
 impl ScriptExtension {
-    // We don't use the complete u32 of `third`, so the "all" value is not just u32::MAX
+    // We don't use the complete u64 of `third`, so the "all" value is not just u32::MAX
     // Instead, we take the number of the next (unused) script bit, subtract 128 to bring
-    // it in the range of `third`, create a u32 with just that bit set, and subtract 1
+    // it in the range of `third`, create a u64 with just that bit set, and subtract 1
     // to create one with all the lower bits set.
-    const THIRD_MAX: u32 = ((1 << (NEXT_SCRIPT - 128)) - 1);
+    const THIRD_MAX: u64 = ((1 << (NEXT_SCRIPT - 128)) - 1);
 
-    pub(crate) const fn new(first: u64, second: u64, third: u32) -> Self {
+    pub(crate) const fn new(first: u64, second: u64, third: u64) -> Self {
         ScriptExtension {
             first,
             second,
