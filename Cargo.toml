@@ -8,7 +8,7 @@ homepage = "https://github.com/unicode-rs/unicode-script"
 repository = "https://github.com/unicode-rs/unicode-script"
 documentation = "https://docs.rs/unicode-script"
 
-license = "MIT/Apache-2.0"
+license = "MIT OR Apache-2.0"
 keywords = ["text", "unicode", "script", "language"]
 readme = "README.md"
 description = """
