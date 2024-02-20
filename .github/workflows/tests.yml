@@ -25,3 +25,11 @@ jobs:
     - name: Run benchmarks
       run: cargo bench --features bench
       if: startsWith(matrix.rust, 'nightly')
+  regen:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: Regen
+      run: cd scripts && python3 unicode.py
+    - name: Diff
+      run: diff src/tables.rs scripts/tables.rs
