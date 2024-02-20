@@ -46,7 +46,7 @@ ending='''
 }
 '''
 
-UNICODE_VERSION = (15, 0, 0)
+UNICODE_VERSION = (15, 1, 0)
 
 UNICODE_VERSION_NUMBER = "%s.%s.%s" %UNICODE_VERSION
 
