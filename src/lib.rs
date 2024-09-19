@@ -504,7 +504,7 @@ mod tests {
     fn bench_script_intersection(b: &mut Bencher) {
         b.iter(|| {
             let script = test::black_box(Script::Devanagari);
-            let ext = test::black_box(script_extensions::BENG_DEVA_DOGR_GONG_GONM_GRAN_GUJR_GURU_KNDA_MAHJ_MLYM_NAND_ORYA_SIND_SINH_SYLO_TAKR_TAML_TELU_TIRH);
+            let ext = test::black_box(script_extensions::BENG_DEVA_DOGR_GONG_GONM_GRAN_GUJR_GURU_KNDA_MAHJ_MLYM_NAND_ONAO_ORYA_SIND_SINH_SYLO_TAKR_TAML_TELU_TIRH);
             test::black_box(ext.intersection(script.into()));
         })
     }
@@ -534,8 +534,8 @@ mod tests {
     #[bench]
     fn bench_ext_intersection(b: &mut Bencher) {
         b.iter(|| {
-            let e1 = test::black_box(script_extensions::ARAB_NKOO_ROHG_SYRC_THAA_YEZI);
-            let e2 = test::black_box(script_extensions::BENG_DEVA_DOGR_GONG_GONM_GRAN_GUJR_GURU_KNDA_MAHJ_MLYM_NAND_ORYA_SIND_SINH_SYLO_TAKR_TAML_TELU_TIRH);
+            let e1 = test::black_box(script_extensions::ARAB_GARA_NKOO_ROHG_SYRC_THAA_YEZI);
+            let e2 = test::black_box(script_extensions::BENG_DEVA_DOGR_GONG_GONM_GRAN_GUJR_GURU_KNDA_MAHJ_MLYM_NAND_ONAO_ORYA_SIND_SINH_SYLO_TAKR_TAML_TELU_TIRH);
             test::black_box(e2.intersection(e1));
         })
     }
@@ -544,7 +544,7 @@ mod tests {
     #[bench]
     fn bench_to_vec(b: &mut Bencher) {
         b.iter(|| {
-            let ext = test::black_box(script_extensions::BENG_DEVA_DOGR_GONG_GONM_GRAN_GUJR_GURU_KNDA_MAHJ_MLYM_NAND_ORYA_SIND_SINH_SYLO_TAKR_TAML_TELU_TIRH);
+            let ext = test::black_box(script_extensions::BENG_DEVA_DOGR_GONG_GONM_GRAN_GUJR_GURU_KNDA_MAHJ_MLYM_NAND_ONAO_ORYA_SIND_SINH_SYLO_TAKR_TAML_TELU_TIRH);
             test::black_box(ext.iter().collect::<Vec<_>>());
         })
     }
