@@ -83,12 +83,10 @@ impl From<Script> for ScriptExtension {
 impl TryFrom<ScriptExtension> for Script {
     type Error = ();
     fn try_from(ext: ScriptExtension) -> Result<Self, ()> {
-        if ext.is_common_or_inherited() {
-            if ext.common {
-                Ok(Script::Common)
-            } else {
-                Ok(Script::Inherited)
-            }
+        if ext.is_common() {
+            Ok(Script::Common)
+        } else if ext.is_inherited() {
+            Ok(Script::Inherited)
         } else if ext.is_empty() {
             Ok(Script::Unknown)
         } else {
@@ -131,7 +129,7 @@ impl fmt::Display for Script {
     }
 }
 
-#[derive(Clone, Copy, PartialEq, Eq, Hash)]
+#[derive(Clone, Copy, PartialEq, Eq, Hash, Debug)]
 #[non_exhaustive]
 /// A value for the `Script_Extension` property
 ///
@@ -139,15 +137,15 @@ impl fmt::Display for Script {
 ///
 /// This is essentially an optimized version of `Vec<Script>` that uses bitfields
 pub struct ScriptExtension {
-    // A bitset for the first 64 scripts
+    // A bitset for the first scripts [0..64]
     first: u64,
-    // A bitset for the scripts 65-128
+    // A bitset for the scripts [65..128]
     second: u64,
-    // A bitset for scripts after 128
+    // A bitset for scripts after [128..NEXT_SCRIPT]
+    // The last 2 bits represent whether Common and Inherited is included
+    // * Bit 63 indicates whether it includes Common
+    // * Bit 64 indicates whether it includes Inherited
     third: u64,
-    // Both Common and Inherited are represented by all used bits being set,
-    // this flag lets us distinguish the two.
-    common: bool,
 }
 
 impl ScriptExtension {
@@ -155,56 +153,53 @@ impl ScriptExtension {
     // Instead, we take the number of the next (unused) script bit, subtract 128 to bring
     // it in the range of `third`, create a u64 with just that bit set, and subtract 1
     // to create one with all the lower bits set.
-    const THIRD_MAX: u64 = ((1 << (NEXT_SCRIPT - 128)) - 1);
+    const _CHECK: () = assert!(NEXT_SCRIPT - 128 < 63);
+    const COMMON_MASK: u64 = (1 << 62); // 63rd bit
+    const INHERITED_MASK: u64 = (1 << 63); // 64th bit
 
     pub(crate) const fn new(first: u64, second: u64, third: u64) -> Self {
         ScriptExtension {
             first,
             second,
             third,
-            common: false,
         }
     }
 
+    /// Returns a ScriptExtension containing only Common.
     pub(crate) const fn new_common() -> Self {
         ScriptExtension {
-            first: u64::MAX,
-            second: u64::MAX,
-            third: Self::THIRD_MAX,
-            common: true,
+            first: 0,
+            second: 0,
+            third: Self::COMMON_MASK,
         }
     }
 
+    /// Returns a ScriptExtension containing only Inherited.
     pub(crate) const fn new_inherited() -> Self {
         ScriptExtension {
-            first: u64::MAX,
-            second: u64::MAX,
-            third: Self::THIRD_MAX,
-            common: false,
+            first: 0,
+            second: 0,
+            third: Self::INHERITED_MASK,
         }
     }
 
+    /// Returns an empty ScriptExtension
     pub(crate) const fn new_unknown() -> Self {
         ScriptExtension {
             first: 0,
             second: 0,
             third: 0,
-            common: false,
         }
-    }
-
-    const fn is_common_or_inherited(self) -> bool {
-        (self.first == u64::MAX) & (self.second == u64::MAX) & (self.third == Self::THIRD_MAX)
     }
 
     /// Checks if the script extension is Common
     pub const fn is_common(self) -> bool {
-        self.is_common_or_inherited() & self.common
+        (self.third & Self::COMMON_MASK) != 0
     }
 
     /// Checks if the script extension is Inherited
     pub const fn is_inherited(self) -> bool {
-        self.is_common_or_inherited() & !self.common
+        (self.third & Self::INHERITED_MASK) != 0
     }
 
     /// Checks if the script extension is empty (unknown)
@@ -212,13 +207,10 @@ impl ScriptExtension {
         (self.first == 0) & (self.second == 0) & (self.third == 0)
     }
 
-    /// Returns the number of scripts in the script extension
+    /// Returns the number of scripts in the script extension. Common and
+    /// Inherited, if present, are included and counted independently in the return value.
     pub fn len(self) -> usize {
-        if self.is_common_or_inherited() {
-            1
-        } else {
-            (self.first.count_ones() + self.second.count_ones() + self.third.count_ones()) as usize
-        }
+        (self.first.count_ones() + self.second.count_ones() + self.third.count_ones()) as usize
     }
 
     /// Intersect this `ScriptExtension` with another `ScriptExtension`. Produces `Unknown` if things
@@ -233,54 +225,47 @@ impl ScriptExtension {
 
     /// Find the intersection between two ScriptExtensions. Returns Unknown if things
     /// do not intersect.
-    ///
-    /// "Common" (`Zyyy`) and "Inherited" (`Zinh`) are considered as intersecting
-    /// everything, the intersection of `Common` and `Inherited` is `Inherited`
     pub const fn intersection(self, other: Self) -> Self {
         let first = self.first & other.first;
         let second = self.second & other.second;
         let third = self.third & other.third;
-        let common = self.common & other.common;
         ScriptExtension {
             first,
             second,
             third,
-            common,
         }
     }
 
     /// Find the union between two ScriptExtensions.
-    ///
-    /// "Common" (`Zyyy`) and "Inherited" (`Zinh`) are considered as intersecting
-    /// everything, the union of `Common` and `Inherited` is `Common`
     pub const fn union(self, other: Self) -> Self {
         let first = self.first | other.first;
         let second = self.second | other.second;
         let third = self.third | other.third;
-        let common = self.common | other.common;
         ScriptExtension {
             first,
             second,
             third,
-            common,
         }
     }
 
+    /// Returns true if and only if all members of `self` are present in `other`.
+    pub fn is_subset_or_equal(self, other: Self) -> bool {
+        self.intersection(other) == self && self.union(other) == other
+    }
+
     /// Check if this ScriptExtension contains the given script
-    ///
-    /// Should be used with specific scripts only, this will
-    /// return `true` if `self` is not `Unknown` and `script` is
-    /// `Common` or `Inherited`
     pub fn contains_script(self, script: Script) -> bool {
         !self.intersection(script.into()).is_empty()
     }
 
-    /// Get the intersection of script extensions of all characters
-    /// in a string.
+    /// Get the script extension representing the union of all scripts for
+    /// the characters in a string.
+    ///
+    /// This is likely to decay to Unknown. You probably want to use `for_str_union()` instead.
     pub fn for_str(x: &str) -> Self {
-        let mut ext = ScriptExtension::default();
+        let mut ext = ScriptExtension::new_unknown();
         for ch in x.chars() {
-            ext.intersect_with(ch.into());
+            ext = ext.union(ch.into());
         }
         ext
     }
@@ -311,33 +296,23 @@ impl From<&'_ str> for ScriptExtension {
     }
 }
 
-impl fmt::Debug for ScriptExtension {
-    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-        write!(f, "ScriptExtension(")?;
-        fmt::Display::fmt(self, f)?;
-        write!(f, ")")
-    }
-}
-
 impl fmt::Display for ScriptExtension {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-        if self.is_common() {
-            write!(f, "Common")?;
-        } else if self.is_inherited() {
-            write!(f, "Inherited")?;
-        } else if self.is_empty() {
+        write!(f, "ScriptExtension(")?;
+        if self.is_empty() {
             write!(f, "Unknown")?;
         } else {
             let mut first = true;
             for script in self.iter() {
-                if !first {
-                    write!(f, " + ")?;
+                if first {
                     first = false;
+                } else {
+                    write!(f, " + ")?;
                 }
                 script.full_name().fmt(f)?;
             }
         }
-        Ok(())
+        write!(f, ")")
     }
 }
 
@@ -361,7 +336,7 @@ impl UnicodeScript for char {
 
 /// Iterator over scripts in a [ScriptExtension].
 ///
-/// Can be obtained ia [ScriptExtension::iter()]
+/// Can be obtained via [ScriptExtension::iter()]
 pub struct ScriptIterator {
     ext: ScriptExtension,
 }
@@ -370,14 +345,17 @@ impl Iterator for ScriptIterator {
     type Item = Script;
 
     fn next(&mut self) -> Option<Script> {
-        if self.ext.is_common_or_inherited() {
-            let common = self.ext.common;
-            self.ext = ScriptExtension::new_unknown();
-            if common {
-                Some(Script::Common)
-            } else {
-                Some(Script::Inherited)
-            }
+        if self.ext.is_inherited() {
+            // If `self.ext` is both Inherited and Common, this
+            // temporarily constructs an invalid ScriptExtension. We don't
+            // use `self.ext` for anything other than iterating over bits,
+            // so this is okay.
+            self.ext.third &= !ScriptExtension::INHERITED_MASK;
+            Some(Script::Inherited)
+        } else if self.ext.is_common() {
+            self.ext.third &= !ScriptExtension::COMMON_MASK;
+            Some(Script::Common)
+
         // Are there bits left in the first chunk?
         } else if self.ext.first != 0 {
             // Find the next bit
@@ -385,11 +363,13 @@ impl Iterator for ScriptIterator {
             // unset just that bit
             self.ext.first &= !(1 << bit);
             Some(Script::for_integer(bit as u8))
+
         // Are there bits left in the second chunk?
         } else if self.ext.second != 0 {
             let bit = self.ext.second.trailing_zeros();
             self.ext.second &= !(1 << bit);
             Some(Script::for_integer(64 + bit as u8))
+
         // Are there bits left in the third chunk?
         } else if self.ext.third != 0 {
             let bit = self.ext.third.trailing_zeros();
@@ -429,8 +409,8 @@ mod tests {
             seen_scripts.insert(script);
             seen_exts.insert(ext);
             assert_eq!(script as u8, bit);
-            assert!(!ScriptExtension::new_common().intersection(ext).is_empty());
-            assert!(!ScriptExtension::new_inherited()
+            assert!(ScriptExtension::new_common().intersection(ext).is_empty());
+            assert!(ScriptExtension::new_inherited()
                 .intersection(ext)
                 .is_empty());
             assert!(ScriptExtension::new_unknown().intersection(ext).is_empty());
@@ -443,13 +423,13 @@ mod tests {
     fn test_specific() {
         let s = "सवव मानवी व्यद्क् जन्मतःच स्वतींत्र आहेत व त्ाींना समान प्रवतष्ठा व समान अविकार आहेत. त्ाींना ववचारशद्क् व सवविे कबुद्द्धलाभलेली आहे. व त्ाींनी एकमेकाींशी बींिुत्वाचाभावनेने आचरण करावे.";
         let ext = ScriptExtension::for_str(s);
-        assert_eq!(ext, script_extensions::DEVA);
+        assert!(script_extensions::DEVA.is_subset_or_equal(ext));
         println!(
-            "{:?}",
+            "{}",
             script_extensions::DEVA_DOGR_GUJR_GURU_KHOJ_KTHI_MAHJ_MODI_SIND_TAKR_TIRH
         );
         println!(
-            "{:?}",
+            "{}",
             ext.intersection(
                 script_extensions::DEVA_DOGR_GUJR_GURU_KHOJ_KTHI_MAHJ_MODI_SIND_TAKR_TIRH
             )
@@ -461,7 +441,9 @@ mod tests {
         let u = ext.union(Script::Dogra.into());
         assert_eq!(
             u.intersection(
-                script_extensions::DEVA_DOGR_GUJR_GURU_KHOJ_KTHI_MAHJ_MODI_SIND_TAKR_TIRH
+                script_extensions::COMMON.union(
+                    script_extensions::DEVA_DOGR_GUJR_GURU_KHOJ_KTHI_MAHJ_MODI_SIND_TAKR_TIRH
+                )
             ),
             u
         );
@@ -497,6 +479,68 @@ mod tests {
 
         let scr: Result<Script, _> = ext.try_into();
         assert!(scr.is_err());
+    }
+
+    #[test]
+    fn test_subsets_and_iter() {
+        let cases: &[(ScriptExtension, &[Script])] = &[
+            (ScriptExtension::new_inherited(), &[Script::Inherited]),
+            (ScriptExtension::new_common(), &[Script::Common]),
+            (
+                ScriptExtension::new_inherited().union(script_extensions::COMMON),
+                &[Script::Inherited, Script::Common],
+            ),
+            (
+                ScriptExtension::new_inherited()
+                    .union(script_extensions::COMMON)
+                    .union(script_extensions::LATIN),
+                &[Script::Inherited, Script::Common, Script::Latin],
+            ),
+            (
+                ScriptExtension::new_inherited()
+                    .union(script_extensions::COMMON)
+                    .union(script_extensions::LATIN)
+                    .union(script_extensions::CYRILLIC),
+                &[
+                    Script::Inherited,
+                    Script::Common,
+                    Script::Cyrillic,
+                    Script::Latin,
+                ],
+            ),
+        ];
+        for &(full_extension, component_scripts) in cases {
+            for &script in component_scripts.iter() {
+                assert!(full_extension.contains_script(script));
+                let cur = script.into();
+                let intersect = full_extension.intersection(cur);
+                let union = full_extension.union(cur);
+                assert_eq!(intersect, cur);
+                assert_eq!(union, full_extension);
+
+                assert!(cur.is_subset_or_equal(cur));
+                assert!(cur.is_subset_or_equal(intersect));
+                assert!(cur.is_subset_or_equal(full_extension));
+                assert!(cur.is_subset_or_equal(union));
+                if component_scripts.len() > 1 {
+                    assert!(!full_extension.is_subset_or_equal(cur));
+                    assert!(!union.is_subset_or_equal(cur));
+                }
+
+                assert!(intersect.is_subset_or_equal(intersect));
+                assert!(intersect.is_subset_or_equal(full_extension));
+                assert!(intersect.is_subset_or_equal(union));
+                if component_scripts.len() > 1 {
+                    assert!(!full_extension.is_subset_or_equal(intersect));
+                    assert!(!union.is_subset_or_equal(intersect));
+                }
+
+                assert!(union.is_subset_or_equal(union));
+            }
+            let scripts = component_scripts.iter().cloned().collect::<Vec<_>>();
+            let scripts_iterated = full_extension.iter().collect::<Vec<_>>();
+            assert_eq!(scripts, scripts_iterated);
+        }
     }
 
     #[cfg(feature = "bench")]
