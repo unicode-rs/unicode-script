@@ -330,9 +330,10 @@ impl fmt::Display for ScriptExtension {
         } else {
             let mut first = true;
             for script in self.iter() {
-                if !first {
-                    write!(f, " + ")?;
+                if first {
                     first = false;
+                } else {
+                    write!(f, " + ")?;
                 }
                 script.full_name().fmt(f)?;
             }
@@ -361,7 +362,7 @@ impl UnicodeScript for char {
 
 /// Iterator over scripts in a [ScriptExtension].
 ///
-/// Can be obtained ia [ScriptExtension::iter()]
+/// Can be obtained via [ScriptExtension::iter()]
 pub struct ScriptIterator {
     ext: ScriptExtension,
 }
