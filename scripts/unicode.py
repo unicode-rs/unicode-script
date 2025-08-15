@@ -297,7 +297,7 @@ def generate_script_impl(f):
     #[inline]
     pub(crate) fn inner_short_name(self) -> &'static str {
         match self {
-            Script::Unknown => "",
+            Script::Unknown => "Zzzz",
             Script::Common => "Zyyy",
             Script::Inherited => "Zinh",
 """)
@@ -312,6 +312,7 @@ def generate_script_impl(f):
     #[inline]
     pub(crate) fn inner_from_short_name(input: &str) -> Option<Self> {
         match input {
+            "Zzzz" => Some(Script::Unknown),
             "Zyyy" => Some(Script::Common),
             "Zinh" => Some(Script::Inherited),
 """)
