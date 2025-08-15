@@ -6,7 +6,7 @@
 
 mod tables;
 
-use core::convert::TryFrom;
+use core::convert::{TryFrom, TryInto};
 use core::fmt;
 use core::u64;
 pub use tables::script_extensions;
@@ -36,6 +36,12 @@ impl Script {
     /// script four-character short name.
     pub fn from_short_name(input: &str) -> Option<Self> {
         Self::inner_from_short_name(input)
+    }
+
+    /// The 4-byte iso15924 tag as a `u32`
+    pub fn as_iso15924_tag(self) -> u32 {
+        let arr: [u8; 4] = self.inner_short_name().as_bytes().try_into().unwrap();
+        u32::from_be_bytes(arr)
     }
 
     /// Is this script "Recommended" according to
