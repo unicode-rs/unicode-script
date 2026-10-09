@@ -20,7 +20,7 @@ use crate::ScriptExtension;
 
 /// The version of [Unicode](http://www.unicode.org/)
 /// that this version of unicode-script is based on.
-pub const UNICODE_VERSION: (u64, u64, u64) = (17, 0, 0);
+pub const UNICODE_VERSION: (u64, u64, u64) = (18, 0, 0);
 
 #[derive(Clone, Copy, PartialEq, Eq, Debug, Hash)]
 #[non_exhaustive]
@@ -156,230 +156,236 @@ pub enum Script {
     Old_Italic = 59,
     /// Java
     Javanese = 60,
+    /// Jurc
+    Jurchen = 61,
     /// Kali
-    Kayah_Li = 61,
+    Kayah_Li = 62,
     /// Kana
-    Katakana = 62,
+    Katakana = 63,
     /// Kawi
-    Kawi = 63,
+    Kawi = 64,
     /// Khar
-    Kharoshthi = 64,
+    Kharoshthi = 65,
     /// Khmr
-    Khmer = 65,
+    Khmer = 66,
     /// Khoj
-    Khojki = 66,
+    Khojki = 67,
     /// Kits
-    Khitan_Small_Script = 67,
+    Khitan_Small_Script = 68,
     /// Knda
-    Kannada = 68,
+    Kannada = 69,
     /// Krai
-    Kirat_Rai = 69,
+    Kirat_Rai = 70,
     /// Kthi
-    Kaithi = 70,
+    Kaithi = 71,
     /// Lana
-    Tai_Tham = 71,
+    Tai_Tham = 72,
     /// Laoo
-    Lao = 72,
+    Lao = 73,
     /// Latn
-    Latin = 73,
+    Latin = 74,
     /// Lepc
-    Lepcha = 74,
+    Lepcha = 75,
     /// Limb
-    Limbu = 75,
+    Limbu = 76,
     /// Lina
-    Linear_A = 76,
+    Linear_A = 77,
     /// Linb
-    Linear_B = 77,
+    Linear_B = 78,
     /// Lisu
-    Lisu = 78,
+    Lisu = 79,
     /// Lyci
-    Lycian = 79,
+    Lycian = 80,
     /// Lydi
-    Lydian = 80,
+    Lydian = 81,
     /// Mahj
-    Mahajani = 81,
+    Mahajani = 82,
     /// Maka
-    Makasar = 82,
+    Makasar = 83,
     /// Mand
-    Mandaic = 83,
+    Mandaic = 84,
     /// Mani
-    Manichaean = 84,
+    Manichaean = 85,
     /// Marc
-    Marchen = 85,
+    Marchen = 86,
     /// Medf
-    Medefaidrin = 86,
+    Medefaidrin = 87,
     /// Mend
-    Mende_Kikakui = 87,
+    Mende_Kikakui = 88,
     /// Merc
-    Meroitic_Cursive = 88,
+    Meroitic_Cursive = 89,
     /// Mero
-    Meroitic_Hieroglyphs = 89,
+    Meroitic_Hieroglyphs = 90,
     /// Mlym
-    Malayalam = 90,
+    Malayalam = 91,
     /// Modi
-    Modi = 91,
+    Modi = 92,
     /// Mong
-    Mongolian = 92,
+    Mongolian = 93,
     /// Mroo
-    Mro = 93,
+    Mro = 94,
     /// Mtei
-    Meetei_Mayek = 94,
+    Meetei_Mayek = 95,
     /// Mult
-    Multani = 95,
+    Multani = 96,
     /// Mymr
-    Myanmar = 96,
+    Myanmar = 97,
     /// Nagm
-    Nag_Mundari = 97,
+    Nag_Mundari = 98,
     /// Nand
-    Nandinagari = 98,
+    Nandinagari = 99,
     /// Narb
-    Old_North_Arabian = 99,
+    Old_North_Arabian = 100,
     /// Nbat
-    Nabataean = 100,
+    Nabataean = 101,
     /// Newa
-    Newa = 101,
+    Newa = 102,
     /// Nkoo
-    Nko = 102,
+    Nko = 103,
     /// Nshu
-    Nushu = 103,
+    Nushu = 104,
     /// Ogam
-    Ogham = 104,
+    Ogham = 105,
     /// Olck
-    Ol_Chiki = 105,
+    Ol_Chiki = 106,
     /// Onao
-    Ol_Onal = 106,
+    Ol_Onal = 107,
     /// Orkh
-    Old_Turkic = 107,
+    Old_Turkic = 108,
     /// Orya
-    Oriya = 108,
+    Oriya = 109,
     /// Osge
-    Osage = 109,
+    Osage = 110,
     /// Osma
-    Osmanya = 110,
+    Osmanya = 111,
     /// Ougr
-    Old_Uyghur = 111,
+    Old_Uyghur = 112,
     /// Palm
-    Palmyrene = 112,
+    Palmyrene = 113,
     /// Pauc
-    Pau_Cin_Hau = 113,
+    Pau_Cin_Hau = 114,
+    /// Pcun
+    Proto_Cuneiform = 115,
     /// Perm
-    Old_Permic = 114,
+    Old_Permic = 116,
     /// Phag
-    Phags_Pa = 115,
+    Phags_Pa = 117,
     /// Phli
-    Inscriptional_Pahlavi = 116,
+    Inscriptional_Pahlavi = 118,
     /// Phlp
-    Psalter_Pahlavi = 117,
+    Psalter_Pahlavi = 119,
     /// Phnx
-    Phoenician = 118,
+    Phoenician = 120,
     /// Plrd
-    Miao = 119,
+    Miao = 121,
     /// Prti
-    Inscriptional_Parthian = 120,
+    Inscriptional_Parthian = 122,
     /// Rjng
-    Rejang = 121,
+    Rejang = 123,
     /// Rohg
-    Hanifi_Rohingya = 122,
+    Hanifi_Rohingya = 124,
     /// Runr
-    Runic = 123,
+    Runic = 125,
     /// Samr
-    Samaritan = 124,
+    Samaritan = 126,
     /// Sarb
-    Old_South_Arabian = 125,
+    Old_South_Arabian = 127,
     /// Saur
-    Saurashtra = 126,
+    Saurashtra = 128,
+    /// Seal
+    Seal = 129,
     /// Sgnw
-    SignWriting = 127,
+    SignWriting = 130,
     /// Shaw
-    Shavian = 128,
+    Shavian = 131,
     /// Shrd
-    Sharada = 129,
+    Sharada = 132,
     /// Sidd
-    Siddham = 130,
+    Siddham = 133,
     /// Sidt
-    Sidetic = 131,
+    Sidetic = 134,
     /// Sind
-    Khudawadi = 132,
+    Khudawadi = 135,
     /// Sinh
-    Sinhala = 133,
+    Sinhala = 136,
     /// Sogd
-    Sogdian = 134,
+    Sogdian = 137,
     /// Sogo
-    Old_Sogdian = 135,
+    Old_Sogdian = 138,
     /// Sora
-    Sora_Sompeng = 136,
+    Sora_Sompeng = 139,
     /// Soyo
-    Soyombo = 137,
+    Soyombo = 140,
     /// Sund
-    Sundanese = 138,
+    Sundanese = 141,
     /// Sunu
-    Sunuwar = 139,
+    Sunuwar = 142,
     /// Sylo
-    Syloti_Nagri = 140,
+    Syloti_Nagri = 143,
     /// Syrc
-    Syriac = 141,
+    Syriac = 144,
     /// Tagb
-    Tagbanwa = 142,
+    Tagbanwa = 145,
     /// Takr
-    Takri = 143,
+    Takri = 146,
     /// Tale
-    Tai_Le = 144,
+    Tai_Le = 147,
     /// Talu
-    New_Tai_Lue = 145,
+    New_Tai_Lue = 148,
     /// Taml
-    Tamil = 146,
+    Tamil = 149,
     /// Tang
-    Tangut = 147,
+    Tangut = 150,
     /// Tavt
-    Tai_Viet = 148,
+    Tai_Viet = 151,
     /// Tayo
-    Tai_Yo = 149,
+    Tai_Yo = 152,
     /// Telu
-    Telugu = 150,
+    Telugu = 153,
     /// Tfng
-    Tifinagh = 151,
+    Tifinagh = 154,
     /// Tglg
-    Tagalog = 152,
+    Tagalog = 155,
     /// Thaa
-    Thaana = 153,
+    Thaana = 156,
     /// Thai
-    Thai = 154,
+    Thai = 157,
     /// Tibt
-    Tibetan = 155,
+    Tibetan = 158,
     /// Tirh
-    Tirhuta = 156,
+    Tirhuta = 159,
     /// Tnsa
-    Tangsa = 157,
+    Tangsa = 160,
     /// Todr
-    Todhri = 158,
+    Todhri = 161,
     /// Tols
-    Tolong_Siki = 159,
+    Tolong_Siki = 162,
     /// Toto
-    Toto = 160,
+    Toto = 163,
     /// Tutg
-    Tulu_Tigalari = 161,
+    Tulu_Tigalari = 164,
     /// Ugar
-    Ugaritic = 162,
+    Ugaritic = 165,
     /// Vaii
-    Vai = 163,
+    Vai = 166,
     /// Vith
-    Vithkuqi = 164,
+    Vithkuqi = 167,
     /// Wara
-    Warang_Citi = 165,
+    Warang_Citi = 168,
     /// Wcho
-    Wancho = 166,
+    Wancho = 169,
     /// Xpeo
-    Old_Persian = 167,
+    Old_Persian = 170,
     /// Xsux
-    Cuneiform = 168,
+    Cuneiform = 171,
     /// Yezi
-    Yezidi = 169,
+    Yezidi = 172,
     /// Yiii
-    Yi = 170,
+    Yi = 173,
     /// Zanb
-    Zanabazar_Square = 171,
+    Zanabazar_Square = 174,
 }
-pub const NEXT_SCRIPT: u8 = 172;
+pub const NEXT_SCRIPT: u8 = 175;
 
 pub mod script_extensions {
     use crate::ScriptExtension;
@@ -626,436 +632,446 @@ pub mod script_extensions {
     pub const JAVANESE: ScriptExtension = ScriptExtension::new(0x1000000000000000, 0, 0);
     /// Javanese
     pub const JAVA: ScriptExtension = JAVANESE;
+    /// Jurchen
+    pub const JURCHEN: ScriptExtension = ScriptExtension::new(0x2000000000000000, 0, 0);
+    /// Jurchen
+    pub const JURC: ScriptExtension = JURCHEN;
     /// Kayah_Li
-    pub const KAYAH_LI: ScriptExtension = ScriptExtension::new(0x2000000000000000, 0, 0);
+    pub const KAYAH_LI: ScriptExtension = ScriptExtension::new(0x4000000000000000, 0, 0);
     /// Kayah_Li
     pub const KALI: ScriptExtension = KAYAH_LI;
     /// Katakana
-    pub const KATAKANA: ScriptExtension = ScriptExtension::new(0x4000000000000000, 0, 0);
+    pub const KATAKANA: ScriptExtension = ScriptExtension::new(0x8000000000000000, 0, 0);
     /// Katakana
     pub const KANA: ScriptExtension = KATAKANA;
     /// Kawi
-    pub const KAWI: ScriptExtension = ScriptExtension::new(0x8000000000000000, 0, 0);
+    pub const KAWI: ScriptExtension = ScriptExtension::new(0, 0x1, 0);
     /// Kharoshthi
-    pub const KHAROSHTHI: ScriptExtension = ScriptExtension::new(0, 0x1, 0);
+    pub const KHAROSHTHI: ScriptExtension = ScriptExtension::new(0, 0x2, 0);
     /// Kharoshthi
     pub const KHAR: ScriptExtension = KHAROSHTHI;
     /// Khmer
-    pub const KHMER: ScriptExtension = ScriptExtension::new(0, 0x2, 0);
+    pub const KHMER: ScriptExtension = ScriptExtension::new(0, 0x4, 0);
     /// Khmer
     pub const KHMR: ScriptExtension = KHMER;
     /// Khojki
-    pub const KHOJKI: ScriptExtension = ScriptExtension::new(0, 0x4, 0);
+    pub const KHOJKI: ScriptExtension = ScriptExtension::new(0, 0x8, 0);
     /// Khojki
     pub const KHOJ: ScriptExtension = KHOJKI;
     /// Khitan_Small_Script
-    pub const KHITAN_SMALL_SCRIPT: ScriptExtension = ScriptExtension::new(0, 0x8, 0);
+    pub const KHITAN_SMALL_SCRIPT: ScriptExtension = ScriptExtension::new(0, 0x10, 0);
     /// Khitan_Small_Script
     pub const KITS: ScriptExtension = KHITAN_SMALL_SCRIPT;
     /// Kannada
-    pub const KANNADA: ScriptExtension = ScriptExtension::new(0, 0x10, 0);
+    pub const KANNADA: ScriptExtension = ScriptExtension::new(0, 0x20, 0);
     /// Kannada
     pub const KNDA: ScriptExtension = KANNADA;
     /// Kirat_Rai
-    pub const KIRAT_RAI: ScriptExtension = ScriptExtension::new(0, 0x20, 0);
+    pub const KIRAT_RAI: ScriptExtension = ScriptExtension::new(0, 0x40, 0);
     /// Kirat_Rai
     pub const KRAI: ScriptExtension = KIRAT_RAI;
     /// Kaithi
-    pub const KAITHI: ScriptExtension = ScriptExtension::new(0, 0x40, 0);
+    pub const KAITHI: ScriptExtension = ScriptExtension::new(0, 0x80, 0);
     /// Kaithi
     pub const KTHI: ScriptExtension = KAITHI;
     /// Tai_Tham
-    pub const TAI_THAM: ScriptExtension = ScriptExtension::new(0, 0x80, 0);
+    pub const TAI_THAM: ScriptExtension = ScriptExtension::new(0, 0x100, 0);
     /// Tai_Tham
     pub const LANA: ScriptExtension = TAI_THAM;
     /// Lao
-    pub const LAO: ScriptExtension = ScriptExtension::new(0, 0x100, 0);
+    pub const LAO: ScriptExtension = ScriptExtension::new(0, 0x200, 0);
     /// Lao
     pub const LAOO: ScriptExtension = LAO;
     /// Latin
-    pub const LATIN: ScriptExtension = ScriptExtension::new(0, 0x200, 0);
+    pub const LATIN: ScriptExtension = ScriptExtension::new(0, 0x400, 0);
     /// Latin
     pub const LATN: ScriptExtension = LATIN;
     /// Lepcha
-    pub const LEPCHA: ScriptExtension = ScriptExtension::new(0, 0x400, 0);
+    pub const LEPCHA: ScriptExtension = ScriptExtension::new(0, 0x800, 0);
     /// Lepcha
     pub const LEPC: ScriptExtension = LEPCHA;
     /// Limbu
-    pub const LIMBU: ScriptExtension = ScriptExtension::new(0, 0x800, 0);
+    pub const LIMBU: ScriptExtension = ScriptExtension::new(0, 0x1000, 0);
     /// Limbu
     pub const LIMB: ScriptExtension = LIMBU;
     /// Linear_A
-    pub const LINEAR_A: ScriptExtension = ScriptExtension::new(0, 0x1000, 0);
+    pub const LINEAR_A: ScriptExtension = ScriptExtension::new(0, 0x2000, 0);
     /// Linear_A
     pub const LINA: ScriptExtension = LINEAR_A;
     /// Linear_B
-    pub const LINEAR_B: ScriptExtension = ScriptExtension::new(0, 0x2000, 0);
+    pub const LINEAR_B: ScriptExtension = ScriptExtension::new(0, 0x4000, 0);
     /// Linear_B
     pub const LINB: ScriptExtension = LINEAR_B;
     /// Lisu
-    pub const LISU: ScriptExtension = ScriptExtension::new(0, 0x4000, 0);
+    pub const LISU: ScriptExtension = ScriptExtension::new(0, 0x8000, 0);
     /// Lycian
-    pub const LYCIAN: ScriptExtension = ScriptExtension::new(0, 0x8000, 0);
+    pub const LYCIAN: ScriptExtension = ScriptExtension::new(0, 0x10000, 0);
     /// Lycian
     pub const LYCI: ScriptExtension = LYCIAN;
     /// Lydian
-    pub const LYDIAN: ScriptExtension = ScriptExtension::new(0, 0x10000, 0);
+    pub const LYDIAN: ScriptExtension = ScriptExtension::new(0, 0x20000, 0);
     /// Lydian
     pub const LYDI: ScriptExtension = LYDIAN;
     /// Mahajani
-    pub const MAHAJANI: ScriptExtension = ScriptExtension::new(0, 0x20000, 0);
+    pub const MAHAJANI: ScriptExtension = ScriptExtension::new(0, 0x40000, 0);
     /// Mahajani
     pub const MAHJ: ScriptExtension = MAHAJANI;
     /// Makasar
-    pub const MAKASAR: ScriptExtension = ScriptExtension::new(0, 0x40000, 0);
+    pub const MAKASAR: ScriptExtension = ScriptExtension::new(0, 0x80000, 0);
     /// Makasar
     pub const MAKA: ScriptExtension = MAKASAR;
     /// Mandaic
-    pub const MANDAIC: ScriptExtension = ScriptExtension::new(0, 0x80000, 0);
+    pub const MANDAIC: ScriptExtension = ScriptExtension::new(0, 0x100000, 0);
     /// Mandaic
     pub const MAND: ScriptExtension = MANDAIC;
     /// Manichaean
-    pub const MANICHAEAN: ScriptExtension = ScriptExtension::new(0, 0x100000, 0);
+    pub const MANICHAEAN: ScriptExtension = ScriptExtension::new(0, 0x200000, 0);
     /// Manichaean
     pub const MANI: ScriptExtension = MANICHAEAN;
     /// Marchen
-    pub const MARCHEN: ScriptExtension = ScriptExtension::new(0, 0x200000, 0);
+    pub const MARCHEN: ScriptExtension = ScriptExtension::new(0, 0x400000, 0);
     /// Marchen
     pub const MARC: ScriptExtension = MARCHEN;
     /// Medefaidrin
-    pub const MEDEFAIDRIN: ScriptExtension = ScriptExtension::new(0, 0x400000, 0);
+    pub const MEDEFAIDRIN: ScriptExtension = ScriptExtension::new(0, 0x800000, 0);
     /// Medefaidrin
     pub const MEDF: ScriptExtension = MEDEFAIDRIN;
     /// Mende_Kikakui
-    pub const MENDE_KIKAKUI: ScriptExtension = ScriptExtension::new(0, 0x800000, 0);
+    pub const MENDE_KIKAKUI: ScriptExtension = ScriptExtension::new(0, 0x1000000, 0);
     /// Mende_Kikakui
     pub const MEND: ScriptExtension = MENDE_KIKAKUI;
     /// Meroitic_Cursive
-    pub const MEROITIC_CURSIVE: ScriptExtension = ScriptExtension::new(0, 0x1000000, 0);
+    pub const MEROITIC_CURSIVE: ScriptExtension = ScriptExtension::new(0, 0x2000000, 0);
     /// Meroitic_Cursive
     pub const MERC: ScriptExtension = MEROITIC_CURSIVE;
     /// Meroitic_Hieroglyphs
-    pub const MEROITIC_HIEROGLYPHS: ScriptExtension = ScriptExtension::new(0, 0x2000000, 0);
+    pub const MEROITIC_HIEROGLYPHS: ScriptExtension = ScriptExtension::new(0, 0x4000000, 0);
     /// Meroitic_Hieroglyphs
     pub const MERO: ScriptExtension = MEROITIC_HIEROGLYPHS;
     /// Malayalam
-    pub const MALAYALAM: ScriptExtension = ScriptExtension::new(0, 0x4000000, 0);
+    pub const MALAYALAM: ScriptExtension = ScriptExtension::new(0, 0x8000000, 0);
     /// Malayalam
     pub const MLYM: ScriptExtension = MALAYALAM;
     /// Modi
-    pub const MODI: ScriptExtension = ScriptExtension::new(0, 0x8000000, 0);
+    pub const MODI: ScriptExtension = ScriptExtension::new(0, 0x10000000, 0);
     /// Mongolian
-    pub const MONGOLIAN: ScriptExtension = ScriptExtension::new(0, 0x10000000, 0);
+    pub const MONGOLIAN: ScriptExtension = ScriptExtension::new(0, 0x20000000, 0);
     /// Mongolian
     pub const MONG: ScriptExtension = MONGOLIAN;
     /// Mro
-    pub const MRO: ScriptExtension = ScriptExtension::new(0, 0x20000000, 0);
+    pub const MRO: ScriptExtension = ScriptExtension::new(0, 0x40000000, 0);
     /// Mro
     pub const MROO: ScriptExtension = MRO;
     /// Meetei_Mayek
-    pub const MEETEI_MAYEK: ScriptExtension = ScriptExtension::new(0, 0x40000000, 0);
+    pub const MEETEI_MAYEK: ScriptExtension = ScriptExtension::new(0, 0x80000000, 0);
     /// Meetei_Mayek
     pub const MTEI: ScriptExtension = MEETEI_MAYEK;
     /// Multani
-    pub const MULTANI: ScriptExtension = ScriptExtension::new(0, 0x80000000, 0);
+    pub const MULTANI: ScriptExtension = ScriptExtension::new(0, 0x100000000, 0);
     /// Multani
     pub const MULT: ScriptExtension = MULTANI;
     /// Myanmar
-    pub const MYANMAR: ScriptExtension = ScriptExtension::new(0, 0x100000000, 0);
+    pub const MYANMAR: ScriptExtension = ScriptExtension::new(0, 0x200000000, 0);
     /// Myanmar
     pub const MYMR: ScriptExtension = MYANMAR;
     /// Nag_Mundari
-    pub const NAG_MUNDARI: ScriptExtension = ScriptExtension::new(0, 0x200000000, 0);
+    pub const NAG_MUNDARI: ScriptExtension = ScriptExtension::new(0, 0x400000000, 0);
     /// Nag_Mundari
     pub const NAGM: ScriptExtension = NAG_MUNDARI;
     /// Nandinagari
-    pub const NANDINAGARI: ScriptExtension = ScriptExtension::new(0, 0x400000000, 0);
+    pub const NANDINAGARI: ScriptExtension = ScriptExtension::new(0, 0x800000000, 0);
     /// Nandinagari
     pub const NAND: ScriptExtension = NANDINAGARI;
     /// Old_North_Arabian
-    pub const OLD_NORTH_ARABIAN: ScriptExtension = ScriptExtension::new(0, 0x800000000, 0);
+    pub const OLD_NORTH_ARABIAN: ScriptExtension = ScriptExtension::new(0, 0x1000000000, 0);
     /// Old_North_Arabian
     pub const NARB: ScriptExtension = OLD_NORTH_ARABIAN;
     /// Nabataean
-    pub const NABATAEAN: ScriptExtension = ScriptExtension::new(0, 0x1000000000, 0);
+    pub const NABATAEAN: ScriptExtension = ScriptExtension::new(0, 0x2000000000, 0);
     /// Nabataean
     pub const NBAT: ScriptExtension = NABATAEAN;
     /// Newa
-    pub const NEWA: ScriptExtension = ScriptExtension::new(0, 0x2000000000, 0);
+    pub const NEWA: ScriptExtension = ScriptExtension::new(0, 0x4000000000, 0);
     /// Nko
-    pub const NKO: ScriptExtension = ScriptExtension::new(0, 0x4000000000, 0);
+    pub const NKO: ScriptExtension = ScriptExtension::new(0, 0x8000000000, 0);
     /// Nko
     pub const NKOO: ScriptExtension = NKO;
     /// Nushu
-    pub const NUSHU: ScriptExtension = ScriptExtension::new(0, 0x8000000000, 0);
+    pub const NUSHU: ScriptExtension = ScriptExtension::new(0, 0x10000000000, 0);
     /// Nushu
     pub const NSHU: ScriptExtension = NUSHU;
     /// Ogham
-    pub const OGHAM: ScriptExtension = ScriptExtension::new(0, 0x10000000000, 0);
+    pub const OGHAM: ScriptExtension = ScriptExtension::new(0, 0x20000000000, 0);
     /// Ogham
     pub const OGAM: ScriptExtension = OGHAM;
     /// Ol_Chiki
-    pub const OL_CHIKI: ScriptExtension = ScriptExtension::new(0, 0x20000000000, 0);
+    pub const OL_CHIKI: ScriptExtension = ScriptExtension::new(0, 0x40000000000, 0);
     /// Ol_Chiki
     pub const OLCK: ScriptExtension = OL_CHIKI;
     /// Ol_Onal
-    pub const OL_ONAL: ScriptExtension = ScriptExtension::new(0, 0x40000000000, 0);
+    pub const OL_ONAL: ScriptExtension = ScriptExtension::new(0, 0x80000000000, 0);
     /// Ol_Onal
     pub const ONAO: ScriptExtension = OL_ONAL;
     /// Old_Turkic
-    pub const OLD_TURKIC: ScriptExtension = ScriptExtension::new(0, 0x80000000000, 0);
+    pub const OLD_TURKIC: ScriptExtension = ScriptExtension::new(0, 0x100000000000, 0);
     /// Old_Turkic
     pub const ORKH: ScriptExtension = OLD_TURKIC;
     /// Oriya
-    pub const ORIYA: ScriptExtension = ScriptExtension::new(0, 0x100000000000, 0);
+    pub const ORIYA: ScriptExtension = ScriptExtension::new(0, 0x200000000000, 0);
     /// Oriya
     pub const ORYA: ScriptExtension = ORIYA;
     /// Osage
-    pub const OSAGE: ScriptExtension = ScriptExtension::new(0, 0x200000000000, 0);
+    pub const OSAGE: ScriptExtension = ScriptExtension::new(0, 0x400000000000, 0);
     /// Osage
     pub const OSGE: ScriptExtension = OSAGE;
     /// Osmanya
-    pub const OSMANYA: ScriptExtension = ScriptExtension::new(0, 0x400000000000, 0);
+    pub const OSMANYA: ScriptExtension = ScriptExtension::new(0, 0x800000000000, 0);
     /// Osmanya
     pub const OSMA: ScriptExtension = OSMANYA;
     /// Old_Uyghur
-    pub const OLD_UYGHUR: ScriptExtension = ScriptExtension::new(0, 0x800000000000, 0);
+    pub const OLD_UYGHUR: ScriptExtension = ScriptExtension::new(0, 0x1000000000000, 0);
     /// Old_Uyghur
     pub const OUGR: ScriptExtension = OLD_UYGHUR;
     /// Palmyrene
-    pub const PALMYRENE: ScriptExtension = ScriptExtension::new(0, 0x1000000000000, 0);
+    pub const PALMYRENE: ScriptExtension = ScriptExtension::new(0, 0x2000000000000, 0);
     /// Palmyrene
     pub const PALM: ScriptExtension = PALMYRENE;
     /// Pau_Cin_Hau
-    pub const PAU_CIN_HAU: ScriptExtension = ScriptExtension::new(0, 0x2000000000000, 0);
+    pub const PAU_CIN_HAU: ScriptExtension = ScriptExtension::new(0, 0x4000000000000, 0);
     /// Pau_Cin_Hau
     pub const PAUC: ScriptExtension = PAU_CIN_HAU;
+    /// Proto_Cuneiform
+    pub const PROTO_CUNEIFORM: ScriptExtension = ScriptExtension::new(0, 0x8000000000000, 0);
+    /// Proto_Cuneiform
+    pub const PCUN: ScriptExtension = PROTO_CUNEIFORM;
     /// Old_Permic
-    pub const OLD_PERMIC: ScriptExtension = ScriptExtension::new(0, 0x4000000000000, 0);
+    pub const OLD_PERMIC: ScriptExtension = ScriptExtension::new(0, 0x10000000000000, 0);
     /// Old_Permic
     pub const PERM: ScriptExtension = OLD_PERMIC;
     /// Phags_Pa
-    pub const PHAGS_PA: ScriptExtension = ScriptExtension::new(0, 0x8000000000000, 0);
+    pub const PHAGS_PA: ScriptExtension = ScriptExtension::new(0, 0x20000000000000, 0);
     /// Phags_Pa
     pub const PHAG: ScriptExtension = PHAGS_PA;
     /// Inscriptional_Pahlavi
-    pub const INSCRIPTIONAL_PAHLAVI: ScriptExtension = ScriptExtension::new(0, 0x10000000000000, 0);
+    pub const INSCRIPTIONAL_PAHLAVI: ScriptExtension = ScriptExtension::new(0, 0x40000000000000, 0);
     /// Inscriptional_Pahlavi
     pub const PHLI: ScriptExtension = INSCRIPTIONAL_PAHLAVI;
     /// Psalter_Pahlavi
-    pub const PSALTER_PAHLAVI: ScriptExtension = ScriptExtension::new(0, 0x20000000000000, 0);
+    pub const PSALTER_PAHLAVI: ScriptExtension = ScriptExtension::new(0, 0x80000000000000, 0);
     /// Psalter_Pahlavi
     pub const PHLP: ScriptExtension = PSALTER_PAHLAVI;
     /// Phoenician
-    pub const PHOENICIAN: ScriptExtension = ScriptExtension::new(0, 0x40000000000000, 0);
+    pub const PHOENICIAN: ScriptExtension = ScriptExtension::new(0, 0x100000000000000, 0);
     /// Phoenician
     pub const PHNX: ScriptExtension = PHOENICIAN;
     /// Miao
-    pub const MIAO: ScriptExtension = ScriptExtension::new(0, 0x80000000000000, 0);
+    pub const MIAO: ScriptExtension = ScriptExtension::new(0, 0x200000000000000, 0);
     /// Miao
     pub const PLRD: ScriptExtension = MIAO;
     /// Inscriptional_Parthian
-    pub const INSCRIPTIONAL_PARTHIAN: ScriptExtension = ScriptExtension::new(0, 0x100000000000000, 0);
+    pub const INSCRIPTIONAL_PARTHIAN: ScriptExtension = ScriptExtension::new(0, 0x400000000000000, 0);
     /// Inscriptional_Parthian
     pub const PRTI: ScriptExtension = INSCRIPTIONAL_PARTHIAN;
     /// Rejang
-    pub const REJANG: ScriptExtension = ScriptExtension::new(0, 0x200000000000000, 0);
+    pub const REJANG: ScriptExtension = ScriptExtension::new(0, 0x800000000000000, 0);
     /// Rejang
     pub const RJNG: ScriptExtension = REJANG;
     /// Hanifi_Rohingya
-    pub const HANIFI_ROHINGYA: ScriptExtension = ScriptExtension::new(0, 0x400000000000000, 0);
+    pub const HANIFI_ROHINGYA: ScriptExtension = ScriptExtension::new(0, 0x1000000000000000, 0);
     /// Hanifi_Rohingya
     pub const ROHG: ScriptExtension = HANIFI_ROHINGYA;
     /// Runic
-    pub const RUNIC: ScriptExtension = ScriptExtension::new(0, 0x800000000000000, 0);
+    pub const RUNIC: ScriptExtension = ScriptExtension::new(0, 0x2000000000000000, 0);
     /// Runic
     pub const RUNR: ScriptExtension = RUNIC;
     /// Samaritan
-    pub const SAMARITAN: ScriptExtension = ScriptExtension::new(0, 0x1000000000000000, 0);
+    pub const SAMARITAN: ScriptExtension = ScriptExtension::new(0, 0x4000000000000000, 0);
     /// Samaritan
     pub const SAMR: ScriptExtension = SAMARITAN;
     /// Old_South_Arabian
-    pub const OLD_SOUTH_ARABIAN: ScriptExtension = ScriptExtension::new(0, 0x2000000000000000, 0);
+    pub const OLD_SOUTH_ARABIAN: ScriptExtension = ScriptExtension::new(0, 0x8000000000000000, 0);
     /// Old_South_Arabian
     pub const SARB: ScriptExtension = OLD_SOUTH_ARABIAN;
     /// Saurashtra
-    pub const SAURASHTRA: ScriptExtension = ScriptExtension::new(0, 0x4000000000000000, 0);
+    pub const SAURASHTRA: ScriptExtension = ScriptExtension::new(0, 0, 0x1);
     /// Saurashtra
     pub const SAUR: ScriptExtension = SAURASHTRA;
+    /// Seal
+    pub const SEAL: ScriptExtension = ScriptExtension::new(0, 0, 0x2);
     /// SignWriting
-    pub const SIGNWRITING: ScriptExtension = ScriptExtension::new(0, 0x8000000000000000, 0);
+    pub const SIGNWRITING: ScriptExtension = ScriptExtension::new(0, 0, 0x4);
     /// SignWriting
     pub const SGNW: ScriptExtension = SIGNWRITING;
     /// Shavian
-    pub const SHAVIAN: ScriptExtension = ScriptExtension::new(0, 0, 0x1);
+    pub const SHAVIAN: ScriptExtension = ScriptExtension::new(0, 0, 0x8);
     /// Shavian
     pub const SHAW: ScriptExtension = SHAVIAN;
     /// Sharada
-    pub const SHARADA: ScriptExtension = ScriptExtension::new(0, 0, 0x2);
+    pub const SHARADA: ScriptExtension = ScriptExtension::new(0, 0, 0x10);
     /// Sharada
     pub const SHRD: ScriptExtension = SHARADA;
     /// Siddham
-    pub const SIDDHAM: ScriptExtension = ScriptExtension::new(0, 0, 0x4);
+    pub const SIDDHAM: ScriptExtension = ScriptExtension::new(0, 0, 0x20);
     /// Siddham
     pub const SIDD: ScriptExtension = SIDDHAM;
     /// Sidetic
-    pub const SIDETIC: ScriptExtension = ScriptExtension::new(0, 0, 0x8);
+    pub const SIDETIC: ScriptExtension = ScriptExtension::new(0, 0, 0x40);
     /// Sidetic
     pub const SIDT: ScriptExtension = SIDETIC;
     /// Khudawadi
-    pub const KHUDAWADI: ScriptExtension = ScriptExtension::new(0, 0, 0x10);
+    pub const KHUDAWADI: ScriptExtension = ScriptExtension::new(0, 0, 0x80);
     /// Khudawadi
     pub const SIND: ScriptExtension = KHUDAWADI;
     /// Sinhala
-    pub const SINHALA: ScriptExtension = ScriptExtension::new(0, 0, 0x20);
+    pub const SINHALA: ScriptExtension = ScriptExtension::new(0, 0, 0x100);
     /// Sinhala
     pub const SINH: ScriptExtension = SINHALA;
     /// Sogdian
-    pub const SOGDIAN: ScriptExtension = ScriptExtension::new(0, 0, 0x40);
+    pub const SOGDIAN: ScriptExtension = ScriptExtension::new(0, 0, 0x200);
     /// Sogdian
     pub const SOGD: ScriptExtension = SOGDIAN;
     /// Old_Sogdian
-    pub const OLD_SOGDIAN: ScriptExtension = ScriptExtension::new(0, 0, 0x80);
+    pub const OLD_SOGDIAN: ScriptExtension = ScriptExtension::new(0, 0, 0x400);
     /// Old_Sogdian
     pub const SOGO: ScriptExtension = OLD_SOGDIAN;
     /// Sora_Sompeng
-    pub const SORA_SOMPENG: ScriptExtension = ScriptExtension::new(0, 0, 0x100);
+    pub const SORA_SOMPENG: ScriptExtension = ScriptExtension::new(0, 0, 0x800);
     /// Sora_Sompeng
     pub const SORA: ScriptExtension = SORA_SOMPENG;
     /// Soyombo
-    pub const SOYOMBO: ScriptExtension = ScriptExtension::new(0, 0, 0x200);
+    pub const SOYOMBO: ScriptExtension = ScriptExtension::new(0, 0, 0x1000);
     /// Soyombo
     pub const SOYO: ScriptExtension = SOYOMBO;
     /// Sundanese
-    pub const SUNDANESE: ScriptExtension = ScriptExtension::new(0, 0, 0x400);
+    pub const SUNDANESE: ScriptExtension = ScriptExtension::new(0, 0, 0x2000);
     /// Sundanese
     pub const SUND: ScriptExtension = SUNDANESE;
     /// Sunuwar
-    pub const SUNUWAR: ScriptExtension = ScriptExtension::new(0, 0, 0x800);
+    pub const SUNUWAR: ScriptExtension = ScriptExtension::new(0, 0, 0x4000);
     /// Sunuwar
     pub const SUNU: ScriptExtension = SUNUWAR;
     /// Syloti_Nagri
-    pub const SYLOTI_NAGRI: ScriptExtension = ScriptExtension::new(0, 0, 0x1000);
+    pub const SYLOTI_NAGRI: ScriptExtension = ScriptExtension::new(0, 0, 0x8000);
     /// Syloti_Nagri
     pub const SYLO: ScriptExtension = SYLOTI_NAGRI;
     /// Syriac
-    pub const SYRIAC: ScriptExtension = ScriptExtension::new(0, 0, 0x2000);
+    pub const SYRIAC: ScriptExtension = ScriptExtension::new(0, 0, 0x10000);
     /// Syriac
     pub const SYRC: ScriptExtension = SYRIAC;
     /// Tagbanwa
-    pub const TAGBANWA: ScriptExtension = ScriptExtension::new(0, 0, 0x4000);
+    pub const TAGBANWA: ScriptExtension = ScriptExtension::new(0, 0, 0x20000);
     /// Tagbanwa
     pub const TAGB: ScriptExtension = TAGBANWA;
     /// Takri
-    pub const TAKRI: ScriptExtension = ScriptExtension::new(0, 0, 0x8000);
+    pub const TAKRI: ScriptExtension = ScriptExtension::new(0, 0, 0x40000);
     /// Takri
     pub const TAKR: ScriptExtension = TAKRI;
     /// Tai_Le
-    pub const TAI_LE: ScriptExtension = ScriptExtension::new(0, 0, 0x10000);
+    pub const TAI_LE: ScriptExtension = ScriptExtension::new(0, 0, 0x80000);
     /// Tai_Le
     pub const TALE: ScriptExtension = TAI_LE;
     /// New_Tai_Lue
-    pub const NEW_TAI_LUE: ScriptExtension = ScriptExtension::new(0, 0, 0x20000);
+    pub const NEW_TAI_LUE: ScriptExtension = ScriptExtension::new(0, 0, 0x100000);
     /// New_Tai_Lue
     pub const TALU: ScriptExtension = NEW_TAI_LUE;
     /// Tamil
-    pub const TAMIL: ScriptExtension = ScriptExtension::new(0, 0, 0x40000);
+    pub const TAMIL: ScriptExtension = ScriptExtension::new(0, 0, 0x200000);
     /// Tamil
     pub const TAML: ScriptExtension = TAMIL;
     /// Tangut
-    pub const TANGUT: ScriptExtension = ScriptExtension::new(0, 0, 0x80000);
+    pub const TANGUT: ScriptExtension = ScriptExtension::new(0, 0, 0x400000);
     /// Tangut
     pub const TANG: ScriptExtension = TANGUT;
     /// Tai_Viet
-    pub const TAI_VIET: ScriptExtension = ScriptExtension::new(0, 0, 0x100000);
+    pub const TAI_VIET: ScriptExtension = ScriptExtension::new(0, 0, 0x800000);
     /// Tai_Viet
     pub const TAVT: ScriptExtension = TAI_VIET;
     /// Tai_Yo
-    pub const TAI_YO: ScriptExtension = ScriptExtension::new(0, 0, 0x200000);
+    pub const TAI_YO: ScriptExtension = ScriptExtension::new(0, 0, 0x1000000);
     /// Tai_Yo
     pub const TAYO: ScriptExtension = TAI_YO;
     /// Telugu
-    pub const TELUGU: ScriptExtension = ScriptExtension::new(0, 0, 0x400000);
+    pub const TELUGU: ScriptExtension = ScriptExtension::new(0, 0, 0x2000000);
     /// Telugu
     pub const TELU: ScriptExtension = TELUGU;
     /// Tifinagh
-    pub const TIFINAGH: ScriptExtension = ScriptExtension::new(0, 0, 0x800000);
+    pub const TIFINAGH: ScriptExtension = ScriptExtension::new(0, 0, 0x4000000);
     /// Tifinagh
     pub const TFNG: ScriptExtension = TIFINAGH;
     /// Tagalog
-    pub const TAGALOG: ScriptExtension = ScriptExtension::new(0, 0, 0x1000000);
+    pub const TAGALOG: ScriptExtension = ScriptExtension::new(0, 0, 0x8000000);
     /// Tagalog
     pub const TGLG: ScriptExtension = TAGALOG;
     /// Thaana
-    pub const THAANA: ScriptExtension = ScriptExtension::new(0, 0, 0x2000000);
+    pub const THAANA: ScriptExtension = ScriptExtension::new(0, 0, 0x10000000);
     /// Thaana
     pub const THAA: ScriptExtension = THAANA;
     /// Thai
-    pub const THAI: ScriptExtension = ScriptExtension::new(0, 0, 0x4000000);
+    pub const THAI: ScriptExtension = ScriptExtension::new(0, 0, 0x20000000);
     /// Tibetan
-    pub const TIBETAN: ScriptExtension = ScriptExtension::new(0, 0, 0x8000000);
+    pub const TIBETAN: ScriptExtension = ScriptExtension::new(0, 0, 0x40000000);
     /// Tibetan
     pub const TIBT: ScriptExtension = TIBETAN;
     /// Tirhuta
-    pub const TIRHUTA: ScriptExtension = ScriptExtension::new(0, 0, 0x10000000);
+    pub const TIRHUTA: ScriptExtension = ScriptExtension::new(0, 0, 0x80000000);
     /// Tirhuta
     pub const TIRH: ScriptExtension = TIRHUTA;
     /// Tangsa
-    pub const TANGSA: ScriptExtension = ScriptExtension::new(0, 0, 0x20000000);
+    pub const TANGSA: ScriptExtension = ScriptExtension::new(0, 0, 0x100000000);
     /// Tangsa
     pub const TNSA: ScriptExtension = TANGSA;
     /// Todhri
-    pub const TODHRI: ScriptExtension = ScriptExtension::new(0, 0, 0x40000000);
+    pub const TODHRI: ScriptExtension = ScriptExtension::new(0, 0, 0x200000000);
     /// Todhri
     pub const TODR: ScriptExtension = TODHRI;
     /// Tolong_Siki
-    pub const TOLONG_SIKI: ScriptExtension = ScriptExtension::new(0, 0, 0x80000000);
+    pub const TOLONG_SIKI: ScriptExtension = ScriptExtension::new(0, 0, 0x400000000);
     /// Tolong_Siki
     pub const TOLS: ScriptExtension = TOLONG_SIKI;
     /// Toto
-    pub const TOTO: ScriptExtension = ScriptExtension::new(0, 0, 0x100000000);
+    pub const TOTO: ScriptExtension = ScriptExtension::new(0, 0, 0x800000000);
     /// Tulu_Tigalari
-    pub const TULU_TIGALARI: ScriptExtension = ScriptExtension::new(0, 0, 0x200000000);
+    pub const TULU_TIGALARI: ScriptExtension = ScriptExtension::new(0, 0, 0x1000000000);
     /// Tulu_Tigalari
     pub const TUTG: ScriptExtension = TULU_TIGALARI;
     /// Ugaritic
-    pub const UGARITIC: ScriptExtension = ScriptExtension::new(0, 0, 0x400000000);
+    pub const UGARITIC: ScriptExtension = ScriptExtension::new(0, 0, 0x2000000000);
     /// Ugaritic
     pub const UGAR: ScriptExtension = UGARITIC;
     /// Vai
-    pub const VAI: ScriptExtension = ScriptExtension::new(0, 0, 0x800000000);
+    pub const VAI: ScriptExtension = ScriptExtension::new(0, 0, 0x4000000000);
     /// Vai
     pub const VAII: ScriptExtension = VAI;
     /// Vithkuqi
-    pub const VITHKUQI: ScriptExtension = ScriptExtension::new(0, 0, 0x1000000000);
+    pub const VITHKUQI: ScriptExtension = ScriptExtension::new(0, 0, 0x8000000000);
     /// Vithkuqi
     pub const VITH: ScriptExtension = VITHKUQI;
     /// Warang_Citi
-    pub const WARANG_CITI: ScriptExtension = ScriptExtension::new(0, 0, 0x2000000000);
+    pub const WARANG_CITI: ScriptExtension = ScriptExtension::new(0, 0, 0x10000000000);
     /// Warang_Citi
     pub const WARA: ScriptExtension = WARANG_CITI;
     /// Wancho
-    pub const WANCHO: ScriptExtension = ScriptExtension::new(0, 0, 0x4000000000);
+    pub const WANCHO: ScriptExtension = ScriptExtension::new(0, 0, 0x20000000000);
     /// Wancho
     pub const WCHO: ScriptExtension = WANCHO;
     /// Old_Persian
-    pub const OLD_PERSIAN: ScriptExtension = ScriptExtension::new(0, 0, 0x8000000000);
+    pub const OLD_PERSIAN: ScriptExtension = ScriptExtension::new(0, 0, 0x40000000000);
     /// Old_Persian
     pub const XPEO: ScriptExtension = OLD_PERSIAN;
     /// Cuneiform
-    pub const CUNEIFORM: ScriptExtension = ScriptExtension::new(0, 0, 0x10000000000);
+    pub const CUNEIFORM: ScriptExtension = ScriptExtension::new(0, 0, 0x80000000000);
     /// Cuneiform
     pub const XSUX: ScriptExtension = CUNEIFORM;
     /// Yezidi
-    pub const YEZIDI: ScriptExtension = ScriptExtension::new(0, 0, 0x20000000000);
+    pub const YEZIDI: ScriptExtension = ScriptExtension::new(0, 0, 0x100000000000);
     /// Yezidi
     pub const YEZI: ScriptExtension = YEZIDI;
     /// Yi
-    pub const YI: ScriptExtension = ScriptExtension::new(0, 0, 0x40000000000);
+    pub const YI: ScriptExtension = ScriptExtension::new(0, 0, 0x200000000000);
     /// Yi
     pub const YIII: ScriptExtension = YI;
     /// Zanabazar_Square
-    pub const ZANABAZAR_SQUARE: ScriptExtension = ScriptExtension::new(0, 0, 0x80000000000);
+    pub const ZANABAZAR_SQUARE: ScriptExtension = ScriptExtension::new(0, 0, 0x400000000000);
     /// Zanabazar_Square
     pub const ZANB: ScriptExtension = ZANABAZAR_SQUARE;
     /// Avestan, Carian, Coptic, Duployan, Elbasan, Georgian, Glagolitic, Gunjala_Gondi, Gothic, Greek, Han, Latin, Lydian, Mahajani, Old_Permic, Shavian
@@ -1158,6 +1174,8 @@ pub mod script_extensions {
     pub const GURU_MULT: ScriptExtension = GURU.union(MULT);
     /// Gujarati, Khojki
     pub const GUJR_KHOJ: ScriptExtension = GUJR.union(KHOJ);
+    /// Kannada, Malayalam, Tamil, Telugu
+    pub const KNDA_MLYM_TAML_TELU: ScriptExtension = KNDA.union(MLYM).union(TAML).union(TELU);
     /// Grantha, Tamil
     pub const GRAN_TAML: ScriptExtension = GRAN.union(TAML);
     /// Kannada, Nandinagari, Tulu_Tigalari
@@ -1276,6 +1294,8 @@ pub mod script_extensions {
     pub const ARAB_COPT: ScriptExtension = ARAB.union(COPT);
     /// Manichaean, Old_Uyghur
     pub const MANI_OUGR: ScriptExtension = MANI.union(OUGR);
+    /// Proto_Cuneiform, Cuneiform
+    pub const PCUN_XSUX: ScriptExtension = PCUN.union(XSUX);
 }
 
 impl Script {
@@ -1347,6 +1367,7 @@ impl Script {
             Script::Old_Hungarian => "Old_Hungarian",
             Script::Old_Italic => "Old_Italic",
             Script::Javanese => "Javanese",
+            Script::Jurchen => "Jurchen",
             Script::Kayah_Li => "Kayah_Li",
             Script::Katakana => "Katakana",
             Script::Kawi => "Kawi",
@@ -1400,6 +1421,7 @@ impl Script {
             Script::Old_Uyghur => "Old_Uyghur",
             Script::Palmyrene => "Palmyrene",
             Script::Pau_Cin_Hau => "Pau_Cin_Hau",
+            Script::Proto_Cuneiform => "Proto_Cuneiform",
             Script::Old_Permic => "Old_Permic",
             Script::Phags_Pa => "Phags_Pa",
             Script::Inscriptional_Pahlavi => "Inscriptional_Pahlavi",
@@ -1413,6 +1435,7 @@ impl Script {
             Script::Samaritan => "Samaritan",
             Script::Old_South_Arabian => "Old_South_Arabian",
             Script::Saurashtra => "Saurashtra",
+            Script::Seal => "Seal",
             Script::SignWriting => "SignWriting",
             Script::Shavian => "Shavian",
             Script::Sharada => "Sharada",
@@ -1528,6 +1551,7 @@ impl Script {
             "Old_Hungarian" => Some(Script::Old_Hungarian),
             "Old_Italic" => Some(Script::Old_Italic),
             "Javanese" => Some(Script::Javanese),
+            "Jurchen" => Some(Script::Jurchen),
             "Kayah_Li" => Some(Script::Kayah_Li),
             "Katakana" => Some(Script::Katakana),
             "Kawi" => Some(Script::Kawi),
@@ -1581,6 +1605,7 @@ impl Script {
             "Old_Uyghur" => Some(Script::Old_Uyghur),
             "Palmyrene" => Some(Script::Palmyrene),
             "Pau_Cin_Hau" => Some(Script::Pau_Cin_Hau),
+            "Proto_Cuneiform" => Some(Script::Proto_Cuneiform),
             "Old_Permic" => Some(Script::Old_Permic),
             "Phags_Pa" => Some(Script::Phags_Pa),
             "Inscriptional_Pahlavi" => Some(Script::Inscriptional_Pahlavi),
@@ -1594,6 +1619,7 @@ impl Script {
             "Samaritan" => Some(Script::Samaritan),
             "Old_South_Arabian" => Some(Script::Old_South_Arabian),
             "Saurashtra" => Some(Script::Saurashtra),
+            "Seal" => Some(Script::Seal),
             "SignWriting" => Some(Script::SignWriting),
             "Shavian" => Some(Script::Shavian),
             "Sharada" => Some(Script::Sharada),
@@ -1710,6 +1736,7 @@ impl Script {
             Script::Old_Hungarian => "Hung",
             Script::Old_Italic => "Ital",
             Script::Javanese => "Java",
+            Script::Jurchen => "Jurc",
             Script::Kayah_Li => "Kali",
             Script::Katakana => "Kana",
             Script::Kawi => "Kawi",
@@ -1763,6 +1790,7 @@ impl Script {
             Script::Old_Uyghur => "Ougr",
             Script::Palmyrene => "Palm",
             Script::Pau_Cin_Hau => "Pauc",
+            Script::Proto_Cuneiform => "Pcun",
             Script::Old_Permic => "Perm",
             Script::Phags_Pa => "Phag",
             Script::Inscriptional_Pahlavi => "Phli",
@@ -1776,6 +1804,7 @@ impl Script {
             Script::Samaritan => "Samr",
             Script::Old_South_Arabian => "Sarb",
             Script::Saurashtra => "Saur",
+            Script::Seal => "Seal",
             Script::SignWriting => "Sgnw",
             Script::Shavian => "Shaw",
             Script::Sharada => "Shrd",
@@ -1891,6 +1920,7 @@ impl Script {
             "Hung" => Some(Script::Old_Hungarian),
             "Ital" => Some(Script::Old_Italic),
             "Java" => Some(Script::Javanese),
+            "Jurc" => Some(Script::Jurchen),
             "Kali" => Some(Script::Kayah_Li),
             "Kana" => Some(Script::Katakana),
             "Kawi" => Some(Script::Kawi),
@@ -1944,6 +1974,7 @@ impl Script {
             "Ougr" => Some(Script::Old_Uyghur),
             "Palm" => Some(Script::Palmyrene),
             "Pauc" => Some(Script::Pau_Cin_Hau),
+            "Pcun" => Some(Script::Proto_Cuneiform),
             "Perm" => Some(Script::Old_Permic),
             "Phag" => Some(Script::Phags_Pa),
             "Phli" => Some(Script::Inscriptional_Pahlavi),
@@ -1957,6 +1988,7 @@ impl Script {
             "Samr" => Some(Script::Samaritan),
             "Sarb" => Some(Script::Old_South_Arabian),
             "Saur" => Some(Script::Saurashtra),
+            "Seal" => Some(Script::Seal),
             "Sgnw" => Some(Script::SignWriting),
             "Shaw" => Some(Script::Shavian),
             "Shrd" => Some(Script::Sharada),
@@ -2070,117 +2102,120 @@ impl Script {
             58 => Script::Old_Hungarian,
             59 => Script::Old_Italic,
             60 => Script::Javanese,
-            61 => Script::Kayah_Li,
-            62 => Script::Katakana,
-            63 => Script::Kawi,
-            64 => Script::Kharoshthi,
-            65 => Script::Khmer,
-            66 => Script::Khojki,
-            67 => Script::Khitan_Small_Script,
-            68 => Script::Kannada,
-            69 => Script::Kirat_Rai,
-            70 => Script::Kaithi,
-            71 => Script::Tai_Tham,
-            72 => Script::Lao,
-            73 => Script::Latin,
-            74 => Script::Lepcha,
-            75 => Script::Limbu,
-            76 => Script::Linear_A,
-            77 => Script::Linear_B,
-            78 => Script::Lisu,
-            79 => Script::Lycian,
-            80 => Script::Lydian,
-            81 => Script::Mahajani,
-            82 => Script::Makasar,
-            83 => Script::Mandaic,
-            84 => Script::Manichaean,
-            85 => Script::Marchen,
-            86 => Script::Medefaidrin,
-            87 => Script::Mende_Kikakui,
-            88 => Script::Meroitic_Cursive,
-            89 => Script::Meroitic_Hieroglyphs,
-            90 => Script::Malayalam,
-            91 => Script::Modi,
-            92 => Script::Mongolian,
-            93 => Script::Mro,
-            94 => Script::Meetei_Mayek,
-            95 => Script::Multani,
-            96 => Script::Myanmar,
-            97 => Script::Nag_Mundari,
-            98 => Script::Nandinagari,
-            99 => Script::Old_North_Arabian,
-            100 => Script::Nabataean,
-            101 => Script::Newa,
-            102 => Script::Nko,
-            103 => Script::Nushu,
-            104 => Script::Ogham,
-            105 => Script::Ol_Chiki,
-            106 => Script::Ol_Onal,
-            107 => Script::Old_Turkic,
-            108 => Script::Oriya,
-            109 => Script::Osage,
-            110 => Script::Osmanya,
-            111 => Script::Old_Uyghur,
-            112 => Script::Palmyrene,
-            113 => Script::Pau_Cin_Hau,
-            114 => Script::Old_Permic,
-            115 => Script::Phags_Pa,
-            116 => Script::Inscriptional_Pahlavi,
-            117 => Script::Psalter_Pahlavi,
-            118 => Script::Phoenician,
-            119 => Script::Miao,
-            120 => Script::Inscriptional_Parthian,
-            121 => Script::Rejang,
-            122 => Script::Hanifi_Rohingya,
-            123 => Script::Runic,
-            124 => Script::Samaritan,
-            125 => Script::Old_South_Arabian,
-            126 => Script::Saurashtra,
-            127 => Script::SignWriting,
-            128 => Script::Shavian,
-            129 => Script::Sharada,
-            130 => Script::Siddham,
-            131 => Script::Sidetic,
-            132 => Script::Khudawadi,
-            133 => Script::Sinhala,
-            134 => Script::Sogdian,
-            135 => Script::Old_Sogdian,
-            136 => Script::Sora_Sompeng,
-            137 => Script::Soyombo,
-            138 => Script::Sundanese,
-            139 => Script::Sunuwar,
-            140 => Script::Syloti_Nagri,
-            141 => Script::Syriac,
-            142 => Script::Tagbanwa,
-            143 => Script::Takri,
-            144 => Script::Tai_Le,
-            145 => Script::New_Tai_Lue,
-            146 => Script::Tamil,
-            147 => Script::Tangut,
-            148 => Script::Tai_Viet,
-            149 => Script::Tai_Yo,
-            150 => Script::Telugu,
-            151 => Script::Tifinagh,
-            152 => Script::Tagalog,
-            153 => Script::Thaana,
-            154 => Script::Thai,
-            155 => Script::Tibetan,
-            156 => Script::Tirhuta,
-            157 => Script::Tangsa,
-            158 => Script::Todhri,
-            159 => Script::Tolong_Siki,
-            160 => Script::Toto,
-            161 => Script::Tulu_Tigalari,
-            162 => Script::Ugaritic,
-            163 => Script::Vai,
-            164 => Script::Vithkuqi,
-            165 => Script::Warang_Citi,
-            166 => Script::Wancho,
-            167 => Script::Old_Persian,
-            168 => Script::Cuneiform,
-            169 => Script::Yezidi,
-            170 => Script::Yi,
-            171 => Script::Zanabazar_Square,
+            61 => Script::Jurchen,
+            62 => Script::Kayah_Li,
+            63 => Script::Katakana,
+            64 => Script::Kawi,
+            65 => Script::Kharoshthi,
+            66 => Script::Khmer,
+            67 => Script::Khojki,
+            68 => Script::Khitan_Small_Script,
+            69 => Script::Kannada,
+            70 => Script::Kirat_Rai,
+            71 => Script::Kaithi,
+            72 => Script::Tai_Tham,
+            73 => Script::Lao,
+            74 => Script::Latin,
+            75 => Script::Lepcha,
+            76 => Script::Limbu,
+            77 => Script::Linear_A,
+            78 => Script::Linear_B,
+            79 => Script::Lisu,
+            80 => Script::Lycian,
+            81 => Script::Lydian,
+            82 => Script::Mahajani,
+            83 => Script::Makasar,
+            84 => Script::Mandaic,
+            85 => Script::Manichaean,
+            86 => Script::Marchen,
+            87 => Script::Medefaidrin,
+            88 => Script::Mende_Kikakui,
+            89 => Script::Meroitic_Cursive,
+            90 => Script::Meroitic_Hieroglyphs,
+            91 => Script::Malayalam,
+            92 => Script::Modi,
+            93 => Script::Mongolian,
+            94 => Script::Mro,
+            95 => Script::Meetei_Mayek,
+            96 => Script::Multani,
+            97 => Script::Myanmar,
+            98 => Script::Nag_Mundari,
+            99 => Script::Nandinagari,
+            100 => Script::Old_North_Arabian,
+            101 => Script::Nabataean,
+            102 => Script::Newa,
+            103 => Script::Nko,
+            104 => Script::Nushu,
+            105 => Script::Ogham,
+            106 => Script::Ol_Chiki,
+            107 => Script::Ol_Onal,
+            108 => Script::Old_Turkic,
+            109 => Script::Oriya,
+            110 => Script::Osage,
+            111 => Script::Osmanya,
+            112 => Script::Old_Uyghur,
+            113 => Script::Palmyrene,
+            114 => Script::Pau_Cin_Hau,
+            115 => Script::Proto_Cuneiform,
+            116 => Script::Old_Permic,
+            117 => Script::Phags_Pa,
+            118 => Script::Inscriptional_Pahlavi,
+            119 => Script::Psalter_Pahlavi,
+            120 => Script::Phoenician,
+            121 => Script::Miao,
+            122 => Script::Inscriptional_Parthian,
+            123 => Script::Rejang,
+            124 => Script::Hanifi_Rohingya,
+            125 => Script::Runic,
+            126 => Script::Samaritan,
+            127 => Script::Old_South_Arabian,
+            128 => Script::Saurashtra,
+            129 => Script::Seal,
+            130 => Script::SignWriting,
+            131 => Script::Shavian,
+            132 => Script::Sharada,
+            133 => Script::Siddham,
+            134 => Script::Sidetic,
+            135 => Script::Khudawadi,
+            136 => Script::Sinhala,
+            137 => Script::Sogdian,
+            138 => Script::Old_Sogdian,
+            139 => Script::Sora_Sompeng,
+            140 => Script::Soyombo,
+            141 => Script::Sundanese,
+            142 => Script::Sunuwar,
+            143 => Script::Syloti_Nagri,
+            144 => Script::Syriac,
+            145 => Script::Tagbanwa,
+            146 => Script::Takri,
+            147 => Script::Tai_Le,
+            148 => Script::New_Tai_Lue,
+            149 => Script::Tamil,
+            150 => Script::Tangut,
+            151 => Script::Tai_Viet,
+            152 => Script::Tai_Yo,
+            153 => Script::Telugu,
+            154 => Script::Tifinagh,
+            155 => Script::Tagalog,
+            156 => Script::Thaana,
+            157 => Script::Thai,
+            158 => Script::Tibetan,
+            159 => Script::Tirhuta,
+            160 => Script::Tangsa,
+            161 => Script::Todhri,
+            162 => Script::Tolong_Siki,
+            163 => Script::Toto,
+            164 => Script::Tulu_Tigalari,
+            165 => Script::Ugaritic,
+            166 => Script::Vai,
+            167 => Script::Vithkuqi,
+            168 => Script::Warang_Citi,
+            169 => Script::Wancho,
+            170 => Script::Old_Persian,
+            171 => Script::Cuneiform,
+            172 => Script::Yezidi,
+            173 => Script::Yi,
+            174 => Script::Zanabazar_Square,
             _ => unreachable!(),
         }
     }
@@ -2264,553 +2299,555 @@ pub fn get_script_extension(c: char) -> Option<ScriptExtension> {
          Script::Cyrillic), ('\u{482}', '\u{482}',  Script::Cyrillic), ('\u{483}', '\u{484}',
          Script::Cyrillic), ('\u{485}', '\u{486}',  Script::Inherited), ('\u{487}', '\u{487}',
          Script::Cyrillic), ('\u{488}', '\u{489}',  Script::Cyrillic), ('\u{48a}', '\u{52f}',
-         Script::Cyrillic), ('\u{531}', '\u{556}',  Script::Armenian), ('\u{559}', '\u{559}',
+         Script::Cyrillic), ('\u{531}', '\u{556}',  Script::Armenian), ('\u{558}', '\u{559}',
          Script::Armenian), ('\u{55a}', '\u{55f}',  Script::Armenian), ('\u{560}', '\u{588}',
          Script::Armenian), ('\u{589}', '\u{589}',  Script::Armenian), ('\u{58a}', '\u{58a}',
-         Script::Armenian), ('\u{58d}', '\u{58e}',  Script::Armenian), ('\u{58f}', '\u{58f}',
-         Script::Armenian), ('\u{591}', '\u{5bd}',  Script::Hebrew), ('\u{5be}', '\u{5be}',
-         Script::Hebrew), ('\u{5bf}', '\u{5bf}',  Script::Hebrew), ('\u{5c0}', '\u{5c0}',
-         Script::Hebrew), ('\u{5c1}', '\u{5c2}',  Script::Hebrew), ('\u{5c3}', '\u{5c3}',
-         Script::Hebrew), ('\u{5c4}', '\u{5c5}',  Script::Hebrew), ('\u{5c6}', '\u{5c6}',
-         Script::Hebrew), ('\u{5c7}', '\u{5c7}',  Script::Hebrew), ('\u{5d0}', '\u{5ea}',
-         Script::Hebrew), ('\u{5ef}', '\u{5f2}',  Script::Hebrew), ('\u{5f3}', '\u{5f4}',
-         Script::Hebrew), ('\u{600}', '\u{604}',  Script::Arabic), ('\u{605}', '\u{605}',
-         Script::Common), ('\u{606}', '\u{608}',  Script::Arabic), ('\u{609}', '\u{60a}',
-         Script::Arabic), ('\u{60b}', '\u{60b}',  Script::Arabic), ('\u{60c}', '\u{60c}',
-         Script::Common), ('\u{60d}', '\u{60d}',  Script::Arabic), ('\u{60e}', '\u{60f}',
-         Script::Arabic), ('\u{610}', '\u{61a}',  Script::Arabic), ('\u{61b}', '\u{61b}',
-         Script::Common), ('\u{61c}', '\u{61c}',  Script::Arabic), ('\u{61d}', '\u{61e}',
-         Script::Arabic), ('\u{61f}', '\u{61f}',  Script::Common), ('\u{620}', '\u{63f}',
-         Script::Arabic), ('\u{640}', '\u{640}',  Script::Common), ('\u{641}', '\u{64a}',
-         Script::Arabic), ('\u{64b}', '\u{655}',  Script::Inherited), ('\u{656}', '\u{65f}',
-         Script::Arabic), ('\u{660}', '\u{669}',  Script::Arabic), ('\u{66a}', '\u{66d}',
-         Script::Arabic), ('\u{66e}', '\u{66f}',  Script::Arabic), ('\u{670}', '\u{670}',
-         Script::Inherited), ('\u{671}', '\u{6d3}',  Script::Arabic), ('\u{6d4}', '\u{6d4}',
-         Script::Arabic), ('\u{6d5}', '\u{6d5}',  Script::Arabic), ('\u{6d6}', '\u{6dc}',
-         Script::Arabic), ('\u{6dd}', '\u{6dd}',  Script::Common), ('\u{6de}', '\u{6de}',
-         Script::Arabic), ('\u{6df}', '\u{6e4}',  Script::Arabic), ('\u{6e5}', '\u{6e6}',
-         Script::Arabic), ('\u{6e7}', '\u{6e8}',  Script::Arabic), ('\u{6e9}', '\u{6e9}',
-         Script::Arabic), ('\u{6ea}', '\u{6ed}',  Script::Arabic), ('\u{6ee}', '\u{6ef}',
-         Script::Arabic), ('\u{6f0}', '\u{6f9}',  Script::Arabic), ('\u{6fa}', '\u{6fc}',
-         Script::Arabic), ('\u{6fd}', '\u{6fe}',  Script::Arabic), ('\u{6ff}', '\u{6ff}',
-         Script::Arabic), ('\u{700}', '\u{70d}',  Script::Syriac), ('\u{70f}', '\u{70f}',
-         Script::Syriac), ('\u{710}', '\u{710}',  Script::Syriac), ('\u{711}', '\u{711}',
-         Script::Syriac), ('\u{712}', '\u{72f}',  Script::Syriac), ('\u{730}', '\u{74a}',
-         Script::Syriac), ('\u{74d}', '\u{74f}',  Script::Syriac), ('\u{750}', '\u{77f}',
-         Script::Arabic), ('\u{780}', '\u{7a5}',  Script::Thaana), ('\u{7a6}', '\u{7b0}',
-         Script::Thaana), ('\u{7b1}', '\u{7b1}',  Script::Thaana), ('\u{7c0}', '\u{7c9}',
-         Script::Nko), ('\u{7ca}', '\u{7ea}',  Script::Nko), ('\u{7eb}', '\u{7f3}',  Script::Nko),
-        ('\u{7f4}', '\u{7f5}',  Script::Nko), ('\u{7f6}', '\u{7f6}',  Script::Nko), ('\u{7f7}',
-        '\u{7f9}',  Script::Nko), ('\u{7fa}', '\u{7fa}',  Script::Nko), ('\u{7fd}', '\u{7fd}',
-         Script::Nko), ('\u{7fe}', '\u{7ff}',  Script::Nko), ('\u{800}', '\u{815}',
-         Script::Samaritan), ('\u{816}', '\u{819}',  Script::Samaritan), ('\u{81a}', '\u{81a}',
-         Script::Samaritan), ('\u{81b}', '\u{823}',  Script::Samaritan), ('\u{824}', '\u{824}',
-         Script::Samaritan), ('\u{825}', '\u{827}',  Script::Samaritan), ('\u{828}', '\u{828}',
-         Script::Samaritan), ('\u{829}', '\u{82d}',  Script::Samaritan), ('\u{830}', '\u{83e}',
-         Script::Samaritan), ('\u{840}', '\u{858}',  Script::Mandaic), ('\u{859}', '\u{85b}',
-         Script::Mandaic), ('\u{85e}', '\u{85e}',  Script::Mandaic), ('\u{860}', '\u{86a}',
-         Script::Syriac), ('\u{870}', '\u{887}',  Script::Arabic), ('\u{888}', '\u{888}',
-         Script::Arabic), ('\u{889}', '\u{88f}',  Script::Arabic), ('\u{890}', '\u{891}',
-         Script::Arabic), ('\u{897}', '\u{89f}',  Script::Arabic), ('\u{8a0}', '\u{8c8}',
-         Script::Arabic), ('\u{8c9}', '\u{8c9}',  Script::Arabic), ('\u{8ca}', '\u{8e1}',
-         Script::Arabic), ('\u{8e2}', '\u{8e2}',  Script::Common), ('\u{8e3}', '\u{8ff}',
-         Script::Arabic), ('\u{900}', '\u{902}',  Script::Devanagari), ('\u{903}', '\u{903}',
-         Script::Devanagari), ('\u{904}', '\u{939}',  Script::Devanagari), ('\u{93a}', '\u{93a}',
-         Script::Devanagari), ('\u{93b}', '\u{93b}',  Script::Devanagari), ('\u{93c}', '\u{93c}',
-         Script::Devanagari), ('\u{93d}', '\u{93d}',  Script::Devanagari), ('\u{93e}', '\u{940}',
-         Script::Devanagari), ('\u{941}', '\u{948}',  Script::Devanagari), ('\u{949}', '\u{94c}',
-         Script::Devanagari), ('\u{94d}', '\u{94d}',  Script::Devanagari), ('\u{94e}', '\u{94f}',
-         Script::Devanagari), ('\u{950}', '\u{950}',  Script::Devanagari), ('\u{951}', '\u{954}',
-         Script::Inherited), ('\u{955}', '\u{957}',  Script::Devanagari), ('\u{958}', '\u{961}',
-         Script::Devanagari), ('\u{962}', '\u{963}',  Script::Devanagari), ('\u{964}', '\u{965}',
-         Script::Common), ('\u{966}', '\u{96f}',  Script::Devanagari), ('\u{970}', '\u{970}',
-         Script::Devanagari), ('\u{971}', '\u{971}',  Script::Devanagari), ('\u{972}', '\u{97f}',
-         Script::Devanagari), ('\u{980}', '\u{980}',  Script::Bengali), ('\u{981}', '\u{981}',
-         Script::Bengali), ('\u{982}', '\u{983}',  Script::Bengali), ('\u{985}', '\u{98c}',
-         Script::Bengali), ('\u{98f}', '\u{990}',  Script::Bengali), ('\u{993}', '\u{9a8}',
-         Script::Bengali), ('\u{9aa}', '\u{9b0}',  Script::Bengali), ('\u{9b2}', '\u{9b2}',
-         Script::Bengali), ('\u{9b6}', '\u{9b9}',  Script::Bengali), ('\u{9bc}', '\u{9bc}',
-         Script::Bengali), ('\u{9bd}', '\u{9bd}',  Script::Bengali), ('\u{9be}', '\u{9c0}',
-         Script::Bengali), ('\u{9c1}', '\u{9c4}',  Script::Bengali), ('\u{9c7}', '\u{9c8}',
-         Script::Bengali), ('\u{9cb}', '\u{9cc}',  Script::Bengali), ('\u{9cd}', '\u{9cd}',
-         Script::Bengali), ('\u{9ce}', '\u{9ce}',  Script::Bengali), ('\u{9d7}', '\u{9d7}',
-         Script::Bengali), ('\u{9dc}', '\u{9dd}',  Script::Bengali), ('\u{9df}', '\u{9e1}',
-         Script::Bengali), ('\u{9e2}', '\u{9e3}',  Script::Bengali), ('\u{9e6}', '\u{9ef}',
-         Script::Bengali), ('\u{9f0}', '\u{9f1}',  Script::Bengali), ('\u{9f2}', '\u{9f3}',
-         Script::Bengali), ('\u{9f4}', '\u{9f9}',  Script::Bengali), ('\u{9fa}', '\u{9fa}',
-         Script::Bengali), ('\u{9fb}', '\u{9fb}',  Script::Bengali), ('\u{9fc}', '\u{9fc}',
-         Script::Bengali), ('\u{9fd}', '\u{9fd}',  Script::Bengali), ('\u{9fe}', '\u{9fe}',
-         Script::Bengali), ('\u{a01}', '\u{a02}',  Script::Gurmukhi), ('\u{a03}', '\u{a03}',
-         Script::Gurmukhi), ('\u{a05}', '\u{a0a}',  Script::Gurmukhi), ('\u{a0f}', '\u{a10}',
-         Script::Gurmukhi), ('\u{a13}', '\u{a28}',  Script::Gurmukhi), ('\u{a2a}', '\u{a30}',
-         Script::Gurmukhi), ('\u{a32}', '\u{a33}',  Script::Gurmukhi), ('\u{a35}', '\u{a36}',
-         Script::Gurmukhi), ('\u{a38}', '\u{a39}',  Script::Gurmukhi), ('\u{a3c}', '\u{a3c}',
-         Script::Gurmukhi), ('\u{a3e}', '\u{a40}',  Script::Gurmukhi), ('\u{a41}', '\u{a42}',
-         Script::Gurmukhi), ('\u{a47}', '\u{a48}',  Script::Gurmukhi), ('\u{a4b}', '\u{a4d}',
-         Script::Gurmukhi), ('\u{a51}', '\u{a51}',  Script::Gurmukhi), ('\u{a59}', '\u{a5c}',
-         Script::Gurmukhi), ('\u{a5e}', '\u{a5e}',  Script::Gurmukhi), ('\u{a66}', '\u{a6f}',
-         Script::Gurmukhi), ('\u{a70}', '\u{a71}',  Script::Gurmukhi), ('\u{a72}', '\u{a74}',
-         Script::Gurmukhi), ('\u{a75}', '\u{a75}',  Script::Gurmukhi), ('\u{a76}', '\u{a76}',
-         Script::Gurmukhi), ('\u{a81}', '\u{a82}',  Script::Gujarati), ('\u{a83}', '\u{a83}',
-         Script::Gujarati), ('\u{a85}', '\u{a8d}',  Script::Gujarati), ('\u{a8f}', '\u{a91}',
-         Script::Gujarati), ('\u{a93}', '\u{aa8}',  Script::Gujarati), ('\u{aaa}', '\u{ab0}',
-         Script::Gujarati), ('\u{ab2}', '\u{ab3}',  Script::Gujarati), ('\u{ab5}', '\u{ab9}',
-         Script::Gujarati), ('\u{abc}', '\u{abc}',  Script::Gujarati), ('\u{abd}', '\u{abd}',
-         Script::Gujarati), ('\u{abe}', '\u{ac0}',  Script::Gujarati), ('\u{ac1}', '\u{ac5}',
-         Script::Gujarati), ('\u{ac7}', '\u{ac8}',  Script::Gujarati), ('\u{ac9}', '\u{ac9}',
-         Script::Gujarati), ('\u{acb}', '\u{acc}',  Script::Gujarati), ('\u{acd}', '\u{acd}',
-         Script::Gujarati), ('\u{ad0}', '\u{ad0}',  Script::Gujarati), ('\u{ae0}', '\u{ae1}',
-         Script::Gujarati), ('\u{ae2}', '\u{ae3}',  Script::Gujarati), ('\u{ae6}', '\u{aef}',
-         Script::Gujarati), ('\u{af0}', '\u{af0}',  Script::Gujarati), ('\u{af1}', '\u{af1}',
-         Script::Gujarati), ('\u{af9}', '\u{af9}',  Script::Gujarati), ('\u{afa}', '\u{aff}',
-         Script::Gujarati), ('\u{b01}', '\u{b01}',  Script::Oriya), ('\u{b02}', '\u{b03}',
-         Script::Oriya), ('\u{b05}', '\u{b0c}',  Script::Oriya), ('\u{b0f}', '\u{b10}',
-         Script::Oriya), ('\u{b13}', '\u{b28}',  Script::Oriya), ('\u{b2a}', '\u{b30}',
-         Script::Oriya), ('\u{b32}', '\u{b33}',  Script::Oriya), ('\u{b35}', '\u{b39}',
-         Script::Oriya), ('\u{b3c}', '\u{b3c}',  Script::Oriya), ('\u{b3d}', '\u{b3d}',
-         Script::Oriya), ('\u{b3e}', '\u{b3e}',  Script::Oriya), ('\u{b3f}', '\u{b3f}',
-         Script::Oriya), ('\u{b40}', '\u{b40}',  Script::Oriya), ('\u{b41}', '\u{b44}',
-         Script::Oriya), ('\u{b47}', '\u{b48}',  Script::Oriya), ('\u{b4b}', '\u{b4c}',
-         Script::Oriya), ('\u{b4d}', '\u{b4d}',  Script::Oriya), ('\u{b55}', '\u{b56}',
-         Script::Oriya), ('\u{b57}', '\u{b57}',  Script::Oriya), ('\u{b5c}', '\u{b5d}',
-         Script::Oriya), ('\u{b5f}', '\u{b61}',  Script::Oriya), ('\u{b62}', '\u{b63}',
-         Script::Oriya), ('\u{b66}', '\u{b6f}',  Script::Oriya), ('\u{b70}', '\u{b70}',
-         Script::Oriya), ('\u{b71}', '\u{b71}',  Script::Oriya), ('\u{b72}', '\u{b77}',
-         Script::Oriya), ('\u{b82}', '\u{b82}',  Script::Tamil), ('\u{b83}', '\u{b83}',
-         Script::Tamil), ('\u{b85}', '\u{b8a}',  Script::Tamil), ('\u{b8e}', '\u{b90}',
-         Script::Tamil), ('\u{b92}', '\u{b95}',  Script::Tamil), ('\u{b99}', '\u{b9a}',
-         Script::Tamil), ('\u{b9c}', '\u{b9c}',  Script::Tamil), ('\u{b9e}', '\u{b9f}',
-         Script::Tamil), ('\u{ba3}', '\u{ba4}',  Script::Tamil), ('\u{ba8}', '\u{baa}',
-         Script::Tamil), ('\u{bae}', '\u{bb9}',  Script::Tamil), ('\u{bbe}', '\u{bbf}',
-         Script::Tamil), ('\u{bc0}', '\u{bc0}',  Script::Tamil), ('\u{bc1}', '\u{bc2}',
-         Script::Tamil), ('\u{bc6}', '\u{bc8}',  Script::Tamil), ('\u{bca}', '\u{bcc}',
-         Script::Tamil), ('\u{bcd}', '\u{bcd}',  Script::Tamil), ('\u{bd0}', '\u{bd0}',
-         Script::Tamil), ('\u{bd7}', '\u{bd7}',  Script::Tamil), ('\u{be6}', '\u{bef}',
-         Script::Tamil), ('\u{bf0}', '\u{bf2}',  Script::Tamil), ('\u{bf3}', '\u{bf8}',
-         Script::Tamil), ('\u{bf9}', '\u{bf9}',  Script::Tamil), ('\u{bfa}', '\u{bfa}',
-         Script::Tamil), ('\u{c00}', '\u{c00}',  Script::Telugu), ('\u{c01}', '\u{c03}',
-         Script::Telugu), ('\u{c04}', '\u{c04}',  Script::Telugu), ('\u{c05}', '\u{c0c}',
-         Script::Telugu), ('\u{c0e}', '\u{c10}',  Script::Telugu), ('\u{c12}', '\u{c28}',
-         Script::Telugu), ('\u{c2a}', '\u{c39}',  Script::Telugu), ('\u{c3c}', '\u{c3c}',
-         Script::Telugu), ('\u{c3d}', '\u{c3d}',  Script::Telugu), ('\u{c3e}', '\u{c40}',
-         Script::Telugu), ('\u{c41}', '\u{c44}',  Script::Telugu), ('\u{c46}', '\u{c48}',
-         Script::Telugu), ('\u{c4a}', '\u{c4d}',  Script::Telugu), ('\u{c55}', '\u{c56}',
-         Script::Telugu), ('\u{c58}', '\u{c5a}',  Script::Telugu), ('\u{c5c}', '\u{c5d}',
-         Script::Telugu), ('\u{c60}', '\u{c61}',  Script::Telugu), ('\u{c62}', '\u{c63}',
-         Script::Telugu), ('\u{c66}', '\u{c6f}',  Script::Telugu), ('\u{c77}', '\u{c77}',
-         Script::Telugu), ('\u{c78}', '\u{c7e}',  Script::Telugu), ('\u{c7f}', '\u{c7f}',
-         Script::Telugu), ('\u{c80}', '\u{c80}',  Script::Kannada), ('\u{c81}', '\u{c81}',
-         Script::Kannada), ('\u{c82}', '\u{c83}',  Script::Kannada), ('\u{c84}', '\u{c84}',
-         Script::Kannada), ('\u{c85}', '\u{c8c}',  Script::Kannada), ('\u{c8e}', '\u{c90}',
-         Script::Kannada), ('\u{c92}', '\u{ca8}',  Script::Kannada), ('\u{caa}', '\u{cb3}',
-         Script::Kannada), ('\u{cb5}', '\u{cb9}',  Script::Kannada), ('\u{cbc}', '\u{cbc}',
-         Script::Kannada), ('\u{cbd}', '\u{cbd}',  Script::Kannada), ('\u{cbe}', '\u{cbe}',
-         Script::Kannada), ('\u{cbf}', '\u{cbf}',  Script::Kannada), ('\u{cc0}', '\u{cc4}',
-         Script::Kannada), ('\u{cc6}', '\u{cc6}',  Script::Kannada), ('\u{cc7}', '\u{cc8}',
-         Script::Kannada), ('\u{cca}', '\u{ccb}',  Script::Kannada), ('\u{ccc}', '\u{ccd}',
-         Script::Kannada), ('\u{cd5}', '\u{cd6}',  Script::Kannada), ('\u{cdc}', '\u{cde}',
-         Script::Kannada), ('\u{ce0}', '\u{ce1}',  Script::Kannada), ('\u{ce2}', '\u{ce3}',
-         Script::Kannada), ('\u{ce6}', '\u{cef}',  Script::Kannada), ('\u{cf1}', '\u{cf2}',
-         Script::Kannada), ('\u{cf3}', '\u{cf3}',  Script::Kannada), ('\u{d00}', '\u{d01}',
-         Script::Malayalam), ('\u{d02}', '\u{d03}',  Script::Malayalam), ('\u{d04}', '\u{d0c}',
-         Script::Malayalam), ('\u{d0e}', '\u{d10}',  Script::Malayalam), ('\u{d12}', '\u{d3a}',
-         Script::Malayalam), ('\u{d3b}', '\u{d3c}',  Script::Malayalam), ('\u{d3d}', '\u{d3d}',
-         Script::Malayalam), ('\u{d3e}', '\u{d40}',  Script::Malayalam), ('\u{d41}', '\u{d44}',
-         Script::Malayalam), ('\u{d46}', '\u{d48}',  Script::Malayalam), ('\u{d4a}', '\u{d4c}',
-         Script::Malayalam), ('\u{d4d}', '\u{d4d}',  Script::Malayalam), ('\u{d4e}', '\u{d4e}',
-         Script::Malayalam), ('\u{d4f}', '\u{d4f}',  Script::Malayalam), ('\u{d54}', '\u{d56}',
-         Script::Malayalam), ('\u{d57}', '\u{d57}',  Script::Malayalam), ('\u{d58}', '\u{d5e}',
-         Script::Malayalam), ('\u{d5f}', '\u{d61}',  Script::Malayalam), ('\u{d62}', '\u{d63}',
-         Script::Malayalam), ('\u{d66}', '\u{d6f}',  Script::Malayalam), ('\u{d70}', '\u{d78}',
-         Script::Malayalam), ('\u{d79}', '\u{d79}',  Script::Malayalam), ('\u{d7a}', '\u{d7f}',
-         Script::Malayalam), ('\u{d81}', '\u{d81}',  Script::Sinhala), ('\u{d82}', '\u{d83}',
-         Script::Sinhala), ('\u{d85}', '\u{d96}',  Script::Sinhala), ('\u{d9a}', '\u{db1}',
-         Script::Sinhala), ('\u{db3}', '\u{dbb}',  Script::Sinhala), ('\u{dbd}', '\u{dbd}',
-         Script::Sinhala), ('\u{dc0}', '\u{dc6}',  Script::Sinhala), ('\u{dca}', '\u{dca}',
-         Script::Sinhala), ('\u{dcf}', '\u{dd1}',  Script::Sinhala), ('\u{dd2}', '\u{dd4}',
-         Script::Sinhala), ('\u{dd6}', '\u{dd6}',  Script::Sinhala), ('\u{dd8}', '\u{ddf}',
-         Script::Sinhala), ('\u{de6}', '\u{def}',  Script::Sinhala), ('\u{df2}', '\u{df3}',
-         Script::Sinhala), ('\u{df4}', '\u{df4}',  Script::Sinhala), ('\u{e01}', '\u{e30}',
-         Script::Thai), ('\u{e31}', '\u{e31}',  Script::Thai), ('\u{e32}', '\u{e33}',
-         Script::Thai), ('\u{e34}', '\u{e3a}',  Script::Thai), ('\u{e3f}', '\u{e3f}',
-         Script::Common), ('\u{e40}', '\u{e45}',  Script::Thai), ('\u{e46}', '\u{e46}',
-         Script::Thai), ('\u{e47}', '\u{e4e}',  Script::Thai), ('\u{e4f}', '\u{e4f}',
-         Script::Thai), ('\u{e50}', '\u{e59}',  Script::Thai), ('\u{e5a}', '\u{e5b}',
-         Script::Thai), ('\u{e81}', '\u{e82}',  Script::Lao), ('\u{e84}', '\u{e84}',  Script::Lao),
-        ('\u{e86}', '\u{e8a}',  Script::Lao), ('\u{e8c}', '\u{ea3}',  Script::Lao), ('\u{ea5}',
-        '\u{ea5}',  Script::Lao), ('\u{ea7}', '\u{eb0}',  Script::Lao), ('\u{eb1}', '\u{eb1}',
-         Script::Lao), ('\u{eb2}', '\u{eb3}',  Script::Lao), ('\u{eb4}', '\u{ebc}',  Script::Lao),
-        ('\u{ebd}', '\u{ebd}',  Script::Lao), ('\u{ec0}', '\u{ec4}',  Script::Lao), ('\u{ec6}',
-        '\u{ec6}',  Script::Lao), ('\u{ec8}', '\u{ece}',  Script::Lao), ('\u{ed0}', '\u{ed9}',
-         Script::Lao), ('\u{edc}', '\u{edf}',  Script::Lao), ('\u{f00}', '\u{f00}',
-         Script::Tibetan), ('\u{f01}', '\u{f03}',  Script::Tibetan), ('\u{f04}', '\u{f12}',
-         Script::Tibetan), ('\u{f13}', '\u{f13}',  Script::Tibetan), ('\u{f14}', '\u{f14}',
-         Script::Tibetan), ('\u{f15}', '\u{f17}',  Script::Tibetan), ('\u{f18}', '\u{f19}',
-         Script::Tibetan), ('\u{f1a}', '\u{f1f}',  Script::Tibetan), ('\u{f20}', '\u{f29}',
-         Script::Tibetan), ('\u{f2a}', '\u{f33}',  Script::Tibetan), ('\u{f34}', '\u{f34}',
-         Script::Tibetan), ('\u{f35}', '\u{f35}',  Script::Tibetan), ('\u{f36}', '\u{f36}',
-         Script::Tibetan), ('\u{f37}', '\u{f37}',  Script::Tibetan), ('\u{f38}', '\u{f38}',
-         Script::Tibetan), ('\u{f39}', '\u{f39}',  Script::Tibetan), ('\u{f3a}', '\u{f3a}',
-         Script::Tibetan), ('\u{f3b}', '\u{f3b}',  Script::Tibetan), ('\u{f3c}', '\u{f3c}',
-         Script::Tibetan), ('\u{f3d}', '\u{f3d}',  Script::Tibetan), ('\u{f3e}', '\u{f3f}',
-         Script::Tibetan), ('\u{f40}', '\u{f47}',  Script::Tibetan), ('\u{f49}', '\u{f6c}',
-         Script::Tibetan), ('\u{f71}', '\u{f7e}',  Script::Tibetan), ('\u{f7f}', '\u{f7f}',
-         Script::Tibetan), ('\u{f80}', '\u{f84}',  Script::Tibetan), ('\u{f85}', '\u{f85}',
-         Script::Tibetan), ('\u{f86}', '\u{f87}',  Script::Tibetan), ('\u{f88}', '\u{f8c}',
-         Script::Tibetan), ('\u{f8d}', '\u{f97}',  Script::Tibetan), ('\u{f99}', '\u{fbc}',
-         Script::Tibetan), ('\u{fbe}', '\u{fc5}',  Script::Tibetan), ('\u{fc6}', '\u{fc6}',
-         Script::Tibetan), ('\u{fc7}', '\u{fcc}',  Script::Tibetan), ('\u{fce}', '\u{fcf}',
-         Script::Tibetan), ('\u{fd0}', '\u{fd4}',  Script::Tibetan), ('\u{fd5}', '\u{fd8}',
-         Script::Common), ('\u{fd9}', '\u{fda}',  Script::Tibetan), ('\u{1000}', '\u{102a}',
-         Script::Myanmar), ('\u{102b}', '\u{102c}',  Script::Myanmar), ('\u{102d}', '\u{1030}',
-         Script::Myanmar), ('\u{1031}', '\u{1031}',  Script::Myanmar), ('\u{1032}', '\u{1037}',
-         Script::Myanmar), ('\u{1038}', '\u{1038}',  Script::Myanmar), ('\u{1039}', '\u{103a}',
-         Script::Myanmar), ('\u{103b}', '\u{103c}',  Script::Myanmar), ('\u{103d}', '\u{103e}',
-         Script::Myanmar), ('\u{103f}', '\u{103f}',  Script::Myanmar), ('\u{1040}', '\u{1049}',
-         Script::Myanmar), ('\u{104a}', '\u{104f}',  Script::Myanmar), ('\u{1050}', '\u{1055}',
-         Script::Myanmar), ('\u{1056}', '\u{1057}',  Script::Myanmar), ('\u{1058}', '\u{1059}',
-         Script::Myanmar), ('\u{105a}', '\u{105d}',  Script::Myanmar), ('\u{105e}', '\u{1060}',
-         Script::Myanmar), ('\u{1061}', '\u{1061}',  Script::Myanmar), ('\u{1062}', '\u{1064}',
-         Script::Myanmar), ('\u{1065}', '\u{1066}',  Script::Myanmar), ('\u{1067}', '\u{106d}',
-         Script::Myanmar), ('\u{106e}', '\u{1070}',  Script::Myanmar), ('\u{1071}', '\u{1074}',
-         Script::Myanmar), ('\u{1075}', '\u{1081}',  Script::Myanmar), ('\u{1082}', '\u{1082}',
-         Script::Myanmar), ('\u{1083}', '\u{1084}',  Script::Myanmar), ('\u{1085}', '\u{1086}',
-         Script::Myanmar), ('\u{1087}', '\u{108c}',  Script::Myanmar), ('\u{108d}', '\u{108d}',
-         Script::Myanmar), ('\u{108e}', '\u{108e}',  Script::Myanmar), ('\u{108f}', '\u{108f}',
-         Script::Myanmar), ('\u{1090}', '\u{1099}',  Script::Myanmar), ('\u{109a}', '\u{109c}',
-         Script::Myanmar), ('\u{109d}', '\u{109d}',  Script::Myanmar), ('\u{109e}', '\u{109f}',
-         Script::Myanmar), ('\u{10a0}', '\u{10c5}',  Script::Georgian), ('\u{10c7}', '\u{10c7}',
-         Script::Georgian), ('\u{10cd}', '\u{10cd}',  Script::Georgian), ('\u{10d0}', '\u{10fa}',
-         Script::Georgian), ('\u{10fb}', '\u{10fb}',  Script::Common), ('\u{10fc}', '\u{10fc}',
-         Script::Georgian), ('\u{10fd}', '\u{10ff}',  Script::Georgian), ('\u{1100}', '\u{11ff}',
-         Script::Hangul), ('\u{1200}', '\u{1248}',  Script::Ethiopic), ('\u{124a}', '\u{124d}',
-         Script::Ethiopic), ('\u{1250}', '\u{1256}',  Script::Ethiopic), ('\u{1258}', '\u{1258}',
-         Script::Ethiopic), ('\u{125a}', '\u{125d}',  Script::Ethiopic), ('\u{1260}', '\u{1288}',
-         Script::Ethiopic), ('\u{128a}', '\u{128d}',  Script::Ethiopic), ('\u{1290}', '\u{12b0}',
-         Script::Ethiopic), ('\u{12b2}', '\u{12b5}',  Script::Ethiopic), ('\u{12b8}', '\u{12be}',
-         Script::Ethiopic), ('\u{12c0}', '\u{12c0}',  Script::Ethiopic), ('\u{12c2}', '\u{12c5}',
-         Script::Ethiopic), ('\u{12c8}', '\u{12d6}',  Script::Ethiopic), ('\u{12d8}', '\u{1310}',
-         Script::Ethiopic), ('\u{1312}', '\u{1315}',  Script::Ethiopic), ('\u{1318}', '\u{135a}',
-         Script::Ethiopic), ('\u{135d}', '\u{135f}',  Script::Ethiopic), ('\u{1360}', '\u{1368}',
-         Script::Ethiopic), ('\u{1369}', '\u{137c}',  Script::Ethiopic), ('\u{1380}', '\u{138f}',
-         Script::Ethiopic), ('\u{1390}', '\u{1399}',  Script::Ethiopic), ('\u{13a0}', '\u{13f5}',
-         Script::Cherokee), ('\u{13f8}', '\u{13fd}',  Script::Cherokee), ('\u{1400}', '\u{1400}',
-         Script::Canadian_Aboriginal), ('\u{1401}', '\u{166c}',  Script::Canadian_Aboriginal),
-        ('\u{166d}', '\u{166d}',  Script::Canadian_Aboriginal), ('\u{166e}', '\u{166e}',
-         Script::Canadian_Aboriginal), ('\u{166f}', '\u{167f}',  Script::Canadian_Aboriginal),
-        ('\u{1680}', '\u{1680}',  Script::Ogham), ('\u{1681}', '\u{169a}',  Script::Ogham),
-        ('\u{169b}', '\u{169b}',  Script::Ogham), ('\u{169c}', '\u{169c}',  Script::Ogham),
-        ('\u{16a0}', '\u{16ea}',  Script::Runic), ('\u{16eb}', '\u{16ed}',  Script::Common),
-        ('\u{16ee}', '\u{16f0}',  Script::Runic), ('\u{16f1}', '\u{16f8}',  Script::Runic),
-        ('\u{1700}', '\u{1711}',  Script::Tagalog), ('\u{1712}', '\u{1714}',  Script::Tagalog),
-        ('\u{1715}', '\u{1715}',  Script::Tagalog), ('\u{171f}', '\u{171f}',  Script::Tagalog),
-        ('\u{1720}', '\u{1731}',  Script::Hanunoo), ('\u{1732}', '\u{1733}',  Script::Hanunoo),
-        ('\u{1734}', '\u{1734}',  Script::Hanunoo), ('\u{1735}', '\u{1736}',  Script::Common),
-        ('\u{1740}', '\u{1751}',  Script::Buhid), ('\u{1752}', '\u{1753}',  Script::Buhid),
-        ('\u{1760}', '\u{176c}',  Script::Tagbanwa), ('\u{176e}', '\u{1770}',  Script::Tagbanwa),
-        ('\u{1772}', '\u{1773}',  Script::Tagbanwa), ('\u{1780}', '\u{17b3}',  Script::Khmer),
-        ('\u{17b4}', '\u{17b5}',  Script::Khmer), ('\u{17b6}', '\u{17b6}',  Script::Khmer),
-        ('\u{17b7}', '\u{17bd}',  Script::Khmer), ('\u{17be}', '\u{17c5}',  Script::Khmer),
-        ('\u{17c6}', '\u{17c6}',  Script::Khmer), ('\u{17c7}', '\u{17c8}',  Script::Khmer),
-        ('\u{17c9}', '\u{17d3}',  Script::Khmer), ('\u{17d4}', '\u{17d6}',  Script::Khmer),
-        ('\u{17d7}', '\u{17d7}',  Script::Khmer), ('\u{17d8}', '\u{17da}',  Script::Khmer),
-        ('\u{17db}', '\u{17db}',  Script::Khmer), ('\u{17dc}', '\u{17dc}',  Script::Khmer),
-        ('\u{17dd}', '\u{17dd}',  Script::Khmer), ('\u{17e0}', '\u{17e9}',  Script::Khmer),
-        ('\u{17f0}', '\u{17f9}',  Script::Khmer), ('\u{1800}', '\u{1801}',  Script::Mongolian),
-        ('\u{1802}', '\u{1803}',  Script::Common), ('\u{1804}', '\u{1804}',  Script::Mongolian),
-        ('\u{1805}', '\u{1805}',  Script::Common), ('\u{1806}', '\u{1806}',  Script::Mongolian),
-        ('\u{1807}', '\u{180a}',  Script::Mongolian), ('\u{180b}', '\u{180d}',  Script::Mongolian),
-        ('\u{180e}', '\u{180e}',  Script::Mongolian), ('\u{180f}', '\u{180f}',  Script::Mongolian),
-        ('\u{1810}', '\u{1819}',  Script::Mongolian), ('\u{1820}', '\u{1842}',  Script::Mongolian),
-        ('\u{1843}', '\u{1843}',  Script::Mongolian), ('\u{1844}', '\u{1878}',  Script::Mongolian),
-        ('\u{1880}', '\u{1884}',  Script::Mongolian), ('\u{1885}', '\u{1886}',  Script::Mongolian),
-        ('\u{1887}', '\u{18a8}',  Script::Mongolian), ('\u{18a9}', '\u{18a9}',  Script::Mongolian),
-        ('\u{18aa}', '\u{18aa}',  Script::Mongolian), ('\u{18b0}', '\u{18f5}',
-         Script::Canadian_Aboriginal), ('\u{1900}', '\u{191e}',  Script::Limbu), ('\u{1920}',
-        '\u{1922}',  Script::Limbu), ('\u{1923}', '\u{1926}',  Script::Limbu), ('\u{1927}',
-        '\u{1928}',  Script::Limbu), ('\u{1929}', '\u{192b}',  Script::Limbu), ('\u{1930}',
-        '\u{1931}',  Script::Limbu), ('\u{1932}', '\u{1932}',  Script::Limbu), ('\u{1933}',
-        '\u{1938}',  Script::Limbu), ('\u{1939}', '\u{193b}',  Script::Limbu), ('\u{1940}',
-        '\u{1940}',  Script::Limbu), ('\u{1944}', '\u{1945}',  Script::Limbu), ('\u{1946}',
-        '\u{194f}',  Script::Limbu), ('\u{1950}', '\u{196d}',  Script::Tai_Le), ('\u{1970}',
-        '\u{1974}',  Script::Tai_Le), ('\u{1980}', '\u{19ab}',  Script::New_Tai_Lue), ('\u{19b0}',
-        '\u{19c9}',  Script::New_Tai_Lue), ('\u{19d0}', '\u{19d9}',  Script::New_Tai_Lue),
-        ('\u{19da}', '\u{19da}',  Script::New_Tai_Lue), ('\u{19de}', '\u{19df}',
-         Script::New_Tai_Lue), ('\u{19e0}', '\u{19ff}',  Script::Khmer), ('\u{1a00}', '\u{1a16}',
-         Script::Buginese), ('\u{1a17}', '\u{1a18}',  Script::Buginese), ('\u{1a19}', '\u{1a1a}',
-         Script::Buginese), ('\u{1a1b}', '\u{1a1b}',  Script::Buginese), ('\u{1a1e}', '\u{1a1f}',
-         Script::Buginese), ('\u{1a20}', '\u{1a54}',  Script::Tai_Tham), ('\u{1a55}', '\u{1a55}',
-         Script::Tai_Tham), ('\u{1a56}', '\u{1a56}',  Script::Tai_Tham), ('\u{1a57}', '\u{1a57}',
-         Script::Tai_Tham), ('\u{1a58}', '\u{1a5e}',  Script::Tai_Tham), ('\u{1a60}', '\u{1a60}',
-         Script::Tai_Tham), ('\u{1a61}', '\u{1a61}',  Script::Tai_Tham), ('\u{1a62}', '\u{1a62}',
-         Script::Tai_Tham), ('\u{1a63}', '\u{1a64}',  Script::Tai_Tham), ('\u{1a65}', '\u{1a6c}',
-         Script::Tai_Tham), ('\u{1a6d}', '\u{1a72}',  Script::Tai_Tham), ('\u{1a73}', '\u{1a7c}',
-         Script::Tai_Tham), ('\u{1a7f}', '\u{1a7f}',  Script::Tai_Tham), ('\u{1a80}', '\u{1a89}',
-         Script::Tai_Tham), ('\u{1a90}', '\u{1a99}',  Script::Tai_Tham), ('\u{1aa0}', '\u{1aa6}',
-         Script::Tai_Tham), ('\u{1aa7}', '\u{1aa7}',  Script::Tai_Tham), ('\u{1aa8}', '\u{1aad}',
-         Script::Tai_Tham), ('\u{1ab0}', '\u{1abd}',  Script::Inherited), ('\u{1abe}', '\u{1abe}',
-         Script::Inherited), ('\u{1abf}', '\u{1add}',  Script::Inherited), ('\u{1ae0}', '\u{1aeb}',
-         Script::Inherited), ('\u{1b00}', '\u{1b03}',  Script::Balinese), ('\u{1b04}', '\u{1b04}',
-         Script::Balinese), ('\u{1b05}', '\u{1b33}',  Script::Balinese), ('\u{1b34}', '\u{1b34}',
-         Script::Balinese), ('\u{1b35}', '\u{1b35}',  Script::Balinese), ('\u{1b36}', '\u{1b3a}',
-         Script::Balinese), ('\u{1b3b}', '\u{1b3b}',  Script::Balinese), ('\u{1b3c}', '\u{1b3c}',
-         Script::Balinese), ('\u{1b3d}', '\u{1b41}',  Script::Balinese), ('\u{1b42}', '\u{1b42}',
-         Script::Balinese), ('\u{1b43}', '\u{1b44}',  Script::Balinese), ('\u{1b45}', '\u{1b4c}',
-         Script::Balinese), ('\u{1b4e}', '\u{1b4f}',  Script::Balinese), ('\u{1b50}', '\u{1b59}',
-         Script::Balinese), ('\u{1b5a}', '\u{1b60}',  Script::Balinese), ('\u{1b61}', '\u{1b6a}',
-         Script::Balinese), ('\u{1b6b}', '\u{1b73}',  Script::Balinese), ('\u{1b74}', '\u{1b7c}',
-         Script::Balinese), ('\u{1b7d}', '\u{1b7f}',  Script::Balinese), ('\u{1b80}', '\u{1b81}',
-         Script::Sundanese), ('\u{1b82}', '\u{1b82}',  Script::Sundanese), ('\u{1b83}', '\u{1ba0}',
-         Script::Sundanese), ('\u{1ba1}', '\u{1ba1}',  Script::Sundanese), ('\u{1ba2}', '\u{1ba5}',
-         Script::Sundanese), ('\u{1ba6}', '\u{1ba7}',  Script::Sundanese), ('\u{1ba8}', '\u{1ba9}',
-         Script::Sundanese), ('\u{1baa}', '\u{1baa}',  Script::Sundanese), ('\u{1bab}', '\u{1bad}',
-         Script::Sundanese), ('\u{1bae}', '\u{1baf}',  Script::Sundanese), ('\u{1bb0}', '\u{1bb9}',
-         Script::Sundanese), ('\u{1bba}', '\u{1bbf}',  Script::Sundanese), ('\u{1bc0}', '\u{1be5}',
-         Script::Batak), ('\u{1be6}', '\u{1be6}',  Script::Batak), ('\u{1be7}', '\u{1be7}',
-         Script::Batak), ('\u{1be8}', '\u{1be9}',  Script::Batak), ('\u{1bea}', '\u{1bec}',
-         Script::Batak), ('\u{1bed}', '\u{1bed}',  Script::Batak), ('\u{1bee}', '\u{1bee}',
-         Script::Batak), ('\u{1bef}', '\u{1bf1}',  Script::Batak), ('\u{1bf2}', '\u{1bf3}',
-         Script::Batak), ('\u{1bfc}', '\u{1bff}',  Script::Batak), ('\u{1c00}', '\u{1c23}',
-         Script::Lepcha), ('\u{1c24}', '\u{1c2b}',  Script::Lepcha), ('\u{1c2c}', '\u{1c33}',
-         Script::Lepcha), ('\u{1c34}', '\u{1c35}',  Script::Lepcha), ('\u{1c36}', '\u{1c37}',
-         Script::Lepcha), ('\u{1c3b}', '\u{1c3f}',  Script::Lepcha), ('\u{1c40}', '\u{1c49}',
-         Script::Lepcha), ('\u{1c4d}', '\u{1c4f}',  Script::Lepcha), ('\u{1c50}', '\u{1c59}',
-         Script::Ol_Chiki), ('\u{1c5a}', '\u{1c77}',  Script::Ol_Chiki), ('\u{1c78}', '\u{1c7d}',
-         Script::Ol_Chiki), ('\u{1c7e}', '\u{1c7f}',  Script::Ol_Chiki), ('\u{1c80}', '\u{1c8a}',
-         Script::Cyrillic), ('\u{1c90}', '\u{1cba}',  Script::Georgian), ('\u{1cbd}', '\u{1cbf}',
-         Script::Georgian), ('\u{1cc0}', '\u{1cc7}',  Script::Sundanese), ('\u{1cd0}', '\u{1cd2}',
-         Script::Inherited), ('\u{1cd3}', '\u{1cd3}',  Script::Common), ('\u{1cd4}', '\u{1ce0}',
-         Script::Inherited), ('\u{1ce1}', '\u{1ce1}',  Script::Common), ('\u{1ce2}', '\u{1ce8}',
-         Script::Inherited), ('\u{1ce9}', '\u{1cec}',  Script::Common), ('\u{1ced}', '\u{1ced}',
-         Script::Inherited), ('\u{1cee}', '\u{1cf3}',  Script::Common), ('\u{1cf4}', '\u{1cf4}',
-         Script::Inherited), ('\u{1cf5}', '\u{1cf6}',  Script::Common), ('\u{1cf7}', '\u{1cf7}',
-         Script::Common), ('\u{1cf8}', '\u{1cf9}',  Script::Inherited), ('\u{1cfa}', '\u{1cfa}',
-         Script::Common), ('\u{1d00}', '\u{1d25}',  Script::Latin), ('\u{1d26}', '\u{1d2a}',
-         Script::Greek), ('\u{1d2b}', '\u{1d2b}',  Script::Cyrillic), ('\u{1d2c}', '\u{1d5c}',
-         Script::Latin), ('\u{1d5d}', '\u{1d61}',  Script::Greek), ('\u{1d62}', '\u{1d65}',
-         Script::Latin), ('\u{1d66}', '\u{1d6a}',  Script::Greek), ('\u{1d6b}', '\u{1d77}',
-         Script::Latin), ('\u{1d78}', '\u{1d78}',  Script::Cyrillic), ('\u{1d79}', '\u{1d9a}',
-         Script::Latin), ('\u{1d9b}', '\u{1dbe}',  Script::Latin), ('\u{1dbf}', '\u{1dbf}',
-         Script::Greek), ('\u{1dc0}', '\u{1dff}',  Script::Inherited), ('\u{1e00}', '\u{1eff}',
-         Script::Latin), ('\u{1f00}', '\u{1f15}',  Script::Greek), ('\u{1f18}', '\u{1f1d}',
-         Script::Greek), ('\u{1f20}', '\u{1f45}',  Script::Greek), ('\u{1f48}', '\u{1f4d}',
-         Script::Greek), ('\u{1f50}', '\u{1f57}',  Script::Greek), ('\u{1f59}', '\u{1f59}',
-         Script::Greek), ('\u{1f5b}', '\u{1f5b}',  Script::Greek), ('\u{1f5d}', '\u{1f5d}',
-         Script::Greek), ('\u{1f5f}', '\u{1f7d}',  Script::Greek), ('\u{1f80}', '\u{1fb4}',
-         Script::Greek), ('\u{1fb6}', '\u{1fbc}',  Script::Greek), ('\u{1fbd}', '\u{1fbd}',
-         Script::Greek), ('\u{1fbe}', '\u{1fbe}',  Script::Greek), ('\u{1fbf}', '\u{1fc1}',
-         Script::Greek), ('\u{1fc2}', '\u{1fc4}',  Script::Greek), ('\u{1fc6}', '\u{1fcc}',
-         Script::Greek), ('\u{1fcd}', '\u{1fcf}',  Script::Greek), ('\u{1fd0}', '\u{1fd3}',
-         Script::Greek), ('\u{1fd6}', '\u{1fdb}',  Script::Greek), ('\u{1fdd}', '\u{1fdf}',
-         Script::Greek), ('\u{1fe0}', '\u{1fec}',  Script::Greek), ('\u{1fed}', '\u{1fef}',
-         Script::Greek), ('\u{1ff2}', '\u{1ff4}',  Script::Greek), ('\u{1ff6}', '\u{1ffc}',
-         Script::Greek), ('\u{1ffd}', '\u{1ffe}',  Script::Greek), ('\u{2000}', '\u{200a}',
-         Script::Common), ('\u{200b}', '\u{200b}',  Script::Common), ('\u{200c}', '\u{200d}',
-         Script::Inherited), ('\u{200e}', '\u{200f}',  Script::Common), ('\u{2010}', '\u{2015}',
-         Script::Common), ('\u{2016}', '\u{2017}',  Script::Common), ('\u{2018}', '\u{2018}',
-         Script::Common), ('\u{2019}', '\u{2019}',  Script::Common), ('\u{201a}', '\u{201a}',
-         Script::Common), ('\u{201b}', '\u{201c}',  Script::Common), ('\u{201d}', '\u{201d}',
-         Script::Common), ('\u{201e}', '\u{201e}',  Script::Common), ('\u{201f}', '\u{201f}',
-         Script::Common), ('\u{2020}', '\u{2027}',  Script::Common), ('\u{2028}', '\u{2028}',
-         Script::Common), ('\u{2029}', '\u{2029}',  Script::Common), ('\u{202a}', '\u{202e}',
-         Script::Common), ('\u{202f}', '\u{202f}',  Script::Common), ('\u{2030}', '\u{2038}',
-         Script::Common), ('\u{2039}', '\u{2039}',  Script::Common), ('\u{203a}', '\u{203a}',
-         Script::Common), ('\u{203b}', '\u{203e}',  Script::Common), ('\u{203f}', '\u{2040}',
-         Script::Common), ('\u{2041}', '\u{2043}',  Script::Common), ('\u{2044}', '\u{2044}',
-         Script::Common), ('\u{2045}', '\u{2045}',  Script::Common), ('\u{2046}', '\u{2046}',
-         Script::Common), ('\u{2047}', '\u{2051}',  Script::Common), ('\u{2052}', '\u{2052}',
-         Script::Common), ('\u{2053}', '\u{2053}',  Script::Common), ('\u{2054}', '\u{2054}',
-         Script::Common), ('\u{2055}', '\u{205e}',  Script::Common), ('\u{205f}', '\u{205f}',
-         Script::Common), ('\u{2060}', '\u{2064}',  Script::Common), ('\u{2066}', '\u{206f}',
-         Script::Common), ('\u{2070}', '\u{2070}',  Script::Common), ('\u{2071}', '\u{2071}',
-         Script::Latin), ('\u{2074}', '\u{2079}',  Script::Common), ('\u{207a}', '\u{207c}',
-         Script::Common), ('\u{207d}', '\u{207d}',  Script::Common), ('\u{207e}', '\u{207e}',
-         Script::Common), ('\u{207f}', '\u{207f}',  Script::Latin), ('\u{2080}', '\u{2089}',
-         Script::Common), ('\u{208a}', '\u{208c}',  Script::Common), ('\u{208d}', '\u{208d}',
-         Script::Common), ('\u{208e}', '\u{208e}',  Script::Common), ('\u{2090}', '\u{209c}',
-         Script::Latin), ('\u{20a0}', '\u{20c1}',  Script::Common), ('\u{20d0}', '\u{20dc}',
-         Script::Inherited), ('\u{20dd}', '\u{20e0}',  Script::Inherited), ('\u{20e1}', '\u{20e1}',
-         Script::Inherited), ('\u{20e2}', '\u{20e4}',  Script::Inherited), ('\u{20e5}', '\u{20f0}',
-         Script::Inherited), ('\u{2100}', '\u{2101}',  Script::Common), ('\u{2102}', '\u{2102}',
-         Script::Common), ('\u{2103}', '\u{2106}',  Script::Common), ('\u{2107}', '\u{2107}',
-         Script::Common), ('\u{2108}', '\u{2109}',  Script::Common), ('\u{210a}', '\u{2113}',
-         Script::Common), ('\u{2114}', '\u{2114}',  Script::Common), ('\u{2115}', '\u{2115}',
-         Script::Common), ('\u{2116}', '\u{2117}',  Script::Common), ('\u{2118}', '\u{2118}',
-         Script::Common), ('\u{2119}', '\u{211d}',  Script::Common), ('\u{211e}', '\u{2123}',
-         Script::Common), ('\u{2124}', '\u{2124}',  Script::Common), ('\u{2125}', '\u{2125}',
-         Script::Common), ('\u{2126}', '\u{2126}',  Script::Greek), ('\u{2127}', '\u{2127}',
-         Script::Common), ('\u{2128}', '\u{2128}',  Script::Common), ('\u{2129}', '\u{2129}',
-         Script::Common), ('\u{212a}', '\u{212b}',  Script::Latin), ('\u{212c}', '\u{212d}',
-         Script::Common), ('\u{212e}', '\u{212e}',  Script::Common), ('\u{212f}', '\u{2131}',
-         Script::Common), ('\u{2132}', '\u{2132}',  Script::Latin), ('\u{2133}', '\u{2134}',
-         Script::Common), ('\u{2135}', '\u{2138}',  Script::Common), ('\u{2139}', '\u{2139}',
-         Script::Common), ('\u{213a}', '\u{213b}',  Script::Common), ('\u{213c}', '\u{213f}',
-         Script::Common), ('\u{2140}', '\u{2144}',  Script::Common), ('\u{2145}', '\u{2149}',
-         Script::Common), ('\u{214a}', '\u{214a}',  Script::Common), ('\u{214b}', '\u{214b}',
-         Script::Common), ('\u{214c}', '\u{214d}',  Script::Common), ('\u{214e}', '\u{214e}',
-         Script::Latin), ('\u{214f}', '\u{214f}',  Script::Common), ('\u{2150}', '\u{215f}',
-         Script::Common), ('\u{2160}', '\u{2182}',  Script::Latin), ('\u{2183}', '\u{2184}',
-         Script::Latin), ('\u{2185}', '\u{2188}',  Script::Latin), ('\u{2189}', '\u{2189}',
-         Script::Common), ('\u{218a}', '\u{218b}',  Script::Common), ('\u{2190}', '\u{2194}',
-         Script::Common), ('\u{2195}', '\u{2199}',  Script::Common), ('\u{219a}', '\u{219b}',
-         Script::Common), ('\u{219c}', '\u{219f}',  Script::Common), ('\u{21a0}', '\u{21a0}',
-         Script::Common), ('\u{21a1}', '\u{21a2}',  Script::Common), ('\u{21a3}', '\u{21a3}',
-         Script::Common), ('\u{21a4}', '\u{21a5}',  Script::Common), ('\u{21a6}', '\u{21a6}',
-         Script::Common), ('\u{21a7}', '\u{21ad}',  Script::Common), ('\u{21ae}', '\u{21ae}',
-         Script::Common), ('\u{21af}', '\u{21cd}',  Script::Common), ('\u{21ce}', '\u{21cf}',
-         Script::Common), ('\u{21d0}', '\u{21d1}',  Script::Common), ('\u{21d2}', '\u{21d2}',
-         Script::Common), ('\u{21d3}', '\u{21d3}',  Script::Common), ('\u{21d4}', '\u{21d4}',
-         Script::Common), ('\u{21d5}', '\u{21f3}',  Script::Common), ('\u{21f4}', '\u{22ff}',
-         Script::Common), ('\u{2300}', '\u{2307}',  Script::Common), ('\u{2308}', '\u{2308}',
-         Script::Common), ('\u{2309}', '\u{2309}',  Script::Common), ('\u{230a}', '\u{230a}',
-         Script::Common), ('\u{230b}', '\u{230b}',  Script::Common), ('\u{230c}', '\u{231f}',
-         Script::Common), ('\u{2320}', '\u{2321}',  Script::Common), ('\u{2322}', '\u{2328}',
-         Script::Common), ('\u{2329}', '\u{2329}',  Script::Common), ('\u{232a}', '\u{232a}',
-         Script::Common), ('\u{232b}', '\u{237b}',  Script::Common), ('\u{237c}', '\u{237c}',
-         Script::Common), ('\u{237d}', '\u{239a}',  Script::Common), ('\u{239b}', '\u{23b3}',
-         Script::Common), ('\u{23b4}', '\u{23db}',  Script::Common), ('\u{23dc}', '\u{23e1}',
-         Script::Common), ('\u{23e2}', '\u{2429}',  Script::Common), ('\u{2440}', '\u{244a}',
-         Script::Common), ('\u{2460}', '\u{249b}',  Script::Common), ('\u{249c}', '\u{24e9}',
-         Script::Common), ('\u{24ea}', '\u{24ff}',  Script::Common), ('\u{2500}', '\u{25b6}',
-         Script::Common), ('\u{25b7}', '\u{25b7}',  Script::Common), ('\u{25b8}', '\u{25c0}',
-         Script::Common), ('\u{25c1}', '\u{25c1}',  Script::Common), ('\u{25c2}', '\u{25f7}',
-         Script::Common), ('\u{25f8}', '\u{25ff}',  Script::Common), ('\u{2600}', '\u{266e}',
-         Script::Common), ('\u{266f}', '\u{266f}',  Script::Common), ('\u{2670}', '\u{2767}',
-         Script::Common), ('\u{2768}', '\u{2768}',  Script::Common), ('\u{2769}', '\u{2769}',
-         Script::Common), ('\u{276a}', '\u{276a}',  Script::Common), ('\u{276b}', '\u{276b}',
-         Script::Common), ('\u{276c}', '\u{276c}',  Script::Common), ('\u{276d}', '\u{276d}',
-         Script::Common), ('\u{276e}', '\u{276e}',  Script::Common), ('\u{276f}', '\u{276f}',
-         Script::Common), ('\u{2770}', '\u{2770}',  Script::Common), ('\u{2771}', '\u{2771}',
-         Script::Common), ('\u{2772}', '\u{2772}',  Script::Common), ('\u{2773}', '\u{2773}',
-         Script::Common), ('\u{2774}', '\u{2774}',  Script::Common), ('\u{2775}', '\u{2775}',
-         Script::Common), ('\u{2776}', '\u{2793}',  Script::Common), ('\u{2794}', '\u{27bf}',
-         Script::Common), ('\u{27c0}', '\u{27c4}',  Script::Common), ('\u{27c5}', '\u{27c5}',
-         Script::Common), ('\u{27c6}', '\u{27c6}',  Script::Common), ('\u{27c7}', '\u{27e5}',
-         Script::Common), ('\u{27e6}', '\u{27e6}',  Script::Common), ('\u{27e7}', '\u{27e7}',
-         Script::Common), ('\u{27e8}', '\u{27e8}',  Script::Common), ('\u{27e9}', '\u{27e9}',
-         Script::Common), ('\u{27ea}', '\u{27ea}',  Script::Common), ('\u{27eb}', '\u{27eb}',
-         Script::Common), ('\u{27ec}', '\u{27ec}',  Script::Common), ('\u{27ed}', '\u{27ed}',
-         Script::Common), ('\u{27ee}', '\u{27ee}',  Script::Common), ('\u{27ef}', '\u{27ef}',
-         Script::Common), ('\u{27f0}', '\u{27ff}',  Script::Common), ('\u{2800}', '\u{28ff}',
-         Script::Braille), ('\u{2900}', '\u{2982}',  Script::Common), ('\u{2983}', '\u{2983}',
-         Script::Common), ('\u{2984}', '\u{2984}',  Script::Common), ('\u{2985}', '\u{2985}',
-         Script::Common), ('\u{2986}', '\u{2986}',  Script::Common), ('\u{2987}', '\u{2987}',
-         Script::Common), ('\u{2988}', '\u{2988}',  Script::Common), ('\u{2989}', '\u{2989}',
-         Script::Common), ('\u{298a}', '\u{298a}',  Script::Common), ('\u{298b}', '\u{298b}',
-         Script::Common), ('\u{298c}', '\u{298c}',  Script::Common), ('\u{298d}', '\u{298d}',
-         Script::Common), ('\u{298e}', '\u{298e}',  Script::Common), ('\u{298f}', '\u{298f}',
-         Script::Common), ('\u{2990}', '\u{2990}',  Script::Common), ('\u{2991}', '\u{2991}',
-         Script::Common), ('\u{2992}', '\u{2992}',  Script::Common), ('\u{2993}', '\u{2993}',
-         Script::Common), ('\u{2994}', '\u{2994}',  Script::Common), ('\u{2995}', '\u{2995}',
-         Script::Common), ('\u{2996}', '\u{2996}',  Script::Common), ('\u{2997}', '\u{2997}',
-         Script::Common), ('\u{2998}', '\u{2998}',  Script::Common), ('\u{2999}', '\u{29d7}',
-         Script::Common), ('\u{29d8}', '\u{29d8}',  Script::Common), ('\u{29d9}', '\u{29d9}',
-         Script::Common), ('\u{29da}', '\u{29da}',  Script::Common), ('\u{29db}', '\u{29db}',
-         Script::Common), ('\u{29dc}', '\u{29fb}',  Script::Common), ('\u{29fc}', '\u{29fc}',
-         Script::Common), ('\u{29fd}', '\u{29fd}',  Script::Common), ('\u{29fe}', '\u{2aff}',
-         Script::Common), ('\u{2b00}', '\u{2b2f}',  Script::Common), ('\u{2b30}', '\u{2b44}',
-         Script::Common), ('\u{2b45}', '\u{2b46}',  Script::Common), ('\u{2b47}', '\u{2b4c}',
-         Script::Common), ('\u{2b4d}', '\u{2b73}',  Script::Common), ('\u{2b76}', '\u{2bff}',
-         Script::Common), ('\u{2c00}', '\u{2c5f}',  Script::Glagolitic), ('\u{2c60}', '\u{2c7b}',
-         Script::Latin), ('\u{2c7c}', '\u{2c7d}',  Script::Latin), ('\u{2c7e}', '\u{2c7f}',
-         Script::Latin), ('\u{2c80}', '\u{2ce4}',  Script::Coptic), ('\u{2ce5}', '\u{2cea}',
-         Script::Coptic), ('\u{2ceb}', '\u{2cee}',  Script::Coptic), ('\u{2cef}', '\u{2cf1}',
-         Script::Coptic), ('\u{2cf2}', '\u{2cf3}',  Script::Coptic), ('\u{2cf9}', '\u{2cfc}',
-         Script::Coptic), ('\u{2cfd}', '\u{2cfd}',  Script::Coptic), ('\u{2cfe}', '\u{2cff}',
-         Script::Coptic), ('\u{2d00}', '\u{2d25}',  Script::Georgian), ('\u{2d27}', '\u{2d27}',
-         Script::Georgian), ('\u{2d2d}', '\u{2d2d}',  Script::Georgian), ('\u{2d30}', '\u{2d67}',
-         Script::Tifinagh), ('\u{2d6f}', '\u{2d6f}',  Script::Tifinagh), ('\u{2d70}', '\u{2d70}',
-         Script::Tifinagh), ('\u{2d7f}', '\u{2d7f}',  Script::Tifinagh), ('\u{2d80}', '\u{2d96}',
-         Script::Ethiopic), ('\u{2da0}', '\u{2da6}',  Script::Ethiopic), ('\u{2da8}', '\u{2dae}',
-         Script::Ethiopic), ('\u{2db0}', '\u{2db6}',  Script::Ethiopic), ('\u{2db8}', '\u{2dbe}',
-         Script::Ethiopic), ('\u{2dc0}', '\u{2dc6}',  Script::Ethiopic), ('\u{2dc8}', '\u{2dce}',
-         Script::Ethiopic), ('\u{2dd0}', '\u{2dd6}',  Script::Ethiopic), ('\u{2dd8}', '\u{2dde}',
-         Script::Ethiopic), ('\u{2de0}', '\u{2dff}',  Script::Cyrillic), ('\u{2e00}', '\u{2e01}',
-         Script::Common), ('\u{2e02}', '\u{2e02}',  Script::Common), ('\u{2e03}', '\u{2e03}',
-         Script::Common), ('\u{2e04}', '\u{2e04}',  Script::Common), ('\u{2e05}', '\u{2e05}',
-         Script::Common), ('\u{2e06}', '\u{2e08}',  Script::Common), ('\u{2e09}', '\u{2e09}',
-         Script::Common), ('\u{2e0a}', '\u{2e0a}',  Script::Common), ('\u{2e0b}', '\u{2e0b}',
-         Script::Common), ('\u{2e0c}', '\u{2e0c}',  Script::Common), ('\u{2e0d}', '\u{2e0d}',
-         Script::Common), ('\u{2e0e}', '\u{2e16}',  Script::Common), ('\u{2e17}', '\u{2e17}',
-         Script::Common), ('\u{2e18}', '\u{2e19}',  Script::Common), ('\u{2e1a}', '\u{2e1a}',
-         Script::Common), ('\u{2e1b}', '\u{2e1b}',  Script::Common), ('\u{2e1c}', '\u{2e1c}',
-         Script::Common), ('\u{2e1d}', '\u{2e1d}',  Script::Common), ('\u{2e1e}', '\u{2e1f}',
-         Script::Common), ('\u{2e20}', '\u{2e20}',  Script::Common), ('\u{2e21}', '\u{2e21}',
-         Script::Common), ('\u{2e22}', '\u{2e22}',  Script::Common), ('\u{2e23}', '\u{2e23}',
-         Script::Common), ('\u{2e24}', '\u{2e24}',  Script::Common), ('\u{2e25}', '\u{2e25}',
-         Script::Common), ('\u{2e26}', '\u{2e26}',  Script::Common), ('\u{2e27}', '\u{2e27}',
-         Script::Common), ('\u{2e28}', '\u{2e28}',  Script::Common), ('\u{2e29}', '\u{2e29}',
-         Script::Common), ('\u{2e2a}', '\u{2e2e}',  Script::Common), ('\u{2e2f}', '\u{2e2f}',
-         Script::Common), ('\u{2e30}', '\u{2e39}',  Script::Common), ('\u{2e3a}', '\u{2e3b}',
-         Script::Common), ('\u{2e3c}', '\u{2e3f}',  Script::Common), ('\u{2e40}', '\u{2e40}',
-         Script::Common), ('\u{2e41}', '\u{2e41}',  Script::Common), ('\u{2e42}', '\u{2e42}',
-         Script::Common), ('\u{2e43}', '\u{2e4f}',  Script::Common), ('\u{2e50}', '\u{2e51}',
-         Script::Common), ('\u{2e52}', '\u{2e54}',  Script::Common), ('\u{2e55}', '\u{2e55}',
-         Script::Common), ('\u{2e56}', '\u{2e56}',  Script::Common), ('\u{2e57}', '\u{2e57}',
-         Script::Common), ('\u{2e58}', '\u{2e58}',  Script::Common), ('\u{2e59}', '\u{2e59}',
-         Script::Common), ('\u{2e5a}', '\u{2e5a}',  Script::Common), ('\u{2e5b}', '\u{2e5b}',
-         Script::Common), ('\u{2e5c}', '\u{2e5c}',  Script::Common), ('\u{2e5d}', '\u{2e5d}',
-         Script::Common), ('\u{2e80}', '\u{2e99}',  Script::Han), ('\u{2e9b}', '\u{2ef3}',
-         Script::Han), ('\u{2f00}', '\u{2fd5}',  Script::Han), ('\u{2ff0}', '\u{2fff}',
-         Script::Common), ('\u{3000}', '\u{3000}',  Script::Common), ('\u{3001}', '\u{3003}',
-         Script::Common), ('\u{3004}', '\u{3004}',  Script::Common), ('\u{3005}', '\u{3005}',
-         Script::Han), ('\u{3006}', '\u{3006}',  Script::Common), ('\u{3007}', '\u{3007}',
-         Script::Han), ('\u{3008}', '\u{3008}',  Script::Common), ('\u{3009}', '\u{3009}',
-         Script::Common), ('\u{300a}', '\u{300a}',  Script::Common), ('\u{300b}', '\u{300b}',
-         Script::Common), ('\u{300c}', '\u{300c}',  Script::Common), ('\u{300d}', '\u{300d}',
-         Script::Common), ('\u{300e}', '\u{300e}',  Script::Common), ('\u{300f}', '\u{300f}',
-         Script::Common), ('\u{3010}', '\u{3010}',  Script::Common), ('\u{3011}', '\u{3011}',
-         Script::Common), ('\u{3012}', '\u{3013}',  Script::Common), ('\u{3014}', '\u{3014}',
-         Script::Common), ('\u{3015}', '\u{3015}',  Script::Common), ('\u{3016}', '\u{3016}',
-         Script::Common), ('\u{3017}', '\u{3017}',  Script::Common), ('\u{3018}', '\u{3018}',
-         Script::Common), ('\u{3019}', '\u{3019}',  Script::Common), ('\u{301a}', '\u{301a}',
-         Script::Common), ('\u{301b}', '\u{301b}',  Script::Common), ('\u{301c}', '\u{301c}',
-         Script::Common), ('\u{301d}', '\u{301d}',  Script::Common), ('\u{301e}', '\u{301f}',
-         Script::Common), ('\u{3020}', '\u{3020}',  Script::Common), ('\u{3021}', '\u{3029}',
-         Script::Han), ('\u{302a}', '\u{302d}',  Script::Inherited), ('\u{302e}', '\u{302f}',
-         Script::Hangul), ('\u{3030}', '\u{3030}',  Script::Common), ('\u{3031}', '\u{3035}',
-         Script::Common), ('\u{3036}', '\u{3037}',  Script::Common), ('\u{3038}', '\u{303a}',
-         Script::Han), ('\u{303b}', '\u{303b}',  Script::Han), ('\u{303c}', '\u{303c}',
-         Script::Common), ('\u{303d}', '\u{303d}',  Script::Common), ('\u{303e}', '\u{303f}',
-         Script::Common), ('\u{3041}', '\u{3096}',  Script::Hiragana), ('\u{3099}', '\u{309a}',
-         Script::Inherited), ('\u{309b}', '\u{309c}',  Script::Common), ('\u{309d}', '\u{309e}',
-         Script::Hiragana), ('\u{309f}', '\u{309f}',  Script::Hiragana), ('\u{30a0}', '\u{30a0}',
-         Script::Common), ('\u{30a1}', '\u{30fa}',  Script::Katakana), ('\u{30fb}', '\u{30fb}',
-         Script::Common), ('\u{30fc}', '\u{30fc}',  Script::Common), ('\u{30fd}', '\u{30fe}',
-         Script::Katakana), ('\u{30ff}', '\u{30ff}',  Script::Katakana), ('\u{3105}', '\u{312f}',
-         Script::Bopomofo), ('\u{3131}', '\u{318e}',  Script::Hangul), ('\u{3190}', '\u{3191}',
-         Script::Common), ('\u{3192}', '\u{3195}',  Script::Common), ('\u{3196}', '\u{319f}',
-         Script::Common), ('\u{31a0}', '\u{31bf}',  Script::Bopomofo), ('\u{31c0}', '\u{31e5}',
-         Script::Common), ('\u{31ef}', '\u{31ef}',  Script::Common), ('\u{31f0}', '\u{31ff}',
-         Script::Katakana), ('\u{3200}', '\u{321e}',  Script::Hangul), ('\u{3220}', '\u{3229}',
-         Script::Common), ('\u{322a}', '\u{3247}',  Script::Common), ('\u{3248}', '\u{324f}',
-         Script::Common), ('\u{3250}', '\u{3250}',  Script::Common), ('\u{3251}', '\u{325f}',
-         Script::Common), ('\u{3260}', '\u{327e}',  Script::Hangul), ('\u{327f}', '\u{327f}',
-         Script::Common), ('\u{3280}', '\u{3289}',  Script::Common), ('\u{328a}', '\u{32b0}',
-         Script::Common), ('\u{32b1}', '\u{32bf}',  Script::Common), ('\u{32c0}', '\u{32cf}',
-         Script::Common), ('\u{32d0}', '\u{32fe}',  Script::Katakana), ('\u{32ff}', '\u{32ff}',
-         Script::Common), ('\u{3300}', '\u{3357}',  Script::Katakana), ('\u{3358}', '\u{33ff}',
-         Script::Common), ('\u{3400}', '\u{4dbf}',  Script::Han), ('\u{4dc0}', '\u{4dff}',
-         Script::Common), ('\u{4e00}', '\u{9fff}',  Script::Han), ('\u{a000}', '\u{a014}',
-         Script::Yi), ('\u{a015}', '\u{a015}',  Script::Yi), ('\u{a016}', '\u{a48c}',  Script::Yi),
-        ('\u{a490}', '\u{a4c6}',  Script::Yi), ('\u{a4d0}', '\u{a4f7}',  Script::Lisu), ('\u{a4f8}',
-        '\u{a4fd}',  Script::Lisu), ('\u{a4fe}', '\u{a4ff}',  Script::Lisu), ('\u{a500}',
-        '\u{a60b}',  Script::Vai), ('\u{a60c}', '\u{a60c}',  Script::Vai), ('\u{a60d}', '\u{a60f}',
-         Script::Vai), ('\u{a610}', '\u{a61f}',  Script::Vai), ('\u{a620}', '\u{a629}',
-         Script::Vai), ('\u{a62a}', '\u{a62b}',  Script::Vai), ('\u{a640}', '\u{a66d}',
-         Script::Cyrillic), ('\u{a66e}', '\u{a66e}',  Script::Cyrillic), ('\u{a66f}', '\u{a66f}',
-         Script::Cyrillic), ('\u{a670}', '\u{a672}',  Script::Cyrillic), ('\u{a673}', '\u{a673}',
-         Script::Cyrillic), ('\u{a674}', '\u{a67d}',  Script::Cyrillic), ('\u{a67e}', '\u{a67e}',
-         Script::Cyrillic), ('\u{a67f}', '\u{a67f}',  Script::Cyrillic), ('\u{a680}', '\u{a69b}',
-         Script::Cyrillic), ('\u{a69c}', '\u{a69d}',  Script::Cyrillic), ('\u{a69e}', '\u{a69f}',
-         Script::Cyrillic), ('\u{a6a0}', '\u{a6e5}',  Script::Bamum), ('\u{a6e6}', '\u{a6ef}',
-         Script::Bamum), ('\u{a6f0}', '\u{a6f1}',  Script::Bamum), ('\u{a6f2}', '\u{a6f7}',
-         Script::Bamum), ('\u{a700}', '\u{a716}',  Script::Common), ('\u{a717}', '\u{a71f}',
-         Script::Common), ('\u{a720}', '\u{a721}',  Script::Common), ('\u{a722}', '\u{a76f}',
-         Script::Latin), ('\u{a770}', '\u{a770}',  Script::Latin), ('\u{a771}', '\u{a787}',
-         Script::Latin), ('\u{a788}', '\u{a788}',  Script::Common), ('\u{a789}', '\u{a78a}',
-         Script::Common), ('\u{a78b}', '\u{a78e}',  Script::Latin), ('\u{a78f}', '\u{a78f}',
-         Script::Latin), ('\u{a790}', '\u{a7dc}',  Script::Latin), ('\u{a7f1}', '\u{a7f4}',
+         Script::Armenian), ('\u{58b}', '\u{58c}',  Script::Armenian), ('\u{58d}', '\u{58e}',
+         Script::Armenian), ('\u{58f}', '\u{58f}',  Script::Armenian), ('\u{591}', '\u{5bd}',
+         Script::Hebrew), ('\u{5be}', '\u{5be}',  Script::Hebrew), ('\u{5bf}', '\u{5bf}',
+         Script::Hebrew), ('\u{5c0}', '\u{5c0}',  Script::Hebrew), ('\u{5c1}', '\u{5c2}',
+         Script::Hebrew), ('\u{5c3}', '\u{5c3}',  Script::Hebrew), ('\u{5c4}', '\u{5c5}',
+         Script::Hebrew), ('\u{5c6}', '\u{5c6}',  Script::Hebrew), ('\u{5c7}', '\u{5c9}',
+         Script::Hebrew), ('\u{5d0}', '\u{5ea}',  Script::Hebrew), ('\u{5ef}', '\u{5f2}',
+         Script::Hebrew), ('\u{5f3}', '\u{5f4}',  Script::Hebrew), ('\u{600}', '\u{604}',
+         Script::Arabic), ('\u{605}', '\u{605}',  Script::Common), ('\u{606}', '\u{608}',
+         Script::Arabic), ('\u{609}', '\u{60a}',  Script::Arabic), ('\u{60b}', '\u{60b}',
+         Script::Arabic), ('\u{60c}', '\u{60c}',  Script::Common), ('\u{60d}', '\u{60d}',
+         Script::Arabic), ('\u{60e}', '\u{60f}',  Script::Arabic), ('\u{610}', '\u{61a}',
+         Script::Arabic), ('\u{61b}', '\u{61b}',  Script::Common), ('\u{61c}', '\u{61c}',
+         Script::Arabic), ('\u{61d}', '\u{61e}',  Script::Arabic), ('\u{61f}', '\u{61f}',
+         Script::Common), ('\u{620}', '\u{63f}',  Script::Arabic), ('\u{640}', '\u{640}',
+         Script::Common), ('\u{641}', '\u{64a}',  Script::Arabic), ('\u{64b}', '\u{655}',
+         Script::Inherited), ('\u{656}', '\u{65f}',  Script::Arabic), ('\u{660}', '\u{669}',
+         Script::Arabic), ('\u{66a}', '\u{66d}',  Script::Arabic), ('\u{66e}', '\u{66f}',
+         Script::Arabic), ('\u{670}', '\u{670}',  Script::Inherited), ('\u{671}', '\u{6d3}',
+         Script::Arabic), ('\u{6d4}', '\u{6d4}',  Script::Arabic), ('\u{6d5}', '\u{6d5}',
+         Script::Arabic), ('\u{6d6}', '\u{6dc}',  Script::Arabic), ('\u{6dd}', '\u{6dd}',
+         Script::Common), ('\u{6de}', '\u{6de}',  Script::Arabic), ('\u{6df}', '\u{6e4}',
+         Script::Arabic), ('\u{6e5}', '\u{6e6}',  Script::Arabic), ('\u{6e7}', '\u{6e8}',
+         Script::Arabic), ('\u{6e9}', '\u{6e9}',  Script::Arabic), ('\u{6ea}', '\u{6ed}',
+         Script::Arabic), ('\u{6ee}', '\u{6ef}',  Script::Arabic), ('\u{6f0}', '\u{6f9}',
+         Script::Arabic), ('\u{6fa}', '\u{6fc}',  Script::Arabic), ('\u{6fd}', '\u{6fe}',
+         Script::Arabic), ('\u{6ff}', '\u{6ff}',  Script::Arabic), ('\u{700}', '\u{70d}',
+         Script::Syriac), ('\u{70f}', '\u{70f}',  Script::Syriac), ('\u{710}', '\u{710}',
+         Script::Syriac), ('\u{711}', '\u{711}',  Script::Syriac), ('\u{712}', '\u{72f}',
+         Script::Syriac), ('\u{730}', '\u{74a}',  Script::Syriac), ('\u{74d}', '\u{74f}',
+         Script::Syriac), ('\u{750}', '\u{77f}',  Script::Arabic), ('\u{780}', '\u{7a5}',
+         Script::Thaana), ('\u{7a6}', '\u{7b0}',  Script::Thaana), ('\u{7b1}', '\u{7b1}',
+         Script::Thaana), ('\u{7c0}', '\u{7c9}',  Script::Nko), ('\u{7ca}', '\u{7ea}',
+         Script::Nko), ('\u{7eb}', '\u{7f3}',  Script::Nko), ('\u{7f4}', '\u{7f5}',  Script::Nko),
+        ('\u{7f6}', '\u{7f6}',  Script::Nko), ('\u{7f7}', '\u{7f9}',  Script::Nko), ('\u{7fa}',
+        '\u{7fa}',  Script::Nko), ('\u{7fd}', '\u{7fd}',  Script::Nko), ('\u{7fe}', '\u{7ff}',
+         Script::Nko), ('\u{800}', '\u{815}',  Script::Samaritan), ('\u{816}', '\u{819}',
+         Script::Samaritan), ('\u{81a}', '\u{81a}',  Script::Samaritan), ('\u{81b}', '\u{823}',
+         Script::Samaritan), ('\u{824}', '\u{824}',  Script::Samaritan), ('\u{825}', '\u{827}',
+         Script::Samaritan), ('\u{828}', '\u{828}',  Script::Samaritan), ('\u{829}', '\u{82d}',
+         Script::Samaritan), ('\u{830}', '\u{83e}',  Script::Samaritan), ('\u{840}', '\u{858}',
+         Script::Mandaic), ('\u{859}', '\u{85b}',  Script::Mandaic), ('\u{85e}', '\u{85e}',
+         Script::Mandaic), ('\u{860}', '\u{86a}',  Script::Syriac), ('\u{870}', '\u{887}',
+         Script::Arabic), ('\u{888}', '\u{888}',  Script::Arabic), ('\u{889}', '\u{88f}',
+         Script::Arabic), ('\u{890}', '\u{891}',  Script::Arabic), ('\u{897}', '\u{89f}',
+         Script::Arabic), ('\u{8a0}', '\u{8c8}',  Script::Arabic), ('\u{8c9}', '\u{8c9}',
+         Script::Arabic), ('\u{8ca}', '\u{8e1}',  Script::Arabic), ('\u{8e2}', '\u{8e2}',
+         Script::Common), ('\u{8e3}', '\u{8ff}',  Script::Arabic), ('\u{900}', '\u{902}',
+         Script::Devanagari), ('\u{903}', '\u{903}',  Script::Devanagari), ('\u{904}', '\u{939}',
+         Script::Devanagari), ('\u{93a}', '\u{93a}',  Script::Devanagari), ('\u{93b}', '\u{93b}',
+         Script::Devanagari), ('\u{93c}', '\u{93c}',  Script::Devanagari), ('\u{93d}', '\u{93d}',
+         Script::Devanagari), ('\u{93e}', '\u{940}',  Script::Devanagari), ('\u{941}', '\u{948}',
+         Script::Devanagari), ('\u{949}', '\u{94c}',  Script::Devanagari), ('\u{94d}', '\u{94d}',
+         Script::Devanagari), ('\u{94e}', '\u{94f}',  Script::Devanagari), ('\u{950}', '\u{950}',
+         Script::Devanagari), ('\u{951}', '\u{954}',  Script::Inherited), ('\u{955}', '\u{957}',
+         Script::Devanagari), ('\u{958}', '\u{961}',  Script::Devanagari), ('\u{962}', '\u{963}',
+         Script::Devanagari), ('\u{964}', '\u{965}',  Script::Common), ('\u{966}', '\u{96f}',
+         Script::Devanagari), ('\u{970}', '\u{970}',  Script::Devanagari), ('\u{971}', '\u{971}',
+         Script::Devanagari), ('\u{972}', '\u{97f}',  Script::Devanagari), ('\u{980}', '\u{980}',
+         Script::Bengali), ('\u{981}', '\u{981}',  Script::Bengali), ('\u{982}', '\u{983}',
+         Script::Bengali), ('\u{985}', '\u{98c}',  Script::Bengali), ('\u{98f}', '\u{990}',
+         Script::Bengali), ('\u{993}', '\u{9a8}',  Script::Bengali), ('\u{9aa}', '\u{9b0}',
+         Script::Bengali), ('\u{9b2}', '\u{9b2}',  Script::Bengali), ('\u{9b6}', '\u{9b9}',
+         Script::Bengali), ('\u{9bc}', '\u{9bc}',  Script::Bengali), ('\u{9bd}', '\u{9bd}',
+         Script::Bengali), ('\u{9be}', '\u{9c0}',  Script::Bengali), ('\u{9c1}', '\u{9c4}',
+         Script::Bengali), ('\u{9c7}', '\u{9c8}',  Script::Bengali), ('\u{9cb}', '\u{9cc}',
+         Script::Bengali), ('\u{9cd}', '\u{9cd}',  Script::Bengali), ('\u{9ce}', '\u{9ce}',
+         Script::Bengali), ('\u{9d7}', '\u{9d7}',  Script::Bengali), ('\u{9dc}', '\u{9dd}',
+         Script::Bengali), ('\u{9df}', '\u{9e1}',  Script::Bengali), ('\u{9e2}', '\u{9e3}',
+         Script::Bengali), ('\u{9e6}', '\u{9ef}',  Script::Bengali), ('\u{9f0}', '\u{9f1}',
+         Script::Bengali), ('\u{9f2}', '\u{9f3}',  Script::Bengali), ('\u{9f4}', '\u{9f9}',
+         Script::Bengali), ('\u{9fa}', '\u{9fa}',  Script::Bengali), ('\u{9fb}', '\u{9fb}',
+         Script::Bengali), ('\u{9fc}', '\u{9fc}',  Script::Bengali), ('\u{9fd}', '\u{9fd}',
+         Script::Bengali), ('\u{9fe}', '\u{9fe}',  Script::Bengali), ('\u{a01}', '\u{a02}',
+         Script::Gurmukhi), ('\u{a03}', '\u{a03}',  Script::Gurmukhi), ('\u{a05}', '\u{a0a}',
+         Script::Gurmukhi), ('\u{a0f}', '\u{a10}',  Script::Gurmukhi), ('\u{a13}', '\u{a28}',
+         Script::Gurmukhi), ('\u{a2a}', '\u{a30}',  Script::Gurmukhi), ('\u{a32}', '\u{a33}',
+         Script::Gurmukhi), ('\u{a35}', '\u{a36}',  Script::Gurmukhi), ('\u{a38}', '\u{a39}',
+         Script::Gurmukhi), ('\u{a3c}', '\u{a3c}',  Script::Gurmukhi), ('\u{a3e}', '\u{a40}',
+         Script::Gurmukhi), ('\u{a41}', '\u{a42}',  Script::Gurmukhi), ('\u{a47}', '\u{a48}',
+         Script::Gurmukhi), ('\u{a4b}', '\u{a4d}',  Script::Gurmukhi), ('\u{a51}', '\u{a51}',
+         Script::Gurmukhi), ('\u{a59}', '\u{a5c}',  Script::Gurmukhi), ('\u{a5e}', '\u{a5e}',
+         Script::Gurmukhi), ('\u{a66}', '\u{a6f}',  Script::Gurmukhi), ('\u{a70}', '\u{a71}',
+         Script::Gurmukhi), ('\u{a72}', '\u{a74}',  Script::Gurmukhi), ('\u{a75}', '\u{a75}',
+         Script::Gurmukhi), ('\u{a76}', '\u{a76}',  Script::Gurmukhi), ('\u{a81}', '\u{a82}',
+         Script::Gujarati), ('\u{a83}', '\u{a83}',  Script::Gujarati), ('\u{a85}', '\u{a8d}',
+         Script::Gujarati), ('\u{a8f}', '\u{a91}',  Script::Gujarati), ('\u{a93}', '\u{aa8}',
+         Script::Gujarati), ('\u{aaa}', '\u{ab0}',  Script::Gujarati), ('\u{ab2}', '\u{ab3}',
+         Script::Gujarati), ('\u{ab5}', '\u{ab9}',  Script::Gujarati), ('\u{abc}', '\u{abc}',
+         Script::Gujarati), ('\u{abd}', '\u{abd}',  Script::Gujarati), ('\u{abe}', '\u{ac0}',
+         Script::Gujarati), ('\u{ac1}', '\u{ac5}',  Script::Gujarati), ('\u{ac7}', '\u{ac8}',
+         Script::Gujarati), ('\u{ac9}', '\u{ac9}',  Script::Gujarati), ('\u{acb}', '\u{acc}',
+         Script::Gujarati), ('\u{acd}', '\u{acd}',  Script::Gujarati), ('\u{ad0}', '\u{ad0}',
+         Script::Gujarati), ('\u{ae0}', '\u{ae1}',  Script::Gujarati), ('\u{ae2}', '\u{ae3}',
+         Script::Gujarati), ('\u{ae6}', '\u{aef}',  Script::Gujarati), ('\u{af0}', '\u{af0}',
+         Script::Gujarati), ('\u{af1}', '\u{af1}',  Script::Gujarati), ('\u{af9}', '\u{af9}',
+         Script::Gujarati), ('\u{afa}', '\u{aff}',  Script::Gujarati), ('\u{b01}', '\u{b01}',
+         Script::Oriya), ('\u{b02}', '\u{b03}',  Script::Oriya), ('\u{b05}', '\u{b0c}',
+         Script::Oriya), ('\u{b0f}', '\u{b10}',  Script::Oriya), ('\u{b13}', '\u{b28}',
+         Script::Oriya), ('\u{b2a}', '\u{b30}',  Script::Oriya), ('\u{b32}', '\u{b33}',
+         Script::Oriya), ('\u{b35}', '\u{b39}',  Script::Oriya), ('\u{b3c}', '\u{b3c}',
+         Script::Oriya), ('\u{b3d}', '\u{b3d}',  Script::Oriya), ('\u{b3e}', '\u{b3e}',
+         Script::Oriya), ('\u{b3f}', '\u{b3f}',  Script::Oriya), ('\u{b40}', '\u{b40}',
+         Script::Oriya), ('\u{b41}', '\u{b44}',  Script::Oriya), ('\u{b47}', '\u{b48}',
+         Script::Oriya), ('\u{b4b}', '\u{b4c}',  Script::Oriya), ('\u{b4d}', '\u{b4d}',
+         Script::Oriya), ('\u{b53}', '\u{b56}',  Script::Oriya), ('\u{b57}', '\u{b57}',
+         Script::Oriya), ('\u{b5c}', '\u{b5d}',  Script::Oriya), ('\u{b5f}', '\u{b61}',
+         Script::Oriya), ('\u{b62}', '\u{b63}',  Script::Oriya), ('\u{b66}', '\u{b6f}',
+         Script::Oriya), ('\u{b70}', '\u{b70}',  Script::Oriya), ('\u{b71}', '\u{b71}',
+         Script::Oriya), ('\u{b72}', '\u{b77}',  Script::Oriya), ('\u{b82}', '\u{b82}',
+         Script::Tamil), ('\u{b83}', '\u{b83}',  Script::Tamil), ('\u{b85}', '\u{b8a}',
+         Script::Tamil), ('\u{b8e}', '\u{b90}',  Script::Tamil), ('\u{b92}', '\u{b95}',
+         Script::Tamil), ('\u{b99}', '\u{b9a}',  Script::Tamil), ('\u{b9c}', '\u{b9c}',
+         Script::Tamil), ('\u{b9e}', '\u{b9f}',  Script::Tamil), ('\u{ba3}', '\u{ba4}',
+         Script::Tamil), ('\u{ba8}', '\u{baa}',  Script::Tamil), ('\u{bae}', '\u{bb9}',
+         Script::Tamil), ('\u{bbe}', '\u{bbf}',  Script::Tamil), ('\u{bc0}', '\u{bc0}',
+         Script::Tamil), ('\u{bc1}', '\u{bc2}',  Script::Tamil), ('\u{bc6}', '\u{bc8}',
+         Script::Tamil), ('\u{bca}', '\u{bcc}',  Script::Tamil), ('\u{bcd}', '\u{bcd}',
+         Script::Tamil), ('\u{bd0}', '\u{bd0}',  Script::Tamil), ('\u{bd7}', '\u{bd7}',
+         Script::Tamil), ('\u{be6}', '\u{bef}',  Script::Tamil), ('\u{bf0}', '\u{bf2}',
+         Script::Tamil), ('\u{bf3}', '\u{bf8}',  Script::Tamil), ('\u{bf9}', '\u{bf9}',
+         Script::Tamil), ('\u{bfa}', '\u{bfa}',  Script::Tamil), ('\u{c00}', '\u{c00}',
+         Script::Telugu), ('\u{c01}', '\u{c03}',  Script::Telugu), ('\u{c04}', '\u{c04}',
+         Script::Telugu), ('\u{c05}', '\u{c0c}',  Script::Telugu), ('\u{c0e}', '\u{c10}',
+         Script::Telugu), ('\u{c12}', '\u{c28}',  Script::Telugu), ('\u{c2a}', '\u{c39}',
+         Script::Telugu), ('\u{c3c}', '\u{c3c}',  Script::Telugu), ('\u{c3d}', '\u{c3d}',
+         Script::Telugu), ('\u{c3e}', '\u{c40}',  Script::Telugu), ('\u{c41}', '\u{c44}',
+         Script::Telugu), ('\u{c46}', '\u{c48}',  Script::Telugu), ('\u{c4a}', '\u{c4d}',
+         Script::Telugu), ('\u{c55}', '\u{c56}',  Script::Telugu), ('\u{c58}', '\u{c5a}',
+         Script::Telugu), ('\u{c5c}', '\u{c5d}',  Script::Telugu), ('\u{c60}', '\u{c61}',
+         Script::Telugu), ('\u{c62}', '\u{c63}',  Script::Telugu), ('\u{c66}', '\u{c6f}',
+         Script::Telugu), ('\u{c77}', '\u{c77}',  Script::Telugu), ('\u{c78}', '\u{c7e}',
+         Script::Telugu), ('\u{c7f}', '\u{c7f}',  Script::Telugu), ('\u{c80}', '\u{c80}',
+         Script::Kannada), ('\u{c81}', '\u{c81}',  Script::Kannada), ('\u{c82}', '\u{c83}',
+         Script::Kannada), ('\u{c84}', '\u{c84}',  Script::Kannada), ('\u{c85}', '\u{c8c}',
+         Script::Kannada), ('\u{c8e}', '\u{c90}',  Script::Kannada), ('\u{c92}', '\u{ca8}',
+         Script::Kannada), ('\u{caa}', '\u{cb3}',  Script::Kannada), ('\u{cb5}', '\u{cb9}',
+         Script::Kannada), ('\u{cbc}', '\u{cbc}',  Script::Kannada), ('\u{cbd}', '\u{cbd}',
+         Script::Kannada), ('\u{cbe}', '\u{cbe}',  Script::Kannada), ('\u{cbf}', '\u{cbf}',
+         Script::Kannada), ('\u{cc0}', '\u{cc4}',  Script::Kannada), ('\u{cc6}', '\u{cc6}',
+         Script::Kannada), ('\u{cc7}', '\u{cc8}',  Script::Kannada), ('\u{cca}', '\u{ccb}',
+         Script::Kannada), ('\u{ccc}', '\u{ccd}',  Script::Kannada), ('\u{cd5}', '\u{cd6}',
+         Script::Kannada), ('\u{cdc}', '\u{cde}',  Script::Kannada), ('\u{ce0}', '\u{ce1}',
+         Script::Kannada), ('\u{ce2}', '\u{ce3}',  Script::Kannada), ('\u{ce6}', '\u{cef}',
+         Script::Kannada), ('\u{cf1}', '\u{cf2}',  Script::Kannada), ('\u{cf3}', '\u{cf3}',
+         Script::Kannada), ('\u{d00}', '\u{d01}',  Script::Malayalam), ('\u{d02}', '\u{d03}',
+         Script::Malayalam), ('\u{d04}', '\u{d0c}',  Script::Malayalam), ('\u{d0e}', '\u{d10}',
+         Script::Malayalam), ('\u{d12}', '\u{d3a}',  Script::Malayalam), ('\u{d3b}', '\u{d3c}',
+         Script::Malayalam), ('\u{d3d}', '\u{d3d}',  Script::Malayalam), ('\u{d3e}', '\u{d40}',
+         Script::Malayalam), ('\u{d41}', '\u{d44}',  Script::Malayalam), ('\u{d46}', '\u{d48}',
+         Script::Malayalam), ('\u{d4a}', '\u{d4c}',  Script::Malayalam), ('\u{d4d}', '\u{d4d}',
+         Script::Malayalam), ('\u{d4e}', '\u{d4e}',  Script::Malayalam), ('\u{d4f}', '\u{d4f}',
+         Script::Malayalam), ('\u{d54}', '\u{d56}',  Script::Malayalam), ('\u{d57}', '\u{d57}',
+         Script::Malayalam), ('\u{d58}', '\u{d5e}',  Script::Malayalam), ('\u{d5f}', '\u{d61}',
+         Script::Malayalam), ('\u{d62}', '\u{d63}',  Script::Malayalam), ('\u{d66}', '\u{d6f}',
+         Script::Malayalam), ('\u{d70}', '\u{d78}',  Script::Malayalam), ('\u{d79}', '\u{d79}',
+         Script::Malayalam), ('\u{d7a}', '\u{d7f}',  Script::Malayalam), ('\u{d81}', '\u{d81}',
+         Script::Sinhala), ('\u{d82}', '\u{d83}',  Script::Sinhala), ('\u{d85}', '\u{d96}',
+         Script::Sinhala), ('\u{d9a}', '\u{db1}',  Script::Sinhala), ('\u{db3}', '\u{dbb}',
+         Script::Sinhala), ('\u{dbd}', '\u{dbd}',  Script::Sinhala), ('\u{dc0}', '\u{dc6}',
+         Script::Sinhala), ('\u{dca}', '\u{dca}',  Script::Sinhala), ('\u{dcf}', '\u{dd1}',
+         Script::Sinhala), ('\u{dd2}', '\u{dd4}',  Script::Sinhala), ('\u{dd6}', '\u{dd6}',
+         Script::Sinhala), ('\u{dd8}', '\u{ddf}',  Script::Sinhala), ('\u{de6}', '\u{def}',
+         Script::Sinhala), ('\u{df2}', '\u{df3}',  Script::Sinhala), ('\u{df4}', '\u{df4}',
+         Script::Sinhala), ('\u{e01}', '\u{e30}',  Script::Thai), ('\u{e31}', '\u{e31}',
+         Script::Thai), ('\u{e32}', '\u{e33}',  Script::Thai), ('\u{e34}', '\u{e3a}',
+         Script::Thai), ('\u{e3f}', '\u{e3f}',  Script::Common), ('\u{e40}', '\u{e45}',
+         Script::Thai), ('\u{e46}', '\u{e46}',  Script::Thai), ('\u{e47}', '\u{e4e}',
+         Script::Thai), ('\u{e4f}', '\u{e4f}',  Script::Thai), ('\u{e50}', '\u{e59}',
+         Script::Thai), ('\u{e5a}', '\u{e5b}',  Script::Thai), ('\u{e81}', '\u{e82}',  Script::Lao),
+        ('\u{e84}', '\u{e84}',  Script::Lao), ('\u{e86}', '\u{e8a}',  Script::Lao), ('\u{e8c}',
+        '\u{ea3}',  Script::Lao), ('\u{ea5}', '\u{ea5}',  Script::Lao), ('\u{ea7}', '\u{eb0}',
+         Script::Lao), ('\u{eb1}', '\u{eb1}',  Script::Lao), ('\u{eb2}', '\u{eb3}',  Script::Lao),
+        ('\u{eb4}', '\u{ebc}',  Script::Lao), ('\u{ebd}', '\u{ebd}',  Script::Lao), ('\u{ec0}',
+        '\u{ec4}',  Script::Lao), ('\u{ec6}', '\u{ec6}',  Script::Lao), ('\u{ec8}', '\u{ece}',
+         Script::Lao), ('\u{ed0}', '\u{ed9}',  Script::Lao), ('\u{edc}', '\u{edf}',  Script::Lao),
+        ('\u{f00}', '\u{f00}',  Script::Tibetan), ('\u{f01}', '\u{f03}',  Script::Tibetan),
+        ('\u{f04}', '\u{f12}',  Script::Tibetan), ('\u{f13}', '\u{f13}',  Script::Tibetan),
+        ('\u{f14}', '\u{f14}',  Script::Tibetan), ('\u{f15}', '\u{f17}',  Script::Tibetan),
+        ('\u{f18}', '\u{f19}',  Script::Tibetan), ('\u{f1a}', '\u{f1f}',  Script::Tibetan),
+        ('\u{f20}', '\u{f29}',  Script::Tibetan), ('\u{f2a}', '\u{f33}',  Script::Tibetan),
+        ('\u{f34}', '\u{f34}',  Script::Tibetan), ('\u{f35}', '\u{f35}',  Script::Tibetan),
+        ('\u{f36}', '\u{f36}',  Script::Tibetan), ('\u{f37}', '\u{f37}',  Script::Tibetan),
+        ('\u{f38}', '\u{f38}',  Script::Tibetan), ('\u{f39}', '\u{f39}',  Script::Tibetan),
+        ('\u{f3a}', '\u{f3a}',  Script::Tibetan), ('\u{f3b}', '\u{f3b}',  Script::Tibetan),
+        ('\u{f3c}', '\u{f3c}',  Script::Tibetan), ('\u{f3d}', '\u{f3d}',  Script::Tibetan),
+        ('\u{f3e}', '\u{f3f}',  Script::Tibetan), ('\u{f40}', '\u{f47}',  Script::Tibetan),
+        ('\u{f49}', '\u{f6c}',  Script::Tibetan), ('\u{f71}', '\u{f7e}',  Script::Tibetan),
+        ('\u{f7f}', '\u{f7f}',  Script::Tibetan), ('\u{f80}', '\u{f84}',  Script::Tibetan),
+        ('\u{f85}', '\u{f85}',  Script::Tibetan), ('\u{f86}', '\u{f87}',  Script::Tibetan),
+        ('\u{f88}', '\u{f8c}',  Script::Tibetan), ('\u{f8d}', '\u{f97}',  Script::Tibetan),
+        ('\u{f99}', '\u{fbc}',  Script::Tibetan), ('\u{fbe}', '\u{fc5}',  Script::Tibetan),
+        ('\u{fc6}', '\u{fc6}',  Script::Tibetan), ('\u{fc7}', '\u{fcc}',  Script::Tibetan),
+        ('\u{fce}', '\u{fcf}',  Script::Tibetan), ('\u{fd0}', '\u{fd4}',  Script::Tibetan),
+        ('\u{fd5}', '\u{fd8}',  Script::Common), ('\u{fd9}', '\u{fda}',  Script::Tibetan),
+        ('\u{1000}', '\u{102a}',  Script::Myanmar), ('\u{102b}', '\u{102c}',  Script::Myanmar),
+        ('\u{102d}', '\u{1030}',  Script::Myanmar), ('\u{1031}', '\u{1031}',  Script::Myanmar),
+        ('\u{1032}', '\u{1037}',  Script::Myanmar), ('\u{1038}', '\u{1038}',  Script::Myanmar),
+        ('\u{1039}', '\u{103a}',  Script::Myanmar), ('\u{103b}', '\u{103c}',  Script::Myanmar),
+        ('\u{103d}', '\u{103e}',  Script::Myanmar), ('\u{103f}', '\u{103f}',  Script::Myanmar),
+        ('\u{1040}', '\u{1049}',  Script::Myanmar), ('\u{104a}', '\u{104f}',  Script::Myanmar),
+        ('\u{1050}', '\u{1055}',  Script::Myanmar), ('\u{1056}', '\u{1057}',  Script::Myanmar),
+        ('\u{1058}', '\u{1059}',  Script::Myanmar), ('\u{105a}', '\u{105d}',  Script::Myanmar),
+        ('\u{105e}', '\u{1060}',  Script::Myanmar), ('\u{1061}', '\u{1061}',  Script::Myanmar),
+        ('\u{1062}', '\u{1064}',  Script::Myanmar), ('\u{1065}', '\u{1066}',  Script::Myanmar),
+        ('\u{1067}', '\u{106d}',  Script::Myanmar), ('\u{106e}', '\u{1070}',  Script::Myanmar),
+        ('\u{1071}', '\u{1074}',  Script::Myanmar), ('\u{1075}', '\u{1081}',  Script::Myanmar),
+        ('\u{1082}', '\u{1082}',  Script::Myanmar), ('\u{1083}', '\u{1084}',  Script::Myanmar),
+        ('\u{1085}', '\u{1086}',  Script::Myanmar), ('\u{1087}', '\u{108c}',  Script::Myanmar),
+        ('\u{108d}', '\u{108d}',  Script::Myanmar), ('\u{108e}', '\u{108e}',  Script::Myanmar),
+        ('\u{108f}', '\u{108f}',  Script::Myanmar), ('\u{1090}', '\u{1099}',  Script::Myanmar),
+        ('\u{109a}', '\u{109c}',  Script::Myanmar), ('\u{109d}', '\u{109d}',  Script::Myanmar),
+        ('\u{109e}', '\u{109f}',  Script::Myanmar), ('\u{10a0}', '\u{10c5}',  Script::Georgian),
+        ('\u{10c7}', '\u{10c7}',  Script::Georgian), ('\u{10cd}', '\u{10cd}',  Script::Georgian),
+        ('\u{10d0}', '\u{10fa}',  Script::Georgian), ('\u{10fb}', '\u{10fb}',  Script::Common),
+        ('\u{10fc}', '\u{10fc}',  Script::Georgian), ('\u{10fd}', '\u{10ff}',  Script::Georgian),
+        ('\u{1100}', '\u{11ff}',  Script::Hangul), ('\u{1200}', '\u{1248}',  Script::Ethiopic),
+        ('\u{124a}', '\u{124d}',  Script::Ethiopic), ('\u{1250}', '\u{1256}',  Script::Ethiopic),
+        ('\u{1258}', '\u{1258}',  Script::Ethiopic), ('\u{125a}', '\u{125d}',  Script::Ethiopic),
+        ('\u{1260}', '\u{1288}',  Script::Ethiopic), ('\u{128a}', '\u{128d}',  Script::Ethiopic),
+        ('\u{1290}', '\u{12b0}',  Script::Ethiopic), ('\u{12b2}', '\u{12b5}',  Script::Ethiopic),
+        ('\u{12b8}', '\u{12be}',  Script::Ethiopic), ('\u{12c0}', '\u{12c0}',  Script::Ethiopic),
+        ('\u{12c2}', '\u{12c5}',  Script::Ethiopic), ('\u{12c8}', '\u{12d6}',  Script::Ethiopic),
+        ('\u{12d8}', '\u{1310}',  Script::Ethiopic), ('\u{1312}', '\u{1315}',  Script::Ethiopic),
+        ('\u{1318}', '\u{135a}',  Script::Ethiopic), ('\u{135d}', '\u{135f}',  Script::Ethiopic),
+        ('\u{1360}', '\u{1368}',  Script::Ethiopic), ('\u{1369}', '\u{137c}',  Script::Ethiopic),
+        ('\u{1380}', '\u{138f}',  Script::Ethiopic), ('\u{1390}', '\u{1399}',  Script::Ethiopic),
+        ('\u{13a0}', '\u{13f5}',  Script::Cherokee), ('\u{13f8}', '\u{13fd}',  Script::Cherokee),
+        ('\u{1400}', '\u{1400}',  Script::Canadian_Aboriginal), ('\u{1401}', '\u{166c}',
+         Script::Canadian_Aboriginal), ('\u{166d}', '\u{166d}',  Script::Canadian_Aboriginal),
+        ('\u{166e}', '\u{166e}',  Script::Canadian_Aboriginal), ('\u{166f}', '\u{167f}',
+         Script::Canadian_Aboriginal), ('\u{1680}', '\u{1680}',  Script::Ogham), ('\u{1681}',
+        '\u{169a}',  Script::Ogham), ('\u{169b}', '\u{169b}',  Script::Ogham), ('\u{169c}',
+        '\u{169c}',  Script::Ogham), ('\u{16a0}', '\u{16ea}',  Script::Runic), ('\u{16eb}',
+        '\u{16ed}',  Script::Common), ('\u{16ee}', '\u{16f0}',  Script::Runic), ('\u{16f1}',
+        '\u{16f8}',  Script::Runic), ('\u{1700}', '\u{1711}',  Script::Tagalog), ('\u{1712}',
+        '\u{1714}',  Script::Tagalog), ('\u{1715}', '\u{1715}',  Script::Tagalog), ('\u{171f}',
+        '\u{171f}',  Script::Tagalog), ('\u{1720}', '\u{1731}',  Script::Hanunoo), ('\u{1732}',
+        '\u{1733}',  Script::Hanunoo), ('\u{1734}', '\u{1734}',  Script::Hanunoo), ('\u{1735}',
+        '\u{1736}',  Script::Common), ('\u{1740}', '\u{1751}',  Script::Buhid), ('\u{1752}',
+        '\u{1753}',  Script::Buhid), ('\u{1760}', '\u{176c}',  Script::Tagbanwa), ('\u{176e}',
+        '\u{1770}',  Script::Tagbanwa), ('\u{1772}', '\u{1773}',  Script::Tagbanwa), ('\u{1780}',
+        '\u{17b3}',  Script::Khmer), ('\u{17b4}', '\u{17b5}',  Script::Khmer), ('\u{17b6}',
+        '\u{17b6}',  Script::Khmer), ('\u{17b7}', '\u{17bd}',  Script::Khmer), ('\u{17be}',
+        '\u{17c5}',  Script::Khmer), ('\u{17c6}', '\u{17c6}',  Script::Khmer), ('\u{17c7}',
+        '\u{17c8}',  Script::Khmer), ('\u{17c9}', '\u{17d3}',  Script::Khmer), ('\u{17d4}',
+        '\u{17d6}',  Script::Khmer), ('\u{17d7}', '\u{17d7}',  Script::Khmer), ('\u{17d8}',
+        '\u{17da}',  Script::Khmer), ('\u{17db}', '\u{17db}',  Script::Khmer), ('\u{17dc}',
+        '\u{17dc}',  Script::Khmer), ('\u{17dd}', '\u{17dd}',  Script::Khmer), ('\u{17e0}',
+        '\u{17e9}',  Script::Khmer), ('\u{17f0}', '\u{17f9}',  Script::Khmer), ('\u{1800}',
+        '\u{1801}',  Script::Mongolian), ('\u{1802}', '\u{1803}',  Script::Common), ('\u{1804}',
+        '\u{1804}',  Script::Mongolian), ('\u{1805}', '\u{1805}',  Script::Common), ('\u{1806}',
+        '\u{1806}',  Script::Mongolian), ('\u{1807}', '\u{180a}',  Script::Mongolian), ('\u{180b}',
+        '\u{180d}',  Script::Mongolian), ('\u{180e}', '\u{180e}',  Script::Mongolian), ('\u{180f}',
+        '\u{180f}',  Script::Mongolian), ('\u{1810}', '\u{1819}',  Script::Mongolian), ('\u{1820}',
+        '\u{1842}',  Script::Mongolian), ('\u{1843}', '\u{1843}',  Script::Mongolian), ('\u{1844}',
+        '\u{1878}',  Script::Mongolian), ('\u{1880}', '\u{1884}',  Script::Mongolian), ('\u{1885}',
+        '\u{1886}',  Script::Mongolian), ('\u{1887}', '\u{18a8}',  Script::Mongolian), ('\u{18a9}',
+        '\u{18a9}',  Script::Mongolian), ('\u{18aa}', '\u{18aa}',  Script::Mongolian), ('\u{18b0}',
+        '\u{18f5}',  Script::Canadian_Aboriginal), ('\u{1900}', '\u{191e}',  Script::Limbu),
+        ('\u{1920}', '\u{1922}',  Script::Limbu), ('\u{1923}', '\u{1926}',  Script::Limbu),
+        ('\u{1927}', '\u{1928}',  Script::Limbu), ('\u{1929}', '\u{192b}',  Script::Limbu),
+        ('\u{1930}', '\u{1931}',  Script::Limbu), ('\u{1932}', '\u{1932}',  Script::Limbu),
+        ('\u{1933}', '\u{1938}',  Script::Limbu), ('\u{1939}', '\u{193b}',  Script::Limbu),
+        ('\u{1940}', '\u{1940}',  Script::Limbu), ('\u{1944}', '\u{1945}',  Script::Limbu),
+        ('\u{1946}', '\u{194f}',  Script::Limbu), ('\u{1950}', '\u{196d}',  Script::Tai_Le),
+        ('\u{1970}', '\u{1974}',  Script::Tai_Le), ('\u{1980}', '\u{19ab}',  Script::New_Tai_Lue),
+        ('\u{19b0}', '\u{19c9}',  Script::New_Tai_Lue), ('\u{19d0}', '\u{19d9}',
+         Script::New_Tai_Lue), ('\u{19da}', '\u{19da}',  Script::New_Tai_Lue), ('\u{19de}',
+        '\u{19df}',  Script::New_Tai_Lue), ('\u{19e0}', '\u{19ff}',  Script::Khmer), ('\u{1a00}',
+        '\u{1a16}',  Script::Buginese), ('\u{1a17}', '\u{1a18}',  Script::Buginese), ('\u{1a19}',
+        '\u{1a1a}',  Script::Buginese), ('\u{1a1b}', '\u{1a1b}',  Script::Buginese), ('\u{1a1e}',
+        '\u{1a1f}',  Script::Buginese), ('\u{1a20}', '\u{1a54}',  Script::Tai_Tham), ('\u{1a55}',
+        '\u{1a55}',  Script::Tai_Tham), ('\u{1a56}', '\u{1a56}',  Script::Tai_Tham), ('\u{1a57}',
+        '\u{1a57}',  Script::Tai_Tham), ('\u{1a58}', '\u{1a5e}',  Script::Tai_Tham), ('\u{1a60}',
+        '\u{1a60}',  Script::Tai_Tham), ('\u{1a61}', '\u{1a61}',  Script::Tai_Tham), ('\u{1a62}',
+        '\u{1a62}',  Script::Tai_Tham), ('\u{1a63}', '\u{1a64}',  Script::Tai_Tham), ('\u{1a65}',
+        '\u{1a6c}',  Script::Tai_Tham), ('\u{1a6d}', '\u{1a72}',  Script::Tai_Tham), ('\u{1a73}',
+        '\u{1a7c}',  Script::Tai_Tham), ('\u{1a7f}', '\u{1a7f}',  Script::Tai_Tham), ('\u{1a80}',
+        '\u{1a89}',  Script::Tai_Tham), ('\u{1a90}', '\u{1a99}',  Script::Tai_Tham), ('\u{1aa0}',
+        '\u{1aa6}',  Script::Tai_Tham), ('\u{1aa7}', '\u{1aa7}',  Script::Tai_Tham), ('\u{1aa8}',
+        '\u{1aad}',  Script::Tai_Tham), ('\u{1ab0}', '\u{1abd}',  Script::Inherited), ('\u{1abe}',
+        '\u{1abe}',  Script::Inherited), ('\u{1abf}', '\u{1af0}',  Script::Inherited), ('\u{1b00}',
+        '\u{1b03}',  Script::Balinese), ('\u{1b04}', '\u{1b04}',  Script::Balinese), ('\u{1b05}',
+        '\u{1b33}',  Script::Balinese), ('\u{1b34}', '\u{1b34}',  Script::Balinese), ('\u{1b35}',
+        '\u{1b35}',  Script::Balinese), ('\u{1b36}', '\u{1b3a}',  Script::Balinese), ('\u{1b3b}',
+        '\u{1b3b}',  Script::Balinese), ('\u{1b3c}', '\u{1b3c}',  Script::Balinese), ('\u{1b3d}',
+        '\u{1b41}',  Script::Balinese), ('\u{1b42}', '\u{1b42}',  Script::Balinese), ('\u{1b43}',
+        '\u{1b44}',  Script::Balinese), ('\u{1b45}', '\u{1b4c}',  Script::Balinese), ('\u{1b4e}',
+        '\u{1b4f}',  Script::Balinese), ('\u{1b50}', '\u{1b59}',  Script::Balinese), ('\u{1b5a}',
+        '\u{1b60}',  Script::Balinese), ('\u{1b61}', '\u{1b6a}',  Script::Balinese), ('\u{1b6b}',
+        '\u{1b73}',  Script::Balinese), ('\u{1b74}', '\u{1b7c}',  Script::Balinese), ('\u{1b7d}',
+        '\u{1b7f}',  Script::Balinese), ('\u{1b80}', '\u{1b81}',  Script::Sundanese), ('\u{1b82}',
+        '\u{1b82}',  Script::Sundanese), ('\u{1b83}', '\u{1ba0}',  Script::Sundanese), ('\u{1ba1}',
+        '\u{1ba1}',  Script::Sundanese), ('\u{1ba2}', '\u{1ba5}',  Script::Sundanese), ('\u{1ba6}',
+        '\u{1ba7}',  Script::Sundanese), ('\u{1ba8}', '\u{1ba9}',  Script::Sundanese), ('\u{1baa}',
+        '\u{1baa}',  Script::Sundanese), ('\u{1bab}', '\u{1bad}',  Script::Sundanese), ('\u{1bae}',
+        '\u{1baf}',  Script::Sundanese), ('\u{1bb0}', '\u{1bb9}',  Script::Sundanese), ('\u{1bba}',
+        '\u{1bbf}',  Script::Sundanese), ('\u{1bc0}', '\u{1be5}',  Script::Batak), ('\u{1be6}',
+        '\u{1be6}',  Script::Batak), ('\u{1be7}', '\u{1be7}',  Script::Batak), ('\u{1be8}',
+        '\u{1be9}',  Script::Batak), ('\u{1bea}', '\u{1bec}',  Script::Batak), ('\u{1bed}',
+        '\u{1bed}',  Script::Batak), ('\u{1bee}', '\u{1bee}',  Script::Batak), ('\u{1bef}',
+        '\u{1bf1}',  Script::Batak), ('\u{1bf2}', '\u{1bf3}',  Script::Batak), ('\u{1bfc}',
+        '\u{1bff}',  Script::Batak), ('\u{1c00}', '\u{1c23}',  Script::Lepcha), ('\u{1c24}',
+        '\u{1c2b}',  Script::Lepcha), ('\u{1c2c}', '\u{1c33}',  Script::Lepcha), ('\u{1c34}',
+        '\u{1c35}',  Script::Lepcha), ('\u{1c36}', '\u{1c37}',  Script::Lepcha), ('\u{1c3b}',
+        '\u{1c3f}',  Script::Lepcha), ('\u{1c40}', '\u{1c49}',  Script::Lepcha), ('\u{1c4d}',
+        '\u{1c4f}',  Script::Lepcha), ('\u{1c50}', '\u{1c59}',  Script::Ol_Chiki), ('\u{1c5a}',
+        '\u{1c77}',  Script::Ol_Chiki), ('\u{1c78}', '\u{1c7d}',  Script::Ol_Chiki), ('\u{1c7e}',
+        '\u{1c7f}',  Script::Ol_Chiki), ('\u{1c80}', '\u{1c8a}',  Script::Cyrillic), ('\u{1c90}',
+        '\u{1cba}',  Script::Georgian), ('\u{1cbd}', '\u{1cbf}',  Script::Georgian), ('\u{1cc0}',
+        '\u{1cc7}',  Script::Sundanese), ('\u{1cd0}', '\u{1cd2}',  Script::Inherited), ('\u{1cd3}',
+        '\u{1cd3}',  Script::Common), ('\u{1cd4}', '\u{1ce0}',  Script::Inherited), ('\u{1ce1}',
+        '\u{1ce1}',  Script::Common), ('\u{1ce2}', '\u{1ce8}',  Script::Inherited), ('\u{1ce9}',
+        '\u{1cec}',  Script::Common), ('\u{1ced}', '\u{1ced}',  Script::Inherited), ('\u{1cee}',
+        '\u{1cf3}',  Script::Common), ('\u{1cf4}', '\u{1cf4}',  Script::Inherited), ('\u{1cf5}',
+        '\u{1cf6}',  Script::Common), ('\u{1cf7}', '\u{1cf7}',  Script::Common), ('\u{1cf8}',
+        '\u{1cf9}',  Script::Inherited), ('\u{1cfa}', '\u{1cfa}',  Script::Common), ('\u{1d00}',
+        '\u{1d25}',  Script::Latin), ('\u{1d26}', '\u{1d2a}',  Script::Greek), ('\u{1d2b}',
+        '\u{1d2b}',  Script::Cyrillic), ('\u{1d2c}', '\u{1d5c}',  Script::Latin), ('\u{1d5d}',
+        '\u{1d61}',  Script::Greek), ('\u{1d62}', '\u{1d65}',  Script::Latin), ('\u{1d66}',
+        '\u{1d6a}',  Script::Greek), ('\u{1d6b}', '\u{1d77}',  Script::Latin), ('\u{1d78}',
+        '\u{1d78}',  Script::Cyrillic), ('\u{1d79}', '\u{1d9a}',  Script::Latin), ('\u{1d9b}',
+        '\u{1dbe}',  Script::Latin), ('\u{1dbf}', '\u{1dbf}',  Script::Greek), ('\u{1dc0}',
+        '\u{1dff}',  Script::Inherited), ('\u{1e00}', '\u{1eff}',  Script::Latin), ('\u{1f00}',
+        '\u{1f15}',  Script::Greek), ('\u{1f18}', '\u{1f1d}',  Script::Greek), ('\u{1f20}',
+        '\u{1f45}',  Script::Greek), ('\u{1f48}', '\u{1f4d}',  Script::Greek), ('\u{1f50}',
+        '\u{1f57}',  Script::Greek), ('\u{1f59}', '\u{1f59}',  Script::Greek), ('\u{1f5b}',
+        '\u{1f5b}',  Script::Greek), ('\u{1f5d}', '\u{1f5d}',  Script::Greek), ('\u{1f5f}',
+        '\u{1f7d}',  Script::Greek), ('\u{1f80}', '\u{1fb4}',  Script::Greek), ('\u{1fb6}',
+        '\u{1fbc}',  Script::Greek), ('\u{1fbd}', '\u{1fbd}',  Script::Greek), ('\u{1fbe}',
+        '\u{1fbe}',  Script::Greek), ('\u{1fbf}', '\u{1fc1}',  Script::Greek), ('\u{1fc2}',
+        '\u{1fc4}',  Script::Greek), ('\u{1fc6}', '\u{1fcc}',  Script::Greek), ('\u{1fcd}',
+        '\u{1fcf}',  Script::Greek), ('\u{1fd0}', '\u{1fd3}',  Script::Greek), ('\u{1fd6}',
+        '\u{1fdb}',  Script::Greek), ('\u{1fdd}', '\u{1fdf}',  Script::Greek), ('\u{1fe0}',
+        '\u{1fec}',  Script::Greek), ('\u{1fed}', '\u{1fef}',  Script::Greek), ('\u{1ff2}',
+        '\u{1ff4}',  Script::Greek), ('\u{1ff6}', '\u{1ffc}',  Script::Greek), ('\u{1ffd}',
+        '\u{1ffe}',  Script::Greek), ('\u{2000}', '\u{200a}',  Script::Common), ('\u{200b}',
+        '\u{200b}',  Script::Common), ('\u{200c}', '\u{200d}',  Script::Inherited), ('\u{200e}',
+        '\u{200f}',  Script::Common), ('\u{2010}', '\u{2015}',  Script::Common), ('\u{2016}',
+        '\u{2017}',  Script::Common), ('\u{2018}', '\u{2018}',  Script::Common), ('\u{2019}',
+        '\u{2019}',  Script::Common), ('\u{201a}', '\u{201a}',  Script::Common), ('\u{201b}',
+        '\u{201c}',  Script::Common), ('\u{201d}', '\u{201d}',  Script::Common), ('\u{201e}',
+        '\u{201e}',  Script::Common), ('\u{201f}', '\u{201f}',  Script::Common), ('\u{2020}',
+        '\u{2027}',  Script::Common), ('\u{2028}', '\u{2028}',  Script::Common), ('\u{2029}',
+        '\u{2029}',  Script::Common), ('\u{202a}', '\u{202e}',  Script::Common), ('\u{202f}',
+        '\u{202f}',  Script::Common), ('\u{2030}', '\u{2038}',  Script::Common), ('\u{2039}',
+        '\u{2039}',  Script::Common), ('\u{203a}', '\u{203a}',  Script::Common), ('\u{203b}',
+        '\u{203e}',  Script::Common), ('\u{203f}', '\u{2040}',  Script::Common), ('\u{2041}',
+        '\u{2043}',  Script::Common), ('\u{2044}', '\u{2044}',  Script::Common), ('\u{2045}',
+        '\u{2045}',  Script::Common), ('\u{2046}', '\u{2046}',  Script::Common), ('\u{2047}',
+        '\u{2051}',  Script::Common), ('\u{2052}', '\u{2052}',  Script::Common), ('\u{2053}',
+        '\u{2053}',  Script::Common), ('\u{2054}', '\u{2054}',  Script::Common), ('\u{2055}',
+        '\u{205e}',  Script::Common), ('\u{205f}', '\u{205f}',  Script::Common), ('\u{2060}',
+        '\u{2064}',  Script::Common), ('\u{2066}', '\u{206f}',  Script::Common), ('\u{2070}',
+        '\u{2070}',  Script::Common), ('\u{2071}', '\u{2071}',  Script::Latin), ('\u{2074}',
+        '\u{2079}',  Script::Common), ('\u{207a}', '\u{207c}',  Script::Common), ('\u{207d}',
+        '\u{207d}',  Script::Common), ('\u{207e}', '\u{207e}',  Script::Common), ('\u{207f}',
+        '\u{207f}',  Script::Latin), ('\u{2080}', '\u{2089}',  Script::Common), ('\u{208a}',
+        '\u{208c}',  Script::Common), ('\u{208d}', '\u{208d}',  Script::Common), ('\u{208e}',
+        '\u{208e}',  Script::Common), ('\u{208f}', '\u{208f}',  Script::Common), ('\u{2090}',
+        '\u{209f}',  Script::Latin), ('\u{20a0}', '\u{20c4}',  Script::Common), ('\u{20d0}',
+        '\u{20dc}',  Script::Inherited), ('\u{20dd}', '\u{20e0}',  Script::Inherited), ('\u{20e1}',
+        '\u{20e1}',  Script::Inherited), ('\u{20e2}', '\u{20e4}',  Script::Inherited), ('\u{20e5}',
+        '\u{20f0}',  Script::Inherited), ('\u{2100}', '\u{2101}',  Script::Common), ('\u{2102}',
+        '\u{2102}',  Script::Common), ('\u{2103}', '\u{2106}',  Script::Common), ('\u{2107}',
+        '\u{2107}',  Script::Common), ('\u{2108}', '\u{2109}',  Script::Common), ('\u{210a}',
+        '\u{2113}',  Script::Common), ('\u{2114}', '\u{2114}',  Script::Common), ('\u{2115}',
+        '\u{2115}',  Script::Common), ('\u{2116}', '\u{2117}',  Script::Common), ('\u{2118}',
+        '\u{2118}',  Script::Common), ('\u{2119}', '\u{211d}',  Script::Common), ('\u{211e}',
+        '\u{2123}',  Script::Common), ('\u{2124}', '\u{2124}',  Script::Common), ('\u{2125}',
+        '\u{2125}',  Script::Common), ('\u{2126}', '\u{2126}',  Script::Greek), ('\u{2127}',
+        '\u{2127}',  Script::Common), ('\u{2128}', '\u{2128}',  Script::Common), ('\u{2129}',
+        '\u{2129}',  Script::Common), ('\u{212a}', '\u{212b}',  Script::Latin), ('\u{212c}',
+        '\u{212d}',  Script::Common), ('\u{212e}', '\u{212e}',  Script::Common), ('\u{212f}',
+        '\u{2131}',  Script::Common), ('\u{2132}', '\u{2132}',  Script::Latin), ('\u{2133}',
+        '\u{2134}',  Script::Common), ('\u{2135}', '\u{2138}',  Script::Common), ('\u{2139}',
+        '\u{2139}',  Script::Common), ('\u{213a}', '\u{213b}',  Script::Common), ('\u{213c}',
+        '\u{213f}',  Script::Common), ('\u{2140}', '\u{2144}',  Script::Common), ('\u{2145}',
+        '\u{2149}',  Script::Common), ('\u{214a}', '\u{214a}',  Script::Common), ('\u{214b}',
+        '\u{214b}',  Script::Common), ('\u{214c}', '\u{214d}',  Script::Common), ('\u{214e}',
+        '\u{214e}',  Script::Latin), ('\u{214f}', '\u{214f}',  Script::Common), ('\u{2150}',
+        '\u{215f}',  Script::Common), ('\u{2160}', '\u{2182}',  Script::Latin), ('\u{2183}',
+        '\u{2184}',  Script::Latin), ('\u{2185}', '\u{2188}',  Script::Latin), ('\u{2189}',
+        '\u{2189}',  Script::Common), ('\u{218a}', '\u{218b}',  Script::Common), ('\u{2190}',
+        '\u{2194}',  Script::Common), ('\u{2195}', '\u{2199}',  Script::Common), ('\u{219a}',
+        '\u{219b}',  Script::Common), ('\u{219c}', '\u{219f}',  Script::Common), ('\u{21a0}',
+        '\u{21a0}',  Script::Common), ('\u{21a1}', '\u{21a2}',  Script::Common), ('\u{21a3}',
+        '\u{21a3}',  Script::Common), ('\u{21a4}', '\u{21a5}',  Script::Common), ('\u{21a6}',
+        '\u{21a6}',  Script::Common), ('\u{21a7}', '\u{21ad}',  Script::Common), ('\u{21ae}',
+        '\u{21ae}',  Script::Common), ('\u{21af}', '\u{21cd}',  Script::Common), ('\u{21ce}',
+        '\u{21cf}',  Script::Common), ('\u{21d0}', '\u{21d1}',  Script::Common), ('\u{21d2}',
+        '\u{21d2}',  Script::Common), ('\u{21d3}', '\u{21d3}',  Script::Common), ('\u{21d4}',
+        '\u{21d4}',  Script::Common), ('\u{21d5}', '\u{21f3}',  Script::Common), ('\u{21f4}',
+        '\u{22ff}',  Script::Common), ('\u{2300}', '\u{2307}',  Script::Common), ('\u{2308}',
+        '\u{2308}',  Script::Common), ('\u{2309}', '\u{2309}',  Script::Common), ('\u{230a}',
+        '\u{230a}',  Script::Common), ('\u{230b}', '\u{230b}',  Script::Common), ('\u{230c}',
+        '\u{231f}',  Script::Common), ('\u{2320}', '\u{2321}',  Script::Common), ('\u{2322}',
+        '\u{2328}',  Script::Common), ('\u{2329}', '\u{2329}',  Script::Common), ('\u{232a}',
+        '\u{232a}',  Script::Common), ('\u{232b}', '\u{237b}',  Script::Common), ('\u{237c}',
+        '\u{237c}',  Script::Common), ('\u{237d}', '\u{239a}',  Script::Common), ('\u{239b}',
+        '\u{23b3}',  Script::Common), ('\u{23b4}', '\u{23db}',  Script::Common), ('\u{23dc}',
+        '\u{23e1}',  Script::Common), ('\u{23e2}', '\u{2429}',  Script::Common), ('\u{2440}',
+        '\u{244a}',  Script::Common), ('\u{2460}', '\u{249b}',  Script::Common), ('\u{249c}',
+        '\u{24e9}',  Script::Common), ('\u{24ea}', '\u{24ff}',  Script::Common), ('\u{2500}',
+        '\u{25b6}',  Script::Common), ('\u{25b7}', '\u{25b7}',  Script::Common), ('\u{25b8}',
+        '\u{25c0}',  Script::Common), ('\u{25c1}', '\u{25c1}',  Script::Common), ('\u{25c2}',
+        '\u{25f7}',  Script::Common), ('\u{25f8}', '\u{25ff}',  Script::Common), ('\u{2600}',
+        '\u{266e}',  Script::Common), ('\u{266f}', '\u{266f}',  Script::Common), ('\u{2670}',
+        '\u{2767}',  Script::Common), ('\u{2768}', '\u{2768}',  Script::Common), ('\u{2769}',
+        '\u{2769}',  Script::Common), ('\u{276a}', '\u{276a}',  Script::Common), ('\u{276b}',
+        '\u{276b}',  Script::Common), ('\u{276c}', '\u{276c}',  Script::Common), ('\u{276d}',
+        '\u{276d}',  Script::Common), ('\u{276e}', '\u{276e}',  Script::Common), ('\u{276f}',
+        '\u{276f}',  Script::Common), ('\u{2770}', '\u{2770}',  Script::Common), ('\u{2771}',
+        '\u{2771}',  Script::Common), ('\u{2772}', '\u{2772}',  Script::Common), ('\u{2773}',
+        '\u{2773}',  Script::Common), ('\u{2774}', '\u{2774}',  Script::Common), ('\u{2775}',
+        '\u{2775}',  Script::Common), ('\u{2776}', '\u{2793}',  Script::Common), ('\u{2794}',
+        '\u{27bf}',  Script::Common), ('\u{27c0}', '\u{27c4}',  Script::Common), ('\u{27c5}',
+        '\u{27c5}',  Script::Common), ('\u{27c6}', '\u{27c6}',  Script::Common), ('\u{27c7}',
+        '\u{27e5}',  Script::Common), ('\u{27e6}', '\u{27e6}',  Script::Common), ('\u{27e7}',
+        '\u{27e7}',  Script::Common), ('\u{27e8}', '\u{27e8}',  Script::Common), ('\u{27e9}',
+        '\u{27e9}',  Script::Common), ('\u{27ea}', '\u{27ea}',  Script::Common), ('\u{27eb}',
+        '\u{27eb}',  Script::Common), ('\u{27ec}', '\u{27ec}',  Script::Common), ('\u{27ed}',
+        '\u{27ed}',  Script::Common), ('\u{27ee}', '\u{27ee}',  Script::Common), ('\u{27ef}',
+        '\u{27ef}',  Script::Common), ('\u{27f0}', '\u{27ff}',  Script::Common), ('\u{2800}',
+        '\u{28ff}',  Script::Braille), ('\u{2900}', '\u{2982}',  Script::Common), ('\u{2983}',
+        '\u{2983}',  Script::Common), ('\u{2984}', '\u{2984}',  Script::Common), ('\u{2985}',
+        '\u{2985}',  Script::Common), ('\u{2986}', '\u{2986}',  Script::Common), ('\u{2987}',
+        '\u{2987}',  Script::Common), ('\u{2988}', '\u{2988}',  Script::Common), ('\u{2989}',
+        '\u{2989}',  Script::Common), ('\u{298a}', '\u{298a}',  Script::Common), ('\u{298b}',
+        '\u{298b}',  Script::Common), ('\u{298c}', '\u{298c}',  Script::Common), ('\u{298d}',
+        '\u{298d}',  Script::Common), ('\u{298e}', '\u{298e}',  Script::Common), ('\u{298f}',
+        '\u{298f}',  Script::Common), ('\u{2990}', '\u{2990}',  Script::Common), ('\u{2991}',
+        '\u{2991}',  Script::Common), ('\u{2992}', '\u{2992}',  Script::Common), ('\u{2993}',
+        '\u{2993}',  Script::Common), ('\u{2994}', '\u{2994}',  Script::Common), ('\u{2995}',
+        '\u{2995}',  Script::Common), ('\u{2996}', '\u{2996}',  Script::Common), ('\u{2997}',
+        '\u{2997}',  Script::Common), ('\u{2998}', '\u{2998}',  Script::Common), ('\u{2999}',
+        '\u{29d7}',  Script::Common), ('\u{29d8}', '\u{29d8}',  Script::Common), ('\u{29d9}',
+        '\u{29d9}',  Script::Common), ('\u{29da}', '\u{29da}',  Script::Common), ('\u{29db}',
+        '\u{29db}',  Script::Common), ('\u{29dc}', '\u{29fb}',  Script::Common), ('\u{29fc}',
+        '\u{29fc}',  Script::Common), ('\u{29fd}', '\u{29fd}',  Script::Common), ('\u{29fe}',
+        '\u{2aff}',  Script::Common), ('\u{2b00}', '\u{2b2f}',  Script::Common), ('\u{2b30}',
+        '\u{2b44}',  Script::Common), ('\u{2b45}', '\u{2b46}',  Script::Common), ('\u{2b47}',
+        '\u{2b4c}',  Script::Common), ('\u{2b4d}', '\u{2b73}',  Script::Common), ('\u{2b76}',
+        '\u{2bff}',  Script::Common), ('\u{2c00}', '\u{2c5f}',  Script::Glagolitic), ('\u{2c60}',
+        '\u{2c7b}',  Script::Latin), ('\u{2c7c}', '\u{2c7d}',  Script::Latin), ('\u{2c7e}',
+        '\u{2c7f}',  Script::Latin), ('\u{2c80}', '\u{2ce4}',  Script::Coptic), ('\u{2ce5}',
+        '\u{2cea}',  Script::Coptic), ('\u{2ceb}', '\u{2cee}',  Script::Coptic), ('\u{2cef}',
+        '\u{2cf1}',  Script::Coptic), ('\u{2cf2}', '\u{2cf3}',  Script::Coptic), ('\u{2cf9}',
+        '\u{2cfc}',  Script::Coptic), ('\u{2cfd}', '\u{2cfd}',  Script::Coptic), ('\u{2cfe}',
+        '\u{2cff}',  Script::Coptic), ('\u{2d00}', '\u{2d25}',  Script::Georgian), ('\u{2d27}',
+        '\u{2d27}',  Script::Georgian), ('\u{2d2d}', '\u{2d2d}',  Script::Georgian), ('\u{2d30}',
+        '\u{2d67}',  Script::Tifinagh), ('\u{2d6f}', '\u{2d6f}',  Script::Tifinagh), ('\u{2d70}',
+        '\u{2d70}',  Script::Tifinagh), ('\u{2d7f}', '\u{2d7f}',  Script::Tifinagh), ('\u{2d80}',
+        '\u{2d96}',  Script::Ethiopic), ('\u{2da0}', '\u{2da6}',  Script::Ethiopic), ('\u{2da8}',
+        '\u{2dae}',  Script::Ethiopic), ('\u{2db0}', '\u{2db6}',  Script::Ethiopic), ('\u{2db8}',
+        '\u{2dbe}',  Script::Ethiopic), ('\u{2dc0}', '\u{2dc6}',  Script::Ethiopic), ('\u{2dc8}',
+        '\u{2dce}',  Script::Ethiopic), ('\u{2dd0}', '\u{2dd6}',  Script::Ethiopic), ('\u{2dd8}',
+        '\u{2dde}',  Script::Ethiopic), ('\u{2de0}', '\u{2dff}',  Script::Cyrillic), ('\u{2e00}',
+        '\u{2e01}',  Script::Common), ('\u{2e02}', '\u{2e02}',  Script::Common), ('\u{2e03}',
+        '\u{2e03}',  Script::Common), ('\u{2e04}', '\u{2e04}',  Script::Common), ('\u{2e05}',
+        '\u{2e05}',  Script::Common), ('\u{2e06}', '\u{2e08}',  Script::Common), ('\u{2e09}',
+        '\u{2e09}',  Script::Common), ('\u{2e0a}', '\u{2e0a}',  Script::Common), ('\u{2e0b}',
+        '\u{2e0b}',  Script::Common), ('\u{2e0c}', '\u{2e0c}',  Script::Common), ('\u{2e0d}',
+        '\u{2e0d}',  Script::Common), ('\u{2e0e}', '\u{2e16}',  Script::Common), ('\u{2e17}',
+        '\u{2e17}',  Script::Common), ('\u{2e18}', '\u{2e19}',  Script::Common), ('\u{2e1a}',
+        '\u{2e1a}',  Script::Common), ('\u{2e1b}', '\u{2e1b}',  Script::Common), ('\u{2e1c}',
+        '\u{2e1c}',  Script::Common), ('\u{2e1d}', '\u{2e1d}',  Script::Common), ('\u{2e1e}',
+        '\u{2e1f}',  Script::Common), ('\u{2e20}', '\u{2e20}',  Script::Common), ('\u{2e21}',
+        '\u{2e21}',  Script::Common), ('\u{2e22}', '\u{2e22}',  Script::Common), ('\u{2e23}',
+        '\u{2e23}',  Script::Common), ('\u{2e24}', '\u{2e24}',  Script::Common), ('\u{2e25}',
+        '\u{2e25}',  Script::Common), ('\u{2e26}', '\u{2e26}',  Script::Common), ('\u{2e27}',
+        '\u{2e27}',  Script::Common), ('\u{2e28}', '\u{2e28}',  Script::Common), ('\u{2e29}',
+        '\u{2e29}',  Script::Common), ('\u{2e2a}', '\u{2e2e}',  Script::Common), ('\u{2e2f}',
+        '\u{2e2f}',  Script::Common), ('\u{2e30}', '\u{2e39}',  Script::Common), ('\u{2e3a}',
+        '\u{2e3b}',  Script::Common), ('\u{2e3c}', '\u{2e3f}',  Script::Common), ('\u{2e40}',
+        '\u{2e40}',  Script::Common), ('\u{2e41}', '\u{2e41}',  Script::Common), ('\u{2e42}',
+        '\u{2e42}',  Script::Common), ('\u{2e43}', '\u{2e4f}',  Script::Common), ('\u{2e50}',
+        '\u{2e51}',  Script::Common), ('\u{2e52}', '\u{2e54}',  Script::Common), ('\u{2e55}',
+        '\u{2e55}',  Script::Common), ('\u{2e56}', '\u{2e56}',  Script::Common), ('\u{2e57}',
+        '\u{2e57}',  Script::Common), ('\u{2e58}', '\u{2e58}',  Script::Common), ('\u{2e59}',
+        '\u{2e59}',  Script::Common), ('\u{2e5a}', '\u{2e5a}',  Script::Common), ('\u{2e5b}',
+        '\u{2e5b}',  Script::Common), ('\u{2e5c}', '\u{2e5c}',  Script::Common), ('\u{2e5d}',
+        '\u{2e5d}',  Script::Common), ('\u{2e60}', '\u{2e61}',  Script::Common), ('\u{2e62}',
+        '\u{2e62}',  Script::Common), ('\u{2e63}', '\u{2e63}',  Script::Common), ('\u{2e80}',
+        '\u{2e99}',  Script::Han), ('\u{2e9b}', '\u{2ef3}',  Script::Han), ('\u{2f00}', '\u{2fd5}',
+         Script::Han), ('\u{2ff0}', '\u{2fff}',  Script::Common), ('\u{3000}', '\u{3000}',
+         Script::Common), ('\u{3001}', '\u{3003}',  Script::Common), ('\u{3004}', '\u{3004}',
+         Script::Common), ('\u{3005}', '\u{3005}',  Script::Han), ('\u{3006}', '\u{3006}',
+         Script::Common), ('\u{3007}', '\u{3007}',  Script::Han), ('\u{3008}', '\u{3008}',
+         Script::Common), ('\u{3009}', '\u{3009}',  Script::Common), ('\u{300a}', '\u{300a}',
+         Script::Common), ('\u{300b}', '\u{300b}',  Script::Common), ('\u{300c}', '\u{300c}',
+         Script::Common), ('\u{300d}', '\u{300d}',  Script::Common), ('\u{300e}', '\u{300e}',
+         Script::Common), ('\u{300f}', '\u{300f}',  Script::Common), ('\u{3010}', '\u{3010}',
+         Script::Common), ('\u{3011}', '\u{3011}',  Script::Common), ('\u{3012}', '\u{3013}',
+         Script::Common), ('\u{3014}', '\u{3014}',  Script::Common), ('\u{3015}', '\u{3015}',
+         Script::Common), ('\u{3016}', '\u{3016}',  Script::Common), ('\u{3017}', '\u{3017}',
+         Script::Common), ('\u{3018}', '\u{3018}',  Script::Common), ('\u{3019}', '\u{3019}',
+         Script::Common), ('\u{301a}', '\u{301a}',  Script::Common), ('\u{301b}', '\u{301b}',
+         Script::Common), ('\u{301c}', '\u{301c}',  Script::Common), ('\u{301d}', '\u{301d}',
+         Script::Common), ('\u{301e}', '\u{301f}',  Script::Common), ('\u{3020}', '\u{3020}',
+         Script::Common), ('\u{3021}', '\u{3029}',  Script::Han), ('\u{302a}', '\u{302d}',
+         Script::Inherited), ('\u{302e}', '\u{302f}',  Script::Hangul), ('\u{3030}', '\u{3030}',
+         Script::Common), ('\u{3031}', '\u{3035}',  Script::Common), ('\u{3036}', '\u{3037}',
+         Script::Common), ('\u{3038}', '\u{303a}',  Script::Han), ('\u{303b}', '\u{303b}',
+         Script::Han), ('\u{303c}', '\u{303c}',  Script::Common), ('\u{303d}', '\u{303d}',
+         Script::Common), ('\u{303e}', '\u{303f}',  Script::Common), ('\u{3041}', '\u{3096}',
+         Script::Hiragana), ('\u{3099}', '\u{309a}',  Script::Inherited), ('\u{309b}', '\u{309c}',
+         Script::Common), ('\u{309d}', '\u{309e}',  Script::Hiragana), ('\u{309f}', '\u{309f}',
+         Script::Hiragana), ('\u{30a0}', '\u{30a0}',  Script::Common), ('\u{30a1}', '\u{30fa}',
+         Script::Katakana), ('\u{30fb}', '\u{30fb}',  Script::Common), ('\u{30fc}', '\u{30fc}',
+         Script::Common), ('\u{30fd}', '\u{30fe}',  Script::Katakana), ('\u{30ff}', '\u{30ff}',
+         Script::Katakana), ('\u{3105}', '\u{312f}',  Script::Bopomofo), ('\u{3131}', '\u{318e}',
+         Script::Hangul), ('\u{3190}', '\u{3191}',  Script::Common), ('\u{3192}', '\u{3195}',
+         Script::Common), ('\u{3196}', '\u{319f}',  Script::Common), ('\u{31a0}', '\u{31bf}',
+         Script::Bopomofo), ('\u{31c0}', '\u{31e5}',  Script::Common), ('\u{31ef}', '\u{31ef}',
+         Script::Common), ('\u{31f0}', '\u{31ff}',  Script::Katakana), ('\u{3200}', '\u{321e}',
+         Script::Hangul), ('\u{3220}', '\u{3229}',  Script::Common), ('\u{322a}', '\u{3247}',
+         Script::Common), ('\u{3248}', '\u{324f}',  Script::Common), ('\u{3250}', '\u{3250}',
+         Script::Common), ('\u{3251}', '\u{325f}',  Script::Common), ('\u{3260}', '\u{327e}',
+         Script::Hangul), ('\u{327f}', '\u{327f}',  Script::Common), ('\u{3280}', '\u{3289}',
+         Script::Common), ('\u{328a}', '\u{32b0}',  Script::Common), ('\u{32b1}', '\u{32bf}',
+         Script::Common), ('\u{32c0}', '\u{32cf}',  Script::Common), ('\u{32d0}', '\u{32fe}',
+         Script::Katakana), ('\u{32ff}', '\u{32ff}',  Script::Common), ('\u{3300}', '\u{3357}',
+         Script::Katakana), ('\u{3358}', '\u{33ff}',  Script::Common), ('\u{3400}', '\u{4dbf}',
+         Script::Han), ('\u{4dc0}', '\u{4dff}',  Script::Common), ('\u{4e00}', '\u{9fff}',
+         Script::Han), ('\u{a000}', '\u{a014}',  Script::Yi), ('\u{a015}', '\u{a015}',  Script::Yi),
+        ('\u{a016}', '\u{a48c}',  Script::Yi), ('\u{a490}', '\u{a4c6}',  Script::Yi), ('\u{a4d0}',
+        '\u{a4f7}',  Script::Lisu), ('\u{a4f8}', '\u{a4fd}',  Script::Lisu), ('\u{a4fe}',
+        '\u{a4ff}',  Script::Lisu), ('\u{a500}', '\u{a60b}',  Script::Vai), ('\u{a60c}', '\u{a60c}',
+         Script::Vai), ('\u{a60d}', '\u{a60f}',  Script::Vai), ('\u{a610}', '\u{a61f}',
+         Script::Vai), ('\u{a620}', '\u{a629}',  Script::Vai), ('\u{a62a}', '\u{a62b}',
+         Script::Vai), ('\u{a640}', '\u{a66d}',  Script::Cyrillic), ('\u{a66e}', '\u{a66e}',
+         Script::Cyrillic), ('\u{a66f}', '\u{a66f}',  Script::Cyrillic), ('\u{a670}', '\u{a672}',
+         Script::Cyrillic), ('\u{a673}', '\u{a673}',  Script::Cyrillic), ('\u{a674}', '\u{a67d}',
+         Script::Cyrillic), ('\u{a67e}', '\u{a67e}',  Script::Cyrillic), ('\u{a67f}', '\u{a67f}',
+         Script::Cyrillic), ('\u{a680}', '\u{a69b}',  Script::Cyrillic), ('\u{a69c}', '\u{a69d}',
+         Script::Cyrillic), ('\u{a69e}', '\u{a69f}',  Script::Cyrillic), ('\u{a6a0}', '\u{a6e5}',
+         Script::Bamum), ('\u{a6e6}', '\u{a6ef}',  Script::Bamum), ('\u{a6f0}', '\u{a6f1}',
+         Script::Bamum), ('\u{a6f2}', '\u{a6f7}',  Script::Bamum), ('\u{a700}', '\u{a716}',
+         Script::Common), ('\u{a717}', '\u{a71f}',  Script::Common), ('\u{a720}', '\u{a721}',
+         Script::Common), ('\u{a722}', '\u{a76f}',  Script::Latin), ('\u{a770}', '\u{a770}',
+         Script::Latin), ('\u{a771}', '\u{a787}',  Script::Latin), ('\u{a788}', '\u{a788}',
+         Script::Common), ('\u{a789}', '\u{a78a}',  Script::Common), ('\u{a78b}', '\u{a78e}',
+         Script::Latin), ('\u{a78f}', '\u{a78f}',  Script::Latin), ('\u{a790}', '\u{a7dd}',
+         Script::Latin), ('\u{a7e2}', '\u{a7e2}',  Script::Latin), ('\u{a7f1}', '\u{a7f4}',
          Script::Latin), ('\u{a7f5}', '\u{a7f6}',  Script::Latin), ('\u{a7f7}', '\u{a7f7}',
          Script::Latin), ('\u{a7f8}', '\u{a7f9}',  Script::Latin), ('\u{a7fa}', '\u{a7fa}',
          Script::Latin), ('\u{a7fb}', '\u{a7ff}',  Script::Latin), ('\u{a800}', '\u{a801}',
@@ -2876,145 +2913,146 @@ pub fn get_script_extension(c: char) -> Option<ScriptExtension> {
         ('\u{ab5c}', '\u{ab5f}',  Script::Latin), ('\u{ab60}', '\u{ab64}',  Script::Latin),
         ('\u{ab65}', '\u{ab65}',  Script::Greek), ('\u{ab66}', '\u{ab68}',  Script::Latin),
         ('\u{ab69}', '\u{ab69}',  Script::Latin), ('\u{ab6a}', '\u{ab6b}',  Script::Common),
-        ('\u{ab70}', '\u{abbf}',  Script::Cherokee), ('\u{abc0}', '\u{abe2}',
-         Script::Meetei_Mayek), ('\u{abe3}', '\u{abe4}',  Script::Meetei_Mayek), ('\u{abe5}',
-        '\u{abe5}',  Script::Meetei_Mayek), ('\u{abe6}', '\u{abe7}',  Script::Meetei_Mayek),
-        ('\u{abe8}', '\u{abe8}',  Script::Meetei_Mayek), ('\u{abe9}', '\u{abea}',
-         Script::Meetei_Mayek), ('\u{abeb}', '\u{abeb}',  Script::Meetei_Mayek), ('\u{abec}',
-        '\u{abec}',  Script::Meetei_Mayek), ('\u{abed}', '\u{abed}',  Script::Meetei_Mayek),
-        ('\u{abf0}', '\u{abf9}',  Script::Meetei_Mayek), ('\u{ac00}', '\u{d7a3}',  Script::Hangul),
-        ('\u{d7b0}', '\u{d7c6}',  Script::Hangul), ('\u{d7cb}', '\u{d7fb}',  Script::Hangul),
-        ('\u{f900}', '\u{fa6d}',  Script::Han), ('\u{fa70}', '\u{fad9}',  Script::Han), ('\u{fb00}',
-        '\u{fb06}',  Script::Latin), ('\u{fb13}', '\u{fb17}',  Script::Armenian), ('\u{fb1d}',
-        '\u{fb1d}',  Script::Hebrew), ('\u{fb1e}', '\u{fb1e}',  Script::Hebrew), ('\u{fb1f}',
-        '\u{fb28}',  Script::Hebrew), ('\u{fb29}', '\u{fb29}',  Script::Hebrew), ('\u{fb2a}',
-        '\u{fb36}',  Script::Hebrew), ('\u{fb38}', '\u{fb3c}',  Script::Hebrew), ('\u{fb3e}',
-        '\u{fb3e}',  Script::Hebrew), ('\u{fb40}', '\u{fb41}',  Script::Hebrew), ('\u{fb43}',
-        '\u{fb44}',  Script::Hebrew), ('\u{fb46}', '\u{fb4f}',  Script::Hebrew), ('\u{fb50}',
-        '\u{fbb1}',  Script::Arabic), ('\u{fbb2}', '\u{fbc2}',  Script::Arabic), ('\u{fbc3}',
-        '\u{fbd2}',  Script::Arabic), ('\u{fbd3}', '\u{fd3d}',  Script::Arabic), ('\u{fd3e}',
-        '\u{fd3e}',  Script::Common), ('\u{fd3f}', '\u{fd3f}',  Script::Common), ('\u{fd40}',
-        '\u{fd4f}',  Script::Arabic), ('\u{fd50}', '\u{fd8f}',  Script::Arabic), ('\u{fd90}',
-        '\u{fd91}',  Script::Arabic), ('\u{fd92}', '\u{fdc7}',  Script::Arabic), ('\u{fdc8}',
-        '\u{fdcf}',  Script::Arabic), ('\u{fdf0}', '\u{fdfb}',  Script::Arabic), ('\u{fdfc}',
-        '\u{fdfc}',  Script::Arabic), ('\u{fdfd}', '\u{fdff}',  Script::Arabic), ('\u{fe00}',
-        '\u{fe0f}',  Script::Inherited), ('\u{fe10}', '\u{fe16}',  Script::Common), ('\u{fe17}',
-        '\u{fe17}',  Script::Common), ('\u{fe18}', '\u{fe18}',  Script::Common), ('\u{fe19}',
-        '\u{fe19}',  Script::Common), ('\u{fe20}', '\u{fe2d}',  Script::Inherited), ('\u{fe2e}',
-        '\u{fe2f}',  Script::Cyrillic), ('\u{fe30}', '\u{fe30}',  Script::Common), ('\u{fe31}',
-        '\u{fe32}',  Script::Common), ('\u{fe33}', '\u{fe34}',  Script::Common), ('\u{fe35}',
-        '\u{fe35}',  Script::Common), ('\u{fe36}', '\u{fe36}',  Script::Common), ('\u{fe37}',
-        '\u{fe37}',  Script::Common), ('\u{fe38}', '\u{fe38}',  Script::Common), ('\u{fe39}',
-        '\u{fe39}',  Script::Common), ('\u{fe3a}', '\u{fe3a}',  Script::Common), ('\u{fe3b}',
-        '\u{fe3b}',  Script::Common), ('\u{fe3c}', '\u{fe3c}',  Script::Common), ('\u{fe3d}',
-        '\u{fe3d}',  Script::Common), ('\u{fe3e}', '\u{fe3e}',  Script::Common), ('\u{fe3f}',
-        '\u{fe3f}',  Script::Common), ('\u{fe40}', '\u{fe40}',  Script::Common), ('\u{fe41}',
-        '\u{fe41}',  Script::Common), ('\u{fe42}', '\u{fe42}',  Script::Common), ('\u{fe43}',
-        '\u{fe43}',  Script::Common), ('\u{fe44}', '\u{fe44}',  Script::Common), ('\u{fe45}',
-        '\u{fe46}',  Script::Common), ('\u{fe47}', '\u{fe47}',  Script::Common), ('\u{fe48}',
-        '\u{fe48}',  Script::Common), ('\u{fe49}', '\u{fe4c}',  Script::Common), ('\u{fe4d}',
-        '\u{fe4f}',  Script::Common), ('\u{fe50}', '\u{fe52}',  Script::Common), ('\u{fe54}',
-        '\u{fe57}',  Script::Common), ('\u{fe58}', '\u{fe58}',  Script::Common), ('\u{fe59}',
-        '\u{fe59}',  Script::Common), ('\u{fe5a}', '\u{fe5a}',  Script::Common), ('\u{fe5b}',
-        '\u{fe5b}',  Script::Common), ('\u{fe5c}', '\u{fe5c}',  Script::Common), ('\u{fe5d}',
-        '\u{fe5d}',  Script::Common), ('\u{fe5e}', '\u{fe5e}',  Script::Common), ('\u{fe5f}',
-        '\u{fe61}',  Script::Common), ('\u{fe62}', '\u{fe62}',  Script::Common), ('\u{fe63}',
-        '\u{fe63}',  Script::Common), ('\u{fe64}', '\u{fe66}',  Script::Common), ('\u{fe68}',
-        '\u{fe68}',  Script::Common), ('\u{fe69}', '\u{fe69}',  Script::Common), ('\u{fe6a}',
-        '\u{fe6b}',  Script::Common), ('\u{fe70}', '\u{fe74}',  Script::Arabic), ('\u{fe76}',
-        '\u{fefc}',  Script::Arabic), ('\u{feff}', '\u{feff}',  Script::Common), ('\u{ff01}',
-        '\u{ff03}',  Script::Common), ('\u{ff04}', '\u{ff04}',  Script::Common), ('\u{ff05}',
-        '\u{ff07}',  Script::Common), ('\u{ff08}', '\u{ff08}',  Script::Common), ('\u{ff09}',
-        '\u{ff09}',  Script::Common), ('\u{ff0a}', '\u{ff0a}',  Script::Common), ('\u{ff0b}',
-        '\u{ff0b}',  Script::Common), ('\u{ff0c}', '\u{ff0c}',  Script::Common), ('\u{ff0d}',
-        '\u{ff0d}',  Script::Common), ('\u{ff0e}', '\u{ff0f}',  Script::Common), ('\u{ff10}',
-        '\u{ff19}',  Script::Common), ('\u{ff1a}', '\u{ff1b}',  Script::Common), ('\u{ff1c}',
-        '\u{ff1e}',  Script::Common), ('\u{ff1f}', '\u{ff20}',  Script::Common), ('\u{ff21}',
-        '\u{ff3a}',  Script::Latin), ('\u{ff3b}', '\u{ff3b}',  Script::Common), ('\u{ff3c}',
-        '\u{ff3c}',  Script::Common), ('\u{ff3d}', '\u{ff3d}',  Script::Common), ('\u{ff3e}',
-        '\u{ff3e}',  Script::Common), ('\u{ff3f}', '\u{ff3f}',  Script::Common), ('\u{ff40}',
-        '\u{ff40}',  Script::Common), ('\u{ff41}', '\u{ff5a}',  Script::Latin), ('\u{ff5b}',
-        '\u{ff5b}',  Script::Common), ('\u{ff5c}', '\u{ff5c}',  Script::Common), ('\u{ff5d}',
-        '\u{ff5d}',  Script::Common), ('\u{ff5e}', '\u{ff5e}',  Script::Common), ('\u{ff5f}',
-        '\u{ff5f}',  Script::Common), ('\u{ff60}', '\u{ff60}',  Script::Common), ('\u{ff61}',
-        '\u{ff61}',  Script::Common), ('\u{ff62}', '\u{ff62}',  Script::Common), ('\u{ff63}',
-        '\u{ff63}',  Script::Common), ('\u{ff64}', '\u{ff65}',  Script::Common), ('\u{ff66}',
-        '\u{ff6f}',  Script::Katakana), ('\u{ff70}', '\u{ff70}',  Script::Common), ('\u{ff71}',
-        '\u{ff9d}',  Script::Katakana), ('\u{ff9e}', '\u{ff9f}',  Script::Common), ('\u{ffa0}',
-        '\u{ffbe}',  Script::Hangul), ('\u{ffc2}', '\u{ffc7}',  Script::Hangul), ('\u{ffca}',
-        '\u{ffcf}',  Script::Hangul), ('\u{ffd2}', '\u{ffd7}',  Script::Hangul), ('\u{ffda}',
-        '\u{ffdc}',  Script::Hangul), ('\u{ffe0}', '\u{ffe1}',  Script::Common), ('\u{ffe2}',
-        '\u{ffe2}',  Script::Common), ('\u{ffe3}', '\u{ffe3}',  Script::Common), ('\u{ffe4}',
-        '\u{ffe4}',  Script::Common), ('\u{ffe5}', '\u{ffe6}',  Script::Common), ('\u{ffe8}',
-        '\u{ffe8}',  Script::Common), ('\u{ffe9}', '\u{ffec}',  Script::Common), ('\u{ffed}',
-        '\u{ffee}',  Script::Common), ('\u{fff9}', '\u{fffb}',  Script::Common), ('\u{fffc}',
-        '\u{fffd}',  Script::Common), ('\u{10000}', '\u{1000b}',  Script::Linear_B), ('\u{1000d}',
-        '\u{10026}',  Script::Linear_B), ('\u{10028}', '\u{1003a}',  Script::Linear_B),
-        ('\u{1003c}', '\u{1003d}',  Script::Linear_B), ('\u{1003f}', '\u{1004d}',
-         Script::Linear_B), ('\u{10050}', '\u{1005d}',  Script::Linear_B), ('\u{10080}',
-        '\u{100fa}',  Script::Linear_B), ('\u{10100}', '\u{10102}',  Script::Common), ('\u{10107}',
-        '\u{10133}',  Script::Common), ('\u{10137}', '\u{1013f}',  Script::Common), ('\u{10140}',
-        '\u{10174}',  Script::Greek), ('\u{10175}', '\u{10178}',  Script::Greek), ('\u{10179}',
-        '\u{10189}',  Script::Greek), ('\u{1018a}', '\u{1018b}',  Script::Greek), ('\u{1018c}',
-        '\u{1018e}',  Script::Greek), ('\u{10190}', '\u{1019c}',  Script::Common), ('\u{101a0}',
-        '\u{101a0}',  Script::Greek), ('\u{101d0}', '\u{101fc}',  Script::Common), ('\u{101fd}',
-        '\u{101fd}',  Script::Inherited), ('\u{10280}', '\u{1029c}',  Script::Lycian), ('\u{102a0}',
-        '\u{102d0}',  Script::Carian), ('\u{102e0}', '\u{102e0}',  Script::Inherited), ('\u{102e1}',
-        '\u{102fb}',  Script::Common), ('\u{10300}', '\u{1031f}',  Script::Old_Italic),
-        ('\u{10320}', '\u{10323}',  Script::Old_Italic), ('\u{1032d}', '\u{1032f}',
-         Script::Old_Italic), ('\u{10330}', '\u{10340}',  Script::Gothic), ('\u{10341}',
-        '\u{10341}',  Script::Gothic), ('\u{10342}', '\u{10349}',  Script::Gothic), ('\u{1034a}',
-        '\u{1034a}',  Script::Gothic), ('\u{10350}', '\u{10375}',  Script::Old_Permic),
-        ('\u{10376}', '\u{1037a}',  Script::Old_Permic), ('\u{10380}', '\u{1039d}',
-         Script::Ugaritic), ('\u{1039f}', '\u{1039f}',  Script::Ugaritic), ('\u{103a0}',
-        '\u{103c3}',  Script::Old_Persian), ('\u{103c8}', '\u{103cf}',  Script::Old_Persian),
-        ('\u{103d0}', '\u{103d0}',  Script::Old_Persian), ('\u{103d1}', '\u{103d5}',
-         Script::Old_Persian), ('\u{10400}', '\u{1044f}',  Script::Deseret), ('\u{10450}',
-        '\u{1047f}',  Script::Shavian), ('\u{10480}', '\u{1049d}',  Script::Osmanya), ('\u{104a0}',
-        '\u{104a9}',  Script::Osmanya), ('\u{104b0}', '\u{104d3}',  Script::Osage), ('\u{104d8}',
-        '\u{104fb}',  Script::Osage), ('\u{10500}', '\u{10527}',  Script::Elbasan), ('\u{10530}',
-        '\u{10563}',  Script::Caucasian_Albanian), ('\u{1056f}', '\u{1056f}',
-         Script::Caucasian_Albanian), ('\u{10570}', '\u{1057a}',  Script::Vithkuqi), ('\u{1057c}',
-        '\u{1058a}',  Script::Vithkuqi), ('\u{1058c}', '\u{10592}',  Script::Vithkuqi),
-        ('\u{10594}', '\u{10595}',  Script::Vithkuqi), ('\u{10597}', '\u{105a1}',
-         Script::Vithkuqi), ('\u{105a3}', '\u{105b1}',  Script::Vithkuqi), ('\u{105b3}',
-        '\u{105b9}',  Script::Vithkuqi), ('\u{105bb}', '\u{105bc}',  Script::Vithkuqi),
-        ('\u{105c0}', '\u{105f3}',  Script::Todhri), ('\u{10600}', '\u{10736}',  Script::Linear_A),
-        ('\u{10740}', '\u{10755}',  Script::Linear_A), ('\u{10760}', '\u{10767}',
-         Script::Linear_A), ('\u{10780}', '\u{10785}',  Script::Latin), ('\u{10787}', '\u{107b0}',
-         Script::Latin), ('\u{107b2}', '\u{107ba}',  Script::Latin), ('\u{10800}', '\u{10805}',
-         Script::Cypriot), ('\u{10808}', '\u{10808}',  Script::Cypriot), ('\u{1080a}', '\u{10835}',
-         Script::Cypriot), ('\u{10837}', '\u{10838}',  Script::Cypriot), ('\u{1083c}', '\u{1083c}',
-         Script::Cypriot), ('\u{1083f}', '\u{1083f}',  Script::Cypriot), ('\u{10840}', '\u{10855}',
-         Script::Imperial_Aramaic), ('\u{10857}', '\u{10857}',  Script::Imperial_Aramaic),
-        ('\u{10858}', '\u{1085f}',  Script::Imperial_Aramaic), ('\u{10860}', '\u{10876}',
-         Script::Palmyrene), ('\u{10877}', '\u{10878}',  Script::Palmyrene), ('\u{10879}',
-        '\u{1087f}',  Script::Palmyrene), ('\u{10880}', '\u{1089e}',  Script::Nabataean),
-        ('\u{108a7}', '\u{108af}',  Script::Nabataean), ('\u{108e0}', '\u{108f2}',  Script::Hatran),
-        ('\u{108f4}', '\u{108f5}',  Script::Hatran), ('\u{108fb}', '\u{108ff}',  Script::Hatran),
-        ('\u{10900}', '\u{10915}',  Script::Phoenician), ('\u{10916}', '\u{1091b}',
-         Script::Phoenician), ('\u{1091f}', '\u{1091f}',  Script::Phoenician), ('\u{10920}',
-        '\u{10939}',  Script::Lydian), ('\u{1093f}', '\u{1093f}',  Script::Lydian), ('\u{10940}',
-        '\u{10959}',  Script::Sidetic), ('\u{10980}', '\u{1099f}',  Script::Meroitic_Hieroglyphs),
-        ('\u{109a0}', '\u{109b7}',  Script::Meroitic_Cursive), ('\u{109bc}', '\u{109bd}',
-         Script::Meroitic_Cursive), ('\u{109be}', '\u{109bf}',  Script::Meroitic_Cursive),
-        ('\u{109c0}', '\u{109cf}',  Script::Meroitic_Cursive), ('\u{109d2}', '\u{109ff}',
-         Script::Meroitic_Cursive), ('\u{10a00}', '\u{10a00}',  Script::Kharoshthi), ('\u{10a01}',
-        '\u{10a03}',  Script::Kharoshthi), ('\u{10a05}', '\u{10a06}',  Script::Kharoshthi),
-        ('\u{10a0c}', '\u{10a0f}',  Script::Kharoshthi), ('\u{10a10}', '\u{10a13}',
-         Script::Kharoshthi), ('\u{10a15}', '\u{10a17}',  Script::Kharoshthi), ('\u{10a19}',
-        '\u{10a35}',  Script::Kharoshthi), ('\u{10a38}', '\u{10a3a}',  Script::Kharoshthi),
-        ('\u{10a3f}', '\u{10a3f}',  Script::Kharoshthi), ('\u{10a40}', '\u{10a48}',
-         Script::Kharoshthi), ('\u{10a50}', '\u{10a58}',  Script::Kharoshthi), ('\u{10a60}',
-        '\u{10a7c}',  Script::Old_South_Arabian), ('\u{10a7d}', '\u{10a7e}',
-         Script::Old_South_Arabian), ('\u{10a7f}', '\u{10a7f}',  Script::Old_South_Arabian),
-        ('\u{10a80}', '\u{10a9c}',  Script::Old_North_Arabian), ('\u{10a9d}', '\u{10a9f}',
-         Script::Old_North_Arabian), ('\u{10ac0}', '\u{10ac7}',  Script::Manichaean), ('\u{10ac8}',
-        '\u{10ac8}',  Script::Manichaean), ('\u{10ac9}', '\u{10ae4}',  Script::Manichaean),
-        ('\u{10ae5}', '\u{10ae6}',  Script::Manichaean), ('\u{10aeb}', '\u{10aef}',
-         Script::Manichaean), ('\u{10af0}', '\u{10af6}',  Script::Manichaean), ('\u{10b00}',
-        '\u{10b35}',  Script::Avestan), ('\u{10b39}', '\u{10b3f}',  Script::Avestan), ('\u{10b40}',
-        '\u{10b55}',  Script::Inscriptional_Parthian), ('\u{10b58}', '\u{10b5f}',
+        ('\u{ab6c}', '\u{ab6d}',  Script::Latin), ('\u{ab70}', '\u{abbf}',  Script::Cherokee),
+        ('\u{abc0}', '\u{abe2}',  Script::Meetei_Mayek), ('\u{abe3}', '\u{abe4}',
+         Script::Meetei_Mayek), ('\u{abe5}', '\u{abe5}',  Script::Meetei_Mayek), ('\u{abe6}',
+        '\u{abe7}',  Script::Meetei_Mayek), ('\u{abe8}', '\u{abe8}',  Script::Meetei_Mayek),
+        ('\u{abe9}', '\u{abea}',  Script::Meetei_Mayek), ('\u{abeb}', '\u{abeb}',
+         Script::Meetei_Mayek), ('\u{abec}', '\u{abec}',  Script::Meetei_Mayek), ('\u{abed}',
+        '\u{abed}',  Script::Meetei_Mayek), ('\u{abf0}', '\u{abf9}',  Script::Meetei_Mayek),
+        ('\u{ac00}', '\u{d7a3}',  Script::Hangul), ('\u{d7b0}', '\u{d7c6}',  Script::Hangul),
+        ('\u{d7cb}', '\u{d7fb}',  Script::Hangul), ('\u{f900}', '\u{fa6d}',  Script::Han),
+        ('\u{fa70}', '\u{fad9}',  Script::Han), ('\u{fb00}', '\u{fb06}',  Script::Latin),
+        ('\u{fb13}', '\u{fb17}',  Script::Armenian), ('\u{fb1d}', '\u{fb1d}',  Script::Hebrew),
+        ('\u{fb1e}', '\u{fb1e}',  Script::Hebrew), ('\u{fb1f}', '\u{fb28}',  Script::Hebrew),
+        ('\u{fb29}', '\u{fb29}',  Script::Hebrew), ('\u{fb2a}', '\u{fb36}',  Script::Hebrew),
+        ('\u{fb38}', '\u{fb3c}',  Script::Hebrew), ('\u{fb3e}', '\u{fb3e}',  Script::Hebrew),
+        ('\u{fb40}', '\u{fb41}',  Script::Hebrew), ('\u{fb43}', '\u{fb44}',  Script::Hebrew),
+        ('\u{fb46}', '\u{fb4f}',  Script::Hebrew), ('\u{fb50}', '\u{fbb1}',  Script::Arabic),
+        ('\u{fbb2}', '\u{fbc2}',  Script::Arabic), ('\u{fbc3}', '\u{fbd2}',  Script::Arabic),
+        ('\u{fbd3}', '\u{fd3d}',  Script::Arabic), ('\u{fd3e}', '\u{fd3e}',  Script::Common),
+        ('\u{fd3f}', '\u{fd3f}',  Script::Common), ('\u{fd40}', '\u{fd4f}',  Script::Arabic),
+        ('\u{fd50}', '\u{fd8f}',  Script::Arabic), ('\u{fd90}', '\u{fd91}',  Script::Arabic),
+        ('\u{fd92}', '\u{fdc7}',  Script::Arabic), ('\u{fdc8}', '\u{fdcf}',  Script::Arabic),
+        ('\u{fdf0}', '\u{fdfb}',  Script::Arabic), ('\u{fdfc}', '\u{fdfc}',  Script::Arabic),
+        ('\u{fdfd}', '\u{fdff}',  Script::Arabic), ('\u{fe00}', '\u{fe0f}',  Script::Inherited),
+        ('\u{fe10}', '\u{fe16}',  Script::Common), ('\u{fe17}', '\u{fe17}',  Script::Common),
+        ('\u{fe18}', '\u{fe18}',  Script::Common), ('\u{fe19}', '\u{fe19}',  Script::Common),
+        ('\u{fe20}', '\u{fe2d}',  Script::Inherited), ('\u{fe2e}', '\u{fe2f}',  Script::Cyrillic),
+        ('\u{fe30}', '\u{fe30}',  Script::Common), ('\u{fe31}', '\u{fe32}',  Script::Common),
+        ('\u{fe33}', '\u{fe34}',  Script::Common), ('\u{fe35}', '\u{fe35}',  Script::Common),
+        ('\u{fe36}', '\u{fe36}',  Script::Common), ('\u{fe37}', '\u{fe37}',  Script::Common),
+        ('\u{fe38}', '\u{fe38}',  Script::Common), ('\u{fe39}', '\u{fe39}',  Script::Common),
+        ('\u{fe3a}', '\u{fe3a}',  Script::Common), ('\u{fe3b}', '\u{fe3b}',  Script::Common),
+        ('\u{fe3c}', '\u{fe3c}',  Script::Common), ('\u{fe3d}', '\u{fe3d}',  Script::Common),
+        ('\u{fe3e}', '\u{fe3e}',  Script::Common), ('\u{fe3f}', '\u{fe3f}',  Script::Common),
+        ('\u{fe40}', '\u{fe40}',  Script::Common), ('\u{fe41}', '\u{fe41}',  Script::Common),
+        ('\u{fe42}', '\u{fe42}',  Script::Common), ('\u{fe43}', '\u{fe43}',  Script::Common),
+        ('\u{fe44}', '\u{fe44}',  Script::Common), ('\u{fe45}', '\u{fe46}',  Script::Common),
+        ('\u{fe47}', '\u{fe47}',  Script::Common), ('\u{fe48}', '\u{fe48}',  Script::Common),
+        ('\u{fe49}', '\u{fe4c}',  Script::Common), ('\u{fe4d}', '\u{fe4f}',  Script::Common),
+        ('\u{fe50}', '\u{fe52}',  Script::Common), ('\u{fe54}', '\u{fe57}',  Script::Common),
+        ('\u{fe58}', '\u{fe58}',  Script::Common), ('\u{fe59}', '\u{fe59}',  Script::Common),
+        ('\u{fe5a}', '\u{fe5a}',  Script::Common), ('\u{fe5b}', '\u{fe5b}',  Script::Common),
+        ('\u{fe5c}', '\u{fe5c}',  Script::Common), ('\u{fe5d}', '\u{fe5d}',  Script::Common),
+        ('\u{fe5e}', '\u{fe5e}',  Script::Common), ('\u{fe5f}', '\u{fe61}',  Script::Common),
+        ('\u{fe62}', '\u{fe62}',  Script::Common), ('\u{fe63}', '\u{fe63}',  Script::Common),
+        ('\u{fe64}', '\u{fe66}',  Script::Common), ('\u{fe68}', '\u{fe68}',  Script::Common),
+        ('\u{fe69}', '\u{fe69}',  Script::Common), ('\u{fe6a}', '\u{fe6b}',  Script::Common),
+        ('\u{fe70}', '\u{fe74}',  Script::Arabic), ('\u{fe76}', '\u{fefc}',  Script::Arabic),
+        ('\u{feff}', '\u{feff}',  Script::Common), ('\u{ff01}', '\u{ff03}',  Script::Common),
+        ('\u{ff04}', '\u{ff04}',  Script::Common), ('\u{ff05}', '\u{ff07}',  Script::Common),
+        ('\u{ff08}', '\u{ff08}',  Script::Common), ('\u{ff09}', '\u{ff09}',  Script::Common),
+        ('\u{ff0a}', '\u{ff0a}',  Script::Common), ('\u{ff0b}', '\u{ff0b}',  Script::Common),
+        ('\u{ff0c}', '\u{ff0c}',  Script::Common), ('\u{ff0d}', '\u{ff0d}',  Script::Common),
+        ('\u{ff0e}', '\u{ff0f}',  Script::Common), ('\u{ff10}', '\u{ff19}',  Script::Common),
+        ('\u{ff1a}', '\u{ff1b}',  Script::Common), ('\u{ff1c}', '\u{ff1e}',  Script::Common),
+        ('\u{ff1f}', '\u{ff20}',  Script::Common), ('\u{ff21}', '\u{ff3a}',  Script::Latin),
+        ('\u{ff3b}', '\u{ff3b}',  Script::Common), ('\u{ff3c}', '\u{ff3c}',  Script::Common),
+        ('\u{ff3d}', '\u{ff3d}',  Script::Common), ('\u{ff3e}', '\u{ff3e}',  Script::Common),
+        ('\u{ff3f}', '\u{ff3f}',  Script::Common), ('\u{ff40}', '\u{ff40}',  Script::Common),
+        ('\u{ff41}', '\u{ff5a}',  Script::Latin), ('\u{ff5b}', '\u{ff5b}',  Script::Common),
+        ('\u{ff5c}', '\u{ff5c}',  Script::Common), ('\u{ff5d}', '\u{ff5d}',  Script::Common),
+        ('\u{ff5e}', '\u{ff5e}',  Script::Common), ('\u{ff5f}', '\u{ff5f}',  Script::Common),
+        ('\u{ff60}', '\u{ff60}',  Script::Common), ('\u{ff61}', '\u{ff61}',  Script::Common),
+        ('\u{ff62}', '\u{ff62}',  Script::Common), ('\u{ff63}', '\u{ff63}',  Script::Common),
+        ('\u{ff64}', '\u{ff65}',  Script::Common), ('\u{ff66}', '\u{ff6f}',  Script::Katakana),
+        ('\u{ff70}', '\u{ff70}',  Script::Common), ('\u{ff71}', '\u{ff9d}',  Script::Katakana),
+        ('\u{ff9e}', '\u{ff9f}',  Script::Common), ('\u{ffa0}', '\u{ffbe}',  Script::Hangul),
+        ('\u{ffc2}', '\u{ffc7}',  Script::Hangul), ('\u{ffca}', '\u{ffcf}',  Script::Hangul),
+        ('\u{ffd2}', '\u{ffd7}',  Script::Hangul), ('\u{ffda}', '\u{ffdc}',  Script::Hangul),
+        ('\u{ffe0}', '\u{ffe1}',  Script::Common), ('\u{ffe2}', '\u{ffe2}',  Script::Common),
+        ('\u{ffe3}', '\u{ffe3}',  Script::Common), ('\u{ffe4}', '\u{ffe4}',  Script::Common),
+        ('\u{ffe5}', '\u{ffe6}',  Script::Common), ('\u{ffe8}', '\u{ffe8}',  Script::Common),
+        ('\u{ffe9}', '\u{ffec}',  Script::Common), ('\u{ffed}', '\u{ffee}',  Script::Common),
+        ('\u{fff9}', '\u{fffb}',  Script::Common), ('\u{fffc}', '\u{fffd}',  Script::Common),
+        ('\u{10000}', '\u{1000b}',  Script::Linear_B), ('\u{1000d}', '\u{10026}',
+         Script::Linear_B), ('\u{10028}', '\u{1003a}',  Script::Linear_B), ('\u{1003c}',
+        '\u{1003d}',  Script::Linear_B), ('\u{1003f}', '\u{1004d}',  Script::Linear_B),
+        ('\u{10050}', '\u{1005d}',  Script::Linear_B), ('\u{10080}', '\u{100fa}',
+         Script::Linear_B), ('\u{10100}', '\u{10102}',  Script::Common), ('\u{10107}', '\u{10133}',
+         Script::Common), ('\u{10137}', '\u{1013f}',  Script::Common), ('\u{10140}', '\u{10174}',
+         Script::Greek), ('\u{10175}', '\u{10178}',  Script::Greek), ('\u{10179}', '\u{10189}',
+         Script::Greek), ('\u{1018a}', '\u{1018b}',  Script::Greek), ('\u{1018c}', '\u{1018e}',
+         Script::Greek), ('\u{10190}', '\u{1019c}',  Script::Common), ('\u{101a0}', '\u{101a0}',
+         Script::Greek), ('\u{101d0}', '\u{101fc}',  Script::Common), ('\u{101fd}', '\u{101fd}',
+         Script::Inherited), ('\u{10280}', '\u{1029c}',  Script::Lycian), ('\u{102a0}', '\u{102d0}',
+         Script::Carian), ('\u{102e0}', '\u{102e0}',  Script::Inherited), ('\u{102e1}', '\u{102fb}',
+         Script::Common), ('\u{10300}', '\u{1031f}',  Script::Old_Italic), ('\u{10320}',
+        '\u{10323}',  Script::Old_Italic), ('\u{1032d}', '\u{1032f}',  Script::Old_Italic),
+        ('\u{10330}', '\u{10340}',  Script::Gothic), ('\u{10341}', '\u{10341}',  Script::Gothic),
+        ('\u{10342}', '\u{10349}',  Script::Gothic), ('\u{1034a}', '\u{1034a}',  Script::Gothic),
+        ('\u{10350}', '\u{10375}',  Script::Old_Permic), ('\u{10376}', '\u{1037a}',
+         Script::Old_Permic), ('\u{10380}', '\u{1039d}',  Script::Ugaritic), ('\u{1039f}',
+        '\u{1039f}',  Script::Ugaritic), ('\u{103a0}', '\u{103c3}',  Script::Old_Persian),
+        ('\u{103c8}', '\u{103cf}',  Script::Old_Persian), ('\u{103d0}', '\u{103d0}',
+         Script::Old_Persian), ('\u{103d1}', '\u{103d5}',  Script::Old_Persian), ('\u{10400}',
+        '\u{1044f}',  Script::Deseret), ('\u{10450}', '\u{1047f}',  Script::Shavian), ('\u{10480}',
+        '\u{1049d}',  Script::Osmanya), ('\u{104a0}', '\u{104a9}',  Script::Osmanya), ('\u{104b0}',
+        '\u{104d3}',  Script::Osage), ('\u{104d8}', '\u{104fb}',  Script::Osage), ('\u{10500}',
+        '\u{10527}',  Script::Elbasan), ('\u{10530}', '\u{10563}',  Script::Caucasian_Albanian),
+        ('\u{1056f}', '\u{1056f}',  Script::Caucasian_Albanian), ('\u{10570}', '\u{1057a}',
+         Script::Vithkuqi), ('\u{1057c}', '\u{1058a}',  Script::Vithkuqi), ('\u{1058c}',
+        '\u{10592}',  Script::Vithkuqi), ('\u{10594}', '\u{10595}',  Script::Vithkuqi),
+        ('\u{10597}', '\u{105a1}',  Script::Vithkuqi), ('\u{105a3}', '\u{105b1}',
+         Script::Vithkuqi), ('\u{105b3}', '\u{105b9}',  Script::Vithkuqi), ('\u{105bb}',
+        '\u{105bc}',  Script::Vithkuqi), ('\u{105c0}', '\u{105f3}',  Script::Todhri), ('\u{10600}',
+        '\u{10736}',  Script::Linear_A), ('\u{10740}', '\u{10755}',  Script::Linear_A),
+        ('\u{10760}', '\u{10767}',  Script::Linear_A), ('\u{10780}', '\u{10785}',  Script::Latin),
+        ('\u{10787}', '\u{107b0}',  Script::Latin), ('\u{107b2}', '\u{107bf}',  Script::Latin),
+        ('\u{10800}', '\u{10805}',  Script::Cypriot), ('\u{10808}', '\u{10808}',  Script::Cypriot),
+        ('\u{1080a}', '\u{10835}',  Script::Cypriot), ('\u{10837}', '\u{10838}',  Script::Cypriot),
+        ('\u{1083c}', '\u{1083c}',  Script::Cypriot), ('\u{1083f}', '\u{1083f}',  Script::Cypriot),
+        ('\u{10840}', '\u{10855}',  Script::Imperial_Aramaic), ('\u{10857}', '\u{10857}',
+         Script::Imperial_Aramaic), ('\u{10858}', '\u{1085f}',  Script::Imperial_Aramaic),
+        ('\u{10860}', '\u{10876}',  Script::Palmyrene), ('\u{10877}', '\u{10878}',
+         Script::Palmyrene), ('\u{10879}', '\u{1087f}',  Script::Palmyrene), ('\u{10880}',
+        '\u{1089e}',  Script::Nabataean), ('\u{108a7}', '\u{108af}',  Script::Nabataean),
+        ('\u{108e0}', '\u{108f2}',  Script::Hatran), ('\u{108f4}', '\u{108f5}',  Script::Hatran),
+        ('\u{108fb}', '\u{108ff}',  Script::Hatran), ('\u{10900}', '\u{10915}',
+         Script::Phoenician), ('\u{10916}', '\u{1091b}',  Script::Phoenician), ('\u{1091f}',
+        '\u{1091f}',  Script::Phoenician), ('\u{10920}', '\u{10939}',  Script::Lydian),
+        ('\u{1093f}', '\u{1093f}',  Script::Lydian), ('\u{10940}', '\u{10959}',  Script::Sidetic),
+        ('\u{10980}', '\u{1099f}',  Script::Meroitic_Hieroglyphs), ('\u{109a0}', '\u{109b7}',
+         Script::Meroitic_Cursive), ('\u{109bc}', '\u{109bd}',  Script::Meroitic_Cursive),
+        ('\u{109be}', '\u{109bf}',  Script::Meroitic_Cursive), ('\u{109c0}', '\u{109cf}',
+         Script::Meroitic_Cursive), ('\u{109d2}', '\u{109ff}',  Script::Meroitic_Cursive),
+        ('\u{10a00}', '\u{10a00}',  Script::Kharoshthi), ('\u{10a01}', '\u{10a03}',
+         Script::Kharoshthi), ('\u{10a05}', '\u{10a06}',  Script::Kharoshthi), ('\u{10a0c}',
+        '\u{10a0f}',  Script::Kharoshthi), ('\u{10a10}', '\u{10a13}',  Script::Kharoshthi),
+        ('\u{10a15}', '\u{10a17}',  Script::Kharoshthi), ('\u{10a19}', '\u{10a35}',
+         Script::Kharoshthi), ('\u{10a38}', '\u{10a3a}',  Script::Kharoshthi), ('\u{10a3f}',
+        '\u{10a3f}',  Script::Kharoshthi), ('\u{10a40}', '\u{10a48}',  Script::Kharoshthi),
+        ('\u{10a50}', '\u{10a58}',  Script::Kharoshthi), ('\u{10a60}', '\u{10a7c}',
+         Script::Old_South_Arabian), ('\u{10a7d}', '\u{10a7e}',  Script::Old_South_Arabian),
+        ('\u{10a7f}', '\u{10a7f}',  Script::Old_South_Arabian), ('\u{10a80}', '\u{10a9c}',
+         Script::Old_North_Arabian), ('\u{10a9d}', '\u{10a9f}',  Script::Old_North_Arabian),
+        ('\u{10ac0}', '\u{10ac7}',  Script::Manichaean), ('\u{10ac8}', '\u{10ac8}',
+         Script::Manichaean), ('\u{10ac9}', '\u{10ae4}',  Script::Manichaean), ('\u{10ae5}',
+        '\u{10ae6}',  Script::Manichaean), ('\u{10aeb}', '\u{10aef}',  Script::Manichaean),
+        ('\u{10af0}', '\u{10af6}',  Script::Manichaean), ('\u{10b00}', '\u{10b35}',
+         Script::Avestan), ('\u{10b39}', '\u{10b3f}',  Script::Avestan), ('\u{10b40}', '\u{10b55}',
+         Script::Inscriptional_Parthian), ('\u{10b58}', '\u{10b5f}',
          Script::Inscriptional_Parthian), ('\u{10b60}', '\u{10b72}',
          Script::Inscriptional_Pahlavi), ('\u{10b78}', '\u{10b7f}',  Script::Inscriptional_Pahlavi),
         ('\u{10b80}', '\u{10b91}',  Script::Psalter_Pahlavi), ('\u{10b99}', '\u{10b9c}',
@@ -3032,28 +3070,30 @@ pub fn get_script_extension(c: char) -> Option<ScriptExtension> {
         '\u{10ea9}',  Script::Yezidi), ('\u{10eab}', '\u{10eac}',  Script::Yezidi), ('\u{10ead}',
         '\u{10ead}',  Script::Yezidi), ('\u{10eb0}', '\u{10eb1}',  Script::Yezidi), ('\u{10ec2}',
         '\u{10ec4}',  Script::Arabic), ('\u{10ec5}', '\u{10ec5}',  Script::Arabic), ('\u{10ec6}',
-        '\u{10ec7}',  Script::Arabic), ('\u{10ed0}', '\u{10ed0}',  Script::Arabic), ('\u{10ed1}',
-        '\u{10ed8}',  Script::Arabic), ('\u{10efa}', '\u{10eff}',  Script::Arabic), ('\u{10f00}',
-        '\u{10f1c}',  Script::Old_Sogdian), ('\u{10f1d}', '\u{10f26}',  Script::Old_Sogdian),
-        ('\u{10f27}', '\u{10f27}',  Script::Old_Sogdian), ('\u{10f30}', '\u{10f45}',
-         Script::Sogdian), ('\u{10f46}', '\u{10f50}',  Script::Sogdian), ('\u{10f51}', '\u{10f54}',
-         Script::Sogdian), ('\u{10f55}', '\u{10f59}',  Script::Sogdian), ('\u{10f70}', '\u{10f81}',
-         Script::Old_Uyghur), ('\u{10f82}', '\u{10f85}',  Script::Old_Uyghur), ('\u{10f86}',
-        '\u{10f89}',  Script::Old_Uyghur), ('\u{10fb0}', '\u{10fc4}',  Script::Chorasmian),
-        ('\u{10fc5}', '\u{10fcb}',  Script::Chorasmian), ('\u{10fe0}', '\u{10ff6}',
-         Script::Elymaic), ('\u{11000}', '\u{11000}',  Script::Brahmi), ('\u{11001}', '\u{11001}',
-         Script::Brahmi), ('\u{11002}', '\u{11002}',  Script::Brahmi), ('\u{11003}', '\u{11037}',
-         Script::Brahmi), ('\u{11038}', '\u{11046}',  Script::Brahmi), ('\u{11047}', '\u{1104d}',
-         Script::Brahmi), ('\u{11052}', '\u{11065}',  Script::Brahmi), ('\u{11066}', '\u{1106f}',
-         Script::Brahmi), ('\u{11070}', '\u{11070}',  Script::Brahmi), ('\u{11071}', '\u{11072}',
-         Script::Brahmi), ('\u{11073}', '\u{11074}',  Script::Brahmi), ('\u{11075}', '\u{11075}',
-         Script::Brahmi), ('\u{1107f}', '\u{1107f}',  Script::Brahmi), ('\u{11080}', '\u{11081}',
-         Script::Kaithi), ('\u{11082}', '\u{11082}',  Script::Kaithi), ('\u{11083}', '\u{110af}',
-         Script::Kaithi), ('\u{110b0}', '\u{110b2}',  Script::Kaithi), ('\u{110b3}', '\u{110b6}',
-         Script::Kaithi), ('\u{110b7}', '\u{110b8}',  Script::Kaithi), ('\u{110b9}', '\u{110ba}',
-         Script::Kaithi), ('\u{110bb}', '\u{110bc}',  Script::Kaithi), ('\u{110bd}', '\u{110bd}',
-         Script::Kaithi), ('\u{110be}', '\u{110c1}',  Script::Kaithi), ('\u{110c2}', '\u{110c2}',
-         Script::Kaithi), ('\u{110cd}', '\u{110cd}',  Script::Kaithi), ('\u{110d0}', '\u{110e8}',
+        '\u{10ec7}',  Script::Arabic), ('\u{10ec9}', '\u{10eca}',  Script::Arabic), ('\u{10ecb}',
+        '\u{10ecf}',  Script::Arabic), ('\u{10ed0}', '\u{10ed0}',  Script::Arabic), ('\u{10ed1}',
+        '\u{10ed8}',  Script::Arabic), ('\u{10ed9}', '\u{10eee}',  Script::Arabic), ('\u{10ef0}',
+        '\u{10eff}',  Script::Arabic), ('\u{10f00}', '\u{10f1c}',  Script::Old_Sogdian),
+        ('\u{10f1d}', '\u{10f26}',  Script::Old_Sogdian), ('\u{10f27}', '\u{10f27}',
+         Script::Old_Sogdian), ('\u{10f30}', '\u{10f45}',  Script::Sogdian), ('\u{10f46}',
+        '\u{10f50}',  Script::Sogdian), ('\u{10f51}', '\u{10f54}',  Script::Sogdian), ('\u{10f55}',
+        '\u{10f59}',  Script::Sogdian), ('\u{10f70}', '\u{10f81}',  Script::Old_Uyghur),
+        ('\u{10f82}', '\u{10f85}',  Script::Old_Uyghur), ('\u{10f86}', '\u{10f89}',
+         Script::Old_Uyghur), ('\u{10fb0}', '\u{10fc4}',  Script::Chorasmian), ('\u{10fc5}',
+        '\u{10fcb}',  Script::Chorasmian), ('\u{10fe0}', '\u{10ff6}',  Script::Elymaic),
+        ('\u{11000}', '\u{11000}',  Script::Brahmi), ('\u{11001}', '\u{11001}',  Script::Brahmi),
+        ('\u{11002}', '\u{11002}',  Script::Brahmi), ('\u{11003}', '\u{11037}',  Script::Brahmi),
+        ('\u{11038}', '\u{11046}',  Script::Brahmi), ('\u{11047}', '\u{1104d}',  Script::Brahmi),
+        ('\u{11052}', '\u{11065}',  Script::Brahmi), ('\u{11066}', '\u{1106f}',  Script::Brahmi),
+        ('\u{11070}', '\u{11070}',  Script::Brahmi), ('\u{11071}', '\u{11072}',  Script::Brahmi),
+        ('\u{11073}', '\u{11074}',  Script::Brahmi), ('\u{11075}', '\u{11075}',  Script::Brahmi),
+        ('\u{1107f}', '\u{1107f}',  Script::Brahmi), ('\u{11080}', '\u{11081}',  Script::Kaithi),
+        ('\u{11082}', '\u{11082}',  Script::Kaithi), ('\u{11083}', '\u{110af}',  Script::Kaithi),
+        ('\u{110b0}', '\u{110b2}',  Script::Kaithi), ('\u{110b3}', '\u{110b6}',  Script::Kaithi),
+        ('\u{110b7}', '\u{110b8}',  Script::Kaithi), ('\u{110b9}', '\u{110ba}',  Script::Kaithi),
+        ('\u{110bb}', '\u{110bc}',  Script::Kaithi), ('\u{110bd}', '\u{110bd}',  Script::Kaithi),
+        ('\u{110be}', '\u{110c1}',  Script::Kaithi), ('\u{110c2}', '\u{110c2}',  Script::Kaithi),
+        ('\u{110cd}', '\u{110cd}',  Script::Kaithi), ('\u{110d0}', '\u{110e8}',
          Script::Sora_Sompeng), ('\u{110f0}', '\u{110f9}',  Script::Sora_Sompeng), ('\u{11100}',
         '\u{11102}',  Script::Chakma), ('\u{11103}', '\u{11126}',  Script::Chakma), ('\u{11127}',
         '\u{1112b}',  Script::Chakma), ('\u{1112c}', '\u{1112c}',  Script::Chakma), ('\u{1112d}',
@@ -3178,52 +3218,56 @@ pub fn get_script_extension(c: char) -> Option<ScriptExtension> {
         '\u{11a99}',  Script::Soyombo), ('\u{11a9a}', '\u{11a9c}',  Script::Soyombo), ('\u{11a9d}',
         '\u{11a9d}',  Script::Soyombo), ('\u{11a9e}', '\u{11aa2}',  Script::Soyombo), ('\u{11ab0}',
         '\u{11abf}',  Script::Canadian_Aboriginal), ('\u{11ac0}', '\u{11af8}',
-         Script::Pau_Cin_Hau), ('\u{11b00}', '\u{11b09}',  Script::Devanagari), ('\u{11b60}',
-        '\u{11b60}',  Script::Sharada), ('\u{11b61}', '\u{11b61}',  Script::Sharada), ('\u{11b62}',
-        '\u{11b64}',  Script::Sharada), ('\u{11b65}', '\u{11b65}',  Script::Sharada), ('\u{11b66}',
-        '\u{11b66}',  Script::Sharada), ('\u{11b67}', '\u{11b67}',  Script::Sharada), ('\u{11bc0}',
-        '\u{11be0}',  Script::Sunuwar), ('\u{11be1}', '\u{11be1}',  Script::Sunuwar), ('\u{11bf0}',
-        '\u{11bf9}',  Script::Sunuwar), ('\u{11c00}', '\u{11c08}',  Script::Bhaiksuki),
-        ('\u{11c0a}', '\u{11c2e}',  Script::Bhaiksuki), ('\u{11c2f}', '\u{11c2f}',
-         Script::Bhaiksuki), ('\u{11c30}', '\u{11c36}',  Script::Bhaiksuki), ('\u{11c38}',
-        '\u{11c3d}',  Script::Bhaiksuki), ('\u{11c3e}', '\u{11c3e}',  Script::Bhaiksuki),
-        ('\u{11c3f}', '\u{11c3f}',  Script::Bhaiksuki), ('\u{11c40}', '\u{11c40}',
-         Script::Bhaiksuki), ('\u{11c41}', '\u{11c45}',  Script::Bhaiksuki), ('\u{11c50}',
-        '\u{11c59}',  Script::Bhaiksuki), ('\u{11c5a}', '\u{11c6c}',  Script::Bhaiksuki),
-        ('\u{11c70}', '\u{11c71}',  Script::Marchen), ('\u{11c72}', '\u{11c8f}',  Script::Marchen),
-        ('\u{11c92}', '\u{11ca7}',  Script::Marchen), ('\u{11ca9}', '\u{11ca9}',  Script::Marchen),
-        ('\u{11caa}', '\u{11cb0}',  Script::Marchen), ('\u{11cb1}', '\u{11cb1}',  Script::Marchen),
-        ('\u{11cb2}', '\u{11cb3}',  Script::Marchen), ('\u{11cb4}', '\u{11cb4}',  Script::Marchen),
-        ('\u{11cb5}', '\u{11cb6}',  Script::Marchen), ('\u{11d00}', '\u{11d06}',
-         Script::Masaram_Gondi), ('\u{11d08}', '\u{11d09}',  Script::Masaram_Gondi), ('\u{11d0b}',
-        '\u{11d30}',  Script::Masaram_Gondi), ('\u{11d31}', '\u{11d36}',  Script::Masaram_Gondi),
-        ('\u{11d3a}', '\u{11d3a}',  Script::Masaram_Gondi), ('\u{11d3c}', '\u{11d3d}',
-         Script::Masaram_Gondi), ('\u{11d3f}', '\u{11d45}',  Script::Masaram_Gondi), ('\u{11d46}',
-        '\u{11d46}',  Script::Masaram_Gondi), ('\u{11d47}', '\u{11d47}',  Script::Masaram_Gondi),
-        ('\u{11d50}', '\u{11d59}',  Script::Masaram_Gondi), ('\u{11d60}', '\u{11d65}',
-         Script::Gunjala_Gondi), ('\u{11d67}', '\u{11d68}',  Script::Gunjala_Gondi), ('\u{11d6a}',
-        '\u{11d89}',  Script::Gunjala_Gondi), ('\u{11d8a}', '\u{11d8e}',  Script::Gunjala_Gondi),
-        ('\u{11d90}', '\u{11d91}',  Script::Gunjala_Gondi), ('\u{11d93}', '\u{11d94}',
-         Script::Gunjala_Gondi), ('\u{11d95}', '\u{11d95}',  Script::Gunjala_Gondi), ('\u{11d96}',
-        '\u{11d96}',  Script::Gunjala_Gondi), ('\u{11d97}', '\u{11d97}',  Script::Gunjala_Gondi),
-        ('\u{11d98}', '\u{11d98}',  Script::Gunjala_Gondi), ('\u{11da0}', '\u{11da9}',
-         Script::Gunjala_Gondi), ('\u{11db0}', '\u{11dd8}',  Script::Tolong_Siki), ('\u{11dd9}',
-        '\u{11dd9}',  Script::Tolong_Siki), ('\u{11dda}', '\u{11ddb}',  Script::Tolong_Siki),
-        ('\u{11de0}', '\u{11de9}',  Script::Tolong_Siki), ('\u{11ee0}', '\u{11ef2}',
-         Script::Makasar), ('\u{11ef3}', '\u{11ef4}',  Script::Makasar), ('\u{11ef5}', '\u{11ef6}',
-         Script::Makasar), ('\u{11ef7}', '\u{11ef8}',  Script::Makasar), ('\u{11f00}', '\u{11f01}',
-         Script::Kawi), ('\u{11f02}', '\u{11f02}',  Script::Kawi), ('\u{11f03}', '\u{11f03}',
-         Script::Kawi), ('\u{11f04}', '\u{11f10}',  Script::Kawi), ('\u{11f12}', '\u{11f33}',
-         Script::Kawi), ('\u{11f34}', '\u{11f35}',  Script::Kawi), ('\u{11f36}', '\u{11f3a}',
-         Script::Kawi), ('\u{11f3e}', '\u{11f3f}',  Script::Kawi), ('\u{11f40}', '\u{11f40}',
-         Script::Kawi), ('\u{11f41}', '\u{11f41}',  Script::Kawi), ('\u{11f42}', '\u{11f42}',
-         Script::Kawi), ('\u{11f43}', '\u{11f4f}',  Script::Kawi), ('\u{11f50}', '\u{11f59}',
-         Script::Kawi), ('\u{11f5a}', '\u{11f5a}',  Script::Kawi), ('\u{11fb0}', '\u{11fb0}',
-         Script::Lisu), ('\u{11fc0}', '\u{11fd4}',  Script::Tamil), ('\u{11fd5}', '\u{11fdc}',
-         Script::Tamil), ('\u{11fdd}', '\u{11fe0}',  Script::Tamil), ('\u{11fe1}', '\u{11ff1}',
-         Script::Tamil), ('\u{11fff}', '\u{11fff}',  Script::Tamil), ('\u{12000}', '\u{12399}',
-         Script::Cuneiform), ('\u{12400}', '\u{1246e}',  Script::Cuneiform), ('\u{12470}',
-        '\u{12474}',  Script::Cuneiform), ('\u{12480}', '\u{12543}',  Script::Cuneiform),
+         Script::Pau_Cin_Hau), ('\u{11b00}', '\u{11b09}',  Script::Devanagari), ('\u{11b0a}',
+        '\u{11b0a}',  Script::Devanagari), ('\u{11b60}', '\u{11b60}',  Script::Sharada),
+        ('\u{11b61}', '\u{11b61}',  Script::Sharada), ('\u{11b62}', '\u{11b64}',  Script::Sharada),
+        ('\u{11b65}', '\u{11b65}',  Script::Sharada), ('\u{11b66}', '\u{11b66}',  Script::Sharada),
+        ('\u{11b67}', '\u{11b67}',  Script::Sharada), ('\u{11bc0}', '\u{11be0}',  Script::Sunuwar),
+        ('\u{11be1}', '\u{11be1}',  Script::Sunuwar), ('\u{11bf0}', '\u{11bf9}',  Script::Sunuwar),
+        ('\u{11c00}', '\u{11c08}',  Script::Bhaiksuki), ('\u{11c0a}', '\u{11c2e}',
+         Script::Bhaiksuki), ('\u{11c2f}', '\u{11c2f}',  Script::Bhaiksuki), ('\u{11c30}',
+        '\u{11c36}',  Script::Bhaiksuki), ('\u{11c38}', '\u{11c3d}',  Script::Bhaiksuki),
+        ('\u{11c3e}', '\u{11c3e}',  Script::Bhaiksuki), ('\u{11c3f}', '\u{11c3f}',
+         Script::Bhaiksuki), ('\u{11c40}', '\u{11c40}',  Script::Bhaiksuki), ('\u{11c41}',
+        '\u{11c45}',  Script::Bhaiksuki), ('\u{11c50}', '\u{11c59}',  Script::Bhaiksuki),
+        ('\u{11c5a}', '\u{11c6c}',  Script::Bhaiksuki), ('\u{11c70}', '\u{11c71}',
+         Script::Marchen), ('\u{11c72}', '\u{11c8f}',  Script::Marchen), ('\u{11c92}', '\u{11ca7}',
+         Script::Marchen), ('\u{11ca9}', '\u{11ca9}',  Script::Marchen), ('\u{11caa}', '\u{11cb0}',
+         Script::Marchen), ('\u{11cb1}', '\u{11cb1}',  Script::Marchen), ('\u{11cb2}', '\u{11cb3}',
+         Script::Marchen), ('\u{11cb4}', '\u{11cb4}',  Script::Marchen), ('\u{11cb5}', '\u{11cb6}',
+         Script::Marchen), ('\u{11d00}', '\u{11d06}',  Script::Masaram_Gondi), ('\u{11d08}',
+        '\u{11d09}',  Script::Masaram_Gondi), ('\u{11d0b}', '\u{11d30}',  Script::Masaram_Gondi),
+        ('\u{11d31}', '\u{11d36}',  Script::Masaram_Gondi), ('\u{11d3a}', '\u{11d3a}',
+         Script::Masaram_Gondi), ('\u{11d3c}', '\u{11d3d}',  Script::Masaram_Gondi), ('\u{11d3f}',
+        '\u{11d45}',  Script::Masaram_Gondi), ('\u{11d46}', '\u{11d46}',  Script::Masaram_Gondi),
+        ('\u{11d47}', '\u{11d47}',  Script::Masaram_Gondi), ('\u{11d50}', '\u{11d59}',
+         Script::Masaram_Gondi), ('\u{11d60}', '\u{11d65}',  Script::Gunjala_Gondi), ('\u{11d67}',
+        '\u{11d68}',  Script::Gunjala_Gondi), ('\u{11d6a}', '\u{11d89}',  Script::Gunjala_Gondi),
+        ('\u{11d8a}', '\u{11d8e}',  Script::Gunjala_Gondi), ('\u{11d90}', '\u{11d91}',
+         Script::Gunjala_Gondi), ('\u{11d93}', '\u{11d94}',  Script::Gunjala_Gondi), ('\u{11d95}',
+        '\u{11d95}',  Script::Gunjala_Gondi), ('\u{11d96}', '\u{11d96}',  Script::Gunjala_Gondi),
+        ('\u{11d97}', '\u{11d97}',  Script::Gunjala_Gondi), ('\u{11d98}', '\u{11d98}',
+         Script::Gunjala_Gondi), ('\u{11da0}', '\u{11da9}',  Script::Gunjala_Gondi), ('\u{11db0}',
+        '\u{11dd8}',  Script::Tolong_Siki), ('\u{11dd9}', '\u{11dd9}',  Script::Tolong_Siki),
+        ('\u{11dda}', '\u{11ddb}',  Script::Tolong_Siki), ('\u{11de0}', '\u{11de9}',
+         Script::Tolong_Siki), ('\u{11df0}', '\u{11df0}',  Script::Bengali), ('\u{11df1}',
+        '\u{11df1}',  Script::Bengali), ('\u{11ee0}', '\u{11ef2}',  Script::Makasar), ('\u{11ef3}',
+        '\u{11ef4}',  Script::Makasar), ('\u{11ef5}', '\u{11ef6}',  Script::Makasar), ('\u{11ef7}',
+        '\u{11ef8}',  Script::Makasar), ('\u{11f00}', '\u{11f01}',  Script::Kawi), ('\u{11f02}',
+        '\u{11f02}',  Script::Kawi), ('\u{11f03}', '\u{11f03}',  Script::Kawi), ('\u{11f04}',
+        '\u{11f10}',  Script::Kawi), ('\u{11f12}', '\u{11f33}',  Script::Kawi), ('\u{11f34}',
+        '\u{11f35}',  Script::Kawi), ('\u{11f36}', '\u{11f3a}',  Script::Kawi), ('\u{11f3e}',
+        '\u{11f3f}',  Script::Kawi), ('\u{11f40}', '\u{11f40}',  Script::Kawi), ('\u{11f41}',
+        '\u{11f41}',  Script::Kawi), ('\u{11f42}', '\u{11f42}',  Script::Kawi), ('\u{11f43}',
+        '\u{11f4f}',  Script::Kawi), ('\u{11f50}', '\u{11f59}',  Script::Kawi), ('\u{11f5a}',
+        '\u{11f5a}',  Script::Kawi), ('\u{11fb0}', '\u{11fb0}',  Script::Lisu), ('\u{11fc0}',
+        '\u{11fd4}',  Script::Tamil), ('\u{11fd5}', '\u{11fdc}',  Script::Tamil), ('\u{11fdd}',
+        '\u{11fe0}',  Script::Tamil), ('\u{11fe1}', '\u{11ff1}',  Script::Tamil), ('\u{11fff}',
+        '\u{11fff}',  Script::Tamil), ('\u{12000}', '\u{12399}',  Script::Cuneiform), ('\u{12400}',
+        '\u{1246f}',  Script::Cuneiform), ('\u{12470}', '\u{12474}',  Script::Cuneiform),
+        ('\u{12475}', '\u{1247f}',  Script::Cuneiform), ('\u{12480}', '\u{12543}',
+         Script::Cuneiform), ('\u{12550}', '\u{125a7}',  Script::Cuneiform), ('\u{125a8}',
+        '\u{1264b}',  Script::Proto_Cuneiform), ('\u{1264c}', '\u{12686}',  Script::Cuneiform),
         ('\u{12f90}', '\u{12ff0}',  Script::Cypro_Minoan), ('\u{12ff1}', '\u{12ff2}',
          Script::Cypro_Minoan), ('\u{13000}', '\u{1342f}',  Script::Egyptian_Hieroglyphs),
         ('\u{13430}', '\u{1343f}',  Script::Egyptian_Hieroglyphs), ('\u{13440}', '\u{13440}',
@@ -3258,70 +3302,80 @@ pub fn get_script_extension(c: char) -> Option<ScriptExtension> {
         '\u{16fe3}',  Script::Han), ('\u{16fe4}', '\u{16fe4}',  Script::Khitan_Small_Script),
         ('\u{16ff0}', '\u{16ff1}',  Script::Han), ('\u{16ff2}', '\u{16ff3}',  Script::Han),
         ('\u{16ff4}', '\u{16ff6}',  Script::Han), ('\u{17000}', '\u{18aff}',  Script::Tangut),
-        ('\u{18b00}', '\u{18cd5}',  Script::Khitan_Small_Script), ('\u{18cff}', '\u{18cff}',
-         Script::Khitan_Small_Script), ('\u{18d00}', '\u{18d1e}',  Script::Tangut), ('\u{18d80}',
-        '\u{18df2}',  Script::Tangut), ('\u{1aff0}', '\u{1aff3}',  Script::Katakana), ('\u{1aff5}',
+        ('\u{18b00}', '\u{18cda}',  Script::Khitan_Small_Script), ('\u{18cff}', '\u{18cff}',
+         Script::Khitan_Small_Script), ('\u{18d00}', '\u{18d20}',  Script::Tangut), ('\u{18d80}',
+        '\u{18df2}',  Script::Tangut), ('\u{18e00}', '\u{19191}',  Script::Jurchen), ('\u{191a0}',
+        '\u{191d2}',  Script::Jurchen), ('\u{1aff0}', '\u{1aff3}',  Script::Katakana), ('\u{1aff5}',
         '\u{1affb}',  Script::Katakana), ('\u{1affd}', '\u{1affe}',  Script::Katakana),
         ('\u{1b000}', '\u{1b000}',  Script::Katakana), ('\u{1b001}', '\u{1b11f}',
-         Script::Hiragana), ('\u{1b120}', '\u{1b122}',  Script::Katakana), ('\u{1b132}',
-        '\u{1b132}',  Script::Hiragana), ('\u{1b150}', '\u{1b152}',  Script::Hiragana),
-        ('\u{1b155}', '\u{1b155}',  Script::Katakana), ('\u{1b164}', '\u{1b167}',
-         Script::Katakana), ('\u{1b170}', '\u{1b2fb}',  Script::Nushu), ('\u{1bc00}', '\u{1bc6a}',
-         Script::Duployan), ('\u{1bc70}', '\u{1bc7c}',  Script::Duployan), ('\u{1bc80}',
-        '\u{1bc88}',  Script::Duployan), ('\u{1bc90}', '\u{1bc99}',  Script::Duployan),
-        ('\u{1bc9c}', '\u{1bc9c}',  Script::Duployan), ('\u{1bc9d}', '\u{1bc9e}',
-         Script::Duployan), ('\u{1bc9f}', '\u{1bc9f}',  Script::Duployan), ('\u{1bca0}',
-        '\u{1bca3}',  Script::Common), ('\u{1cc00}', '\u{1ccef}',  Script::Common), ('\u{1ccf0}',
-        '\u{1ccf9}',  Script::Common), ('\u{1ccfa}', '\u{1ccfc}',  Script::Common), ('\u{1cd00}',
-        '\u{1ceb3}',  Script::Common), ('\u{1ceba}', '\u{1ced0}',  Script::Common), ('\u{1cee0}',
-        '\u{1ceef}',  Script::Common), ('\u{1cef0}', '\u{1cef0}',  Script::Common), ('\u{1cf00}',
-        '\u{1cf2d}',  Script::Inherited), ('\u{1cf30}', '\u{1cf46}',  Script::Inherited),
-        ('\u{1cf50}', '\u{1cfc3}',  Script::Common), ('\u{1d000}', '\u{1d0f5}',  Script::Common),
-        ('\u{1d100}', '\u{1d126}',  Script::Common), ('\u{1d129}', '\u{1d164}',  Script::Common),
-        ('\u{1d165}', '\u{1d166}',  Script::Common), ('\u{1d167}', '\u{1d169}',  Script::Inherited),
-        ('\u{1d16a}', '\u{1d16c}',  Script::Common), ('\u{1d16d}', '\u{1d172}',  Script::Common),
-        ('\u{1d173}', '\u{1d17a}',  Script::Common), ('\u{1d17b}', '\u{1d182}',  Script::Inherited),
-        ('\u{1d183}', '\u{1d184}',  Script::Common), ('\u{1d185}', '\u{1d18b}',  Script::Inherited),
-        ('\u{1d18c}', '\u{1d1a9}',  Script::Common), ('\u{1d1aa}', '\u{1d1ad}',  Script::Inherited),
-        ('\u{1d1ae}', '\u{1d1ea}',  Script::Common), ('\u{1d200}', '\u{1d241}',  Script::Greek),
-        ('\u{1d242}', '\u{1d244}',  Script::Greek), ('\u{1d245}', '\u{1d245}',  Script::Greek),
-        ('\u{1d2c0}', '\u{1d2d3}',  Script::Common), ('\u{1d2e0}', '\u{1d2f3}',  Script::Common),
-        ('\u{1d300}', '\u{1d356}',  Script::Common), ('\u{1d360}', '\u{1d378}',  Script::Common),
-        ('\u{1d400}', '\u{1d454}',  Script::Common), ('\u{1d456}', '\u{1d49c}',  Script::Common),
-        ('\u{1d49e}', '\u{1d49f}',  Script::Common), ('\u{1d4a2}', '\u{1d4a2}',  Script::Common),
-        ('\u{1d4a5}', '\u{1d4a6}',  Script::Common), ('\u{1d4a9}', '\u{1d4ac}',  Script::Common),
-        ('\u{1d4ae}', '\u{1d4b9}',  Script::Common), ('\u{1d4bb}', '\u{1d4bb}',  Script::Common),
-        ('\u{1d4bd}', '\u{1d4c3}',  Script::Common), ('\u{1d4c5}', '\u{1d505}',  Script::Common),
-        ('\u{1d507}', '\u{1d50a}',  Script::Common), ('\u{1d50d}', '\u{1d514}',  Script::Common),
-        ('\u{1d516}', '\u{1d51c}',  Script::Common), ('\u{1d51e}', '\u{1d539}',  Script::Common),
-        ('\u{1d53b}', '\u{1d53e}',  Script::Common), ('\u{1d540}', '\u{1d544}',  Script::Common),
-        ('\u{1d546}', '\u{1d546}',  Script::Common), ('\u{1d54a}', '\u{1d550}',  Script::Common),
-        ('\u{1d552}', '\u{1d6a5}',  Script::Common), ('\u{1d6a8}', '\u{1d6c0}',  Script::Common),
-        ('\u{1d6c1}', '\u{1d6c1}',  Script::Common), ('\u{1d6c2}', '\u{1d6da}',  Script::Common),
-        ('\u{1d6db}', '\u{1d6db}',  Script::Common), ('\u{1d6dc}', '\u{1d6fa}',  Script::Common),
-        ('\u{1d6fb}', '\u{1d6fb}',  Script::Common), ('\u{1d6fc}', '\u{1d714}',  Script::Common),
-        ('\u{1d715}', '\u{1d715}',  Script::Common), ('\u{1d716}', '\u{1d734}',  Script::Common),
-        ('\u{1d735}', '\u{1d735}',  Script::Common), ('\u{1d736}', '\u{1d74e}',  Script::Common),
-        ('\u{1d74f}', '\u{1d74f}',  Script::Common), ('\u{1d750}', '\u{1d76e}',  Script::Common),
-        ('\u{1d76f}', '\u{1d76f}',  Script::Common), ('\u{1d770}', '\u{1d788}',  Script::Common),
-        ('\u{1d789}', '\u{1d789}',  Script::Common), ('\u{1d78a}', '\u{1d7a8}',  Script::Common),
-        ('\u{1d7a9}', '\u{1d7a9}',  Script::Common), ('\u{1d7aa}', '\u{1d7c2}',  Script::Common),
-        ('\u{1d7c3}', '\u{1d7c3}',  Script::Common), ('\u{1d7c4}', '\u{1d7cb}',  Script::Common),
-        ('\u{1d7ce}', '\u{1d7ff}',  Script::Common), ('\u{1d800}', '\u{1d9ff}',
+         Script::Hiragana), ('\u{1b120}', '\u{1b122}',  Script::Katakana), ('\u{1b123}',
+        '\u{1b123}',  Script::Hiragana), ('\u{1b124}', '\u{1b128}',  Script::Katakana),
+        ('\u{1b132}', '\u{1b132}',  Script::Hiragana), ('\u{1b150}', '\u{1b152}',
+         Script::Hiragana), ('\u{1b155}', '\u{1b155}',  Script::Katakana), ('\u{1b164}',
+        '\u{1b168}',  Script::Katakana), ('\u{1b170}', '\u{1b2fb}',  Script::Nushu), ('\u{1bc00}',
+        '\u{1bc6a}',  Script::Duployan), ('\u{1bc70}', '\u{1bc7c}',  Script::Duployan),
+        ('\u{1bc80}', '\u{1bc88}',  Script::Duployan), ('\u{1bc90}', '\u{1bc99}',
+         Script::Duployan), ('\u{1bc9c}', '\u{1bc9c}',  Script::Duployan), ('\u{1bc9d}',
+        '\u{1bc9e}',  Script::Duployan), ('\u{1bc9f}', '\u{1bc9f}',  Script::Duployan),
+        ('\u{1bca0}', '\u{1bca3}',  Script::Common), ('\u{1cc00}', '\u{1ccef}',  Script::Common),
+        ('\u{1ccf0}', '\u{1ccf9}',  Script::Common), ('\u{1ccfa}', '\u{1ccfc}',  Script::Common),
+        ('\u{1cd00}', '\u{1ceb3}',  Script::Common), ('\u{1ceba}', '\u{1ced0}',  Script::Common),
+        ('\u{1ced2}', '\u{1ced4}',  Script::Common), ('\u{1cedd}', '\u{1cedf}',  Script::Common),
+        ('\u{1cee0}', '\u{1ceef}',  Script::Common), ('\u{1cef0}', '\u{1cefd}',  Script::Common),
+        ('\u{1cf00}', '\u{1cf2d}',  Script::Inherited), ('\u{1cf30}', '\u{1cf46}',
+         Script::Inherited), ('\u{1cf50}', '\u{1cfc3}',  Script::Common), ('\u{1d000}', '\u{1d0f5}',
+         Script::Common), ('\u{1d100}', '\u{1d126}',  Script::Common), ('\u{1d127}', '\u{1d128}',
+         Script::Inherited), ('\u{1d129}', '\u{1d164}',  Script::Common), ('\u{1d165}', '\u{1d166}',
+         Script::Common), ('\u{1d167}', '\u{1d169}',  Script::Inherited), ('\u{1d16a}', '\u{1d16c}',
+         Script::Common), ('\u{1d16d}', '\u{1d172}',  Script::Common), ('\u{1d173}', '\u{1d17a}',
+         Script::Common), ('\u{1d17b}', '\u{1d182}',  Script::Inherited), ('\u{1d183}', '\u{1d184}',
+         Script::Common), ('\u{1d185}', '\u{1d18b}',  Script::Inherited), ('\u{1d18c}', '\u{1d1a9}',
+         Script::Common), ('\u{1d1aa}', '\u{1d1ad}',  Script::Inherited), ('\u{1d1ae}', '\u{1d1ff}',
+         Script::Common), ('\u{1d200}', '\u{1d241}',  Script::Greek), ('\u{1d242}', '\u{1d244}',
+         Script::Greek), ('\u{1d245}', '\u{1d245}',  Script::Greek), ('\u{1d250}', '\u{1d252}',
+         Script::Common), ('\u{1d253}', '\u{1d25a}',  Script::Common), ('\u{1d25b}', '\u{1d25c}',
+         Script::Inherited), ('\u{1d25d}', '\u{1d25e}',  Script::Common), ('\u{1d25f}', '\u{1d25f}',
+         Script::Common), ('\u{1d260}', '\u{1d27f}',  Script::Common), ('\u{1d280}', '\u{1d281}',
+         Script::Common), ('\u{1d2c0}', '\u{1d2d3}',  Script::Common), ('\u{1d2e0}', '\u{1d2f3}',
+         Script::Common), ('\u{1d300}', '\u{1d356}',  Script::Common), ('\u{1d360}', '\u{1d378}',
+         Script::Common), ('\u{1d400}', '\u{1d454}',  Script::Common), ('\u{1d456}', '\u{1d49c}',
+         Script::Common), ('\u{1d49e}', '\u{1d49f}',  Script::Common), ('\u{1d4a2}', '\u{1d4a2}',
+         Script::Common), ('\u{1d4a5}', '\u{1d4a6}',  Script::Common), ('\u{1d4a9}', '\u{1d4ac}',
+         Script::Common), ('\u{1d4ae}', '\u{1d4b9}',  Script::Common), ('\u{1d4bb}', '\u{1d4bb}',
+         Script::Common), ('\u{1d4bd}', '\u{1d4c3}',  Script::Common), ('\u{1d4c5}', '\u{1d505}',
+         Script::Common), ('\u{1d507}', '\u{1d50a}',  Script::Common), ('\u{1d50d}', '\u{1d514}',
+         Script::Common), ('\u{1d516}', '\u{1d51c}',  Script::Common), ('\u{1d51e}', '\u{1d539}',
+         Script::Common), ('\u{1d53b}', '\u{1d53e}',  Script::Common), ('\u{1d540}', '\u{1d544}',
+         Script::Common), ('\u{1d546}', '\u{1d546}',  Script::Common), ('\u{1d54a}', '\u{1d550}',
+         Script::Common), ('\u{1d552}', '\u{1d6a6}',  Script::Common), ('\u{1d6a8}', '\u{1d6c0}',
+         Script::Common), ('\u{1d6c1}', '\u{1d6c1}',  Script::Common), ('\u{1d6c2}', '\u{1d6da}',
+         Script::Common), ('\u{1d6db}', '\u{1d6db}',  Script::Common), ('\u{1d6dc}', '\u{1d6fa}',
+         Script::Common), ('\u{1d6fb}', '\u{1d6fb}',  Script::Common), ('\u{1d6fc}', '\u{1d714}',
+         Script::Common), ('\u{1d715}', '\u{1d715}',  Script::Common), ('\u{1d716}', '\u{1d734}',
+         Script::Common), ('\u{1d735}', '\u{1d735}',  Script::Common), ('\u{1d736}', '\u{1d74e}',
+         Script::Common), ('\u{1d74f}', '\u{1d74f}',  Script::Common), ('\u{1d750}', '\u{1d76e}',
+         Script::Common), ('\u{1d76f}', '\u{1d76f}',  Script::Common), ('\u{1d770}', '\u{1d788}',
+         Script::Common), ('\u{1d789}', '\u{1d789}',  Script::Common), ('\u{1d78a}', '\u{1d7a8}',
+         Script::Common), ('\u{1d7a9}', '\u{1d7a9}',  Script::Common), ('\u{1d7aa}', '\u{1d7c2}',
+         Script::Common), ('\u{1d7c3}', '\u{1d7c3}',  Script::Common), ('\u{1d7c4}', '\u{1d7cb}',
+         Script::Common), ('\u{1d7ce}', '\u{1d7ff}',  Script::Common), ('\u{1d800}', '\u{1d9ff}',
          Script::SignWriting), ('\u{1da00}', '\u{1da36}',  Script::SignWriting), ('\u{1da37}',
         '\u{1da3a}',  Script::SignWriting), ('\u{1da3b}', '\u{1da6c}',  Script::SignWriting),
         ('\u{1da6d}', '\u{1da74}',  Script::SignWriting), ('\u{1da75}', '\u{1da75}',
          Script::SignWriting), ('\u{1da76}', '\u{1da83}',  Script::SignWriting), ('\u{1da84}',
         '\u{1da84}',  Script::SignWriting), ('\u{1da85}', '\u{1da86}',  Script::SignWriting),
         ('\u{1da87}', '\u{1da8b}',  Script::SignWriting), ('\u{1da9b}', '\u{1da9f}',
-         Script::SignWriting), ('\u{1daa1}', '\u{1daaf}',  Script::SignWriting), ('\u{1df00}',
-        '\u{1df09}',  Script::Latin), ('\u{1df0a}', '\u{1df0a}',  Script::Latin), ('\u{1df0b}',
-        '\u{1df1e}',  Script::Latin), ('\u{1df25}', '\u{1df2a}',  Script::Latin), ('\u{1e000}',
-        '\u{1e006}',  Script::Glagolitic), ('\u{1e008}', '\u{1e018}',  Script::Glagolitic),
-        ('\u{1e01b}', '\u{1e021}',  Script::Glagolitic), ('\u{1e023}', '\u{1e024}',
-         Script::Glagolitic), ('\u{1e026}', '\u{1e02a}',  Script::Glagolitic), ('\u{1e030}',
-        '\u{1e06d}',  Script::Cyrillic), ('\u{1e08f}', '\u{1e08f}',  Script::Cyrillic),
-        ('\u{1e100}', '\u{1e12c}',  Script::Nyiakeng_Puachue_Hmong), ('\u{1e130}', '\u{1e136}',
+         Script::SignWriting), ('\u{1daa1}', '\u{1daaf}',  Script::SignWriting), ('\u{1db00}',
+        '\u{1db1c}',  Script::Common), ('\u{1df00}', '\u{1df09}',  Script::Latin), ('\u{1df0a}',
+        '\u{1df0a}',  Script::Latin), ('\u{1df0b}', '\u{1df7f}',  Script::Latin), ('\u{1df80}',
+        '\u{1df81}',  Script::Latin), ('\u{1df90}', '\u{1df96}',  Script::Latin), ('\u{1dfcd}',
+        '\u{1dff2}',  Script::Latin), ('\u{1dff3}', '\u{1dff4}',  Script::Greek), ('\u{1dff5}',
+        '\u{1dfff}',  Script::Latin), ('\u{1e000}', '\u{1e006}',  Script::Glagolitic), ('\u{1e008}',
+        '\u{1e018}',  Script::Glagolitic), ('\u{1e01b}', '\u{1e021}',  Script::Glagolitic),
+        ('\u{1e023}', '\u{1e024}',  Script::Glagolitic), ('\u{1e026}', '\u{1e02a}',
+         Script::Glagolitic), ('\u{1e030}', '\u{1e06d}',  Script::Cyrillic), ('\u{1e08f}',
+        '\u{1e08f}',  Script::Cyrillic), ('\u{1e100}', '\u{1e12c}',
+         Script::Nyiakeng_Puachue_Hmong), ('\u{1e130}', '\u{1e136}',
          Script::Nyiakeng_Puachue_Hmong), ('\u{1e137}', '\u{1e13d}',
          Script::Nyiakeng_Puachue_Hmong), ('\u{1e140}', '\u{1e149}',
          Script::Nyiakeng_Puachue_Hmong), ('\u{1e14e}', '\u{1e14e}',
@@ -3371,30 +3425,30 @@ pub fn get_script_extension(c: char) -> Option<ScriptExtension> {
         ('\u{1f030}', '\u{1f093}',  Script::Common), ('\u{1f0a0}', '\u{1f0ae}',  Script::Common),
         ('\u{1f0b1}', '\u{1f0bf}',  Script::Common), ('\u{1f0c1}', '\u{1f0cf}',  Script::Common),
         ('\u{1f0d1}', '\u{1f0f5}',  Script::Common), ('\u{1f100}', '\u{1f10c}',  Script::Common),
-        ('\u{1f10d}', '\u{1f1ad}',  Script::Common), ('\u{1f1e6}', '\u{1f1ff}',  Script::Common),
+        ('\u{1f10d}', '\u{1f1ae}',  Script::Common), ('\u{1f1e6}', '\u{1f1ff}',  Script::Common),
         ('\u{1f200}', '\u{1f200}',  Script::Hiragana), ('\u{1f201}', '\u{1f202}',  Script::Common),
         ('\u{1f210}', '\u{1f23b}',  Script::Common), ('\u{1f240}', '\u{1f248}',  Script::Common),
         ('\u{1f250}', '\u{1f251}',  Script::Common), ('\u{1f260}', '\u{1f265}',  Script::Common),
         ('\u{1f300}', '\u{1f3fa}',  Script::Common), ('\u{1f3fb}', '\u{1f3ff}',  Script::Common),
-        ('\u{1f400}', '\u{1f6d8}',  Script::Common), ('\u{1f6dc}', '\u{1f6ec}',  Script::Common),
-        ('\u{1f6f0}', '\u{1f6fc}',  Script::Common), ('\u{1f700}', '\u{1f7d9}',  Script::Common),
-        ('\u{1f7e0}', '\u{1f7eb}',  Script::Common), ('\u{1f7f0}', '\u{1f7f0}',  Script::Common),
-        ('\u{1f800}', '\u{1f80b}',  Script::Common), ('\u{1f810}', '\u{1f847}',  Script::Common),
-        ('\u{1f850}', '\u{1f859}',  Script::Common), ('\u{1f860}', '\u{1f887}',  Script::Common),
-        ('\u{1f890}', '\u{1f8ad}',  Script::Common), ('\u{1f8b0}', '\u{1f8bb}',  Script::Common),
-        ('\u{1f8c0}', '\u{1f8c1}',  Script::Common), ('\u{1f8d0}', '\u{1f8d8}',  Script::Common),
-        ('\u{1f900}', '\u{1fa57}',  Script::Common), ('\u{1fa60}', '\u{1fa6d}',  Script::Common),
-        ('\u{1fa70}', '\u{1fa7c}',  Script::Common), ('\u{1fa80}', '\u{1fa8a}',  Script::Common),
-        ('\u{1fa8e}', '\u{1fac6}',  Script::Common), ('\u{1fac8}', '\u{1fac8}',  Script::Common),
-        ('\u{1facd}', '\u{1fadc}',  Script::Common), ('\u{1fadf}', '\u{1faea}',  Script::Common),
-        ('\u{1faef}', '\u{1faf8}',  Script::Common), ('\u{1fb00}', '\u{1fb92}',  Script::Common),
+        ('\u{1f400}', '\u{1f6d9}',  Script::Common), ('\u{1f6dc}', '\u{1f6ec}',  Script::Common),
+        ('\u{1f6f0}', '\u{1f6fc}',  Script::Common), ('\u{1f700}', '\u{1f7db}',  Script::Common),
+        ('\u{1f7e0}', '\u{1f7eb}',  Script::Common), ('\u{1f7f0}', '\u{1f80b}',  Script::Common),
+        ('\u{1f810}', '\u{1f847}',  Script::Common), ('\u{1f850}', '\u{1f859}',  Script::Common),
+        ('\u{1f860}', '\u{1f887}',  Script::Common), ('\u{1f890}', '\u{1f8ad}',  Script::Common),
+        ('\u{1f8b0}', '\u{1f8bb}',  Script::Common), ('\u{1f8c0}', '\u{1f8c1}',  Script::Common),
+        ('\u{1f8d0}', '\u{1f8d8}',  Script::Common), ('\u{1f900}', '\u{1fa57}',  Script::Common),
+        ('\u{1fa60}', '\u{1fa6d}',  Script::Common), ('\u{1fa70}', '\u{1fa7c}',  Script::Common),
+        ('\u{1fa80}', '\u{1fac6}',  Script::Common), ('\u{1fac8}', '\u{1fac8}',  Script::Common),
+        ('\u{1facc}', '\u{1fadd}',  Script::Common), ('\u{1fadf}', '\u{1faeb}',  Script::Common),
+        ('\u{1faef}', '\u{1fafa}',  Script::Common), ('\u{1fb00}', '\u{1fb92}',  Script::Common),
         ('\u{1fb94}', '\u{1fbef}',  Script::Common), ('\u{1fbf0}', '\u{1fbf9}',  Script::Common),
         ('\u{1fbfa}', '\u{1fbfa}',  Script::Common), ('\u{20000}', '\u{2a6df}',  Script::Han),
-        ('\u{2a700}', '\u{2b81d}',  Script::Han), ('\u{2b820}', '\u{2cead}',  Script::Han),
+        ('\u{2a700}', '\u{2b81e}',  Script::Han), ('\u{2b820}', '\u{2cead}',  Script::Han),
         ('\u{2ceb0}', '\u{2ebe0}',  Script::Han), ('\u{2ebf0}', '\u{2ee5d}',  Script::Han),
         ('\u{2f800}', '\u{2fa1d}',  Script::Han), ('\u{30000}', '\u{3134a}',  Script::Han),
-        ('\u{31350}', '\u{33479}',  Script::Han), ('\u{e0001}', '\u{e0001}',  Script::Common),
-        ('\u{e0020}', '\u{e007f}',  Script::Common), ('\u{e0100}', '\u{e01ef}',  Script::Inherited)
+        ('\u{31350}', '\u{33479}',  Script::Han), ('\u{3d000}', '\u{3fc3f}',  Script::Seal),
+        ('\u{e0001}', '\u{e0001}',  Script::Common), ('\u{e0020}', '\u{e007f}',  Script::Common),
+        ('\u{e0100}', '\u{e01ef}',  Script::Inherited)
     ];
 
     const SCRIPT_EXTENSIONS: &'static [(char, char, ScriptExtension)] = &[
@@ -3452,7 +3506,8 @@ pub fn get_script_extension(c: char) -> Option<ScriptExtension> {
         script_extensions::BENG_DEVA_DOGR_GONG_GONM_GRAN_GUJR_GUKH_GURU_KNDA_LIMB_MAHJ_MLYM_NAND_ONAO_ORYA_SIND_SINH_SYLO_TAKR_TAML_TELU_TIRH),
         ('\u{966}', '\u{96f}', script_extensions::DEVA_DOGR_KTHI_MAHJ), ('\u{9e6}', '\u{9ef}',
         script_extensions::BENG_CAKM_SYLO), ('\u{a66}', '\u{a6f}', script_extensions::GURU_MULT),
-        ('\u{ae6}', '\u{aef}', script_extensions::GUJR_KHOJ), ('\u{be6}', '\u{bef}',
+        ('\u{ae6}', '\u{aef}', script_extensions::GUJR_KHOJ), ('\u{b83}', '\u{b83}',
+        script_extensions::KNDA_MLYM_TAML_TELU), ('\u{be6}', '\u{bef}',
         script_extensions::GRAN_TAML), ('\u{bf0}', '\u{bf2}', script_extensions::GRAN_TAML),
         ('\u{bf3}', '\u{bf3}', script_extensions::GRAN_TAML), ('\u{ce6}', '\u{cef}',
         script_extensions::KNDA_NAND_TUTG), ('\u{1040}', '\u{1049}',
@@ -3481,13 +3536,13 @@ pub fn get_script_extension(c: char) -> Option<ScriptExtension> {
         script_extensions::DEVA), ('\u{1cf2}', '\u{1cf2}',
         script_extensions::BENG_DEVA_GRAN_KNDA_MLYM_NAND_ORYA_SINH_TELU_TIRH_TUTG), ('\u{1cf3}',
         '\u{1cf3}', script_extensions::DEVA_GRAN), ('\u{1cf4}', '\u{1cf4}',
-        script_extensions::DEVA_GRAN_KNDA_TUTG), ('\u{1cf5}', '\u{1cf6}',
-        script_extensions::BENG_DEVA), ('\u{1cf7}', '\u{1cf7}', script_extensions::BENG),
-        ('\u{1cf8}', '\u{1cf9}', script_extensions::DEVA_GRAN), ('\u{1cfa}', '\u{1cfa}',
-        script_extensions::NAND), ('\u{1dc0}', '\u{1dc1}', script_extensions::GREK), ('\u{1df8}',
-        '\u{1df8}', script_extensions::CYRL_LATN_SYRC), ('\u{1dfa}', '\u{1dfa}',
-        script_extensions::SYRC), ('\u{202f}', '\u{202f}', script_extensions::LATN_MONG_PHAG),
-        ('\u{204f}', '\u{204f}', script_extensions::ADLM_ARAB), ('\u{205a}', '\u{205a}',
+        script_extensions::DEVA_GRAN_KNDA_TUTG), ('\u{1cf5}', '\u{1cf6}', script_extensions::BENG),
+        ('\u{1cf7}', '\u{1cf7}', script_extensions::BENG), ('\u{1cf8}', '\u{1cf9}',
+        script_extensions::DEVA_GRAN), ('\u{1cfa}', '\u{1cfa}', script_extensions::NAND),
+        ('\u{1dc0}', '\u{1dc1}', script_extensions::GREK), ('\u{1df8}', '\u{1df8}',
+        script_extensions::CYRL_LATN_SYRC), ('\u{1dfa}', '\u{1dfa}', script_extensions::SYRC),
+        ('\u{202f}', '\u{202f}', script_extensions::LATN_MONG_PHAG), ('\u{204f}', '\u{204f}',
+        script_extensions::ADLM_ARAB), ('\u{205a}', '\u{205a}',
         script_extensions::CARI_GEOR_GLAG_HUNG_LYCI_ORKH), ('\u{205d}', '\u{205d}',
         script_extensions::CARI_GREK_HUNG_MERO), ('\u{20f0}', '\u{20f0}',
         script_extensions::DEVA_GRAN_LATN), ('\u{2e17}', '\u{2e17}', script_extensions::COPT_LATN),
@@ -3570,7 +3625,9 @@ pub fn get_script_extension(c: char) -> Option<ScriptExtension> {
         script_extensions::MANI_OUGR), ('\u{11301}', '\u{11301}', script_extensions::GRAN_TAML),
         ('\u{11303}', '\u{11303}', script_extensions::GRAN_TAML), ('\u{1133b}', '\u{1133c}',
         script_extensions::GRAN_TAML), ('\u{11fd0}', '\u{11fd1}', script_extensions::GRAN_TAML),
-        ('\u{11fd3}', '\u{11fd3}', script_extensions::GRAN_TAML), ('\u{1bca0}', '\u{1bca3}',
+        ('\u{11fd3}', '\u{11fd3}', script_extensions::GRAN_TAML), ('\u{12550}', '\u{12586}',
+        script_extensions::PCUN_XSUX), ('\u{1258c}', '\u{1258d}', script_extensions::PCUN_XSUX),
+        ('\u{1259a}', '\u{125a7}', script_extensions::PCUN_XSUX), ('\u{1bca0}', '\u{1bca3}',
         script_extensions::DUPL), ('\u{1d360}', '\u{1d371}', script_extensions::HANI), ('\u{1f250}',
         '\u{1f251}', script_extensions::HANI)
     ];
